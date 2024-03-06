@@ -1,0 +1,733 @@
+name1,name2,street1,street2,city,state,zip,zip4,county,phone,intake_prompt,intake1,intake2,website,latitude,longitude,type_facility
+Harborview Medical Center,Inpatient Psychiatry,325 9th Avenue,NA,Seattle,WA,98104,NA,King,206-744-3000,Intake,206-744-4464,NA,http://www.uwmedicine.org/locations/harborview-medical-center,47.6039634,-122.3241159,MH
+Harborview Medical Center,Behavioral Health,325 9th Avenue,Box 359797,Seattle,WA,98104,NA,King,206-744-9697,Intake,206-744-9600,NA,http://,47.603442,-122.323563,MH
+Valley Cities,Pike Place Clinic,1537 Western Avenue,NA,Seattle,WA,98101,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.608984,-122.342247,SA
+Valley Cities,Pike Place Clinic,1537 Western Avenue,NA,Seattle,WA,98101,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.608984,-122.342247,MH
+Harborview Medical Ctr Addictions Prog,Patricia Steel Building,401 Broadway,1st Floor,Seattle,WA,98104,NA,King,206-744-9696,NA,206-744-9617,NA,http://www.uwmedicine.org,47.6054787,-122.3213825,SA
+Catholic Community Services,Counseling Recovery and Wellness Prog,1902 2nd Avenue,Suite 208,Seattle,WA,98101,NA,King,206-956-9570,NA,NA,NA,http://ccsww.org/crew,47.6113716,-122.3404463,MH
+Catholic Community Services,CReW Program,1902 2nd Avenue,Suite 208,Seattle,WA,98101,NA,King,206-956-9570,NA,NA,NA,http://www.ccsww.org/crew,47.6113716,-122.3404463,SA
+Therapeutic Health Services,Summit Branch,1116 Summit Avenue,NA,Seattle,WA,98101,NA,King,206-323-0930 x0,NA,NA,NA,http://www.ths-wa.org,47.6115993,-122.3238161,SA
+Therapeutic Health Services,Seneca Branch,1305 Seneca Street,NA,Seattle,WA,98101,NA,King,206-323-0930,NA,206-323-0930 x0,NA,http://www.ths-wa.org,47.611635,-122.3238581,SA
+Sound,Broadway,600 Broadway,Suite 170,Seattle,WA,98122,NA,King,206-302-2600,Intake,206-302-2300,NA,http://www.sound.health/,47.6077909,-122.3200213,MH
+Positive Behavior Supports Corporation,NA,600 Stewart Street,Suite 300,Seattle,WA,98101,1217,King,855-832-6727,NA,NA,NA,http://www.teampbs.com/,47.6140386,-122.3371639,MH
+Seattle Counseling Service,NA,1216 Pine Street,Suite 300,Seattle,WA,98101,1959,King,206-323-1768,NA,NA,NA,http://seattlecounseling.org,47.6153931,-122.3281622,MH
+Seattle Counseling Service,NA,1216 Pine Street,Suite 300,Seattle,WA,98101,NA,King,206-323-1768,NA,NA,NA,http://www.seattlecounseling.org,47.6153931,-122.3281622,SA
+Matt Talbot Center,NA,2313 3rd Avenue,NA,Seattle,WA,98121,NA,King,206-256-9865,NA,NA,NA,https://ccsww.org/get-help/addiction-recovery-services/matt-talbot-center/,47.6148402,-122.3457403,SA
+Sound,Belltown,2329 4th Avenue,NA,Seattle,WA,98121,NA,King,206-461-3649,Intake,206-901-2000,NA,http://www.sound.health/,47.6157612,-122.3451575,MH
+Nua Counseling PLLC,NA,2505 3rd Avenue,Suite 325,Seattle,WA,98121,NA,King,206-905-4667,NA,NA,206-905-4668,http://www.nuacounseling.com,47.6160848,-122.3477683,SA
+Sound,Capitol Hill-Main,1600 East Olive Street,NA,Seattle,WA,98122,NA,King,206-302-2200,Intake,206-302-2300,NA,http://www.sound.health/,47.6167509,-122.3104599,MH
+Sound,Capitol Hill,1600 East Olive Street,NA,Seattle,WA,98122,NA,King,206-302-2200,NA,NA,NA,http://www.sound.health/,47.6167509,-122.3104599,SA
+Sound,Capitol Hill North,122 16th Avenue East,NA,Seattle,WA,98112,NA,King,206-302-2700,Intake,206-302-2300,NA,http://www.sound.health/,47.6189251,-122.3110379,MH
+Sound,Capitol Hill North,122 16th Avenue East,NA,Seattle,WA,98112,NA,King,206-302-2700,NA,206-302-2300,NA,http://www.sound.health/,47.6189251,-122.3110379,SA
+Pioneer Counseling Services,Seattle/Pioneer Human Services,901 Rainier Avenue South,NA,Seattle,WA,98144,NA,King,206-470-3856,NA,NA,NA,http://pioneerhumanservices.org/treatment/cd/,47.5939748,-122.3106219,SA
+Seattle Childrens Hospital,Odessa Brown Childrens Clinic,2101 East Yesler Way,NA,Seattle,WA,98122,NA,King,206-987-7210,NA,NA,NA,http://,47.6013037,-122.304391,MH
+Evergreen Treatment Services,Unit 1,1700 Airport Way South,NA,Seattle,WA,98134,1618,King,206-223-3644 x266,NA,206-223-3644 x268,NA,http://www.evergreentx.org,47.587621,-122.321008,SA
+Evergreen Treatment Services,Unit 3,1718 Airport Way South,NA,Seattle,WA,98134,NA,King,206-223-3644 x266,NA,206-223-3644 x268,NA,http://www.evergreentreatment.org,47.5875453,-122.3210473,SA
+Evergreen Treatment Services,Unit 2,1740 Airport Way South,NA,Seattle,WA,98134,NA,King,206-223-3644 x266,NA,206-223-3644 x268,NA,http://www.evergreentx.org,47.5872239,-122.3210384,SA
+Sea Mar Behavioral Health,Turning Point Recovery,113 23rd Avenue South,NA,Seattle,WA,98144,NA,King,206-219-5980 x42203,Intakes,206-219-5982 x42202,206-219-5987 x42207,http://www.seamarbh.com,47.6008433,-122.3028226,SA
+Valley Cities,Recovery Place Seattle,1701 18th Avenue South,NA,Seattle,WA,98118,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.5881006,-122.3101472,SA
+Edgewood Behavioral Health,NA,1200 Westlake Avenue North,Suite 508,Seattle,WA,98109,NA,King,206-402-4115,NA,NA,866-530-9989,http://edgewoodseattle.com,47.6300119,-122.33958989999999,SA
+Atlantic Street Center,NA,2103 South Atlantic Street,NA,Seattle,WA,98144,NA,King,206-329-2050,Intake,206-329-2050 x3900,NA,http://www.atlanticstreetcenter.org/,47.5893956,-122.3045104,MH
+Emily Program,Seattle,1700 Westlake Avenue North,Suite 700,Seattle,WA,98109,3097,King,888-364-5977,NA,NA,NA,http://www.emilyprogram.com,47.6345078,-122.3396029,MH
+YMCA Behavioral Health Services,NA,2100 24th Avenue South,Suite 260,Seattle,WA,98144,NA,King,206-382-5340,NA,NA,NA,http://seattleymca.org,47.5842142,-122.3012645,MH
+Therapeutic Health Services,Youth and Family Services,1901 Martin Luther King Jr Way South,NA,Seattle,WA,98144,NA,King,206-322-7676,NA,NA,NA,http://www.ths-wa.org,47.5857831,-122.2985908,SA
+Therapeutic Health Services,THS Youth and Family Services,1901 Martin Luther King Jr Way South,NA,Seattle,WA,98144,NA,King,206-322-7676,Intake,NA,206-726-7585,http://ths-wa.org,47.5857831,-122.2985908,MH
+Lakeside Milam Recovery Centers,Seattle/Eastlake,2815 Eastlake Avenue East,Suite 100,Seattle,WA,98102,NA,King,206-341-9373,NA,NA,800-231-4303,http://www.lakesidemilam.com,47.645927,-122.326082,SA
+Asian Counseling and Referral Service,NA,3639 Martin Luther King Jr Way South,NA,Seattle,WA,98144,NA,King,206-695-7600,NA,NA,NA,http://acrs.org/,47.5708927,-122.2973846,MH
+Asian Counseling and Referral Service,NA,3639 Martin Luther King Jr Way South,NA,Seattle,WA,98144,NA,King,206-695-7600,NA,206-695-7511,NA,http://www.acrs.org,47.570946,-122.297117,SA
+VA Puget Sound Healthcare System,Seattle Division,1660 South Columbian Way,Mail Stop S-116-ATC,Seattle,WA,98108,NA,King,206-764-2457,NA,NA,NA,http://www.pugetsound.va.gov/,47.5631321,-122.3082573,SA
+Seattle Division,VA Puget Sound Healthcare System,1660 South Columbian Way,NA,Seattle,WA,98108,1532,King,206-762-1010,Intake,206-764-2007,NA,http://www.mentalhealth.va.gov/,47.563062,-122.308231,MH
+Integrative Counseling Services,NA,701 North 36th Street,Suite 300,Seattle,WA,98103,NA,King,206-216-5000,NA,NA,NA,http://www.icswa.com,47.651182,-122.349736,SA
+Emily Program,Residential Treatment Facility,4 Nickerson Street,Suite 300,Seattle,WA,98109,NA,King,888-364-5977,NA,NA,NA,http://www.emilyprogram.com,47.6497748,-122.3569369,MH
+University of Washington,Montlake Campus,1959 NE Pacific Street,NA,Seattle,WA,98195,NA,King,206-668-1823,Intake,206-668-1747,NA,http://,47.6499974,-122.3025233,MH
+Sound,Wallingford Branch,4200 Stone Way North,NA,Seattle,WA,98103,NA,King,206-461-3707,NA,206-901-2000,NA,http://www.sound.health/,47.6582485,-122.342022,SA
+Sound,Wallingford Branch,4200 Stone Way North,NA,Seattle,WA,98103,NA,King,206-461-3707,Intake,206-302-2300,NA,http://www.sound.health/,47.6582485,-122.342022,MH
+Neighborcare at 45th Street,NA,1629 North 45th Street,NA,Seattle,WA,98103,NA,King,206-633-3350,NA,NA,NA,http://neighborcare.org/clinics/45th-street/,47.6611526,-122.3377139,SA
+Consejo Counseling and Referral Servs,NA,3808 South Angeline Street,NA,Seattle,WA,98118,NA,King,206-461-4880,Intakes,206-461-4880 x1117,206-461-4880 x1107,http://www.consejocounseling.org,47.5596774,-122.2844477,SA
+A Positive Alternative,NA,4649 Sunnyside Avenue North,Suite 200,Seattle,WA,98103,NA,King,206-547-1955,NA,NA,NA,http://apositivealternative.com/,47.664099,-122.331122,SA
+Seattle Behav Consulting and Ther LLC,NA,4746 11th Avenue NE,Suite 102,Seattle,WA,98105,NA,King,206-535-8876,NA,NA,NA,http://www.sbctsite.com/,47.6645505,-122.3160382,MH
+Associated Behavioral Healthcare Inc,West Seattle Branch,4711 44th Avenue SW,Suite A,Seattle,WA,98116,NA,King,425-646-7279,Intake,NA,800-858-6702,http://www.abhc.com,47.560714,-122.388481,MH
+Seattle Childrens Hospital,Regional Medical Center,4800 Sand Point Way NE,MS OA 5 154,Seattle,WA,98105,NA,King,206-987-2164,Intake,206-987-2164 x2,NA,http://www.seattlechildrens.org,47.6626509,-122.2832652,MH
+Therapeutic Health Services,THS Rainier Branch,5802 Rainier Avenue South,NA,Seattle,WA,98118,NA,King,206-723-1980 x2113,Intakes,206-323-0930,NA,http://ths-wa.org,47.5501143,-122.2768666,MH
+Swedish Medical Center/Ballard Campus,Behavioral Health Unit,5300 Tallman Avenue NW,NA,Seattle,WA,98107,NA,King,206-320-2230,NA,NA,NA,http://www.swedish.org,47.6674625,-122.3795306,MH
+Swedish Medical Center/Ballard,Addiction Recovery Services,5300 Tallman Avenue NW,NA,Seattle,WA,98107,NA,King,206-781-6209,NA,206-781-6048,NA,http://www.swedish.org,47.667576,-122.379747,SA
+Navos,Outpatient Services,2600 SW Holden Street,NA,Seattle,WA,98126,NA,King,206-933-7000,Intake,206-248-8226,NA,http://www.navos.org,47.534053,-122.366222,MH
+Navos,Inpatient Services,2600 SW Holden Street,NA,Seattle,WA,98126,3505,King,206-933-7299,NA,NA,NA,http://www.navos.org,47.534053,-122.366222,MH
+Hope Place,NA,3802 South Othello Street,NA,Seattle,WA,98118,NA,King,206-628-2008,NA,NA,NA,http://www.ugm.org/recovery,47.5372501,-122.2840663,SA
+Consejo Youth and Family Services,NA,8615 14th Avenue South,NA,Seattle,WA,98108,NA,King,206-461-4880,Intakes,206-461-4880 x1107,253-228-9663,http://www.consejocounseling.org,47.525963,-122.315261,SA
+Sea Mar Behavioral Health,Seattle/Outpatient Behavioral Health,8801 14th Avenue South,NA,Seattle,WA,98108,NA,King,206-766-6976,NA,NA,NA,http://www.seamar.org,47.5246185,-122.3151773,MH
+Valley Cities,Rainier Beach Clinic,8444 Rainier Avenue South,NA,Seattle,WA,98118,NA,King,253-833-7444,NA,NA,NA,http://valleycities.org,47.5266748,-122.2696197,SA
+Valley Cities,Rainier Beach,8444 Rainier Avenue South,NA,Seattle,WA,98118,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.5266705,-122.2696147,MH
+Community Psychiatric Clinic,Cascade Hall,204 NE 94th Street,NA,Seattle,WA,98115,NA,King,206-461-4580,NA,NA,NA,http://www.cpcwa.org,47.697078,-122.326947,MH
+Sound,Cascade Hall,204 NE 94th Street,NA,Seattle,WA,98115,NA,King,206-461-4580,NA,NA,NA,http://www.sound.health/,47.697078,-122.326947,MH
+Sea Mar Behavioral Health,White Center,9650 15th Avenue SW,NA,Seattle,WA,98106,NA,King,206-965-1055,NA,NA,NA,http://www.seamar.org,47.515888,-122.353617,MH
+THIRA Health,NA,400 108th Avenue NE,Suite 700,Bellevue,WA,98004,NA,King,425-454-1199,NA,NA,NA,http://www.thirahealth.com,47.6141376,-122.1955313,MH
+Sea Mar Behavioral Health,Renacer Youth Treatment Center,10001 17th Place South,NA,Seattle,WA,98168,NA,King,206-766-6969,NA,NA,206-812-6169,http://www.seamar.org,47.5144156,-122.310594,SA
+Ryther,NA,2400 NE 95th Street,NA,Seattle,WA,98115,NA,King,206-525-5050,NA,206-517-0234,NA,http://www.ryther.org,47.6976455,-122.3021465,SA
+Ryther,NA,2400 NE 95th Street,NA,Seattle,WA,98115,NA,King,206-525-5050,Intake,206-517-0234,NA,http://www.ryther.org,47.6982047,-122.3033831,MH
+Hotel California by the Sea,Bellevue,1601 114th Avenue SE,Suite 180,Bellevue,WA,98004,NA,King,844-766-8717,NA,NA,NA,http://www.HotelCaliforniaBellevue.com,47.5972489,-122.1917014,SA
+Seattle Drug and Narcotic Center,NA,10344 14th Avenue South,NA,Seattle,WA,98168,NA,King,206-767-0244,NA,NA,NA,http://www.seadrunar.org,47.510412,-122.314592,SA
+IKRON of Greater Seattle,Meridian Center,10303 Meridian Avenue North,Suite 204,Bellevue,WA,98004,NA,King,206-420-7949,NA,NA,425-242-1713,http://www.seattle.ikron.org,47.703404,-122.3342328,SA
+IKRON Corporation of Greater Seattle,Meridian Center,10303 Meridian Avenue North,Suite 204,Seattle,WA,98133,NA,King,206-420-7949,Intake,NA,425-242-1713,http://www.seattle.ikron.org,47.703404,-122.3342328,MH
+Overlake Outpatient Psychiatry,NA,1750 112th Avenue NE,Suite B-102,Bellevue,WA,98004,3772,King,425-688-5460,NA,NA,NA,http://overlakehospital.org,47.6258013,-122.1900493,MH
+Associated Behavioral Healthcare Inc,Bellevue,1800 112th Avenue NE,Suite 150-W,Bellevue,WA,98004,NA,King,425-646-7279,Intake,NA,800-858-6702,http://www.abhc.com,47.6272678,-122.1899429,MH
+You Grow Girl,NA,10215 Lake City Way NE,Suite H,Seattle,WA,98125,NA,King,206-643-9622,Intake,206-417-9904,NA,http://www.yougrowgirl.org,47.702779,-122.3023082,MH
+Overlake Hospital Medical Center,Behavioral Medicine,1035 116th Avenue NE,NA,Bellevue,WA,98004,NA,King,425-688-5000,Intake,425-688-5175,NA,http://www.overlakehospital.org,47.6203863,-122.1876044,MH
+Valley Cities,Meridian Center for Health,10521 Meridian Avenue North,NA,Seattle,WA,98133,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.7059831,-122.3346171,SA
+Valley Cities,Meridian,10521 Meridian Avenue North,NA,Seattle,WA,98133,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.7059852,-122.3346167,MH
+Coastal Treatment Services,NA,12835 NE Bel Red Road,Suite 145,Bellevue,WA,98005,2625,King,425-646-4406,NA,NA,NA,http://www.coastaltreatment.com,47.6239847,-122.1865352,SA
+Center for Discovery,Bellevue,11000 NE 33rd Place,Suite 340,Bellevue,WA,98004,NA,King,844-546-2614,NA,NA,NA,http://centerfordiscovery.com/locations/bellevue-outpatient/,47.6415178,-122.1929407,MH
+IKRON Corporation of Greater Seattle,Main,3805 108th Avenue NE,Suites 204 and 102,Bellevue,WA,98004,NA,King,425-242-1713 x23,NA,425-242-1713,NA,http://www.seattle.ikron.org,47.6451334,-122.1949224,SA
+IKRON Corporation of Greater Seattle,Main,3805 108th Avenue NE,Suites 204 and 102,Bellevue,WA,98004,NA,King,425-242-1713,NA,NA,NA,http://www.seattle.ikron.org,47.6451334,-122.1949224,MH
+Sound,Northgate,10700 Meridian Avenue North,Suite G-11,Seattle,WA,98133,NA,King,206-461-4544,Intake,206-901-2000,NA,http://www.sound.health/,47.7072902,-122.3327845,MH
+Evergreen at Northpoint,NA,2111 North Northgate Way,Suite 101,Seattle,WA,98133,NA,King,206-309-3740,NA,NA,NA,http://www.northpointwashington.com,47.7084091,-122.3333163,SA
+Associated Behavioral Healthcare Inc,North Seattle Facility,2111 North Northgate Way,Suite 212,Seattle,WA,98133,9018,King,425-646-7279,Intake,NA,800-858-6702,http://www.abhc.com,47.7084109,-122.3333162,MH
+Sound,Lake City,11000 Lake City Way NE,NA,Seattle,WA,98125,NA,King,206-461-3614,Intake,206-302-2300,NA,http://www.sound.health/,47.7086571,-122.300935,MH
+New Life Recovery Solutions,NA,12330 NE 8th Street,Suite 100,Bellevue,WA,98005,NA,King,425-454-2238,NA,NA,NA,http://www.nlrsnow.com,47.618512,-122.175967,SA
+Ark Assessment Services,NA,11659 1st Avenue South,NA,Seattle,WA,98168,NA,King,206-947-2117,NA,NA,NA,http://arkassessmentservices.com,47.497843,-122.3343003,SA
+University of Washington,Northwest,1550 North 115th Street,Suite E-120,Seattle,WA,98133,NA,King,206-668-1823,Intake,206-668-1747,NA,http://www.nwhospital.org/services/gero_main.asp,47.7147302,-122.3371023,MH
+Mindful Alternatives LLC,NA,12729 Northup Way,Suite 26,Bellevue,WA,98005,1935,King,206-355-2508,NA,NA,NA,http://,47.6274596,-122.170569,SA
+Schick Shadel Hospital,Substance Abuse Program,12101 Ambaum Boulevard SW,NA,Seattle,WA,98146,NA,King,206-244-8100,NA,206-244-8100 x2003,NA,http://www.schickshadel.com,47.4942732,-122.3507648,SA
+Rational Treatment Services (RTS) Inc,NA,12826 SE 40th Lane,Suite 203,Bellevue,WA,98006,NA,King,206-459-2242,NA,NA,NA,http://www.rationaltreatmentservices.com,47.5740739,-122.1684014,SA
+Lakeside Milam Recovery Centers,Kirkland,6725 116th Avenue NE,Suite 110,Kirkland,WA,98033,NA,King,425-822-5095,NA,NA,800-231-4303,http://www.lakesidemilam.com,47.6665089,-122.1859538,SA
+Sunrise Centers,NA,12650 1st Avenue South,NA,Seattle,WA,98168,NA,King,206-248-3006,NA,NA,NA,http://www.sunrisecenters.com,47.4891189,-122.3334535,SA
+Valley Cities,Lake City Clinic,12736 33rd Avenue NE,NA,Seattle,WA,98125,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.7223248,-122.2918447,MH
+Valley Cities,Lake City Clinic,12736 33rd Avenue NE,NA,Seattle,WA,98125,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.7223248,-122.2918447,SA
+Riverton Place,NA,3020 South 128th Street,NA,Seattle,WA,98168,NA,King,206-242-5585,NA,NA,NA,http://www.ugm.org,47.489138,-122.293487,SA
+Ideal Option,Tukwila,2801 South 128th Street,NA,Seattle,WA,98168,NA,King,877-522-1275,NA,NA,NA,http://idealoption.com,47.4884132,-122.296457,SA
+Cascade Behavioral Health Hospital,NA,12844 Military Road South,NA,Seattle,WA,98168,NA,King,206-745-4473,NA,NA,NA,http://www.cascadebh.com/,47.4871988,-122.2962459,SA
+Therapeutic Health Services,Eastside Branch,1412 140th Place NE,NA,Bellevue,WA,98007,NA,King,425-747-7892,NA,NA,NA,http://www.ths-wa.org,47.597386,-122.151518,SA
+Valley Cities,Aurora Clinic,13555 Aurora Avenue North,NA,Seattle,WA,98133,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.7285127,-122.3454918,SA
+Eagle Harbor Counseling LLC,NA,600 Winslow Way East,Suite 232,Bainbridge Island,WA,98110,2417,Kitsap,425-478-1000,NA,NA,NA,http://www.eagleharborcounseling.com,47.6251279,-122.5134362,SA
+Navos,Outpatient Services,1210 SW 136th Street,NA,Seattle,WA,98166,NA,King,206-257-6601,Intake,206-248-8226,NA,http://www.navos.org,47.481788,-122.349848,MH
+Navos,Co Occurring Disorders Program,1210 SW 136th Street,NA,Seattle,WA,98166,NA,King,206-257-6600,NA,NA,NA,http://www.navos.org,47.4817875,-122.3498483,SA
+Sound/Bellevue,Rainbow Creek/Service Center,14270 NE 21st Street,NA,Bellevue,WA,98007,NA,King,425-653-5000,Intake,206-302-2300,NA,http://www.sound.health,47.6295313,-122.1502079,MH
+Sound,Bellevue (Northcreek),14216 NE 21st Street,NA,Bellevue,WA,98007,NA,King,425-653-4900,NA,206-302-2300,NA,http://www.sound.health/,47.6290639,-122.1500614,SA
+Sound/Bellevue,Counseling Services,14216 NE 21st Street,NA,Bellevue,WA,98007,NA,King,425-653-4900,Intake,206-302-2300,NA,http://www.sound.health,47.6290639,-122.1500614,MH
+Youth Eastside Services (YES),NA,11829 97th Avenue NE,NA,Kirkland,WA,98034,NA,King,425-827-4937,NA,NA,NA,http://www.youtheastsideservices.org/,47.7065278,-122.2136813,MH
+Youth Eastside Services (YES),Lake Washington Branch,11829 97th Avenue NE,NA,Kirkland,WA,98034,NA,King,425-747-4937,NA,NA,NA,http://www.youtheastsideservices.org,47.706296,-122.212853,SA
+Hotel California by the Sea,Bellevue,7810 130th Avenue SE,NA,Kirkland,WA,98033,NA,King,844-766-8717,NA,NA,NA,http://www.HotelCaliforniaBellevue.com,47.6739048,-122.1662427,SA
+Valley Cities,Aurora Clinic,325 West Gowe Street,NA,Kent,WA,98032,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.738454,-122.3453305,MH
+Programa SER,NA,901 Rainier Avenue North,Suite B-101,Renton,WA,98057,NA,King,206-387-1240,NA,NA,206-293-2957,http://,47.4973807,-122.220408,SA
+Sea Mar Community Health Centers,King County,3801 150th Avenue SE,Suite 301,Bellevue,WA,98006,NA,King,425-460-7114,NA,NA,NA,http://www.seamar.org,47.5755905,-122.1406525,MH
+Asian Counseling and Referral Service,NA,655 156th Avenue NE,Suites 250 and 255,Bellevue,WA,98007,NA,King,206-695-7600,Intake,206-695-7511,NA,http://acrs.org/,47.6165001,-122.1324295,MH
+Sea Mar Behavioral Health,Bellevue Child and Family,1811 156th Avenue NE,Suite 2,Bellevue,WA,98007,NA,King,425-460-7125,NA,NA,NA,https://www.seamar.org/clark-bh-vancouver-sud.html,47.6263731,-122.1330301,MH
+Ukrainian Community Center of WA,NA,13470 Martin Luther King Way South,NA,Seattle,WA,98178,NA,King,425-430-8229,Intakes,425-430-8229 x4,425-430-8227 x4,http://www.uccwa.org,47.4823911,-122.2453729,MH
+ReSTART Life,Behavioral Healthcare,2002 156th Avenue NE,Suite 100,Bellevue,WA,98007,NA,King,800-682-6934,Intake,800-682-6934 x5,NA,http://www.restartlife.com,47.6289818,-122.1314678,MH
+High West Residence,NA,15035 8th Avenue South,NA,Seattle,WA,98148,NA,King,206-241-3119,NA,NA,NA,http://www.navos.org/,47.4677058,-122.3242432,MH
+Newport Academy,NA,12029 113th Avenue NE,NA,Kirkland,WA,98034,NA,King,877-820-6371,NA,NA,NA,http://www.newportacademy.com/?utm_source=SAMHSA&utm_medium=referral&utm_campaign=listing,47.7085444,-122.1912679,MH
+Lionrock Recovery,Lionrock Behavioral Health Inc,11335 NE 122nd Way,Suite 105,Kirkland,WA,98034,6933,King,800-258-6550,NA,NA,760-994-4990,http://www.lionrockrecovery.com,47.7087506,-122.1893789,SA
+Navos,NA,1033 SW 152nd Street,Building 1019,Seattle,WA,98166,NA,King,206-242-1698,NA,NA,NA,http://www.navos.org,47.465775,-122.3490742,SA
+Navos,Lake Burien Campus,1033 SW 152nd Street,NA,Seattle,WA,98166,NA,King,206-829-1100,Intakes,206-248-8226,206-242-1698,http://www.navos.org,47.465775,-122.3490742,MH
+Youth Eastside Services (YES),Bellevue Main Facility,999 164th Avenue NE,NA,Bellevue,WA,98008,NA,King,425-747-4937,NA,NA,NA,http://youtheastsideservices.org,47.6184584,-122.1241557,SA
+Youth Eastside Services (YES),Community Mental Health Agency,999 164th Avenue NE,NA,Bellevue,WA,98008,NA,King,425-747-4937,NA,NA,NA,http://www.youtheastsideservices.org/,47.6184584,-122.1241557,MH
+La Esperanza Health Counseling Servs,NA,15405 1st Avenue South,NA,Seattle,WA,98148,NA,King,206-306-2690,NA,NA,NA,http://www.laesperanzahcs.org,47.464862,-122.3342811,SA
+Fairfax Hospital,Behavioral Health,10200 NE 132nd Street,NA,Kirkland,WA,98034,NA,King,425-821-2000,NA,425-284-9400,NA,http://www.fairfaxhospital.com,47.7192092,-122.2041786,SA
+BHC Fairfax Hospital,NA,10200 NE 132nd Street,NA,Kirkland,WA,98034,NA,King,425-821-2000,Intake,425-284-8300,NA,http://www.fairfaxhospital.com/,47.719417,-122.204254,MH
+Lakeside Milam Recovery Centers,Kirkland Inpatient,10322 NE 132nd Street,NA,Kirkland,WA,98034,NA,King,425-823-3116,NA,NA,800-231-4303,http://www.lakesidemilam.com,47.719453,-122.202813,SA
+Center for Discovery,Bellevue,16305 SE 37th Street,NA,Bellevue,WA,98008,5918,King,866-862-3631,NA,NA,NA,http://centerfordiscovery.com/locations/bellevue/,47.5772063,-122.1224166,MH
+Therapeutic Health Services,Shoreline Branch,16715 Aurora Avenue North,Suite 102,Seattle,WA,98133,NA,King,206-546-9766,NA,206-546-9766 x0,NA,http://www.ths-wa.org,47.751009,-122.345986,SA
+Center for Human Services,NA,17018 15th Avenue NE,NA,Seattle,WA,98155,NA,King,206-362-7282 x8834,NA,206-362-7282,NA,http://www.chs-nw.org,47.7525985,-122.3129053,SA
+Lakeside Milam Recovery Centers,Renton,1000 SW 7th Street,Suite B,Renton,WA,98057,NA,King,206-248-4358,NA,NA,800-231-4303,http://www.lakesidemilam.com,47.474153,-122.230096,SA
+Youth Eastside Services (YES),Redmond Branch,15600 Redmond Way,Suite 102,Redmond,WA,98052,NA,King,425-747-4937,NA,NA,NA,http://www.youtheastsideservices.org,47.674547,-122.131515,SA
+Sound,Tukwila,6100 Southcenter Boulevard,NA,Seattle,WA,98188,NA,King,206-444-7800,NA,206-302-2200,NA,http://www.sound.health/,47.4632637,-122.256744,SA
+Sound,Tukwila West,6100 Southcenter Boulevard,NA,Seattle,WA,98188,2441,King,206-444-7900,Intake,206-302-2300,NA,http://www.sound.health/,47.4632637,-122.256744,MH
+Youth Eastside Services (YES),NA,15600 Redmond Way,Suite 102,Redmond,WA,98052,NA,King,425-747-4937,NA,NA,NA,http://www.youtheastsideservices.org,47.6745593,-122.13138789999999,MH
+Valley Cities,Renton,221 Wells Avenue South,NA,Renton,WA,98057,2258,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.4803668,-122.2058207,MH
+Valley Cities,Renton Clinic,221 Wells Avenue South,NA,Renton,WA,98057,NA,King,253-939-4055,NA,253-833-7444,NA,http://valleycities.org,47.4803863,-122.2057765,SA
+Cowlitz Tribal Health Seattle,Substance Use Disorder Program,15455 65th Avenue South,NA,Seattle,WA,98188,NA,King,206-721-5170,NA,206-466-5025,NA,http://www.cowlitz.org,47.4633992,-122.2527846,SA
+Sound,Tukwila East,6400 Southcenter Boulevard,NA,Seattle,WA,98188,NA,King,206-444-3600,Intake,206-302-2300,NA,http://www.sound.health/,47.4629733,-122.253868,MH
+Renton Area Youth and Family Services,NA,1025 South 3rd Street,NA,Renton,WA,98055,NA,King,425-271-5600,NA,425-271-5600 x129,NA,http://www.rays.org,47.4796570341826,-122.203941459927,SA
+King Cnty Sexual Assault Resource Ctr,NA,707 South Grady Way,Suite 300,Renton,WA,98057,NA,King,425-226-5062,NA,NA,NA,http://www.kcsarc.org,47.4717992,-122.2093823,MH
+Sound,Redmond,6400 Southcenter Boulevard,NA,Seattle,WA,98188,NA,King,425-653-4980,Intake,206-302-2300,NA,http://www.sound.health/,47.6793571,-122.1235999,MH
+Sound,Stillwater House,8705 166th Avenue NE,NA,Redmond,WA,98052,NA,King,425-653-5080,NA,NA,NA,http://www.sound.health/,47.6803337,-122.1196577,MH
+Armstrong Alcohol and Drug Recovery,NA,625 Strander Boulevard,Suite C,Seattle,WA,98188,NA,King,206-575-1958,NA,NA,NA,http://www.aadr.co,47.4550033,-122.2457672,SA
+Lakeside Milam Recovery Centers,Edmonds,7935 Lake Ballinger Way,NA,Edmonds,WA,98026,NA,Snohomish,425-670-3664,NA,NA,800-231-4303,http://www.lakesidemilam.com,47.777819,-122.340767,SA
+Lutheran Community Services Northwest,NA,4040 South 188th Street,Suite 200,Seattle,WA,98188,NA,King,206-816-3253,NA,NA,NA,http://lcsnw.org,47.4346804,-122.2824728,MH
+Evergreen Treatment Services,South King County Clinic,1412 SW 43rd Street,Suite 140,Renton,WA,98057,NA,King,425-264-0750 x608,NA,425-264-0750 x624,NA,http://www.evergreentx.org/,47.4417246,-122.236344,SA
+Alpha Recovery Choices,NA,10614 Beardslee Boulevard,Suite D,Bothell,WA,98011,NA,King,425-483-4664,NA,NA,NA,http://AlphaRecoveryChoices.com,47.761244,-122.199049,SA
+Northwest Recovery Centers LLC,NA,2000 Benson Road South,Suite 250,Renton,WA,98055,NA,King,425-254-2899,NA,NA,NA,http://www.nwrecoverycenters.com,47.444502,-122.210654,SA
+Alternative Counseling,Kent,19435 West Valley Highway,Suite S-109,Kent,WA,98032,NA,King,425-251-1933,NA,NA,NA,http://www.alternativecounseling.com,47.428057,-122.249369,SA
+Northshore Youth and Family Services,NA,19201 120th Avenue NE,Suite 108,Bothell,WA,98011,9523,King,425-485-6541 x106,Intake,425-485-6541 x100,NA,http://www.northshoreyouthandfamilyservices.org,47.7670442,-122.1812081,MH
+Northshore Youth and Family Services,NA,19201 120th Avenue NE,Suite 108,Bothell,WA,98011,9523,King,425-485-6541,NA,NA,NA,http://northshoreyouthandfamilyservices.org/index.html,47.7670442,-122.1812081,SA
+Ideal Option,Mountlake Terrace,22000 64th Avenue West,Suite 2-F,Mountlake Terrace,WA,98043,NA,Snohomish,877-522-1275,NA,NA,NA,http://idealoption.com,47.7991269,-122.3198001,SA
+Sound Family Center LLC,NA,17924 140th Avenue NE,Suite 230,Woodinville,WA,98072,NA,King,425-419-4800,NA,NA,NA,http://www.soundfamilycenter.com,47.7579832,-122.1524715,SA
+Sunrise Services Inc,Mountlake Terrace,6505 218th Street SW,Suites 6 and 7,Mountlake Terrace,WA,98043,NA,Snohomish,425-595-5200,Intake,425-678-6800,NA,http://sunriseservicesinc.com/,47.8016188,-122.321277,MH
+Suquamish Tribe Wellness,NA,18490 NE Suquamish Way,Suite 107,Suquamish,WA,98392,NA,Kitsap,360-394-8558,NA,NA,NA,http://www.suquamishtribe.com,47.7283365,-122.5586759,SA
+Swedish Edmonds Hospital,NA,21601 76th Avenue West,NA,Edmonds,WA,98026,NA,Snohomish,425-640-4000 x4988,Intake,425-640-4981,NA,http://www.swedish.org/services/behavioral-health/partial-hospitalization-program,47.8033101,-122.334539,MH
+Kitsap Mental Health Services,Adult Outpatient/Pathways,5455 Almira Drive NE,NA,Bremerton,WA,98311,NA,Kitsap,360-373-5031,NA,360-405-4010,NA,http://www.kitsapmentalhealth.org,47.61187,-122.623396,SA
+SquareOne,NA,21300 68th Avenue West,Suite 105,Lynnwood,WA,98036,NA,Snohomish,425-412-3155,NA,NA,NA,http://www.squareonerecovery.org,47.805949,-122.3250856,MH
+SquareOne,NA,21300 68th Avenue West,Suite 105,Lynnwood,WA,98036,NA,Snohomish,425-412-3155,NA,425-412-3155 x0,NA,http://www.squareonerecovery.org,47.805949,-122.3250856,SA
+West Sound Treatment Center,NA,4060 Wheaton Way,Suite F,Bremerton,WA,98310,NA,Kitsap,360-876-9430,NA,NA,NA,http://www.westsoundtreatmentcenter.org,47.6017607,-122.627734,SA
+Balanced Living Therapy LLC,NA,7500 212th Street SW,Suite 205,Edmonds,WA,98026,NA,Snohomish,425-977-4988,NA,NA,NA,http://www.balancedlivingtherapy.com,47.8063501,-122.3347967,MH
+Balanced Living LLC,NA,7500 212th Avenue SW,Suite 205,Edmonds,WA,98026,NA,Snohomish,425-977-4988,NA,NA,NA,http://www.balancedlivingtherapy.com,47.8063501,-122.3347967,SA
+Vashon Youth and Family Services,NA,20110 Vashon Highway SW,NA,Vashon,WA,98070,NA,King,206-463-5511,NA,NA,NA,http://vyfs.org,47.4242715,-122.4591937,MH
+Cascadia Addiction,Bountiful Life Treatment Center PLLC,2817 Wheaton Way,Suite 205,Bremerton,WA,98310,NA,Kitsap,360-373-0155,NA,NA,NA,http://www.bountifullife.org,47.5892184,-122.6306166,SA
+BAART Behavioral Health Services Inc,NA,1520 NE Riddell Road,Suite 110,Bremerton,WA,98310,NA,Kitsap,360-228-7246,NA,NA,NA,http://baartprograms.com/baart-programs-bremerton/,47.607029,-122.6320688,SA
+Compass Health,Aurora House,20903 70th Avenue West,NA,Edmonds,WA,98026,NA,Snohomish,425-672-3333,Intake,888-693-7200,NA,http://www.compasshealth.org,47.8093249,-122.3269203,MH
+La Esperanza Health Counseling Servs,NA,20815 67th Avenue West,Suite 201,Lynnwood,WA,98036,NA,Snohomish,425-248-4534,NA,NA,NA,http://www.laesperanzahcs.org,47.809837,-122.322982,SA
+Center,A Place of Hope,547 Dayton Street,NA,Edmonds,WA,98020,NA,Snohomish,425-771-5166,NA,888-771-5166,NA,http://www.aplaceofhope.com,47.809958,-122.3755057,SA
+Center for Counseling and Health,A Place of Hope,547 Dayton Street,NA,Edmonds,WA,98020,NA,Snohomish,425-771-5166,Intake,888-771-5166,NA,http://www.aplaceofhope.com,47.809958,-122.3755057,MH
+Meier Clinics,Community Mental Health Agency,22232 17th Avenue SE,Suite 302,Bothell,WA,98021,7425,Snohomish,425-487-1005,NA,NA,NA,http://www.meierclinics.com,47.7953945,-122.2116571,MH
+Wadsworth Psyciatric Services,NA,6520 226th Place SE,Suite 203,Issaquah,WA,98027,NA,King,425-222-1000,NA,NA,NA,http://www.psycsvc.com,47.5426236,-122.0381516,MH
+Friends of Youth,Issaquah,414 Front Street North,NA,Issaquah,WA,98027,NA,King,425-392-6367,NA,NA,NA,http://www.friendsofyouth.org,47.5342047,-122.0361211,MH
+Friends of Youth,NA,414 Front Street North,NA,Issaquah,WA,98027,NA,KING,425-392-6367,NA,NA,NA,http://friendsofyouth.org,47.5342047,-122.0361211,SA
+WCHS Inc,DBA Kent Treatment Solutions,21851 84th Avenue South,Suite 101,Kent,WA,98032,NA,King,425-687-7082,NA,NA,NA,http://www.westernwashingtonctc.com,47.4051134,-122.2285484,SA
+Sea Mar Behavioral Health,Lynnwood,4111 Alderwood Mall Boulevard,NA,Lynnwood,WA,98036,6765,Snohomish,425-977-2560,NA,NA,NA,https://www.seamar.org/clark-bh-vancouver-sud.html,47.8178052,-122.2891266,SA
+Evergreen Recovery Centers,NA,4230 198th Street SW,NA,Lynnwood,WA,98036,NA,Snohomish,425-248-4900,NA,NA,NA,http://www.evergreenrc.org,47.8190146,-122.2905492,SA
+RMH Services,Community Mental Health Agency,1933 4th Street,NA,Bremerton,WA,98337,NA,Kitsap,360-479-4959,NA,NA,NA,http://,47.5655753,-122.6452585,MH
+Action Counseling,NA,729 Prospect Street,Suite 200,Port Orchard,WA,98366,NA,Kitsap,360-895-1307,NA,NA,NA,http://alternativecounseling.org,47.5417027,-122.6368624,SA
+NW Family Recovery Solutions LLC,NA,710 Bay Street,NA,Port Orchard,WA,98366,NA,Kitsap,844-701-9974,NA,NA,NA,http://www.nwfamilyrecoverysolutions.com,47.5418581,-122.6372486,SA
+Lakeside Milam Recovery Centers,Issaquah,300 NE Gilman Boulevard,Suite 200,Issaquah,WA,98027,NA,King,425-392-8468,NA,NA,800-231-4303,http://www.lakesidemilam.com,47.5339312,-122.0308932,SA
+Compass Health,Lynnwood Child and Family Clinic,4807 196th Street SW,Suite 100,Lynnwood,WA,98036,NA,Snohomish,425-774-4269,Intakes,425-212-3900,425-349-8200,http://www.compasshealth.org,47.8214555,-122.2982759,MH
+Compass Health,Lynnwood Adult Services,4807 196th Street SW,Suite 220,Lynnwood,WA,98036,NA,Snohomish,425-349-6700,Intakes,425-212-3900,425-349-8200,http://www.compasshealth.org,47.8214555,-122.2982759,MH
+Kitsap Recovery Center,NA,661 Taylor Street,NA,Port Orchard,WA,98366,NA,Kitsap,360-337-4625,NA,NA,NA,http://www.kitsapgov.com,47.5370939,-122.6380771,SA
+Kitsap Recovery Center,Outpatient,1026 Sidney Avenue,NA,Port Orchard,WA,98366,NA,Kitsap,360-337-5725,NA,360-337-5724,NA,http://www.kitsapgov.com,47.5332691,-122.6371106,SA
+Olalla Recovery Centers,NA,12850 Lala Cove Lane SE,NA,Olalla,WA,98359,NA,Kitsap,253-857-6201,NA,NA,800-882-6201,http://www.olalla.org,47.4326246,-122.5445851,SA
+Associated Behavioral Healthcare Inc,Kent,841 Central Avenue North,Suite C-215,Kent,WA,98032,NA,King,425-646-7279,Intake,NA,800-858-6702,http://www.abhc.com,47.389759,-122.2316773,MH
+Social Treatment Opportunity Programs,(STOP) Kent,610 West Meeker,Suite 103,Kent,WA,98032,NA,King,253-471-0890,NA,253-234-1190,NA,http://STOPWA.COM,47.387169,-122.2446775,SA
+Therapeutic Health Services,Kent Branch,24823 South Pacific Highway,Suite 103,Kent,WA,98032,NA,King,253-681-0010,NA,NA,NA,http://www.ths-wa.org,47.3778157,-122.2997386,SA
+Consejo Kent Youth Outpatient Services,Kent SUD Youth Outpatient Services,515 West Harrison Street,Suite 109,Kent,WA,98032,NA,King,253-856-9000 x1588,NA,206-461-4880 x1107,NA,http://www.consejocounseling.org,47.3824156,-122.2386602,SA
+Center for Discovery,Edmonds,7511 176th Street SW,NA,Edmonds,WA,98026,5529,Snohomish,866-862-3631,NA,NA,NA,http://centerfordiscovery.com/locations/edmonds/,47.8397581,-122.3348485,MH
+Refugee Womens Alliance,Community Mental Health Agency,124 4th Avenue South,Suite 230,Kent,WA,98032,NA,King,253-246-4003,NA,NA,NA,http://www.rewa.org,47.3811968,-122.2371175,MH
+Valley Cities,Kent,325 West Gowe Street,NA,Kent,WA,98032,5892,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.3810959,-122.2358124,MH
+Valley Cities,Kent Clinic,325 West Gowe Street,NA,Kent,WA,98032,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.3810785,-122.2358073,SA
+Kent Youth and Family Services,NA,232 South 2nd Avenue,Suite 201,Kent,WA,98032,NA,King,253-859-0300,NA,NA,NA,http://www.kyfs.org,47.3802231402456,-122.234813914976,SA
+Kent Youth/Family Services,NA,232 2nd Avenue South,NA,Kent,WA,98032,NA,King,253-859-0300,NA,NA,NA,http://www.kyfs.org,47.380016,-122.234431,MH
+Agape Unlimited,NA,4841 Auto Center Way,Suite 101,Bremerton,WA,98312,4388,Kitsap,360-373-1529,NA,NA,NA,http://agapekitsap.org,47.562443,-122.679094,SA
+APPLE Consulting,Bothell,18311 Bothell Everett Highway,Suite 260,Bothell,WA,98012,NA,Snohomish,206-437-5412,NA,NA,NA,http://www.apple-asd.com/,47.8317056,-122.2077435,MH
+Valley Cities,Midway Clinic,26401 Pacific Highway South,NA,Seattle,WA,98198,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.365147,-122.306226,SA
+Valley Cities,Midway,26401 Pacific Highway South,NA,Seattle,WA,98198,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org/,47.3651308,-122.306147,MH
+Asian Counseling Treatment Services,Behavioral Health and Recovery Center,4629 168th Street SW,Suite E,Lynnwood,WA,98037,NA,Snohomish,425-776-1290,NA,NA,253-302-3826,http://actsrehab.org/,47.8470724,-122.2961,SA
+Naval Hospital Bremerton,Substance Abuse Rehabilitation Prog,1 Boone Road,NA,Bremerton,WA,98312,NA,Kitsap,360-475-5350,NA,NA,NA,http://,47.5949669,-122.6914938,SA
+Sea Mar Behavioral Health,Kent/Sea Mar Community Health Centers,25028 104th Avenue SE,NA,Kent,WA,98030,NA,King,206-764-8019,NA,NA,NA,http://www.seamar.org/king-bh-kent.html,47.3771191,-122.2017615,MH
+West Sound Treatment Center,Poulsbo,2475 Bethel Road SE,NA,Port Orchard,WA,98366,NA,Kitsap,360-598-3929,NA,360-876-9430,NA,http://www.westsoundtreatmentcenter.org,47.738435,-122.6397459,SA
+WAPI Community Services,NA,28815 Pacific Highway South,Suite 7-A,Federal Way,WA,98003,3876,King,844-987-9274,NA,NA,NA,http://www.wapiseattle.org,47.3430132,-122.3129829,SA
+Lakeside Milam Recovery Centers,Auburn,721 45th Street NE,Suite C,Auburn,WA,98002,NA,King,253-859-6436,NA,NA,800-231-4303,http://www.lakesidemilam.com,47.348269,-122.221735,SA
+Sound,Auburn,4238 Auburn Way North,NA,Auburn,WA,98002,NA,King,253-876-7600,Intake,206-302-2300,NA,http://www.sound.health/,47.3453613,-122.2216404,MH
+Sound,Auburn West,4238 Auburn Way North,NA,Auburn,WA,98002,NA,King,253-876-8900,NA,206-302-2300,NA,http://www.sound.health/,47.3453613,-122.2216404,SA
+Friends of Youth,Duvall,26420 NE Virginia Street,NA,Duvall,WA,98019,NA,King,425-392-6367,NA,NA,NA,http://Friendsofyouth.org,47.743479,-121.9848871,SA
+Intercept Associates,NA,30610 Pacific Highway South,Suite 107,Federal Way,WA,98003,NA,King,253-941-7555,NA,NA,NA,http://www.interceptassociates.com,47.327243,-122.312159,SA
+We Care Daily Clinics,NA,3320 Auburn Way North,NA,Auburn,WA,98002,NA,King,253-999-5750,NA,NA,NA,http://www.wecaredailyclinics.com/,47.3365748,-122.2200828,SA
+Basic Steps Mental Health SPC,NA,12199 Village Center Place,Suite 203,Mukilteo,WA,98275,NA,Snohomish,425-588-8438,Intake,NA,425-322-4850,http://www.basicsteps.life,47.8874623,-122.2959651,MH
+Basic Steps Mental Health SPC,NA,13322 Highway 99,Suite 102,Everett,WA,98204,NA,Snohomish,425-588-8438,NA,NA,NA,http://www.basicsteps.life,47.8874623,-122.2959651,SA
+Valley Cities,Auburn Clinic,2704 I Street NE,NA,Auburn,WA,98002,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.3309765,-122.2188084,MH
+Valley Cities,Auburn Clinic,2704 I Street NE,NA,Auburn,WA,98002,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.3309765,-122.2188084,SA
+Compass Health,Mukilteo Evaluation and Treatment Ctr,10710 Mukilteo Speedway,NA,Mukilteo,WA,98275,NA,Snohomish,425-349-8888,Intakes,425-212-3900,844-822-7609,http://www.compasshealth.org,47.9005433,-122.2929133,MH
+A Walk to Freedom Counseling,NA,514 Auburn Way North,NA,Auburn,WA,98002,NA,King,253-939-2211,NA,NA,NA,http://,47.3121316,-122.2253167,SA
+Future Visions Program Inc,NA,620 M Street NE,Suite 2,Auburn,WA,98002,NA,King,253-735-2718,NA,NA,NA,http://www.future-visions.org,47.3137995505672,-122.213353460604,SA
+Northwest Resources One LLC,NA,33438 1st Way South,NA,Federal Way,WA,98003,6214,King,206-824-9273,NA,206-824-9273 x101,NA,http://,47.3010067,-122.3291016,SA
+Valley Cities,Federal Way,1336 South 336th Street,NA,Federal Way,WA,98003,NA,King,253-939-4055,Intake,253-833-7444,NA,http://www.valleycities.org,47.3010486,-122.3159487,MH
+Valley Cities,Federal Way,1336 South 336th Street,NA,Federal Way,WA,98003,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.3010486,-122.3159487,SA
+MultiCare Auburn Medical Center,Geropsychiatry Unit,202 North Division Street,Plaza One,Auburn,WA,98001,4939,King,253-545-2813,Intake,253-545-2336,NA,http://www.multicare.org,47.3085917,-122.2291393,MH
+Therapeutic Health Services,Snohomish/Everett,9930 Evergreen Way,Building Z-150,Everett,WA,98204,NA,Snohomish,425-347-5121,NA,NA,NA,http://www.ths-wa.org,47.9078052,-122.2433936,SA
+Therapeutic Health Services,Youth and Family/Everett,9930 Evergreen Way,Building Z-154,Everett,WA,98204,NA,Snohomish,425-263-3006 x0,NA,425-263-3006,NA,http://www.ths-wa.org,47.9078378,-122.243373,SA
+Lakeside Milam Recovery Centers,Everett,9930 Evergreen Way,Building X Suite 103,Everett,WA,98204,NA,Snohomish,425-267-9573,NA,NA,800-231-4303,http://www.lakesidemilam.com,47.9078037,-122.2426506,SA
+Center for Human Services,Silver Lake,10315 19th Avenue,Unit 112,Everett,WA,98208,NA,Snohomish,206-362-7282 x8834,NA,206-362-7282,NA,http://www.chs-nw.org,47.9041345,-122.2069596,SA
+Newlife Family Services,Christian Counseling Center,32025 52nd Avenue South,NA,Auburn,WA,98001,NA,King,253-223-3149,NA,NA,NA,http://,47.2942692,-122.3479455,SA
+Sea Mar Behavioral Health,Everett Child and Family,1920 100th Street SE,Suite A-2,Everett,WA,98208,NA,Snohomish,425-312-0277,NA,NA,NA,http://www.seamar.org,47.9069659,-122.2055886,MH
+Ideal Option,Auburn,5615 Dunbation Avenue,NA,Pasco,WA,99301,NA,Franklin,877-522-1275 x1,NA,877-522-1275,NA,http://idealoption.com,47.2924252,-122.2126607,SA
+Sea Mar Behavioral Health,Federal Way/Sea Mar Community Hlth Ctr,31405 18th Avenue South,NA,Federal Way,WA,98003,NA,King,253-681-6640,NA,NA,NA,http://www.seamar.org,47.2759227,-122.2854808,MH
+Everett Treatment Services,NA,7207 Evergreen Way,Suite M,Everett,WA,98203,5678,Snohomish,425-347-9070,NA,NA,NA,http://www.everetttreatmentservices.com,47.9324821,-122.2190835,SA
+Juanita Center LLC,Licensed Behavioral Health Agency,627 5th Street,Suite 100-A,Mukilteo,WA,98275,NA,Snohomish,425-328-9528,NA,NA,NA,http://www.thejuanitacenter.com,47.9444976,-122.3036086,SA
+Ryther Outpatient Services/Mukilteo,NA,315 Lincoln Avenue,Suite C-1,Mukilteo,WA,98275,NA,Snohomish,206-525-5050,Intake,206-517-0234,NA,http://www.ryther.org,47.9456811,-122.3035441,MH
+Sea Mar Behavioral Health,Monroe/Sea Mar Community Health Ctrs,14090 Fryelands Boulevard SE,Suite 347,Monroe,WA,98272,NA,Snohomish,360-805-3122,Intake,NA,360-282-3901,http://www.seamar.org,47.8696786,-122.0103283,MH
+Sea Mar Behavioral Health,Community Healthcare Ctr/Monroe Branch,14090 Fryelands Boulevard SE,Suite 347,Monroe,WA,98272,NA,Snohomish,360-805-3122,NA,NA,360-282-3901,http://www.seamar.org,47.8696786,-122.0103283,SA
+EvergreenHealth Monroe Recovery Center,NA,17880 147th Street SE,NA,Monroe,WA,98272,NA,Snohomish,360-794-1405,NA,NA,NA,http://www.recoverycentermonroe.com,47.8633668,-121.991761,SA
+Fairfax Behavioral Health/Monroe,NA,14701 179th Avenue SE,NA,Monroe,WA,98272,NA,Snohomish,360-365-5300,Intakes,425-284-8300,800-435-7221,http://www.fairfaxhospital.com/,47.863912,-121.9891033,MH
+Gig Harbor Counseling,Branch of Olalla Recovery Centers,5122 Olympic Drive,Suite A-105,Gig Harbor,WA,98335,NA,Pierce,253-851-2552,NA,NA,NA,http://www.olalla.org,47.305079,-122.5841032,SA
+American Behavioral Health Systems,Snohomish Outpatient,5920 Evergreen Way,Suite E,Everett,WA,98203,NA,Snohomish,425-322-5581,NA,425-332-5581,NA,http://www.abhsinc.net,47.9440607,-122.2176833,SA
+Sea Mar Behavioral Health,Gig Harbor,3208 50th Street Court NW,Suite 202,Gig Harbor,WA,98335,NA,Pierce,253-280-9888,NA,NA,NA,http://,47.3034389,-122.583072,MH
+Peninsula Counseling LLC,NA,3214 50th Street Court NW,Suite 305,Gig Harbor,WA,98335,NA,Pierce,253-851-4600,NA,NA,NA,http://www.peninsulacounselingllc.com,47.3030098,-122.5833725,SA
+Recovery Matters LLC,NA,722 Avenue D,Suite 5,Snohomish,WA,98290,NA,Snohomish,360-568-9396,NA,NA,NA,http://recoverymatterssnohomish.com,47.921378,-122.098443,SA
+Raging River Recovery Center,Snoqualmie Tribe,1308 Boalch Avenue NW,NA,North Bend,WA,98045,NA,King,425-831-5425,NA,NA,NA,http://www.snoqualmietribe.us/RagingRiver,47.516211,-121.825621,SA
+Sea Mar Behavioral Health,Community Healthcare,5007 Claremont Way,NA,Everett,WA,98203,NA,Snohomish,425-609-5505,NA,NA,NA,http://www.seamar.org,47.9514713,-122.2119657,MH
+Sea Mar Behavioral Health,Community Health Center,5007 Claremont Way,NA,Everett,WA,98203,NA,Snohomish,425-609-5505,NA,NA,NA,http://www.seamar.org,47.9514713,-122.2119657,SA
+Pierce County Alliance,NA,510 Tacoma Avenue South,NA,Tacoma,WA,98402,NA,Pierce,253-572-4750,NA,NA,253-572-4753,http://piercecountyalliance.org,47.2585371,-122.4459287,SA
+MultiCare Behavioral Health,Adolescent Behavioral Health at TG,315 Martin Luther King Jr Way,NA,Tacoma,WA,98405,NA,Pierce,253-403-0360,Intake,253-381-6558,NA,http://www.multicare.org/,47.2593601,-122.4529681,MH
+Metropolitan Development Council,The Center,721 South Fawcett Avenue,Suite 201,Tacoma,WA,98402,NA,Pierce,253-593-2740,NA,NA,NA,https://mdc-hope.org/,47.2565781,-122.4433261,SA
+FH Counseling and Associates,NA,917 Pacific Avenue,Suites 213-214,Tacoma,WA,98402,NA,Pierce,253-777-4772,NA,NA,NA,http://www.fhca-pllc.com/,47.2548328,-122.4384708,SA
+Compass Health,Everett Child and Family Clinic,4526 Federal Avenue,Building 9,Everett,WA,98203,NA,Snohomish,425-349-8300,Intakes,888-693-7200,425-212-3900,http://www.compasshealth.org,47.9576495,-122.217741,MH
+Compass Health,NA,4526 Federal Avenue,Building 1,Everett,WA,98203,NA,Snohomish,425-349-8480,Intake,844-822-7609,NA,http://www.compasshealth.org,47.9576495,-122.217741,MH
+Alta Counseling and Testing LLC,NA,1712 6th Avenue,Suite 400,Tacoma,WA,98405,3300,Pierce,253-473-7586,NA,NA,NA,http://www.altacounseling.com,47.2559081,-122.4621735,SA
+Northwest Integrated Health,Tacoma,5929 Westgate Boulevard,Suite A,Tacoma,WA,98406,NA,Pierce,253-503-3666,Intakes,253-200-0300,253-503-0226,http://nwih.org,47.2675132,-122.5176013,SA
+Pioneer Counseling Services,Tacoma/Pioneer Human Services,1111 Fawcett Avenue,Suite 200,Tacoma,WA,98402,2029,Pierce,253-274-0484,NA,NA,NA,http://www.pioneerhumanservices.org,47.2525703,-122.4424135,SA
+Holistic Recovery for Mothers,NA,1001 South Yakima Avenue,Suite 14,Tacoma,WA,98405,NA,Pierce,253-267-5402,NA,NA,NA,http://www.holisticrecoveryformothers.org,47.2530195,-122.4470376,MH
+Serenity Counseling Services,NA,5005 Pacific Highway East,Suite 20,Tacoma,WA,98424,NA,Pierce,253-922-6522,NA,NA,NA,http://www.serenity-counseling.com/,47.2440866,-122.3623643,SA
+Eleanor Health,Everett,4310 Colby Avenue,Suite 201,Everett,WA,98203,NA,Snohomish,833-314-0364,NA,NA,NA,http://www.eleanorhealth.com/,47.9603221,-122.2081809,MH
+Sea Mar Tacoma Healthcare for Homeless,Sea Mar Community Health Centers,1307 South 11th Street,NA,Tacoma,WA,98405,NA,Pierce,253-682-2195,NA,NA,NA,https://www.seamar.org/clark-bh-vancouver-sud.html,47.2518718,-122.4550936,SA
+Sea Mar Tacoma 11th Street Medical,NA,1307 South 11th Street,NA,Tacoma,WA,98405,NA,Pierce,253-682-2195,NA,NA,NA,http://www.seamar.org,47.2518718,-122.4550936,MH
+Comprehensive Life Resources,Adult Services,1305 Tacoma Avenue South,Suite 305,Tacoma,WA,98402,NA,Pierce,253-396-5800,NA,NA,NA,http://www.comprehensiveliferesources.org,47.2500237,-122.443347,SA
+Comprehensive Life Resources,Main,1305 Tacoma Avenue South,Suite 201,Tacoma,WA,98402,NA,Pierce,253-396-5800,NA,NA,NA,http://www.comprehensiveliferesources.org,47.2499232,-122.4433833,SA
+Tacoma Detoxification Center,NA,721 South Fawcett Avenue,Room 100,Tacoma,WA,98402,NA,Pierce,253-593-2413,NA,NA,253-284-7821,http://www.mdc-hope.org,47.2493,-122.44,SA
+RI International,E and T,2150 Freeman Road East,NA,Tacoma,WA,98424,NA,Pierce,253-584-2300,NA,NA,NA,http://www.riinternational.com,47.2378692,-122.3271258,MH
+RI International,CSU,2150 Freeman Road East,NA,Tacoma,WA,98424,NA,Pierce,253-942-5644,NA,NA,NA,http://www.rIinternational.com,47.2378692,-122.3271258,MH
+HopeSparks,NA,6424 North 9th Street,NA,Tacoma,WA,98406,2091,Pierce,253-565-4484,NA,NA,NA,http://www.hopesparks.org,47.2576248,-122.5239939,MH
+Sea Mar Behavioral Health,Tacoma/Pierce County,2121 South 19th Street,NA,Tacoma,WA,98405,NA,Pierce,253-396-1634,NA,NA,NA,http://www.seamar.org,47.2429933,-122.4651105,MH
+Multicare Behavioral Health,NA,2201 South 19th Street,Suite 104,Tacoma,WA,98405,NA,Pierce,253-697-8400,Intakes,253-445-8120,888-445-8120,http://www.multicare.org/behavioral-health/,47.2430965,-122.4661263,SA
+Foundation for Multicultural Solutions,El Camino,2136 Martin Luther King Jr Way,NA,Tacoma,WA,98405,3838,Pierce,253-572-3214,NA,NA,NA,http://www.foundationelcamino.org,47.2403017,-122.4494496,SA
+Community Counseling Institute Inc,NA,4427 6th Avenue,NA,Tacoma,WA,98406,NA,Pierce,253-759-0852,NA,NA,NA,http://www.cciwa.org,47.2382610734414,-122.44116759018,SA
+Casteele Williams and Associates,Comprehensive Behavioral Health/Main,711 South 25th Street,Suite B,Tacoma,WA,98405,4306,Pierce,253-536-2881,NA,NA,NA,http://casteelewilliams.com/,47.2385473,-122.4433092,MH
+Compass Health,Cliff Bailey Center,3322 Broadway Street,NA,Everett,WA,98201,NA,Snohomish,425-349-6800,Intake,888-693-7200,NA,http://www.compasshealth.org,47.9728876,-122.2018214,MH
+Compass Health,Snohomish Triage,3322 Broadway,NA,Everett,WA,98201,NA,Snohomish,425-349-6800,Intake,888-693-7200,NA,http://www.compasshealth.org,47.9728876,-122.2018214,MH
+Drug and Alcohol Treatment Services,Providence Regional Med Ctr/Everett,916 Pacific Avenue,NA,Everett,WA,98201,NA,Snohomish,425-258-7390,NA,NA,425-258-7578,http://www.providence.org,47.9755181,-122.2167114,SA
+Fairfax Behavioral Health,Everett,916 Pacific Avenue,NA,Everett,WA,98201,NA,Snohomish,425-466-3000,NA,NA,NA,http://www.fairfaxhospital.com/,47.97558,-122.216819,MH
+Sea Mar Behavioral Health,Adult Treatment Center,1415 Center Street,NA,Tacoma,WA,98409,NA,Pierce,253-280-9860,NA,253-280-9860 x61861,NA,http://www.seamar.org,47.2344557,-122.4525961,SA
+Lakeside Milam Recovery Centers,Tacoma,3315 South 23rd Street,Suite 102,Tacoma,WA,98405,NA,Pierce,253-272-2242 x5201,Intakes,253-272-2242,253-844-2038,http://www.lakesidemilam.com,47.238534,-122.479601,SA
+Center for Discovery,Tacoma,2202 South Cedar,Suite 175,Tacoma,WA,98405,NA,Pierce,844-546-2614,NA,NA,NA,http://centerfordiscovery.com/locations/tacoma-outpatient/,47.2377918,-122.4768145,MH
+Evergreen Recovery Centers,NA,2732 Grand Avenue,NA,Everett,WA,98201,NA,Snohomish,425-259-5842,NA,NA,NA,http://www.evergreenrc.org,47.9815018,-122.2139271,SA
+Compass Health,Dawson Place,1509 California Street,NA,Everett,WA,98201,NA,Snohomish,425-349-6700,NA,NA,NA,http://www.compasshealth.org,47.9808869,-122.2095645,MH
+Port Gardner Bay Recovery,NA,2722 Colby Avenue,Suite 515,Everett,WA,98201,3533,Snohomish,425-252-4656,NA,NA,NA,http://www.portgardnerbayrecovery.com,47.9809591,-122.2090587,SA
+Catholic Community Services,Recovery Center/Everett,2610 Wetmore Avenue,NA,Everett,WA,98201,NA,Snohomish,425-258-5270,NA,425-258-5270 x0,NA,http://www.ccsww.org,47.982681,-122.2076194,SA
+Muckleshoot Family and Youth Services,Behavioral Health,17500 SE 392nd Street,NA,Auburn,WA,98092,NA,King,253-333-3605,NA,NA,NA,http://,47.250809,-122.107849,SA
+Tacoma Pierce County Health Department,Treatment Services Unit 1,3629 South D Street,NA,Tacoma,WA,98418,NA,Pierce,253-798-6576,NA,NA,253-798-6500,http://www.tpchd.org/healthy-people/opioid-treatment-services,47.2251656,-122.4350806,SA
+Friends of Youth,North Bend,401 Ballarat Avenue North,NA,North Bend,WA,98045,NA,King,425-392-6367,NA,NA,NA,http://www.friendsofyouth.org,47.496859,-121.7822682,SA
+Friends of Youth,North Bend,401 Ballarat Avenue North,NA,North Bend,WA,98045,NA,King,425-392-6367,NA,NA,NA,http://,47.496859,-121.7822682,MH
+Muckleshoot Behavioral Health Prog,NA,17813 SE 392nd Street,NA,Auburn,WA,98092,NA,King,253-804-8752,NA,NA,NA,http://,47.2492929,-122.1043814,SA
+Evergreen Recovery Centers,Evergreen Residential Main Campus,2601 Summit Avenue,Building C,Everett,WA,98201,NA,Snohomish,425-258-2407,NA,425-322-0825,NA,http://www.evergreenmanor.org,47.9827586,-122.1835632,SA
+Sound Integrated Health LLC,Tacoma,3640 South Cedar Street,Suite M,Tacoma,WA,98409,NA,Pierce,253-478-0827,NA,NA,NA,http://www.safeandsoundrecovery.com,47.2248246,-122.4785139,SA
+Sound Integrated Health LLC,Tacoma,3640 South Cedar Street,Suite M,Tacoma,WA,98409,NA,Pierce,253-478-0827,NA,NA,NA,http://Www.safeandsoundrecovery.com,47.2248246,-122.4785139,MH
+Adonai Counseling and Employment,NA,4104 South M Street,NA,Tacoma,WA,98418,NA,Pierce,253-777-1434,NA,NA,253-226-8079,http://www.adonaicounselingandemployment.com/,47.2197795,-122.4511185,SA
+Bridgeway Treatment Services LLC,NA,2013 19th Street,NA,Everett,WA,98201,NA,King,425-283-5315,NA,NA,NA,http://www.bridgewaytreatment.com,47.9923943,-122.2017473,SA
+Bridgeway Treatment Services LLC,NA,2013 19th Street,NA,Everett,WA,98201,NA,Snohomish,425-283-5315,NA,NA,NA,http://www.bridgewaytreatment.com,47.9925496,-122.2018184,MH
+Telecare,Community Alternatives Team,3901 South Fife Street,Suite 301,Tacoma,WA,98409,NA,Pierce,253-589-5334,NA,NA,NA,http://www.telecarecorp.com,47.2214293,-122.4708765,MH
+Northwest Integrated Health,South Tacoma,3727 South Tacoma Way,NA,Tacoma,WA,98409,NA,Pierce,253-503-3666,NA,253-200-0300,NA,http://nwih.org,47.2229921,-122.4827464,SA
+Sunrise Services Inc,Everett 1718 Broadway,1718 Broadway,NA,Everett,WA,98201,NA,Snohomish,425-595-5200,NA,NA,NA,http://sunriseservicesinc.com/,47.9942763,-122.2015506,MH
+MultiCare Behavioral Health,PACT,4301 South Pine Street,Suite 21,Tacoma,WA,98409,NA,Pierce,253-301-5220,Intake,NA,253-697-8494,http://www.multicare.org,47.21777,-122.471286,MH
+Good Samaritan Behavioral Healthcare,Asian Counseling Services,2201 South 19th Street,Suite 104,Tacoma,WA,98405,NA,Pierce,253-697-8400,Intakes,253-445-8120,888-445-8120,http://www.multicare.org/behavioral-health,47.21777,-122.471286,MH
+Social Treatment Opportunity Programs,Community Mental Health Agency,4301 South Pine Street,Suite 112,Tacoma,WA,98409,NA,Pierce,253-471-0890 x1100,Intake,253-471-0890,NA,http://www.stopwa.com,47.21777,-122.471286,MH
+Social Treatment Opportunity Programs,(STOP)/Tacoma,4301 South Pine Street,Suite 112,Tacoma,WA,98409,NA,Pierce,253-471-0890 x1100,NA,253-471-0890,NA,http://STOPWA.COM,47.21777,-122.471286,SA
+Royal Life Centers LLC,Puget Sound,1723 Bonney Avenue,NA,Sumner,WA,98390,NA,Pierce,253-750-3571,NA,877-732-6837,NA,http://www.royallifecenters.com,47.2097835,-122.232766,SA
+Sunrise Services Inc,Everett Main,1021 North Broadway,NA,Everett,WA,98201,NA,Snohomish,425-595-5200,Intake,425-493-5800,NA,http://sunriseservicesinc.com/,48.0033879,-122.1998822,MH
+Exodus Counseling and Treatment Servs,NA,918 Alder Avenue,NA,Sumner,WA,98390,NA,Pierce,253-891-2662,NA,NA,NA,http://,47.2023752595422,-122.240564934257,SA
+Compass Health,Greenhouse,2735 10th Street,NA,Everett,WA,98201,NA,Snohomish,425-258-4802,Intakes,888-693-7200,425-212-3900,http://www.compasshealth.org,48.0054319,-122.1942329,MH
+Lakeside Milam Recovery Centers,Puyallup,405 West Stewart Avenue,Suite A,Puyallup,WA,98371,NA,Pierce,253-840-8687,NA,NA,800-231-4303,http://www.lakesidemilam.com,47.193867,-122.298876,SA
+A Change Into Recovery LLC,NA,719 East Main Avenue,Suite C,Puyallup,WA,98372,NA,Pierce,253-841-8165,NA,NA,NA,http://www.achangeintorecovery.com,47.1920645,-122.2846952,SA
+Multicare Health System,NA,325 East Pioneer Avenue,NA,Puyallup,WA,98372,NA,Pierce,253-697-8400,NA,253-445-8120,NA,http://www.multicare.org/behavioral-health/,47.1907927,-122.2900124,SA
+MultiCare Health System,DBA MultiCare Behavioral Health,325 East Pioneer Avenue,NA,Puyallup,WA,98372,NA,Pierce,253-697-8400,Intakes,253-445-8120,888-445-8120,http://www.multicare.org/behavioral-health,47.1907927,-122.2900124,MH
+Consejo Counseling and Referral Servs,Tacoma Branch,5915 Orchard Street West,Unit B,University Place,WA,98467,NA,Pierce,253-414-7461,NA,253-414-7461 x0,NA,http://www.consejocounseling.org,47.2029532,-122.5075782,SA
+ReSTART Life,Serenity Mountain-Wood Creek,30007 138th Place SE,NA,Monroe,WA,98272,NA,Snohomish,800-682-6934,Intake,800-682-6934 x5,NA,http://www.restartlife.com,47.8737502,-121.8293303,MH
+MultiCare Behavioral Health,Luckett House-ARTF,1701 13th Street SE,NA,Puyallup,WA,98372,NA,Pierce,253-848-0880,Intake,253-381-8640,NA,http://www.multicare.org/behavioral-health,47.1758455,-122.2759931,MH
+ReSTART Life,Serenity Mountain-Sky Ridge,30001 138th Place SE,NA,Monroe,WA,98272,NA,Snohomish,800-682-6934,Intake,800-682-6934 x5,NA,http://www.restartlife.com,47.8740295,-121.8290503,MH
+Sea Mar Behavioral Health,Parenting and Recovery,7424 Bridgeport Way West,Suite 305,Lakewood,WA,98499,NA,Pierce,253-246-6820,NA,NA,NA,http://www.seamar.org/,47.1897403,-122.5197912,SA
+Tacoma Treatment Solutions,NA,9500 Front Street,Suite 100,Lakewood,WA,98499,NA,Pierce,253-393-2484,NA,253-584-3996,NA,http://acadiahealthcare.com,47.1710171,-122.4729737,SA
+Greater Lakes Mental Healthcare,Seeley Lake Lodge,9108 Lakewood Drive SW,NA,Lakewood,WA,98499,NA,Pierce,253-581-6202,Intake,253-581-7020,NA,http://glmhc.org,47.17408,-122.50923,MH
+Northwest Integrated Health,Lakewood Clinic,9720 South Tacoma Way,NA,Lakewood,WA,98499,NA,Pierce,253-503-3666,NA,253-200-0300,NA,http://nwih.org,47.1689971,-122.4854461,SA
+Tulalip Behavioral Health and Recovery,Community Mental Health Agency,6406 Marine Drive,NA,Marysville,WA,98271,9775,Snohomish,360-716-4400,NA,NA,NA,http://,48.0546609,-122.2585421,MH
+Northwest Integrated Health,Puyallup Clinic,3800 3rd Street SE,NA,Puyallup,WA,98374,NA,Pierce,253-503-3666,Intakes,253-200-0300,253-200-0415,http://nwih.org,47.1555324,-122.2907585,SA
+Greater Lakes Chemical Dep Services,Greater Lakes Mental Healthcare,9330 59th Avenue SW,NA,Lakewood,WA,98499,6600,Pierce,253-581-7020,NA,NA,NA,http://www.glmhc.org,47.1717961,-122.5164569,SA
+Greater Lakes Mental Healthcare,NA,9330 59th Avenue SW,NA,Lakewood,WA,98499,2858,Pierce,253-581-7020,NA,NA,NA,http://glmhc.org,47.171782,-122.516401,MH
+Child Study and Treatment Center,NA,8805 Steilacoom Boulevard SW,NA,Lakewood,WA,98498,NA,Pierce,253-756-2504,NA,NA,NA,http://www.dshs.wa.gov/bha/division-state-hospitals/child-study-and-treatment-center,47.1789085,-122.5554632,MH
+Catholic Community Services,Recovery Center,1227 2nd Street,NA,Marysville,WA,98270,NA,Snohomish,360-651-2366 x0,NA,NA,NA,http://www.ccsww.org,48.0501898,-122.1807565,SA
+New Freedom Recovery Center LLC,NA,10215 214th Avenue East,NA,Bonney Lake,WA,98391,NA,Pierce,253-862-7374,NA,NA,NA,http://www.newfreedomrecoverycenterwa.com/,47.1635736,-122.1437258,SA
+Crossroads Treatment Center,Lakewood Facility,4928 109th Street SW,Suite A,Lakewood,WA,98499,NA,Pierce,253-473-7474,NA,NA,NA,http://www.crossroadstreatment.org,47.1577884,-122.5031252,SA
+Valley Cities,Enumclaw,325 West Gowe Street,NA,Kent,WA,98032,NA,King,253-833-7444,NA,NA,NA,http://www.valleycities.org,47.2016081,-121.9914355,MH
+Sea Mar Behavioral Health,Puyallup,12812 101st Avenue Court East,Suite 202,Puyallup,WA,98373,NA,Pierce,253-864-4770,NA,NA,NA,http://www.seamar.org,47.139864,-122.2942942,SA
+Sea Mar Behavioral Health,Pierce County,12812 101st Avenue Court East,Suite 202,Puyallup,WA,98373,NA,Pierce,253-864-4770,NA,NA,NA,http://www.seamar.org,47.139864,-122.2942942,MH
+New Life Addiction and Recovery,Services PLLC,5019 Grove Street,Suite 103-A,Marysville,WA,98270,NA,Snohomish,206-407-3333,NA,NA,NA,http://,48.0613152,-122.1626694,SA
+Social Treatment Opportunity Programs,(STOP)/Puyallup,13921 East Meridian,Suite 101,Puyallup,WA,98373,NA,Pierce,253-471-0890,NA,253-770-4720,NA,http://STOPWA.COM,47.1295059,-122.2924169,SA
+VA Puget Sound Healthcare System,American Lake Division,9600 Veterans Drive SW,NA,Tacoma,WA,98493,NA,Pierce,253-582-8440,NA,253-583-1759,NA,http://www.va.gov/pugetsound,47.1420307,-122.5642905,SA
+Comprehensive Life Resources,Spanaway,201 160th Street South,NA,Spanaway,WA,98387,NA,Pierce,253-396-5800,NA,NA,NA,http://www.comprehensiveliferesources.org,47.1121562,-122.4358887,SA
+Alternative Counseling,Spanaway,17002 Pacific Avenue South,NA,Spanaway,WA,98387,NA,Pierce,253-538-2323,NA,NA,NA,http://alternativecounseling.org,47.1022584,-122.4351992,SA
+Pacific Avenue Recovery,NA,18407 Pacific Avenue South,Suite 19,Spanaway,WA,98387,NA,Pierce,253-271-7615,NA,NA,NA,http://,47.0898083,-122.4344088,SA
+Alpine Recovery Services Inc,NA,16404 Smokey Point Boulevard,Suite 109,Arlington,WA,98223,NA,Snohomish,360-658-1388,NA,NA,NA,http://www.alpinerecovery.com,48.1452784,-122.1856904,SA
+Compass Health,Smokey Pt Children and Family Clinic,3320 173rd Place NE,NA,Arlington,WA,98223,NA,Snohomish,425-349-8700,NA,NA,NA,http://www.compasshealth.org,48.1536328,-122.1848328,MH
+Stillaguamish Tribe,Behavioral Health Programs,5700 172nd Street NE,Suite B,Arlington,WA,98223,NA,Snohomish,360-435-3985,NA,NA,NA,http://www.stillaguamish.com,48.1520208,-122.1548385,SA
+Island Crossing Counseling Services,Stillaguamish Tribe of Indians,5700 172nd Street NE,Suite A,Arlington,WA,98223,NA,Snohomish,360-652-9640 x3513,NA,360-652-9640 x3519,NA,http://www.stillaguamish.com/islandcrossing.asp,48.1520208,-122.1548385,SA
+Believe in Recovery LLC,NA,211 Taylor Street,Suite 20,Port Townsend,WA,98368,NA,Jefferson,360-385-1258,NA,NA,NA,http://www.believeinrecoveryllc.com,48.1145026,-122.7568044,SA
+Safe Harbor Recovery Center,Beacon of Hope Port Townsend,686 Lake Street,Suite 400,Port Townsend,WA,98368,NA,Jefferson,360-385-3866,NA,NA,NA,http://,48.104795,-122.803345,SA
+Discovery Behavioral Healthcare,NA,884 West Park Avenue,NA,Port Townsend,WA,98368,NA,Jefferson,360-385-0321 x301,Intake,360-385-0321 x100,NA,http://discoveryBH.org,48.105899,-122.8037781,MH
+Newport Academy,NA,3804 Hastings Avenue West,NA,Port Townsend,WA,98368,NA,Jefferson,877-820-6371,NA,NA,NA,http://www.newportacademy.com/?utm_source=SAMHSA&utm_medium=referral&utm_campaign=listing,48.110177,-122.860194,MH
+Royal Life Centers LLC,Olympic,8645 Martin Way East,NA,Olympia,WA,98516,NA,Thurston,360-515-0070,NA,877-732-6837,NA,http://www.royallifecenters.com,47.0582376,-122.7559358,SA
+Royal Life Centers LLC,Haven,8649 Martin Way East,NA,Olympia,WA,98516,NA,Thurston,360-515-0422,NA,877-732-6837,NA,http://www.royallifecenters.com,47.0574065,-122.7605857,SA
+American Behavioral Health Systems,Stanwood Outpatient,7208 267th Street NW,Suite A-100,Stanwood,WA,98292,NA,Snohomish,360-502-4090,Intakes,360-502-4074,509-232-5766,http://americanbehavioralhealthsystems.org,48.2384384,-122.3325194,SA
+Sunrise Services Inc,Stanwood,9527 271 Street NW,NA,Stanwood,WA,98292,NA,Snohomish,425-595-5200,Intake,360-926-8490,NA,http://sunriseservicesinc.com/,48.2423471,-122.3627477,MH
+South Sound Clinic of,Evergreen Treatment Services,6700 Martin Way East,Suite 117,Olympia,WA,98516,NA,Thurston,360-413-6910 x415,NA,360-413-6910 x417,NA,http://www.evergreentreatment.org,47.051886,-122.7931819,SA
+Compass Health,Coupeville Children and Family Clinic,20 NW 1st Street,NA,Coupeville,WA,98239,NA,Island,360-678-5555,NA,NA,NA,http://www.compasshealth.org,48.2145749,-122.6873885,MH
+New Directions Counseling/Shelton,NA,506 West Franklin Street,NA,Shelton,WA,98584,NA,Mason,360-427-5232,NA,NA,NA,http://www.newdirectionswa.com,47.214098,-123.104828,SA
+Emily Program,South Sound,673 Woodland Square Loop SE,Suite 330,Lacey,WA,98503,NA,Thurston,888-364-5977,NA,NA,NA,http://www.emilyprogram.com,47.0427192,-122.8245091,MH
+Community Youth Services,Shelton,601 West Franklin Street,Suite G-201,Shelton,WA,98584,NA,Mason,360-943-0780,Intake,360-918-7860,NA,http://communityyouthservices.org/,47.2139627,-123.1058359,MH
+Northwest Resources II Inc,Shelton,235 South 3rd Street,NA,Shelton,WA,98584,NA,Mason,360-426-0890,NA,NA,NA,http://,47.2114759,-123.1031051,MH
+Northwest Resources II Inc,Shelton,235 South 3rd Street,NA,Shelton,WA,98584,NA,Mason,360-426-0890,NA,360-426-0890 x333,NA,http://www.nwrii.com,47.2114759,-123.1031051,SA
+Community Youth Services,Shelton,601 West Franklin Street,Suite G-201,Shelton,WA,98584,NA,Mason,360-918-7860,NA,NA,NA,http://www.communityyouthservices.org,47.213935,-123.1059051,SA
+ESD113-True North Student Assistance,Treatment Services Mason County,807 West Pine Street,NA,Shelton,WA,98584,NA,Mason,360-427-2050,NA,NA,360-464-6867,http://www.truenorth113.org,47.215625,-123.1086067,SA
+Social Trt Opportunity Programs II Inc,(STOP)/Shelton,611 West Cota Street,NA,Shelton,WA,98584,NA,Mason,253-471-0890,NA,360-426-5654,NA,http://STOPWA.COM,47.212524,-123.106353,SA
+Behavioral Health Resources,Main Office,3857 Martin Way East,NA,Olympia,WA,98506,5268,Thurston,360-704-7170,NA,NA,NA,http://www.bhr.org,47.047233,-122.8394495,MH
+Northwest Resources II Inc,Olympia Branch,200 Lilly Road NE,Suite C,Olympia,WA,98506,NA,Thurston,360-918-8336,NA,NA,NA,http://nwrii.com,47.0489449,-122.8440981,MH
+Northwest Resources II Inc,NA,200 Lilly Road NE,Suite C,Olympia,WA,98506,NA,Thurston,360-918-8336,NA,NA,NA,http://nwrii.com,47.0489449,-122.8440981,SA
+Harvest Home Residential,NA,3775 Martin Way East,Suite A,Olympia,WA,98506,NA,Thurston,360-704-7170,NA,NA,NA,http://bhr.org,47.0470866,-122.8408621,SA
+Northwest Resources II Inc,Lacey,3773 Martin Way East,Suite 105-A,Olympia,WA,98506,NA,Thurston,360-688-7312,NA,NA,NA,http://,47.0469106,-122.8423327,MH
+Northwest Resources II Inc,Lacey,3773 Martin Way East,Suite 105-A,Olympia,WA,98506,NA,Thurston,360-688-7312,NA,NA,NA,http://,47.0467764,-122.8424041,SA
+Behavioral Health Resources,Recovery Services Shelton Branch,110 West K Street,NA,Shelton,WA,98584,NA,Mason,360-426-1696,NA,NA,NA,http://www.bhr.org,47.225511,-123.1239286,SA
+Behavioral Health Resources,Shelton,110 West K Street,NA,Shelton,WA,98584,NA,Mason,360-426-1696,NA,NA,NA,http://www.bhr.org,47.225511,-123.1239286,MH
+Pathways Mental Health Services,Lacey WA Clinic,4804 Lacey Boulevard SE,Suite A,Lacey,WA,98503,5733,Thurston,360-799-5782,NA,NA,NA,http://pathwaysmhs.org,47.0355414,-122.8200833,SA
+Right Step Inc,NA,3925 8th Avenue SE,Suite A,Lacey,WA,98503,NA,Thurston,360-923-9585,NA,NA,NA,http://www.TheRightStepInc.com,47.040431,-122.83667,SA
+First Things First 123 LLC,NA,1905 4th Avenue East,Suite B,Olympia,WA,98506,NA,Thurston,360-388-0600,NA,360-338-0600,NA,http://www.ftfrecovery.com/,47.0458489,-122.8753098,SA
+Community Youth Services,Main,711 State Avenue NE,NA,Olympia,WA,98506,NA,Thurston,360-918-7860,NA,NA,NA,http://www.communityyouthservices.org,47.0460567,-122.8939094,SA
+Community Youth Services,NA,711 State Avenue NE,NA,Olympia,WA,98506,NA,Thurston,360-943-0780,Intake,360-918-7860,NA,http://communityyouthservices.org,47.0460567,-122.8939094,MH
+Alternatives Pro Counseling Inc,Outpatient Program,203 4th Avenue,Suite 301,Olympia,WA,98501,NA,Thurston,360-357-7986,NA,NA,NA,http://www.apcolympia.com,47.0448007,-122.9001943,SA
+Community Youth Services,Union Avenue,505 Union Avenue SE,1st Floor,Olympia,WA,98501,NA,Thurston,360-943-0780,NA,NA,NA,http://www.communityyouthservices.org,47.0390547,-122.8953253,MH
+Community Youth Services,Republic Building,505 Union Avenue SE,NA,Olympia,WA,98506,NA,Thurston,360-918-7860,NA,NA,360-943-0780,http://www.communityyouthservices.org,47.0390547,-122.8953253,SA
+Community Youth Services,Union Avenue,505 Union Avenue SE,1st Floor,Olympia,WA,98501,NA,Thurston,360-918-7860,NA,NA,NA,http://www.communityyouthservices.org,47.0390547,-122.8953253,SA
+Providence St Peter CDC,NA,4800 College Street SE,NA,Lacey,WA,98503,NA,Thurston,360-456-7575,NA,NA,NA,http://www.providence.org,47.0042257,-122.821917,SA
+Freedom Recovery LLC,NA,715 East Yelm Avenue,Suite 6,Yelm,WA,98597,NA,Thurston,360-960-8595,NA,NA,253-961-0116,http://www.freedomrecoverycenters.com,46.9370921,-122.5989675,SA
+Olympic Personal Growth Center,NA,390 East Cedar Street,NA,Sequim,WA,98382,NA,Clallam,360-681-8463,NA,NA,NA,http://na,48.080498,-123.097961,SA
+Northwest Resources II Inc,Olympia Main,2708 Westmoor Court SW,NA,Olympia,WA,98502,5754,Thurston,360-943-8810,NA,NA,NA,http://www.nwrii.com,47.0378744,-122.9353857,SA
+Northwest Resources II Inc,Olympia Main,2708 Westmoor Court SW,NA,Olympia,WA,98502,NA,Thurston,360-943-8810,NA,NA,NA,http://,47.0378744,-122.9353857,MH
+Squaxin Island Tribe Behavioral Health,Outpatient Program,100 SE Whitener Road,NA,Shelton,WA,98584,NA,Mason,360-426-1582,NA,NA,NA,http://,47.127719,-123.094332,SA
+Penninsula Behavioral Health,NA,490 North 5th Avenue,NA,Sequim,WA,98382,3314,Clallam,360-457-0431,NA,360-457-0431 x121,NA,http://www.peninsulabehavioral.org,48.08305,-123.1128534,SA
+ESD113-True North Student Assistance,Treatment Services Yelm,1315 Yelm Highway,NA,Yelm,WA,98597,NA,Thurston,360-464-6867,NA,360-458-6233,NA,http://www.truenorth113.org,47.0034994,-122.8895143,SA
+Sea Mar Behavioral Health,Oak Harbor,31640 State Route 20,Suite 1,Oak Harbor,WA,98277,NA,Island,360-679-7676,NA,NA,NA,http://www.seamarchc.org,48.2903321,-122.6570843,MH
+Sea Mar Behavioral Health,Oak Harbor,31640 State Route 20,Suite 1,Oak Harbor,WA,98277,NA,Island,360-679-7676,NA,NA,NA,http://www.seamar.org/,48.290273,-122.65782,SA
+Telecare Thurston Mason Crisis Triage,NA,3285 Ferguson Street SW,NA,Olympia,WA,98512,NA,Thurston,360-943-1907,NA,NA,NA,http://,47.01567,-122.9451085,MH
+Island Assessment and Counseling Ctr,NA,520 East Whidbey Avenue,Suite 205,Oak Harbor,WA,98277,NA,Island,360-675-5782,NA,NA,NA,http://www.island-counseling.com,48.2984293760325,-122.65200186948,SA
+Sunrise Services Inc,Oak Harbor,530 NE Midway Boulevard,NA,Oak Harbor,WA,98277,NA,Island,425-595-5200,Intake,360-544-3800,NA,http://sunriseservicesinc.com/,48.3023859,-122.642777,MH
+Sunrise Services Inc,Oak Harbor,530 NE Midway Boulevard,NA,Oak Harbor,WA,98277,NA,Island,360-544-3800,NA,NA,NA,http://sunriseservicesinc.com/,48.3023859,-122.642777,SA
+Behavioral Health Resources,Tumwater,6128 Capitol Boulevard SE,NA,Olympia,WA,98501,NA,Thurston,360-754-5729,NA,NA,NA,http://www.bhr.org,46.9936401,-122.9070478,SA
+Ideal Option,Oak Harbor,32650 State Route 20,Suite E-108,Oak Harbor,WA,98277,NA,Island,877-522-1275,NA,NA,NA,http://idealoption.com,48.3028826,-122.6461058,SA
+ESD113-True North Student Assitance,Treatment ServsThurston County,6005 Tyee Drive SW,NA,Olympia,WA,98512,NA,Thurston,360-464-6867,NA,NA,NA,http://www.truenorth113.org,46.994637,-122.9169826,SA
+Sea Mar Community Health Centers,NA,6334 Littlerock Road SW,NA,Olympia,WA,98512,NA,Thurston,360-704-7590,NA,NA,NA,http://www.seamar.org,46.991456,-122.923395,MH
+Sea Mar Behavioral Health,Mt Vernon Highway 99,2203 Old Highway 99 South Road,NA,Mount Vernon,WA,98273,NA,Skagit,360-542-8810,NA,NA,NA,http://seamar.org,48.4047108,-122.3359001,MH
+Compass Health,Skagit Adult Services,1100 South 2nd Street,2nd Street Building,Mount Vernon,WA,98273,NA,Skagit,360-419-3500,Intake,888-693-7200,NA,http://www.compasshealth.org,48.4145651,-122.3375368,MH
+Compass Health,Skagit Child and Family Services,1100 South 2nd Street,Portable 2,Mount Vernon,WA,98273,NA,Skagit,360-419-3600,Intake,888-693-7200,NA,http://www.compasshealth.org,48.4145651,-122.3375368,MH
+Compass Health,Skagit PACT Program,209 Milwaukee Street,NA,Mount Vernon,WA,98273,NA,Skagit,360-419-7575,NA,NA,NA,http://www.compasshealth.org,48.4150113,-122.3375007,MH
+Sea Mar Behavioral Health,Outpatient Services/Mount Vernon,1010 East College Way,NA,Mount Vernon,WA,98273,NA,Skagit,360-542-8920,NA,NA,NA,http://www.seamar.org,48.4353405,-122.3271598,SA
+Sunrise Services Inc,Mount Vernon College Way,2500 East College Way,NA,Mount Vernon,WA,98273,NA,Skagit,425-595-5200,Intake,360-336-3762,NA,http://sunriseservicesinc.com/,48.4353623,-122.3090034,MH
+Sunrise Services Inc,Mount Vernon College Way,2500 East College Way,NA,Mount Vernon,WA,98273,NA,Skagit,360-336-3762,NA,NA,NA,http://,48.4353623,-122.3090034,SA
+Lifeline Connections,Mount Vernon Office,2105 Continental Place,Suite A,Mount Vernon,WA,98273,NA,Skagit,360-399-6900,NA,NA,NA,http://lifelineconnections.org,48.4395455,-122.3259211,SA
+Reflections Counseling Services Group,NA,3430 East Highway 101,Suite 3,Port Angeles,WA,98362,NA,Clallam,360-452-4062,NA,NA,NA,http://,48.108594,-123.361433,SA
+Follman Agency,Burlington,910 South Anacortes Street,NA,Burlington,WA,98233,NA,Skagit,360-755-1125,NA,NA,NA,http://www.Follmanagency.com,48.467317,-122.3244217,SA
+Skagit Community Detox,Chemical Dependency,201 Lila Lane,NA,Burlington,WA,98233,NA,Skagit,360-757-7738,NA,NA,NA,http://www.PioneerHumanServices.org,48.4680095,-122.3382177,SA
+Catholic Community Services,Recovery Center,614 Peterson Road,NA,Burlington,WA,98233,NA,Skagit,360-757-0131,NA,360-757-0131 x0,NA,http://www.ccsww.org,48.471407,-122.3431159,SA
+North Sound Center for,Integrative Medicine PS,816 East Fairhaven Avenue,NA,Burlington,WA,98233,NA,Skagit,360-336-0123,NA,NA,NA,http://,48.4753439,-122.3240148,SA
+Didgwalic Wellness Center,NA,8212 South March Point Road,NA,Anacortes,WA,98221,NA,Skagit,360-588-2800 x2809,NA,360-588-2800,NA,http://www.didgwalic.com,48.4620931,-122.5665143,SA
+Sauk-Suiattle Indian Tribe,Dept Health and Social Services,5318 Chief Brown Lane,NA,Darrington,WA,98241,NA,Snohomish,360-436-2212,NA,NA,360-436-2233,http://www.sauk-suiattle.com,48.3212942,-121.5532116,SA
+Specialty Services II,NA,825 East 5th Street,NA,Port Angeles,WA,98362,NA,Clallam,360-477-4790,NA,509-232-5766,NA,http://www.abhsinc.net,48.1101099,-123.422759,SA
+Sunrise Services Inc,Sedro Wooley,10212 Collins Road,NA,Sedro Woolley,WA,98284,NA,Skagit,425-595-5200,NA,NA,NA,http://sunriseservicesinc.com/,48.4971072,-122.2808387,MH
+Cedar Grove Counseling Inc,NA,806 South Vine Street,NA,Port Angeles,WA,98362,7982,Clallam,360-452-2443,NA,NA,NA,http://www.cedargroves.com,48.1098815,-123.4321547,SA
+United Northwest Recovery Ctr Inc,NA,605 Sunset Park Drive,Suite B,Sedro Woolley,WA,98284,NA,Skagit,360-856-6300,NA,NA,NA,http://,48.5009608,-122.2512791,SA
+BAART Behavioral Health Services Inc,NA,716 South Chase Street,NA,Port Angeles,WA,98362,NA,Clallam,360-395-2976,NA,NA,NA,http://www.baartprograms.com,48.1118898,-123.4353974,SA
+Peninsula Behavioral Health,NA,118 East 8th Street,NA,Port Angeles,WA,98362,NA,Clallam,360-457-0431,NA,NA,NA,http://peninsulabehavioral.org,48.1122743,-123.4381435,MH
+Peninsula Behavioral Health,NA,118 East 8th Street,NA,Port Angeles,WA,98362,NA,Clallam,360-457-0431,NA,NA,NA,http://www.peninsulabehavioral.org,48.1122743,-123.4381435,SA
+Island Hospital,Psychiatry and Behav Health Clinic,2511 M Avenue,Suite G,Anacortes,WA,98221,NA,Skagit,360-299-1300 x4297,Intake,360-299-4297,NA,http://www.islandhospital.org,48.5017688,-122.6166227,MH
+Pioneer Center North,Branch of Pioneer Human Services,1960 Thompson Drive,NA,Sedro Woolley,WA,98284,NA,Skagit,360-856-3186,NA,360-856-3105,NA,http://www.pioneerhumanservices.org,48.5269716,-122.2107754,SA
+Pioneer Center North,Pioneer Human Services,1960 Thompson Drive,NA,Sedro Woolley,WA,98284,NA,Skagit,360-856-3186,Intake,360-856-3105,NA,http://pioneerhumanservices.org,48.5293416,-122.2056784,MH
+Sea Mar Behavioral Health,Anacortes/Sea Mar Community Hlth Ctrs,1004 M Avenue,Suite 107,Anacortes,WA,98221,NA,Skagit,360-293-8007,NA,NA,NA,http://,48.5140669,-122.6175128,MH
+True Star Behavioral Health,NA,1912 West 18th Street,NA,Port Angeles,WA,98363,NA,Clallam,360-417-2282 x0,NA,360-417-2282,NA,http://www.clallam.net/,48.1190599,-123.4833098,SA
+Upper Skagit Indian Tribe,Chemical Dependency Treatment Program,25959 Community Plaza Way,NA,Sedro Woolley,WA,98284,NA,Skagit,360-854-7070 x7067,NA,360-854-7070,NA,http://,48.5396496,-122.1849766,SA
+Behavioral Health Resources,Elma,575 East Main Street,Suite C,Elma,WA,98541,NA,Grays Harbor,360-482-5358,NA,NA,NA,http://www.bhr.org,47.0047162,-123.3923684,MH
+Klallam Counseling Services,NA,243613 West Highway 101,NA,Port Angeles,WA,98363,NA,Clallam,360-452-4432,NA,NA,NA,http://www.elwha.org/departments/klallam-counseling-services/,48.1012055,-123.5192854,SA
+Tsapowum Chehalis Tribal Behav Hlth,NA,420 Howanut Road,NA,Oakville,WA,98568,NA,Grays Harbor,360-709-1733,NA,NA,NA,http://www.chehalistribe.org/,46.8150051,-123.1725043,MH
+Cascade Community Healthcare,NA,2428 West Reynolds Avenue,NA,Centralia,WA,98531,NA,Lewis,360-330-9044,NA,NA,NA,http://cascadecommunityhealthcare.org/,46.7347678,-122.9830005,MH
+Cascade Mental Healthcare,Evaluation and Treatment Center,3510 Steelhammer Lane,NA,Centralia,WA,98531,NA,Lewis,360-623-8020,Intake,360-623-8004,NA,http://www.cascadementalhealth.org,46.7342019,-123.0033144,MH
+CORE Health,Centralia,1616 South Gold Street,Suite 4,Centralia,WA,98531,NA,Lewis,360-807-4929,NA,NA,NA,http://www.corehealthservices.org,46.6969596,-122.9567762,MH
+CORE Health,Centralia,1616 South Gold Street,Suite 4,Centralia,WA,98531,NA,Lewis,360-807-4929,NA,NA,NA,http://www.corehealthservices.org,46.6969596,-122.9567762,SA
+Sunrise Services Inc,Concrete SR 20,44942 State Route 20,NA,Concrete,WA,98237,NA,Skagit,425-595-5200,Intake,360-630-5430,NA,http://sunriseservicesinc.com/,48.5367984,-121.7674651,MH
+True North Student Assistance and,Treatment Services/Lewis,151 NE Hampe Way,Suite C2-1,Chehalis,WA,98532,NA,Lewis,360-748-2274,NA,360-464-6876,NA,http://www.esd113.org/Page/2408,46.687276,-122.957696,SA
+New Directions Counseling/Chehalis,NA,1956 NE Kresky Street,NA,Chehalis,WA,98532,NA,Lewis,360-740-4380,NA,NA,NA,http://www.newdirectionswa.com,46.680671,-122.958135,SA
+Compass Health,San Juan Island Office,520 Spring Street,NA,Friday Harbor,WA,98250,NA,San Juan,360-378-2669,Intake,888-693-7200,NA,http://www.compasshealth.org,48.5323487,-123.020512,MH
+Compass Health San Juan,Mukilteo Eval and Treatment Facility,10710 Mukilteo Speedway,NA,Mukilteo,WA,98275,NA,Snohomish,360-378-2669,NA,NA,360-378-4994,http://www.compasshealth.org,48.5323487,-123.020512,SA
+Comprehensive Healthcare,Cle Elum,402 East 1st Street,NA,Cle Elum,WA,98922,NA,Kittitas,509-674-2340,NA,NA,NA,http://www.comphc.org,47.1939802,-120.93291549999999,MH
+Eugenia Center,NA,151 North Market Boulevard,Suite C,Chehalis,WA,98532,0121,Lewis,360-948-0203,NA,NA,NA,http://www.eugeniacenter.org,46.6628328,-122.9663632,SA
+Eugenia Center,Chehalis Branch,151 North Market Boulevard,Building C,Chehalis,WA,98532,NA,Lewis,360-948-0203,NA,NA,NA,http://eugeniacenter.org/,46.6628328,-122.9663632,MH
+American Behavioral Health Systems,Chehalis,500 SE Washington Avenue,NA,Chehalis,WA,98532,NA,Lewis,360-748-4776,Intakes,509-232-5766,866-728-8029,http://www.americanbehavioralhealth.net,46.6592389,-122.9581744,SA
+Cascade Mental Healthcare,Chehalis,135 West Main Street,NA,Chehalis,WA,98532,NA,Lewis,360-748-4339,NA,NA,NA,http://www.cascadementalhealth.org,46.6615584,-122.966064,SA
+Eugenia Center,NA,139 NW Chehalis Avenue,NA,Chehalis,WA,98532,NA,Lewis,360-740-9767,NA,NA,NA,http://www.eugeniacenter.org,46.6621455,-122.9703107,SA
+Cascade Community Healthcare,NA,2428 West Reynolds Avenue,NA,Centralia,WA,98531,NA,Lewis,360-330-9044,NA,NA,NA,http://www.cascadementalhealth.org,46.5585286,-122.2762277,MH
+Trinity Behavioral Health LLC,NA,138 South 1st Street,Suite 6,Montesano,WA,98563,NA,Grays Harbor,360-964-4138,NA,NA,NA,http://trinityrecoveryllc.wixsite.com/website-1,46.9818935,-123.6025376,SA
+Willapa Behavioral Health,Montesano Office,338 Pioneer Road West,NA,Montesano,WA,98563,NA,Grays Harbor,360-642-3787,NA,NA,NA,http://,46.9793154,-123.6040191,MH
+Eugenia Center,Mossyrock,230 East State Street,NA,Mossyrock,WA,98564,NA,Lewis,360-983-3227,NA,NA,NA,http://www.eugeniacenter.org,46.5290319,-122.4827222,SA
+Eugenia Center,Mossyrock,230 East State Street,NA,Mossyrock,WA,98564,NA,Lewis,360-983-3227,NA,NA,NA,http://www.eugeniacenter.org,46.5290319,-122.4827222,MH
+Clearing SPC,NA,2687 West Valley Road,NA,Friday Harbor,WA,98250,NA,San Juan,425-275-8600,NA,NA,NA,http://www.theclearingnw.com/,48.565523,-123.145268,MH
+Clearing SPC,NA,2687 West Valley Road,NA,Friday Harbor,WA,98250,NA,San Juan,425-275-8600,NA,NA,NA,http://www.theclearingnw.com,48.565523,-123.145268,SA
+Bridges Treatment and Recovery,NA,1221 Fraser Street,Suite E-1,Bellingham,WA,98229,NA,Whatcom,360-714-8180,NA,NA,NA,http://bridgestreatment.com/,48.711,-122.4155,SA
+Ideal Option,Bellingham,3800 Byron Avenue,Suite 122,Bellingham,WA,98229,NA,Whatcom,877-522-1275,NA,NA,NA,http://idealoption.com,48.7334207,-122.4660784,SA
+Cascade Medical Advantage,NA,800 East Chestnut Street,Suite 3-A,Bellingham,WA,98226,NA,Whatcom,360-927-1502,NA,NA,NA,http://,48.7437352,-122.4733547,SA
+Catholic Community Services,Recovery Center/Bellingham,515 Lakeway Drive,NA,Bellingham,WA,98225,NA,Whatcom,360-676-2187,Intakes,360-676-2187 x0,844-358-5033 x0,http://ccsww.org,48.7452181,-122.4683765,SA
+Belair Clinic,NA,1130 North State Street,NA,Bellingham,WA,98225,NA,Whatcom,360-676-4485,NA,NA,NA,http://www.belairclinic.com,48.7465736,-122.4791756,SA
+Sunrise Services Inc,Bellingham,1515 Cornwall Avenue,NA,Bellingham,WA,98225,NA,Whatcom,425-595-5200,NA,NA,NA,http://sunriseservicesinc.com/,48.7525305,-122.4759785,MH
+Lake Whatcom Center,Agate Heights ALF,3400 Agate Heights Road,NA,Bellingham,WA,98226,NA,Whatcom,360-676-6000 x210,Intake,360-676-6000,NA,http://lwrtc.org,48.765053,-122.369815,MH
+Lake Whatcom Residential and Trt Ctr,Baker Creek,609 Northshore Drive,NA,Bellingham,WA,98226,NA,Whatcom,360-676-6000,NA,NA,NA,http://www.lakewhatcomcenter.org,48.7664992,-122.412528,SA
+Sea Mar Behavioral Health,Visions Female Youth Treatment Center,1603 East Illinois Street,NA,Bellingham,WA,98226,NA,Whatcom,360-647-4266,NA,NA,360-788-7184,http://www.seamar.org,48.7683473,-122.452918,SA
+Lake Whatcom Residential and,Treatment Center Outpatient,3600 Meridian Street,NA,Bellingham,WA,98225,NA,Whatcom,360-676-6000,NA,NA,NA,http://lwrtc.org/,48.7790886,-122.4857041,MH
+Lake Whatcom Residential and Trt Ctr,NA,3600 Meridian Street,NA,Bellingham,WA,98225,NA,Whatcom,360-676-6000 x303,NA,360-676-6000,NA,http://lwrtc.org,48.7790886,-122.4857041,SA
+Compass Health,Whatcom Triage Center,2030 Division Street,NA,Bellingham,WA,98226,NA,Whatcom,425-349-6700,NA,NA,NA,http://www.compasshealth.org,48.781066,-122.449585,MH
+Whatcom Community Detox,NA,2026 Division Street,Suite 100,Bellingham,WA,98226,NA,Whatcom,360-676-2020 x5,NA,NA,360-812-7266,http://www.PioneerHumanServices.org,48.781066,-122.449585,SA
+Compass Health,Whatcom,3645 East McLeod Road,NA,Bellingham,WA,98226,NA,Whatcom,360-676-2220,Intake,844-822-7609,NA,http://www.compass.health.org,48.7826479,-122.4279916,MH
+Compass Health,Crisis Intervention,3645 East McLeod Road,NA,Bellingham,WA,98226,NA,Whatcom,360-672-2220,NA,NA,NA,http://www.compasshealth.org,48.7826479,-122.4279916,MH
+Lake Whatcom Residential and Trt Ctr,Baker Creek Co Occurring RTF,1641 Baker Creek Place,NA,Bellingham,WA,98226,NA,Whatcom,360-676-6000,NA,NA,NA,http://lwrtc.org/,48.7864945,-122.4569448,MH
+Action Counseling,Aberdeen,914 East Wishkah Street,Suite B,Aberdeen,WA,98520,NA,Grays Harbor,360-532-0205,NA,NA,NA,http://www.alternativecounseling.org,46.9775578,-123.8067298,SA
+Sea Mar Community Health Centers,Whatcom County,3350 Airport Drive,NA,Bellingham,WA,98226,NA,Whatcom,360-734-5458,NA,NA,NA,http://www.seamar.org,48.7863247,-122.5227649,MH
+Sea Mar Behavioral Health,Bellingham,3350 Airport Drive,NA,Bellingham,WA,98226,NA,Whatcom,360-734-5458,NA,NA,NA,http://www.SeaMar.org,48.7863247,-122.5227649,SA
+Grays Harbor Treatment Solutions,NA,516 East 1st Street,NA,Aberdeen,WA,98520,NA,Grays Harbor,877-774-6565,NA,NA,NA,http://www.westernwashingtonctc.com,46.9788738,-123.814374,SA
+Lifeline Connections,Bellingham Office,4120 Meridian Street,Suite 220,Bellingham,WA,98226,NA,Whatcom,360-922-3030,NA,NA,NA,http://www.lifelineconnections.org,48.7908164,-122.4851948,SA
+HarborCrest Behavioral Health,Grays Harbor Community Hospital,1006 North H Street,2nd Floor,Aberdeen,WA,98520,NA,Grays Harbor,360-533-8500,NA,360-537-6258,NA,http://www.ghcares.org,46.9813303,-123.8204535,SA
+Lifeline Connections,Aberdeen,311 South I Street,NA,Aberdeen,WA,98520,NA,Grays Harbor,360-787-9319,NA,NA,NA,http://www.lifelineconnections.org,46.9734517,-123.8155084,SA
+Lifeline Connections,Aberdeen,311 South I Street,NA,Aberdeen,WA,98520,NA,Grays Harbor,360-787-9319,Intake,800-604-0025,NA,http://www.lifelineconnections.org,46.9734517,-123.8155084,MH
+Eugenia Center Behavioral Health and,SU Disorder Trt Servs/Eugenia Center,501 North Broadway Street,NA,Aberdeen,WA,98520,NA,Grays Harbor,360-660-1011,NA,360-660-1009,NA,http://www.eugeniacenter.org,46.9781212,-123.8224596,SA
+Eugenia Center Behavioral Health and,SU Disorder Trt Servs/Eugenia Center,501 North Broadway Street,NA,Aberdeen,WA,98520,NA,Grays Harbor,360-660-1011,NA,NA,NA,http://www.eugeniacenter.org,46.9781212,-123.8224596,MH
+Catholic Community Services,Grays Harbor Adult Behavioral Health,403 West State Street,"Suites 201, 202 and 206",Aberdeen,WA,98520,NA,Grays Harbor,360-612-3839,NA,NA,NA,http://www.ccsww.org,46.9705182,-123.8196836,MH
+Social Treatment Opportunity Programs,(STOP)/Aberdeen,114 North Park Street,NA,Aberdeen,WA,98520,NA,Grays Harbor,253-471-0890,Intakes,360-533-4997,800-992-1168,http://STOPWA.COM,46.9715003,-123.8274649,SA
+ESD113-True North Student Assistance,Treatment Services Grays Harbor County,1700 Cherry Street,NA,Aberdeen,WA,98520,NA,Grays Harbor,360-533-9749,NA,360-464-6867,NA,http://www.truenorth113.org,46.9771419,-123.8370748,SA
+Sea Mar Behavioral Health,Grays Harbor,1813 Sumner Avenue,NA,Aberdeen,WA,98520,NA,Grays Harbor,360-538-1461,NA,NA,NA,http://www.seamar.org,46.975661,-123.8383924,MH
+Sea Mar Behavioral Health,Aberdeen,1813 Sumner Avenue,NA,Aberdeen,WA,98520,NA,Grays Harbor,360-538-1461,NA,NA,NA,http://www.seamar.org,46.975661,-123.8383924,SA
+Lummi Counseling Services,NA,2616 Kwina Road,NA,Bellingham,WA,98226,9291,Whatcom,360-312-2420,NA,NA,NA,http://,48.7938779,-122.6261148,SA
+Columbia Wellness,Aberdeen,2700 Simpson Avenue,Suite 101,Aberdeen,WA,98520,NA,Grays Harbor,360-612-0012,NA,NA,NA,http://www.columbiawell.org,46.9753327,-123.8506728,SA
+Columbia Wellness,Aberdeen Branch,2700 Simpson Avenue,Suite 101,Aberdeen,WA,98520,NA,Grays Harbor,360-612-0012,NA,NA,NA,http://www.columbiawell.org,46.9752943,-123.8509055,MH
+Behavioral Health Resources,Hoquiam,205 8th Street,NA,Hoquiam,WA,98550,NA,Grays Harbor,360-704-7170,Intake,360-532-8629,NA,http://www.bhr.org,46.977338,-123.882872,MH
+Bridges Treatment and Recovery,NA,6044 Portal Way,Suite 103,Ferndale,WA,98248,7828,Whatcom,360-393-3461,Intakes,360-714-8180,360-393-4218,http://www.bridgestreatment.com,48.861013,-122.583044,SA
+Nooksack Tribes Genesis II,NA,2505 Sulwhanon Drive,Building A,Everson,WA,98247,NA,Whatcom,360-966-7704,NA,NA,NA,http://www.nooksacktribe.com,48.885073,-122.347738,SA
+ESD113-True North Student Assistance,Treatment Services Pacific County,1016 Commercial Street,NA,Raymond,WA,98577,NA,Pacific,360-464-6867,Intakes,360-942-2474,360-464-6867 x2141,http://www.truenorth113.org,46.6856549,-123.7245687,SA
+Willapa Counseling Center,Raymond,300 Ocean Avenue,NA,Raymond,WA,98577,NA,Pacific,360-942-2303,NA,NA,360-642-3787,http://www.willapabh.org,46.6812857,-123.735879,SA
+Willapa Behavioral Health,NA,300 Ocean Avenue,NA,Raymond,WA,98577,NA,Pacific,360-942-2303,NA,NA,NA,http://willapabh.org/,46.6812857,-123.735879,MH
+Barth Clinic,Barth and Associates,2411 West Dolarway Road,Suite 1,Ellensburg,WA,98926,NA,Kittitas,509-925-7867,NA,877-457-5657,NA,http://www.barthclinic.com,47.004914,-120.5846042,SA
+Quinault Indian Nation,Chemical Dependency Program,1505 Kla Ook Wa Drive,NA,Taholah,WA,98587,NA,Grays Harbor,360-276-4405 x8413,Intakes,360-276-4405 x8130,360-276-8215 x8130,http://,47.3393971,-124.2810023,SA
+Comprehensive Healthcare,SUD Outpatient Services,707 North Pearl Street,Suite K,Ellensburg,WA,98926,NA,Kittitas,509-925-9861,NA,509-575-4200,NA,http://www.comphc.org,46.999023,-120.547856,SA
+Comprehensive Healthcare,Pearl Street,707 North Pearl Street,Suite E,Ellensburg,WA,98926,NA,Kittitas,509-925-9861,NA,NA,NA,http://www.comphc.org,46.999023,-120.547856,MH
+Comprehensive Healthcare,Ellensburg Center,220 West 4th Avenue,NA,Ellensburg,WA,98926,NA,Kittitas,509-925-9861,NA,NA,NA,http://www.cwcmh.org,46.9952286,-120.5496907,MH
+Wenatchee CBOC (116),VAMC/BHS,2530 Chester Kimm Road,NA,Wenatchee,WA,98801,8130,Chelan,509-663-7615,NA,NA,NA,http://www.spokane.va.gov/locations/wenatchee.asp,47.4632344,-120.3347135,MH
+Columbia Valley Community Health,Childrens Behavioral Health,140 Easy Way,NA,Wenatchee,WA,98801,NA,Chelan,509-662-6000,NA,NA,NA,http://www.cvch.org,47.4691979,-120.3336105,MH
+MERIT Resource Services,Ellensburg,200 East 3rd Avenue,NA,Ellensburg,WA,98926,NA,Kittitas,509-925-9821,NA,NA,NA,http://www.meritresources.org,46.9942755,-120.5454202,SA
+Shipowick Smith Counseling LLC,NA,326 North Miller Street,NA,Wenatchee,WA,98801,NA,Chelan,509-667-0679,NA,NA,NA,http://www.shipowickcounseling.com,47.4290279,-120.3251131,SA
+Columbia Counseling 607 LLC,NA,610 North Mission Street,Suite 106,Wenatchee,WA,98801,NA,Chelan,509-888-4404,NA,NA,NA,http://www.columbiacounselingllc.com,47.431629,-120.319586,SA
+Childrens Home Society of WA,Regional Headquarters,1014 Walla Walla Avenue,NA,Wenatchee,WA,98801,NA,Chelan,509-663-0034 x5014,Intakes,509-663-0034,509-885-9090,http://www.childrenshomesociety.org,47.438799,-120.317721,MH
+New Hope Recovery,NA,238 North Chelan Avenue,NA,Wenatchee,WA,98801,NA,Chelan,509-293-7727,NA,NA,NA,http://Newhoperecoveryllc.com,47.4273139,-120.3173424,SA
+Columbia Valley Community Health,Main,600 Orondo Avenue,NA,Wenatchee,WA,98801,NA,Chelan,509-662-6000,NA,NA,NA,http://www.cvch.org,47.4192261,-120.3180752,MH
+Columbia Valley Community Health,Adult Behavioral Health,504 Orondo Avenue,NA,Wenatchee,WA,98801,NA,Douglas,509-662-6000,NA,NA,NA,http://www.cvch.org,47.420284,-120.316417,MH
+Center for Alcohol and Drug Treatment,NA,327 Okanogan Avenue,NA,Wenatchee,WA,98801,NA,Chelan,509-662-9673,Intakes,509-662-9673 x121,509-662-9673 x120,http://cfadt.org,47.4179771,-120.3135556,SA
+Catholic Charities Serving Central WA,NA,145 South Worthen Street,NA,Wenatchee,WA,98801,NA,Chelan,509-662-6761,NA,NA,NA,http://www.catholiccharitiescw.org,47.4234104,-120.3055869,MH
+American Behavioral Health Systems Inc,Parkside,1230 Monitor Street,NA,Wenatchee,WA,98801,3534,Chelan,509-300-1221,NA,NA,NA,http://www.americanbehavioralhealth.net,47.4065872,-120.3053033,MH
+Cowlitz Family Health Center,Toutle River Campus,2232 South Silver Lake Road,NA,Castle Rock,WA,98611,NA,Cowlitz,360-274-3262,NA,NA,NA,http://www.cowlitzfamilyhealth.org,46.252117,-122.825672,SA
+CHSW Family Resource Center,East Wenatchee,220 Eastmont Avenue,Suite B,East Wenatchee,WA,98802,NA,Douglas,509-885-9090,Intake,NA,509-663-0034,http://www.childrenshomesociety.org/,47.4091208,-120.2824429,MH
+Ideal Option,Wenatchee,667 Grant Road,NA,East Wenatchee,WA,98802,NA,Douglas,877-522-1275,NA,NA,NA,http://idealoption.com,47.40631,-120.2798936,SA
+Cedar Grove Counseling Inc,NA,494 South Forks Avenue,NA,Forks,WA,98331,NA,Clallam,360-374-5109,NA,NA,360-452-2443,http://www.cedargroves.com,47.946046,-124.3859008,SA
+West End Outreach Services,Clallam County Hospital District 1,530 Bogachiel Way,NA,Forks,WA,98331,NA,Clallam,360-374-5011,NA,NA,NA,http://www.forkshospital.org,47.946139,-124.3925535,SA
+West End Outreach Services,NA,530 Bogachiel Way,NA,Forks,WA,98331,NA,Clallam,360-374-5011,NA,NA,NA,http://www.forkshospital.org/,47.9462715,-124.3926306,MH
+Shoalwater Bay Indian Tribe,Counseling/CD Program,2373 Old Tokeland Road,Building E,Tokeland,WA,98590,NA,Pacific,360-267-8141,NA,NA,360-267-0119,http://www.shoalwaterbay-nsn.gov/home/shoalwater-services/wellness-center/behavioral-health,46.7209903,-124.0149259,SA
+Awakenings Inc,NA,404 West Main Street,NA,Kelso,WA,98626,NA,Cowlitz,360-423-2806,NA,NA,NA,http://awakenings.cc,46.1459618,-122.9198396,SA
+Awakenings Inc,NA,404 West Main Street,NA,Kelso,WA,98626,NA,Cowlitz,360-423-2806,NA,NA,NA,http://awakenings.cc,46.1458806,-122.9198802,MH
+Kelso Treatment Solutions,WCHS Inc,305 Pacific Avenue South,Suite C,Kelso,WA,98626,NA,Cowlitz,360-425-5378,NA,NA,NA,http://www.acadiahealthcare.com,46.1436885,-122.9123371,SA
+Columbia Wellness,Kelso Branch,305 South Pacific Avenue,Suite 102,Kelso,WA,98626,NA,Cowlitz,360-423-0203,NA,NA,NA,http://columbiawell.org,46.1436885,-122.9123371,MH
+A New Safehaven,NA,1441 11th Avenue,NA,Longview,WA,98632,NA,Cowlitz,360-577-4340,NA,NA,360-577-4341,http://,46.139005,-122.931242,SA
+Cowlitz Family Health Center,Broadway Campus,600 Broadway Street,NA,Longview,WA,98632,NA,Cowlitz,360-425-9600,NA,NA,NA,http://www.cowlitzfamilyhealth.org,46.1368052,-122.9243542,SA
+Kaiser Permanente-Longview,Department of Addiction Medicine,1230 7th Avenue,NA,Longview,WA,98632,NA,Cowlitz,503-249-3434,NA,NA,855-632-8280,http://www.kp.org,46.133508,-122.925759,SA
+Cowlitz Indian Tribe,Cowlitz Tribal Treatment,900 Fir Street,NA,Longview,WA,98632,NA,Cowlitz,360-575-3316,NA,NA,NA,http://www.cowlitz.org,46.130861,-122.931926,SA
+Columbia Wellness,Longview Main,921 14th Avenue,NA,Longview,WA,98632,NA,Cowlitz,360-423-0203,NA,NA,NA,http://www.columbiawell.org,46.1307146,-122.9386613,MH
+CORE Health,Main,748 14th Avenue,NA,Longview,WA,98632,NA,Cowlitz,360-200-5419,NA,NA,NA,http://www.corehealthservices.org,46.1274344,-122.9392793,SA
+CORE Health,Main,748 14th Avenue,NA,Longview,WA,98632,NA,Cowlitz,360-200-5419,Intake,360-200-5149,NA,http://www.corehealthservices.org,46.1274344,-122.9392793,MH
+Columbia Wellness,Longview Branch,720 14th Avenue,NA,Longview,WA,98632,NA,Cowlitz,360-423-0203,NA,NA,NA,http://www.columbiawell.org,46.1265426,-122.9396717,MH
+Columbia Wellness,Wellness and Recovery Center,720 14th Avenue,NA,Longview,WA,98632,NA,Cowlitz,360-423-0203,NA,NA,NA,http://www.columbiawell.org,46.1265426,-122.9396717,SA
+Sundown M Ranch,NA,2280 State Route 821,NA,Yakima,WA,98901,NA,Yakima,509-457-0990 x421,Intakes,800-326-7444,509-457-0990,http://www.sundown.org,46.70643452,-120.4731748,SA
+Wahkiakum County HHS,NA,42 Elochoman Valley Road,NA,Cathlamet,WA,98612,NA,Wahkiakum,360-795-8630,Intake,NA,800-635-5989,http://www.co.wahkiakum.wa.us,46.2152416,-123.3875323,MH
+Wahkiakum County HHS,Substance Use Disorder Program,42 Elochoman Valley Road,NA,Cathlamet,WA,98612,NA,Wahkiakum,360-795-8630,NA,NA,800-635-5989,http://co.wahkiakum.wa.us,46.2152416,-123.3875323,SA
+Catholic Charities Serving Central WA,Yakima Main,5301 Tieton Drive,Suite C,Yakima,WA,98908,NA,Yakima,509-965-7100,NA,NA,NA,http://www.catholiccharitiescw.org,46.5928396,-120.5795899,MH
+Triumph Treatment Services,Inspiration,3300 Roosevelt Avenue,NA,Yakima,WA,98902,NA,Yakima,509-571-1455,Intakes,509-204-3098,509-853-4109,http://www.triumphtx.org,46.6057898,-120.553659,SA
+Beths Place,Triumph Treatment Services,608 Superior Lane,NA,Yakima,WA,98902,NA,Yakima,509-853-4175,Intakes,509-204-3098 x109,509-204-3098 x110,http://www.triumphtx.org,46.6078808,-120.5467401,SA
+Casita,Triumph Treatment Services,605 Superior Lane,NA,Yakima,WA,98902,NA,Yakima,509-853-4173,Intakes,509-204-3098 x111,509-204-3098 x110,http://www.triumphtx.org,46.6075711,-120.5463285,SA
+Riel House,Triumph Treatment Services,613 Superior Lane,NA,Yakima,WA,98902,NA,Yakima,509-575-4810,Intakes,509-204-3098 x110,509-204-3098 x111,http://www.triumphtx.org,46.6074577,-120.545833,SA
+Believe In Recovery LLC,NA,3907 Creekside Loop,Suite 110,Yakima,WA,98902,NA,Yakima,509-317-2140,NA,NA,NA,http://believeinrecoveryllc.com,46.5767159,-120.5606536,SA
+Apple Valley Counseling Services LLC,NA,611 West A Street,NA,Yakima,WA,98902,NA,Yakima,509-452-1000,NA,NA,509-833-3832,http://www.applevalleycounseling.org,46.600968,-120.5189582,SA
+YVFWC Behavioral Health Services,12th Avenue Office,307 South 12th Avenue,Suite 4-B,Yakima,WA,98902,NA,Yakima,509-575-8457,NA,NA,NA,http://www.yvfwc.com,46.5948743,-120.5247455,MH
+YVFWC Behavioral Health Services,NA,307 South 12th Avenue,Suite 4-B,Yakima,WA,98902,3137,NA,509-575-8457,NA,NA,NA,http://www.yvfwc.com,46.5943498,-120.5245749,SA
+MERIT Resource Services,Yakima,315 North 2nd Street,NA,Yakima,WA,98901,NA,Yakima,509-469-9366,NA,NA,NA,http://www.meritresources.org,46.6074522,-120.5064941,SA
+Catholic Charities Serving Central WA,Yakima D Street,303 East D Street,Suite 5,Yakima,WA,98901,NA,Yakima,509-853-1300,NA,NA,NA,http://www.catholiccharitiescw.org,46.6083093,-120.5052704,MH
+Barth Clinic,Barth and Associates,201 East Lincoln Avenue,Suite 100,Yakima,WA,98901,NA,Yakima,509-457-5653,NA,877-457-5657,NA,http://www.barthclinic.com,46.6068917,-120.5062167,SA
+Columbia Valley Community Health,CVCH Chelan Clinic,105 South Apple Blossom Drive,NA,Chelan,WA,98816,NA,Chelan,509-662-6000,NA,NA,NA,http://www.cvch.org,47.8402079,-119.9881322,MH
+Comprehensive Healthcare,Pathways,307 West Walnut Street,NA,Yakima,WA,98902,NA,Yakima,509-453-4274,Intake,NA,509-453-4301,http://www.cwcmh.org,46.5983943,-120.5120776,MH
+Pathways Adult Residential Treatment,NA,307 West Walnut Street,NA,Yakima,WA,98902,NA,Yakima,509-453-4301,NA,NA,509-575-4084,http://www.comphc.org,46.5983943,-120.5120776,SA
+Comprehensive Healthcare,Bridges Evaluation and Treatment,201 South 2nd Avenue,NA,Yakima,WA,98902,NA,Yakima,509-469-2085,Intake,NA,509-575-4084,http://www.cwcmh.org,46.59819,-120.5092522,MH
+Comprehensive Healthcare,Yakima Center,402 South 4th Avenue,NA,Yakima,WA,98902,NA,Yakima,509-575-4084,Intake,509-574-5061,NA,http://www.comphc.org,46.5948512,-120.5124348,MH
+Comprehensive Healthcare,NA,402 South 4th Avenue,NA,Yakima,WA,98902,NA,Yakima,509-576-4345,Intakes,509-317-2622,509-575-4084,http://www.comphc.org,46.5948512,-120.5124348,SA
+Triumph Treatment Services,Community Drug and Alcohol Center,120 South 3rd Street,NA,Yakima,WA,98901,NA,Yakima,509-248-1800,NA,NA,NA,http://www.triumphtx.org,46.6008498,-120.502566,SA
+Comprehensive Healthcare,Withdrawal Mgmt/Crisis Triage Center,505 South 4th Avenue,NA,Yakima,WA,98902,NA,Yakima,509-576-4304,NA,509-575-4200,NA,http://www.comphc.org,46.5938814,-120.5105219,SA
+Comprehensive Healthcare,Detox/Crisis Triage Center,505 South 4th Avenue,Building B,Yakima,WA,98902,NA,Yakima,509-575-4084,NA,509-453-2900,NA,http://www.comphc.org,46.5938814,-120.5105219,SA
+Comprehensive Healthcare,Two Rivers Landing,504 South 3rd Avenue,NA,Yakima,WA,98902,NA,Yakima,509-469-3727,NA,NA,NA,http://www.cwcmh.org,46.5942024,-120.5098532,MH
+Northwest Behavioral Modification,NA,917 East Pitcher Street,NA,Yakima,WA,98901,NA,Yakima,509-457-8554,NA,NA,NA,http://,46.6049127,-120.492158,SA
+Free by the Sea,Sunset View Freedom Center,25517 Park Avenue,NA,Ocean Park,WA,98640,NA,Pacific,360-665-4494,NA,NA,NA,http://www.freebythesea.com,46.4878932,-124.0538507,SA
+YVFWC Behavioral Health Services,NA,918 East Mead Avenue,NA,Yakima,WA,98903,NA,Yakima,509-453-1344,Intake,NA,800-500-0934,http://www.yvfwc.com,46.577316,-120.48907,MH
+Makah Recovery Services,NA,100 Wellness Way,NA,Neah Bay,WA,98357,NA,Clallam,360-645-2461,NA,NA,NA,http://,48.358538,-124.584607,SA
+Willapa Behavioral Health,NA,2204 Pacific Avenue North,NA,Long Beach,WA,98631,NA,Pacific,360-642-3787,Intake,NA,360-942-2303,http://willapabh.org/,46.3686521,-124.0533465,MH
+Willapa Counseling Center,Long Beach,2204 Pacific Avenue North,NA,Long Beach,WA,98631,NA,Pacific,360-642-3787,NA,NA,NA,http://www.willapabh.org,46.3667638,-124.0536812,SA
+Discover Recovery,NA,800 Washington Avenue North,NA,Long Beach,WA,98631,NA,Pacific,360-244-4707,NA,844-243-4317,NA,http://www.discoverrecovery.com,46.3566001,-124.0515476,SA
+Columbia Wellness,Woodland,921 14th Avenue,NA,Longview,WA,98632,NA,Cowlitz,360-423-0203,NA,NA,NA,http://columbiawell.org,45.9084561,-122.7407813,MH
+Grant Integrated Services,Quincy,203 Central Avenue South,NA,Quincy,WA,98848,NA,Grant,509-787-4466,Intake,NA,509-765-9239,http://www.grantcountyweb.com/GRIS/,47.2359737,-119.853708,MH
+MERIT Resource Services,Wapato,312 West 2nd Street,NA,Wapato,WA,98951,NA,Yakima,509-877-7271,NA,NA,NA,http://www.meritresources.org,46.4472464,-120.4231993,SA
+James Oldham Treatment Center,NA,201 Highland Drive,NA,Buena,WA,98921,NA,Yakima,509-865-6705,NA,509-204-3099,NA,http://www.triumphtx.org,46.432433,-120.313182,SA
+Recovery Village Ridgefield,NA,888 South Hillhurst Road,NA,Ridgefield,WA,98642,NA,Clark,360-857-0007,NA,844-836-6574,NA,http://www.ridgefieldrecovery.com/,45.8088551,-122.7349565,SA
+Columbia River Mental Health Services,Battle Ground Clinic,18 NW 20th Avenue,Suite 103,Battle Ground,WA,98604,NA,Clark,360-597-9731,Intake,360-993-3000,NA,http://www.crmhs.org,45.7814928,-122.5588136,MH
+Yakama Nation Tiinawit Program,NA,20 Gunnyon Road,NA,Toppenish,WA,98948,NA,Yakima,509-865-5121 x4455,NA,NA,509-865-5121 x4462,http://,46.3752842,-120.3363918,SA
+BHS/Toppenish,NA,510 West 1st Avenue,NA,Toppenish,WA,98948,NA,Yakima,509-865-3127,Intake,NA,800-500-0934,http://www.yvfwc.com,46.3744749,-120.316492,MH
+MERIT Resource Services,Toppenish,321 West 1st Avenue,NA,Toppenish,WA,98948,NA,Yakima,509-865-5233,NA,NA,NA,http://www.meritresourceservices.org,46.3752938,-120.3140972,SA
+Comprehensive Healthcare,White Salmon Center,432 NE Tahomish Street,NA,White Salmon,WA,98672,NA,Klickitat,509-493-3400,NA,NA,NA,http://www.comphc.org,45.8472861,-121.4547497,MH
+Grant Integrated Services,Mattawa,840 East Plum Street,NA,Moses Lake,WA,98837,NA,Grant,509-765-9239 x5436,Intake,509-765-9239,NA,http://www.grantcountywa.gov,46.7375525,-119.9041988,MH
+Sea Mar Behavioral Health,Vancouver Salmon Creek,14508 NE 20th Avenue,Suite 305,Vancouver,WA,98686,NA,Clark,360-397-9211,Intake,NA,360-260-4900,http://www.seamar.org,45.7263806,-122.6527469,MH
+Rainier Springs,NA,2805 NE 129th Street,NA,Vancouver,WA,98686,NA,Clark,360-356-1890,NA,360-869-0565 x1,NA,http://www.rainiersprings.com,45.7147267,-122.643354,SA
+Rainier Springs,NA,2805 NE 129th Street,NA,Vancouver,WA,98686,NA,Clark,360-356-1890,NA,NA,NA,http://www.rainiersprings.com,45.7147267,-122.643354,MH
+Vancouver Treatment Solutions,NA,2009 NE 117th Street,Suite 101,Vancouver,WA,98686,NA,Clark,360-566-9112,NA,NA,NA,http://www.acadiahealthcare.com/programs-and-services/medication-assisted-treatment,45.7052091,-122.6508218,SA
+Lifeline Connections,Orchards,11719 NE 95th Street,Suite A,Vancouver,WA,98682,NA,Clark,360-984-5511,NA,360-397-8246 x30500,NA,http://www.lifelineconnections.org,45.6901429,-122.5511656,SA
+Lifeline Connections,Orchards Branch,11719 NE 95th Street,Suite A,Vancouver,WA,98682,NA,Clark,360-984-5511,Intake,360-397-8246 x30500,NA,http://www.lifelineconnections.org,45.6901429,-122.5511656,MH
+Columbia River Mental Health Services,Hazel Dell Clinic,9105 NE Highway 99,"Building A, Suite 201",Vancouver,WA,98665,NA,Clark,360-579-9721,Intake,360-993-3000,NA,http://www.crmhs.org,45.6885008,-122.6582054,MH
+Skamania County Community Health,NA,710 SW Rock Creek Drive,NA,Stevenson,WA,98648,NA,Skamania,509-427-3850,NA,NA,NA,http://www.skamaniacounty.org,45.692822,-121.894337,MH
+Columbia River Mental Health Services,Elahan Place,7415 NE 94th Avenue,NA,Vancouver,WA,98662,NA,Clark,360-253-6019,NA,NA,NA,http://www.crmhs.org,45.6760051,-122.5746699,MH
+Skamania County Community Health,NA,710 SW Rock Creek Drive,P.O. Box 1492,Stevenson,WA,98648,NA,Skamania,509-427-3850,NA,NA,NA,http://www.skamaniacounty.org,45.6923108,-121.8940865,SA
+Cowlitz Tribal Treatment Vancouver,NA,7700 NE 26th Avenue,NA,Vancouver,WA,98665,NA,Clark,360-947-2247,NA,NA,NA,http://www.cowlitz.org,45.6781526,-122.6445804,SA
+Sea Mar Behavioral Health,Vancouver Orchards,11801 NE 65th Street,Suite C,Vancouver,WA,98662,NA,Clark,360-566-4432,Intake,360-558-5790,NA,https://www.seamar.org/clark-bh-vancouver-sud.html,45.6696123,-122.5512653,MH
+Columbia Treatment Services,NA,7017 NE Highway 99,Suite 114,Vancouver,WA,98665,NA,Clark,360-694-7484,NA,NA,NA,http://www.columbiatreatmentservices.com,45.673755,-122.661944,SA
+Sea Mar Behavioral Health,NA,5501 NE 109th Court,Suite A-1,Vancouver,WA,98662,NA,Clark,360-566-4432,NA,NA,NA,http://www.seamar.org,45.6619987,-122.5598272,MH
+Recovery Village Ridgefield,Detox Center,5114 NE 94th Avenue,NA,Vancouver,WA,98662,NA,Clark,360-719-1480,NA,888-487-0633,NA,http://www.ridgefieldrecovery.com/,45.659638,-122.577659,SA
+Western Psychological and Counseling,NA,7507 NE 51st Street,NA,Vancouver,WA,98662,NA,Clark,360-906-1190,NA,NA,NA,http://www.westernpsych.com,45.6584841,-122.5961088,SA
+Helping Professionals Wellness Center,NA,5007 NE Saint Johns Road,NA,Vancouver,WA,98661,2348,Clark,360-687-0693,NA,NA,NA,http://hpwellnesscenter.com,45.6582879,-122.6355587,SA
+Serenity Lane,Vancouver,4305 NE Thurston Way,Suite E,Vancouver,WA,98662,NA,Clark,360-213-1216,NA,NA,NA,http://www.serenitylane.org,45.6533949,-122.5858699,SA
+Grant Integrated Services,Royal City,130 Camelia Street,NA,Royal City,WA,99357,NA,Grant,509-765-9239 x5436,Intake,509-765-9239,NA,http://www.grantcountywa.gov,46.9000183,-119.6374414,MH
+Comprehensive Healthcare,NA,432 NE Tohomish Street,NA,White Salmon,WA,98672,NA,Klickitat,509-493-3400,NA,NA,NA,http://www.comphc.org,45.7282202,-121.4822827,SA
+Columbia River Mental Health Services,NorthStar,6926 NE 4th Plain Boulevard,NA,Vancouver,WA,98661,NA,Clark,360-993-3000,NA,360-993-3003,NA,http://www.crmhs.org,45.6463602,-122.6029793,SA
+Columbia River Mental Health Services,NA,6926 NE 4th Plain Boulevard,NA,Vancouver,WA,98661,NA,Clark,360-993-3000,NA,NA,NA,http://www.crmhs.org,45.6463602,-122.6029793,MH
+PeaceHealth Southwest,Behavioral Health,3400 Main Street,NA,Vancouver,WA,98668,NA,Clark,360-696-5300,NA,NA,NA,http://www.peacehealth.org,45.6461,-122.669515,MH
+Lifeline Connections,NA,1601 East 4th Plain Boulevard,Building 17,Vancouver,WA,98661,NA,Clark,360-397-8246,Intakes,360-397-8246 x7580,360-397-8246 x7581,http://www.lifelineconnections.org,45.6388798,-122.6580266,MH
+Lifeline Connections,Main Campus,1601 East 4th Plain Boulevard,Building 17,Vancouver,WA,98661,NA,Clark,360-397-8246,Intakes,360-397-8246 x7580,800-604-0025 x7465,http://www.lifelineconnections.org,45.6365699,-122.6572505,SA
+VA Portland Healthcare System,Substance Abuse Treatment Program,1601 East 4th Plain Boulevard,V3STARS,Vancouver,WA,98661,NA,Clark,360-690-1841,Intakes,360-696-4061 x31841,503-220-8262 x31841,http://,45.6365699,-122.6572505,SA
+Sea Mar Behavioral Health,Sea Mar Community Health Centers,7410 Delaware Lane,NA,Vancouver,WA,98664,NA,Clark,360-566-4402,Intake,360-566-4432,NA,http://www.seamar.org/index.html,45.6245073,-122.5946958,MH
+Childrens Home Society of WA,Vancouver Family Resource Center,309 West 12th Street,NA,Vancouver,WA,98666,NA,Clark,360-695-1325 x4232,Intake,360-695-1325,NA,http://www.chs-wa.org,45.6301661,-122.6741408,MH
+Daybreak Youth Services,Vancouver Outpatient,11818 SE Mill Plain Boulevard,Suite 307,Vancouver,WA,98684,NA,Clark,360-750-9588,Intakes,360-750-9588 x4000,360-750-9635 x4000,http://www.daybreakyouthservices.org,45.621748,-122.550365,SA
+Daybreak Youth Services,Vancouver Outpatient,11818 SE Mill Plain Boulevard,Suite 307,Vancouver,WA,98684,NA,Clark,360-750-9635,NA,NA,NA,http://daybreakyouthservices.org/,45.621748,-122.550365,MH
+Starting Point Inc,NA,801 Grand Boulevard,NA,Vancouver,WA,98661,NA,Clark,360-696-2010,NA,NA,NA,http://,45.626877,-122.6399651,SA
+Columbia River Mental Health Services,Options Youth House,1012 Esther Street,NA,Vancouver,WA,98660,NA,Clark,360-750-7033,Intake,360-993-3000,NA,http://www.crmhs.org,45.629389,-122.6763779,MH
+Affinity Counseling and Treatment LLC,NA,12503 SE Mill Plain Boulevard,Suite 119-A,Vancouver,WA,98684,NA,Clark,360-314-6507,NA,NA,NA,http://Affinitycounseling.net,45.619324,-122.5442912,SA
+Ideal Option,Vancouver/131st,406 SE 131st Avenue,Suite 104,Vancouver,WA,98683,NA,Clark,877-522-1275,NA,877-522-1275 x1,NA,http://idealoption.com,45.6183958,-122.5385716,SA
+Kaiser Permanente-Cascade Park,Department of Addiction Medicine,12607 SE Mill Plain Boulevard,NA,Vancouver,WA,98684,NA,Clark,503-249-3434,NA,NA,855-632-8280,http://kp.org,45.618552,-122.541992,SA
+Innovation Resource Center,NA,533 South 6th Street,NA,Sunnyside,WA,98944,NA,Yakima,509-836-2400,NA,NA,NA,http://www.innovationrc.com,46.3230865,-120.0133116,SA
+MERIT Resource Services,Sunnyside,702 Franklin Avenue,NA,Sunnyside,WA,98944,NA,Yakima,509-837-7700,NA,NA,NA,http://www.meritresources.org,46.322643,-120.0111494,SA
+Comprehensive Healthcare,Sunnyside Center,1319 Saul Road,NA,Sunnyside,WA,98944,NA,Yakima,509-837-2089,NA,NA,NA,http://www.comphc.org,46.3148721,-120.0103393,SA
+Comprehensive Healthcare,Sunnyside Center,1319 Saul Road,NA,Sunnyside,WA,98944,NA,Yakima,509-837-2089,NA,NA,NA,http://www.cwcmh.org,46.3148721,-120.0103393,MH
+Ideal Option,Sunnyside,2201 East Edison Avenue,Suite 4,Sunnyside,WA,98944,NA,Yakima,877-522-1275,NA,NA,NA,http://idealoption.com,46.3234679,-119.9914918,SA
+Comprehensive Healthcare,Goldendale Center,112 West Main Street,NA,Goldendale,WA,98620,NA,Klickitat,509-773-5801,NA,NA,NA,http://www.comphc.org,45.821955,-120.8233297,MH
+Comprehensive Healthcare,NA,112 West Main Street,NA,Goldendale,WA,98620,NA,Klickitat,509-773-5801,NA,NA,NA,http://www.comphc.com,45.821955,-120.8233297,SA
+Okanogan Behavioral Healthcare,NA,1007 Koala Avenue,NA,Omak,WA,98841,NA,Okanogan,509-826-6191,Intake,NA,866-826-6191,http://www.okbhc.org,48.424978,-119.502047,MH
+Okanogan Behavioral Healthcare,Substance Use Disorder Services,1007 Koala Drive,NA,Omak,WA,98841,NA,Okanogan,509-826-6191,NA,NA,866-826-6191,http://www.okbhc.org,48.4249778,-119.5020466,SA
+BHS/Grandview,NA,1000 Wallace Way,NA,Grandview,WA,98930,NA,Yakima,509-882-8918,Intake,NA,800-500-0934,http://www.yvfwc.com,46.2660933,-119.9224747,MH
+Grant Integrated Services,Moses Lake Main,840 East Plum Street,NA,Moses Lake,WA,98837,NA,Grant,509-765-9239 x5436,Intakes,509-765-9239,509-787-4466,http://www.grantcountywa.gov,47.1288644,-119.2626954,MH
+Grant Integrated Services,Moses Lake/Main,840 East Plum Street,NA,Moses Lake,WA,98837,NA,Grant,509-765-9239,NA,NA,509-787-4466,http://www.grantcountywa.gov/178/Grant-Integrated-Services,47.1288644,-119.2626954,SA
+Integrity Support Services LLC,NA,242 Division Street,NA,Grandview,WA,98930,NA,Yakima,509-882-8012,NA,NA,NA,http://,46.253925,-119.9024,SA
+Grant Integrated Services,Grand Coulee,322 Fortuyn Road,NA,Grand Coulee,WA,99133,NA,Grant,509-765-9239,Intake,509-633-1471,NA,http://www.grantcountyweb.com/GrIS/,47.942584,-119.0059405,MH
+Adams Cnty Integrated Healthcare Servs,NA,425 East Main Street,Suite 600,Othello,WA,99344,NA,Adams,509-488-5611,Intake,NA,509-659-4357,http://www.co.adams.wa.us/departments/counseling.asp,46.8269814,-119.1689355,MH
+Adams Cnty Integrated Healthcare Servs,NA,425 East Main Street,Suite 600,Othello,WA,99344,NA,Adams,509-488-4074,Intakes,509-488-5611,509-659-4357,http://www.co.adams.wa.us/departments/health_department/behavior_health/index.php,46.8269814,-119.1689355,SA
+Catholic Charities Serving Central WA,Richland,2139 Van Giesen Street,NA,Richland,WA,99354,NA,Benton,509-946-4645,NA,NA,NA,http://www.catholiccharitiescw.org,46.2928183,-119.2985227,MH
+Lourdes Counseling Center,NA,1175 Carondelet Drive,NA,Richland,WA,99354,3300,Benton,509-943-9104,NA,NA,NA,http://yourlourdes.com/,46.283029,-119.2813984,MH
+Somerset Counseling Center,NA,1305 Mansfield Street,Suite 6,Richland,WA,99352,NA,Benton,509-942-1624,NA,NA,NA,http://www.drugevaluation.com,46.2781189,-119.2831573,SA
+Tri Cities Community Health,Behavioral Medicine Department,829 Goethals Drive,NA,Richland,WA,99352,NA,Benton,509-543-8514,Intake,509-545-6506,NA,http://www.mytcch.org,46.2782665,-119.280182,MH
+Jonathan M Wainwright VAMC,Richland CBOC,825 Jadwyn Avenue,"Suite 250, Richland Fed Building",Richland,WA,99352,NA,Benton,509-525-5200,Intakes,509-525-5200 x26975,509-946-1020,http://www.wallawalla.va.gov,46.2775135,-119.2760197,MH
+ORTC LLC,DBA Tri-Cities Treatment Center,1445 Spaulding Avenue,NA,Richland,WA,99352,NA,Benton,509-578-1492,NA,NA,509-591-8633,http://ortc.care/,46.2359509,-119.2334038,SA
+Ideal Option,Kennewick,8508 West Gage Boulevard,Suite A-101,Kennewick,WA,99336,NA,Benton,877-522-1275,NA,877-522-1275 x1,NA,http://idealoption.com,46.22885,-119.235177,SA
+MERIT Resource Services,Kennewick,7510 West Deschutes Place,NA,Kennewick,WA,99336,NA,Benton,509-579-0738,NA,NA,NA,http://www.meritresources.org/,46.2119165,-119.2230645,SA
+Action Counseling,NA,4911 West Canal Drive,NA,Kennewick,WA,99336,NA,Benton,509-735-7410,NA,NA,NA,http://,46.222972,-119.185996,SA
+Lourdes Health Crisis Services,Kennewick,500 North Morain Street,Suite 1250,Kennewick,WA,99336,NA,Benton,509-943-9104,Intake,509-783-0500,NA,http://www.yourlourdes.com/,46.215233,-119.169834,MH
+First Step Comm Counseling Servs LLC,NA,415 North Morain Street,NA,Kennewick,WA,99336,2667,Benton,509-735-6900,NA,NA,NA,http://www.firststepccs.com,46.2139128,-119.1698613,SA
+Tri Cities Community Health,Behavioral Medicine Department,3180 West Clearwater,Suite E,Kennewick,WA,99336,NA,Benton,509-543-8500,Intake,509-545-6506,NA,http://www.mytcch.org,46.2139382,-119.16448,MH
+Lutheran Community Services NW,Columbia Basin Office,3321 West Kennewick Avenue,Suite 150,Kennewick,WA,99336,2968,Benton,509-735-6446,NA,NA,NA,http://lcsnw.org,46.2092117,-119.1674028,MH
+Advocates for Wellness LLC,NA,120 Vista Way,NA,Kennewick,WA,99336,NA,Benton,509-783-8833,NA,NA,NA,http://www.advocates4wellness.com,46.21149,-119.157754,SA
+Comprehensive Healthcare,Pasco,2715 Saint Andrews Loop,Suite C,Pasco,WA,99301,NA,Franklin,509-412-1051,NA,NA,NA,http://www.comphc.org,46.2527938,-119.1142475,MH
+Comprehensive Healthcare,Pasco Campus,2715 Saint Andrews Loop,Suite C,Pasco,WA,99301,NA,Franklin,509-412-1051,NA,NA,NA,http://www.comphc.org,46.2527938,-119.1142475,SA
+Tri Cities Community Health,NA,715 West Court Street,2nd Floor,Pasco,WA,99301,NA,Franklin,509-545-6506,NA,NA,NA,http://www.mytcch.org,46.2417378,-119.0975782,SA
+Tri Cities Community Health,Behavioral Medicine Department,715 West Court Street,NA,Pasco,WA,99301,NA,Franklin,509-545-6506,NA,NA,NA,http://www.mytcch.org,46.2416554,-119.0975847,MH
+Wilson House,NA,224 North 7th Street,NA,Pasco,WA,99301,NA,Franklin,509-545-4462,Intake,NA,509-943-9104,http://www.yourlourdes.com/,46.2309422,-119.0988245,MH
+Northeast Washington Alliance,Counseling Service,65 North Keller Street,NA,Republic,WA,99166,NA,Ferry,509-775-3341,NA,NA,NA,http://www.stevenscountywa.gov/pview.aspx?id=20848,48.6483147,-118.7372534,MH
+Northeast Washington Alliance,Counseling Service,1211 Merriam Street,NA,Davenport,WA,99122,NA,Lincoln,509-725-3001,NA,NA,NA,http://www.stevenscountywa.gov/pview.aspx?id=20848,47.6521525,-118.1581776,MH
+Lincoln County Alcohol/Drug Center,NA,505 1st Street,NA,Davenport,WA,99122,NA,Lincoln,509-725-2111,NA,NA,509-725-2120,http://www.co.lincoln.wa.us/adc/,47.6535032,-118.1419582,SA
+Colville Tribal Alcohol/Drug Program,Inchelium Branch,320 Short Cut Road,NA,Inchelium,WA,99138,NA,Ferry,509-722-7068 x7068,NA,NA,509-722-7067 x7067,http://www.colvilletribes.com,48.2961583381334,-118.204811059371,SA
+Spokane Tribe Behavioral Health Prog,NA,6228 Old School Road,NA,Wellpinit,WA,99040,NA,Stevens,509-258-7502,Intakes,509-258-7502 x11,509-258-7502 x42,http://www.spokanetribe.com/behavioral-health,47.8897045,-117.9871821,SA
+Northeast Washington Alliance,Counseling Services,165 East Hawthorne Avenue,NA,Colville,WA,99114,NA,Stevens,509-684-4597,NA,NA,NA,http://www.stevenscountywa.gov/pview.aspx?id=20848,48.5362381,-117.9043593,MH
+Adept Assessment Center,Colville,218 B North Oak Street,NA,Colville,WA,99114,NA,Stevens,509-684-5867,NA,NA,NA,http://www.adeptbehavioralhealth.com/,48.5458727,-117.9039559,SA
+Eastern State Hospital,NA,850 Maple Street,NA,Medical Lake,WA,99022,NA,Spokane,509-565-4000,NA,NA,NA,http://www.dshs.wa.gov/bha/division-state-hospitals/eastern-state-hospital-overview,47.573247,-117.6958638,MH
+Jonathan M Wainwright VAMC,Mental Health Services,77 Wainwright Drive,NA,Walla Walla,WA,99362,NA,Walla Walla,509-525-5200,Intakes,509-525-5200 x26527,509-525-5200 x26518,http://www.wallawalla.va.gov,46.0539126,-118.3589285,MH
+VA Med/Jonathan M Wainwright Mem,SARRTP/PRRTP and Outpt Trt,77 Wainwright Drive,NA,Walla Walla,WA,99362,NA,Walla Walla,509-525-5200 x26288,Intakes,509-525-5200 x26527,509-525-5200 x26518,http://www.va.gov\directory\guide\facility.asp?ID=142&dnum=All,46.0538497,-118.3560682,SA
+Comprehensive Healthcare,Walla Walla Office,1520 Kelly Place,Suite 234,Walla Walla,WA,99362,NA,Walla Walla,509-524-2920,NA,NA,NA,http://www.comphc.org,46.0455963,-118.3579916,SA
+Comprehensive Healthcare,Walla Walla,1520 Kelly Place,Suite 234,Walla Walla,WA,99362,NA,Walla Walla,509-524-2920,NA,NA,NA,http://www.comphc.org,46.0455963,-118.3579916,MH
+Serenity Point Counseling Services,NA,410 South Wilbur Avenue,NA,Walla Walla,WA,99362,NA,Walla Walla,509-529-6036 x105,NA,509-529-6036,NA,http://www.serenitypointcounseling.com,46.0556116,-118.3325507,SA
+Northeast Washington Alliance,Counseling Service,165 East Hawthorne Avenue,NA,Colville,WA,99114,NA,Stevens,509-935-4808,NA,NA,NA,http://www.stevenscountywa.gov/pview.aspx?id=20848,48.2772792,-117.7130223,MH
+Courage to Change,NA,13015 West 14th Avenue,NA,Airway Heights,WA,99001,NA,Spokane,509-960-7938,NA,NA,NA,http://couragetochangewestplains.com,47.6424214,-117.5912074,SA
+Camas Path BHS,Kalispel Tribe of Indians,934 South Garfield Road,NA,Airway Heights,WA,99001,NA,Spokane,509-789-7630,NA,NA,NA,http://www.kalispeltribe.com,47.6469353,-117.5779252,SA
+Blue Mountain Counseling,Columbia County,221 East Washington Street,NA,Dayton,WA,99328,NA,Columbia,509-382-1164,NA,NA,NA,http://www.bluemtncounseling.org,46.3218193,-117.9815504,SA
+Blue Mountain Counseling of,Columbia County,221 East Washington Avenue,NA,Dayton,WA,99328,NA,Columbia,509-382-1164,Intake,NA,866-382-1164,http://www.bluemtncounseling.org,46.321436,-117.981786,MH
+Spokane VAMC,Behavioral Health Services (116),4815 North Assembly Street,NA,Spokane,WA,99205,NA,Spokane,509-434-7013,NA,NA,NA,http://www.spokane.va.gov,47.7029335,-117.4776913,MH
+Passages Family Support,NA,1700 South Assembly Street,Suite 300,Spokane,WA,99224,NA,Spokane,509-892-9241,NA,NA,NA,http://www.passages-spokane.org,47.6396676,-117.4763401,MH
+Excelsior Youth Center,DBA Excelsior Wellness,3754 West Indian Trail Road,NA,Spokane,WA,99208,NA,Spokane,509-559-3100,Intake,NA,509-328-7041,http://www.excelsiorwellness.org,47.7240049,-117.467122,MH
+Excelsior Wellness Center,NA,3754 West Indian Trail Road,NA,Spokane,WA,99208,NA,Spokane,509-559-3100,NA,509-559-3160,NA,http://www.ExcelsiorWellness.org,47.7240049,-117.467122,SA
+Adept Assessment Center,Deer Park,104 West Crawford Street,NA,Deer Park,WA,99006,NA,Spokane,509-276-2797,NA,NA,NA,http://www.adeptbehavioralhealth.com/,47.9545081,-117.479604,SA
+Supported Education and Employment,Enhancing Rehabilitation (SEER),3305 Whistalks Way,NA,Spokane,WA,99224,NA,Spokane,509-279-6055,Intake,NA,509-279-6259,http://sccel.spokane.edu/SEER,47.6750573,-117.4615475,MH
+Tamarack Center,NA,2901 West Elliott Drive,NA,Spokane,WA,99224,5202,Spokane,509-326-8100 x304,Intake,509-326-8100 x302,NA,http://tamarack.org,47.6769143,-117.4546134,MH
+Catholic Charities of Eastern WA,Community Behavioral Health Services,1960 North Holy Names Court,Floor 3,Spokane,WA,99224,NA,Spokane,509-242-2308,NA,NA,NA,http://www.cceasternwa.org/,47.6750106,-117.452083,MH
+New Horizon Care Centers,Isabella House,2308 West 3rd Avenue,NA,Spokane,WA,99201,NA,Spokane,509-624-1244 x110,NA,509-624-1244 x108,NA,http://www.nhccspokane.org,47.653907,-117.446634,SA
+NATIVE Project,NA,1803 West Maxwell Avenue,NA,Spokane,WA,99201,NA,Spokane,509-325-5502,NA,NA,NA,http://www.nativeproject.org,47.670558,-117.439184,SA
+NATIVE Project,NA,1803 West Maxwell Avenue,NA,Spokane,WA,99201,NA,Spokane,509-325-5502,Intake,NA,509-483-7535,http://www.nativeproject.org,47.670556,-117.4391691,MH
+Adept Assessment Center,DBA Adept,1321 North Ash Street,NA,Spokane,WA,99201,NA,Spokane,509-327-3120,NA,NA,NA,http://www.adeptbehavioralhealth.com,47.6695372,-117.4372239,SA
+Spokane Addiction Recovery Centers,Outpatient Services,1508 West 6th Avenue,NA,Spokane,WA,99204,NA,Spokane,509-624-5228,NA,NA,NA,http://www.sparcop.org,47.6506709,-117.4345187,SA
+Spokane Addiction Recovery Centers,(SPARC),520 South Walnut Street,NA,Spokane,WA,99204,NA,Spokane,509-241-3130,NA,NA,NA,http://www.sparcop.org,47.6507914,-117.4343736,MH
+Spokane Addiction Recovery Centers,Christoph House,812 South Walnut Street,NA,Spokane,WA,99204,NA,Spokane,509-624-3251,NA,NA,NA,http://www.sparcop.org,47.6479759,-117.4343486,SA
+Karens House,NA,4324 North Jefferson Street,NA,Spokane,WA,99205,NA,Spokane,509-315-8682,NA,509-328-3514,NA,http://www.spokanerecovery.org,47.6981995,-117.4281307,SA
+Karens House,NA,4324 North Jefferson Street,NA,Spokane,WA,99205,NA,Spokane,509-315-8682,Intake,509-328-3514,NA,http://www.spokanerecovery.org,47.6981995,-117.4281307,MH
+Spokane Regional Health District,Treatment Services,West 1101 College Avenue,NA,Spokane,WA,99201,NA,Spokane,509-324-1420,NA,NA,NA,http://www.SRHD.org,47.6631,-117.428367,SA
+Ideal Option,Spokane/Monroe Court,901 North Monroe Street,Suite 322,Spokane,WA,99201,NA,Spokane,877-522-1275,NA,NA,NA,http://idealoption.com,47.6656051,-117.4272401,SA
+Spokane Addiction Recovery Centers,Westbrook House,- - -,NA,Spokane,WA,99204,NA,Spokane,509-624-3251,NA,NA,NA,http://www.sparcop.org,47.6476,-117.427,SA
+Spokane Addiction Recovery Centers,Shaw House,- - -,NA,Spokane,WA,99204,NA,Spokane,509-624-3251,NA,NA,NA,http://www.sparcop.org,47.6476,-117.427,SA
+Spokane Addiction Recovery Centers,Delaney House,- - -,NA,Spokane,WA,99204,NA,Spokane,509-624-3251,NA,NA,NA,http://www.sparcop.org,47.6476,-117.427,SA
+Riverside Recovery Center,Spokane,3710 North Monroe Street,NA,Spokane,WA,99205,NA,Spokane,509-328-5234,NA,NA,NA,http://www.riversidespokane.com,47.6920005,-117.4255982,SA
+YWCA of Spokane,NA,930 North Monroe Street,NA,Spokane,WA,99201,NA,Spokane,509-789-9297,NA,NA,NA,http://www.ywcaspokane.org,47.6661218,-117.4258829,MH
+Colonial Clinic,NA,North 910 Washington Street,Suite 210,Spokane,WA,99201,NA,Spokane,509-327-9831,NA,NA,NA,http://www.colonialclinic.com,47.6658070098221,-117.417413191474,SA
+Ideal Option,Spokane/Washington Street,507 South Washington Street,Suite 101,Spokane,WA,99201,NA,Spokane,877-522-1275,NA,NA,NA,http://idealoption.com,47.6510115,-117.4173785,SA
+Frontier Behavioral Health,Stabilization Services,1401 North Calispell Street,NA,Spokane,WA,99201,NA,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6708554,-117.4163951,MH
+Frontier Behavioral Health,Calispel Evaluation and Trt Facility,1401 North Calispel Street,NA,Spokane,WA,99201,NA,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6708554,-117.4163951,MH
+Spokane Treatment and Recovery Servs,NA,105 West 3rd Street,NA,Spokane,WA,99201,NA,Spokane,509-477-4631,Intakes,509-477-4650,509-477-4649,http://spokanerecovery.org,47.6486641,-117.4168274,SA
+Frontier Behavioral Health,Boone,107 South Division Street,NA,Spokane,WA,99202,1510,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6679561,-117.4141773,MH
+Lutheran Community Services NW,Inland Northwest Office,210 West Sprague Avenue,NA,Spokane,WA,99201,3627,Spokane,509-747-8224,NA,NA,NA,http://www.lcsnw.org,47.657457,-117.413658,MH
+Partners with Families and Children,NA,106 West Mission Avenue,NA,Spokane,WA,99201,2337,Spokane,509-473-4810,Intakes,509-473-4817,509-473-4811,http://www.partnerswithfamilies.org,47.6720917,-117.4132148,SA
+Partners with Families and Children,NA,106 West Mission Avenue,NA,Spokane,WA,99201,2337,Spokane,509-473-4810,NA,NA,NA,http://www.partnerswithfamilies.org,47.6720917,-117.4132148,MH
+Sun Ray Court,Adult Male Branch,518 South Browne Street,NA,Spokane,WA,99204,NA,Spokane,509-456-5465,NA,509-456-5465 x402,NA,http://www.nhccspokane.org,47.6506537,-117.4136223,SA
+Providence Sacred Heart Medical Center,NA,101 West 8th Avenue,NA,Spokane,WA,99220,NA,Spokane,509-474-4745,Intake,509-474-3778,NA,http://washington.providence.org/,47.6491384,-117.4134726,MH
+Frontier Behavioral Health,Child and Family Services,131 South Division Street,NA,Spokane,WA,99202,1510,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6556648,-117.4111722,MH
+Frontier Behavioral Health,Main/Mary Higgins Building,107 South Division Street,NA,Spokane,WA,99202,NA,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6564638,-117.4110428,MH
+Frontier Behavioral Health,Cornerstone,17 East 1st Avenue,NA,Spokane,WA,99202,NA,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6567876,-117.4103221,MH
+American Behavioral Health Systems,Cozza,44 East Cozza Drive,NA,Spokane,WA,99208,NA,Spokane,509-325-6800,Intakes,509-232-5766,866-729-8038,http://www.americanbehavioralhealth.net,47.7245103,-117.4094988,SA
+Spokane Falls Recovery Center,NA,101 East Magnesium Road,Suite 101,Spokane,WA,99208,NA,Spokane,800-301-7372,NA,NA,NA,http://www.spokanefallsrecoverycenter.com,47.736974,-117.4094331,SA
+Frontier Behavioral Health,Short Avenue,124 East Short Avenue,NA,Spokane,WA,99202,NA,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6549436,-117.4093254,MH
+Frontier Behavioral Health,Pacific Avenue,107 South Division Street,NA,Spokane,WA,99202,1510,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6553831,-117.4088049,MH
+Daybreak Youth Services,Spokane Inpatient,628 South Cowley Street,NA,Spokane,WA,99202,NA,Spokane,509-624-3227,Intakes,888-454-5506 x1006,509-624-3227 x1006,https://daybreakyouthservices.org/,47.6502164,-117.4085659,SA
+Daybreak Youth Services,Spokane Inpatient,628 South Cowley Street,NA,Spokane,WA,99202,NA,Spokane,509-624-3227 x1010,Intake,509-624-3227 x1003,NA,https://daybreakyouthservices.org/,47.6502164,-117.4085659,MH
+Ideal Option,Spokane/East Francis,208 East Francis Avenue,NA,Spokane,WA,99208,NA,Spokane,877-522-1275,NA,NA,NA,http://idealoption.com,47.7148908,-117.4068252,SA
+Frontier Behavioral Health,Lidgerwood,5901 North Lidgerwood Street,Suite 115,Spokane,WA,99208,NA,Spokane,509-838-4651,NA,NA,NA,http://fbhwa.org/,47.7121143,-117.4068189,MH
+Ideal Option,Spokane/North Colton,6208 North Colton Street,NA,Spokane,WA,99208,NA,Spokane,877-522-1275 x1,NA,877-522-1275,NA,http://idealoption.com,47.7144715,-117.4066995,SA
+Frontier Behavioral Health,PACT,107 South Division Street,NA,Spokane,WA,99202,NA,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6831945,-117.403656,MH
+Frontier Behavioral Health,Foothills Evaluation and Treatment Ctr,107 South Division Street,NA,Spokane,WA,99202,NA,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6831945,-117.403656,MH
+Royal Life Centers LLC,Spokane Detox,524 East Francis Avenue,NA,Spokane,WA,99208,NA,Spokane,509-368-9735,NA,877-732-6837,NA,http://www.royallifecenters.com,47.7146884,-117.4023175,SA
+American Behavioral Health Systems,Spokane Outpatient,715 East Sprague Avenue,Suite 107,Spokane,WA,99202,NA,Spokane,509-232-5766,NA,509-934-1078,NA,http://www.americanbehavioralhealth.net,47.6575733,-117.3995154,SA
+Emily Program,Spokane,2020 East 29th Avenue,Suite 200,Spokane,WA,99203,NA,Spokane,888-364-5977,NA,NA,NA,http://www.emilyprogram.com,47.6279456,-117.3810567,MH
+Frontier Behavioral Health,Sprague,2118 East Sprague Avenue,NA,Spokane,WA,99202,NA,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.6570454,-117.3786385,MH
+Frontier Behavioral Health,Raschko Elder Services,5125 North Market Street,NA,Spokane,WA,99217,NA,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.7050005,-117.3651445,MH
+YFA Connections,NA,22 South Thor Street,NA,Spokane,WA,99202,NA,Spokane,509-532-2000,Intakes,509-532-2000 x15,509-532-2000 x12,http://www.yfaconnections.org,47.656723,-117.360708,SA
+YFA Connections,Outpatient Mental Health Agency,22 South Thor Street,NA,Spokane,WA,99202,NA,Spokane,509-532-2000 x10,Intake,509-532-2000 x15,NA,http://www.yfaconnections.org,47.6566829,-117.3606465,MH
+Social Treatment Opportunity Programs,(STOP) Spokane,104 South Freya Street,"Blue Flag Building, Suite 206",Spokane,WA,99202,NA,Spokane,253-471-0890,NA,509-927-3668,NA,http://STOPWA.COM,47.6544682,-117.358615,SA
+Royal Life Centers LLC,Cascade,14525 North Newport Highway,NA,Mead,WA,99021,NA,Spokane,509-340-9643,NA,877-732-6837,NA,http://www.royallifecenters.com,47.7899544,-117.3531801,SA
+Spokane Treatment Solutions,NA,4305 East Trent Avenue,NA,Spokane,WA,99212,NA,Spokane,509-795-3133,NA,NA,NA,http://www.crchealth.com,47.6715241,-117.3462652,SA
+Healing Lodge of the Seven Nations,Sage Boys CD,5600 East 8th Avenue,NA,Spokane,WA,99212,0220,Spokane,509-533-6910,Intakes,509-533-6910 x8341,509-533-6910 x8321,http://www.healinglodge.org,47.6464557,-117.3287935,SA
+Healing Lodge of the Seven Nations,Butterfly PelPalWichiya Girls CD,5600 East 8th Avenue,NA,Spokane,WA,99212,0220,Spokane,509-533-6910,Intakes,509-533-6910 x8372,509-533-6910 x8321,http://www.healinglodge.org,47.6464557,-117.3287935,SA
+Healing Lodge of the Seven Nations,Cedar Boys COD,5600 East 8th Avenue,NA,Spokane,WA,99212,NA,Spokane,509-533-6910,Intakes,509-533-6910 x8372,509-533-6910 x8341,http://www.healinglodge.org,47.6464557,-117.3287935,SA
+Frontier Behavioral Health,Argonne Road,505 North Argonne Road,Suite B-206,Spokane,WA,99212,NA,Spokane,509-838-4651,NA,NA,NA,http://fbhwa.org/,47.6615054,-117.2836279,MH
+Daybreak Youth Services,Spokane Outpatient,200 North Mullan Road,Suite 120,Spokane,WA,99206,NA,Spokane,509-927-1688,NA,509-927-1688 x7000,NA,https://daybreakyouthservices.org/,47.6589825,-117.2807433,SA
+Garfield County Human Services,Branch of Quality Behavioral Health,856 Main Street,NA,Pomeroy,WA,99347,NA,Garfield,509-843-3791,NA,NA,NA,http://www.qbhs.org,46.4746089,-117.6014996,SA
+Quality Behavioral Health,NA,900 7th Street,NA,Clarkston,WA,99403,NA,Asotin,509-843-3791,Intake,509-758-3341,NA,http://www.qbhs.org,46.4746089,-117.6014996,MH
+Sunshine Terrace,Community Mental Health Agency (ARTF),1102 South Raymond Road,NA,Spokane,WA,99206,NA,Spokane,509-892-4342 x203,Intake,509-892-4342,NA,http://www.sunshinehealthfacilities.com,47.6471348,-117.2648452,MH
+Sunshine Behavioral Health,NA,1102 South Raymond Road,NA,Spokane,WA,99206,NA,Spokane,509-892-4342,NA,NA,NA,http://shfi.com,47.647547,-117.2647011,MH
+Breakthrough Recovery Group Inc,NA,11711 East Sprague Avenue,Suite D-4,Spokane,WA,99206,NA,Spokane,509-927-6838,NA,NA,NA,http://www.BTRGspokane.com,47.6575937,-117.2470448,SA
+Frontier Behavioral Health,North Pines,317 North Pines Road,NA,Spokane,WA,99206,NA,Spokane,509-838-4651,NA,NA,NA,http://www.fbhwa.org,47.66026,-117.240688,MH
+American Behavioral Health Systems,Mission,12715 East Mission Avenue,NA,Spokane,WA,99216,NA,Spokane,509-232-5766,NA,NA,866-729-8038,http://www.americanbehavioralhealthsystems.net,47.6722562,-117.233194,SA
+Psychiatric Solutions,NA,1620 North Mamer Road,Building B-100,Spokane,WA,99216,NA,Spokane,509-863-9779,Intake,509-863-9779 x213,NA,http://psychsolutions.com/,47.6724424,-117.2185435,MH
+Cub House,Spokane Treatment and Recovery Servs,14819 East Mission Avenue,NA,Spokane,WA,99216,NA,Spokane,509-315-9791,NA,NA,NA,http://www.spokanerecovery.org,47.6690157,-117.2051231,MH
+CubHouse,Spokane Treatment and Recovery Servs,14819 East Mission Avenue,NA,Spokane,WA,99216,NA,Spokane,509-315-9791,NA,NA,509-368-9300,http://www.spokanerecovery.org,47.6690157,-117.2051231,SA
+Pend Oreille County Counseling Servs,Chemical Dependency Treatment,105 South Garden Avenue,NA,Newport,WA,99156,NA,Pend Oreille,509-447-5651,NA,NA,800-404-5151,http://www.pendoreilleco.org,48.1799404,-117.0585756,SA
+Pend Oreille County Counseling Service,NA,105 South Garden Avenue,NA,Newport,WA,99156,NA,Pend Oreille,509-447-5651,Intake,NA,509-404-5151,http://www.pendoreilleco.org,48.1799404,-117.0585756,MH
+Ideal Option,Pullman,745 North Grand Avenue,Suite 107,Pullman,WA,99163,NA,Whitman,877-522-1275,NA,NA,NA,http://idealoption.com,46.7361523,-117.1759337,SA
+Palouse River Counseling,NA,340 NE Maple Street,NA,Pullman,WA,99163,4120,Whitman,509-334-1133,NA,NA,NA,http://www.palouserivercounseling.org,46.730767,-117.177578,MH
+Palouse River Counseling,NA,340 Maple Street NE,NA,Pullman,WA,99163,NA,Whitman,509-334-1133,NA,NA,NA,http://www.palouserivercounseling.org,46.7307404520691,-117.17756426858,SA
+Palouse Recovery Center LLC,NA,1240 SE Bishop Boulevard,Suite P,Pullman,WA,99163,NA,Whitman,509-334-0718,NA,NA,NA,http://www.PalouseRecoveryCenter.com,46.7175964,-117.1648529,SA
+Ideal Option,Clarkston,1372 Bridge Street,NA,Clarkston,WA,99403,NA,Asotin,877-522-1275,NA,NA,NA,http://idealoption.com,46.4199651,-117.062557,SA
+Quality Behavioral Health,NA,900 7th Street,NA,Clarkston,WA,99403,NA,Asotin,509-758-3341,NA,NA,NA,http://www.qbhs.org,46.412504,-117.0473022,MH
+Quality Behavioral Health,NA,900 7th Street,NA,Clarkston,WA,99403,NA,Asotin,509-758-3341,NA,NA,NA,http://www.qbhs.org,46.412671,-117.046895,SA

@@ -1,0 +1,40 @@
+GEOID,NAME,male_under_5E,male_under_5M,female_under_5E,female_under_5M,masters_degreeE,masters_degreeM,owner_occupiedE,owner_occupiedM
+53001,"Adams County, Washington",942,7,925,4,460,109,3831,279
+53003,"Asotin County, Washington",678,76,558,69,841,156,6665,289
+53005,"Benton County, Washington",7081,86,6747,97,11525,929,50750,949
+53007,"Chelan County, Washington",2368,34,2257,88,3804,562,18593,563
+53009,"Clallam County, Washington",1852,103,1504,33,4997,500,24188,651
+53011,"Clark County, Washington",15303,119,14099,120,28442,1221,122549,1229
+53013,"Columbia County, Washington",66,29,110,36,209,74,1328,96
+53015,"Cowlitz County, Washington",3327,113,3160,75,3292,400,28101,793
+53017,"Douglas County, Washington",1455,65,1267,24,1389,269,10352,397
+53019,"Ferry County, Washington",179,47,161,36,275,119,2150,159
+53021,"Franklin County, Washington",4277,131,3980,85,3104,432,19337,711
+53023,"Garfield County, Washington",38,22,52,44,158,65,785,93
+53025,"Grant County, Washington",3660,33,3638,79,2391,341,21097,807
+53027,"Grays Harbor County, Washington",1865,38,1987,92,2705,438,20449,677
+53029,"Island County, Washington",2277,90,2389,93,6331,605,25683,695
+53031,"Jefferson County, Washington",392,21,507,71,3688,380,12206,430
+53033,"King County, Washington",64141,NA,60971,NA,256538,4021,510552,3876
+53035,"Kitsap County, Washington",7869,NA,7328,NA,17112,850,72519,1187
+53037,"Kittitas County, Washington",957,80,903,78,2160,386,11258,383
+53039,"Klickitat County, Washington",433,43,607,65,1452,300,6777,356
+53041,"Lewis County, Washington",2478,54,2242,49,3354,435,22445,613
+53043,"Lincoln County, Washington",283,21,302,38,482,109,3484,133
+53045,"Mason County, Washington",1741,109,1663,69,2128,332,19656,647
+53047,"Okanogan County, Washington",1317,56,1186,17,1615,260,11409,507
+53049,"Pacific County, Washington",483,42,380,64,1069,211,8206,378
+53051,"Pend Oreille County, Washington",303,47,297,30,594,127,4339,257
+53053,"Pierce County, Washington",30157,NA,28576,NA,44151,1719,216271,1969
+53055,"San Juan County, Washington",246,22,260,18,2093,141,6363,190
+53057,"Skagit County, Washington",3782,49,3605,63,6960,492,35645,755
+53059,"Skamania County, Washington",204,14,293,53,631,120,3773,160
+53061,"Snohomish County, Washington",26058,200,24824,88,49415,1770,206932,2000
+53063,"Spokane County, Washington",15922,NA,15233,NA,29438,1299,133285,1750
+53065,"Stevens County, Washington",1277,88,1129,77,1949,316,14420,429
+53067,"Thurston County, Washington",8686,60,7776,61,20847,1055,76475,1283
+53069,"Wahkiakum County, Washington",80,22,82,46,234,77,1659,134
+53071,"Walla Walla County, Washington",1556,58,1610,48,3437,470,14846,463
+53073,"Whatcom County, Washington",5801,77,5547,77,14408,1085,56078,1110
+53075,"Whitman County, Washington",1051,95,927,87,3114,380,8000,334
+53077,"Yakima County, Washington",10147,83,9729,83,7533,719,52441,1128
