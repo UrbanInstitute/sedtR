@@ -16,5 +16,10 @@ Authors:
   \item Alena Stern \email{astern@urban.org}
 }
 
+Other contributors:
+\itemize{
+  \item Eli Pousson \email{eli.pousson@gmail.com} (\href{https://orcid.org/0000-0001-8280-1706}{ORCID}) [contributor]
+}
+
 }
 \keyword{internal}

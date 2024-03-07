@@ -1,46 +1,47 @@
 Package: sedtR
-Title: sedtR allows programmers to call the Urban Institute's Spatial Equity Data Tool API
+Title: sedtR allows programmers to call the Urban Institute's Spatial
+    Equity Data Tool API
 Version: 0.0.0.1000
-Authors@R: 
-    c(person(given = "Gabriel", 
-             family = "Morrison", 
-             email = "gmorrison@urban.org", 
-             role = c("aut", "cre")),
-      person(given = "Alena", 
-             family = "Stern", 
-             email = "astern@urban.org", 
-             role = "aut")
-      )
-Maintainer: Gabriel Morrison <gmorrison@urban.org>
-Description: The Urban Institute has developed the Spatial Equity Data Tool to 
-  analyze the equitability of resources across cities, counties, states, and the
-  entirety of the United States. This package allows users to call the Spatial
-  Equity Data Tool API programmatically using R code. 
-License: GPL (>= 3) + file LICENSE
-Encoding: UTF-8
 Date: 2023-07-14
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+Authors@R: c(
+    person("Gabriel", "Morrison", , "gmorrison@urban.org", role = c("aut", "cre")),
+    person("Alena", "Stern", , "astern@urban.org", role = "aut"),
+    person("Eli", "Pousson", , "eli.pousson@gmail.com", role = "ctb",
+           comment = c(ORCID = "0000-0001-8280-1706"))
+  )
+Maintainer: Gabriel Morrison <gmorrison@urban.org>
+Description: The Urban Institute has developed the Spatial Equity Data
+    Tool to analyze the equitability of resources across cities, counties,
+    states, and the entirety of the United States. This package allows
+    users to call the Spatial Equity Data Tool API programmatically using
+    R code.
+License: GPL (>= 3) + file LICENSE
 Imports:
-  dplyr,
-  forcats,
-  geojsonsf,
-  ggplot2,
-  httr,
-  janitor,
-  jsonlite,
-  purrr,
-  rjson,
-  scales,
-  stringr,
-  urbnthemes,
-  utils,
-  tmap,
-  testthat,
-  here,
-  openxlsx,
-  readr,
-  testthat,
-  tidycensus,
-  tidyr,
-  tidyselect
+    geojsonsf,
+    httr,
+    jsonlite,
+    purrr,
+    rjson,
+    rlang,
+    stringr,
+    utils
+Suggests: 
+    dplyr,
+    forcats,
+    ggplot2,
+    here,
+    janitor,
+    openxlsx,
+    readr,
+    scales,
+    testthat,
+    tidycensus,
+    tidyr,
+    tidyselect,
+    tmap,
+    urbnthemes (>= 0.0.2)
+Remotes: 
+    UrbanInstitute/urbnthemes
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
