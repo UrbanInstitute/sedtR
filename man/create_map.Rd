@@ -8,7 +8,7 @@ create_map(
   geo_df,
   col_to_plot = "diff_pop",
   save_map = TRUE,
-  interactive = TRUE,
+  interactive = rlang::is_interactive(),
   file_path = "bias_map"
 )
 }
