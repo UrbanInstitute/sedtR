@@ -82,7 +82,7 @@ convert_to_na <- function(col_name) {
 
 get_api_results <- function(file_id) {
   #check status
-  status_url <- stringr::str_glue("{base_url}/api/v1/get-output-data-status/{file_id}/")
+  status_url <- sedt_url("get-output-data-status/{file_id}/")
   Sys.sleep(3L)
   response <- httr::GET(url = status_url)
   # if the request for the status is not successful, return error
@@ -129,7 +129,7 @@ get_api_results <- function(file_id) {
     # if the job finished, get the file
     print("getting output file")
     #get file
-    output_data_url <- stringr::str_glue("{base_url}/api/v1/get-output-data/{file_id}/")
+    output_data_url <- sedt_url("get-output-data/{file_id}/")
 
     response <- httr::GET(
       url = output_data_url

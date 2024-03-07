@@ -17,6 +17,11 @@ create_demo_chart <- function(demo_df,
                               save_chart = TRUE,
                               file_path = "dem_disparity_chart.png") {
 
+  rlang::check_installed(
+    c("forcats", "janitor", "scales", "ggplot2", "dplyr"),
+    reason = "to use the `create_demo_chart()` function."
+  )
+
   #Data is correct class:
   stopifnot("data.frame" %in% class(demo_df))
   stopifnot(is.logical(save_chart))
@@ -97,10 +102,10 @@ create_demo_chart <- function(demo_df,
       underrep_label = grid::textGrob(label = "Underrepresented", x = .02, y = 0.02,
                                 just = c("left", "top"),
                                 rot = 90,
-                                gp=gpar(fontface = "bold",
+                                gp=grid::gpar(fontface = "bold",
                                         fontfamily = "Lato",
                                         #col = "#eec046",
-                                        col = palette_urbn_diverging[7],
+                                        col = urbnthemes::palette_urbn_diverging[7],
                                         fontsize = 22,
                                         #alpha = 0.5
                                         alpha = .75
@@ -109,46 +114,46 @@ create_demo_chart <- function(demo_df,
       overrep_label = grid::textGrob(label = "Overrepresented", x = .96, y = 0.98,
                                      just = c("right", "top"),
                                      rot = 90,
-                                     gp=gpar(fontface = "bold",
+                                     gp=grid::gpar(fontface = "bold",
                                              fontfamily = "Lato",
-                                             col = palette_urbn_diverging[1],
+                                             col = urbnthemes::palette_urbn_diverging[1],
                                              fontsize = 22,
                                              alpha = 0.75))
 
       plot <-
         df_plot |>
-          ggplot2::ggplot(aes(y = census_var, x = diff_data_city)) +
+          ggplot2::ggplot(ggplot2::aes(y = census_var, x = diff_data_city)) +
           ggplot2::geom_vline(xintercept = 0, color = urbnthemes::palette_urbn_gray[8]) +
-          ggplot2::geom_segment(aes(x = 0,
+          ggplot2::geom_segment(ggplot2::aes(x = 0,
                                     xend = diff_data_city,
                                     y = census_var,
                                     yend = census_var),
                                 color = urbnthemes::palette_urbn_gray[6]) +
-          ggplot2:: geom_point(aes(color = pos_diff)) +
+          ggplot2::geom_point(ggplot2::aes(color = pos_diff)) +
           # Put text to left/right of 0 line to match equity tool
           ggplot2::geom_text(data = df_plot |>
                                dplyr::filter(diff_data_city >= 0),
-                             aes(x = 0, y = census_var, label = census_var),
+                             ggplot2::aes(x = 0, y = census_var, label = census_var),
                              nudge_x  = -(max_val * 0.01),
                              hjust = "right",
                              size = 5) +
           ggplot2::geom_text(data = df_plot |>
                                dplyr::filter(diff_data_city < 0),
-                             aes(x = 0, y = census_var, label = census_var),
+                             ggplot2::aes(x = 0, y = census_var, label = census_var),
                              nudge_x  = max_val * 0.01,
                              hjust = "left",
                              size = 5) +
           ggplot2::annotation_custom(underrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
           ggplot2::annotation_custom(overrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
           ggplot2::scale_color_manual(values = c('positive' = palette_urbn_diverging[1],
-                                        'negative' = palette_urbn_diverging[7])) +
+                                        'negative' = urbnthemes::palette_urbn_diverging[7])) +
           ggplot2::scale_x_continuous(position = "top",
                              limits = c(-max_val, max_val),
                              labels = scales::percent) +
           ggplot2::labs(y = "", x = "") +
-          ggplot2::theme(panel.grid.major = element_blank(),
-                panel.grid.minor = element_blank(),
-                axis.text.y = element_blank(),
+          ggplot2::theme(panel.grid.major = ggplot2::element_blank(),
+                panel.grid.minor = ggplot2::element_blank(),
+                axis.text.y = ggplot2::element_blank(),
                 legend.position = "none")
 
       print(plot)

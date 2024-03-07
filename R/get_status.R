@@ -8,7 +8,7 @@
 get_status <- function(file_id) {
 
 
-  status_url <- stringr::str_glue("{base_url}/api/v1/get-output-data-status/{file_id}/")
+  status_url <- sedt_url("get-output-data-status/{file_id}/")
   response <- httr::GET(url = status_url)
 
   r_json <- httr::content(response, as = "text")
