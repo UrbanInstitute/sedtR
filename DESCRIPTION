@@ -39,7 +39,8 @@ Suggests:
     tidyr,
     tidyselect,
     tmap,
-    urbnthemes (>= 0.0.2)
+    urbnthemes (>= 0.0.2),
+    withr
 Remotes: 
     UrbanInstitute/urbnthemes
 Encoding: UTF-8
