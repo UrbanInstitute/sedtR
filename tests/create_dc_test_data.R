@@ -12,7 +12,7 @@ test_demo <- tidycensus::get_acs(geography = "tract",
                                                )
                                  ) |>
   tidyr::pivot_wider(names_from = "variable", values_from = c("estimate", "moe")) |>
-  dpylr::rename(
+  dplyr::rename(
     nh_white_pop =  "estimate_B01001H_001",
     nh_white_pop_margin = "moe_B01001H_001",
     hispanic = "estimate_B01001I_001",
@@ -55,7 +55,7 @@ readr::write_csv(missing_lat_lon, "tests/testthat/data/dc_test_api_resource_miss
 
 #For some missing margin columns
 test_demo |>
-  dpylr::select(-hispanic_men_margin, -hispanic_margin) |>
+  dplyr::select(-hispanic_men_margin, -hispanic_margin) |>
   readr::write_csv("tests/testthat/data/dc_test_api_demographic-missing_margins.csv")
 
 test_baseline |>
