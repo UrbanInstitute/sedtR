@@ -1,6 +1,6 @@
 Package: sedtR
 Title: sedtR allows programmers to call the Urban Institute's Spatial Equity Data Tool API
-Version: 0.0.0.1000
+Version: 0.0.0.2000
 Authors@R: 
     c(person(given = "Gabriel", 
              family = "Morrison", 
@@ -15,10 +15,12 @@ Maintainer: Gabriel Morrison <gmorrison@urban.org>
 Description: The Urban Institute has developed the Spatial Equity Data Tool to 
   analyze the equitability of resources across cities, counties, states, and the
   entirety of the United States. This package allows users to call the Spatial
-  Equity Data Tool API programmatically using R code. 
+  Equity Data Tool API programmatically using R code.
+URL: https://github.com/UrbanInstitute/sedtR
+BugReports: https://github.com/UrbanInstitute/sedtR/issues
 License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
-Date: 2023-07-14
+Date: 2024-03-08
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports:
@@ -44,3 +46,5 @@ Imports:
   tidycensus,
   tidyr,
   tidyselect
+Remotes:
+  UrbanInstitute/urbnthemes
