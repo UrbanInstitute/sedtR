@@ -115,22 +115,8 @@ get_api_results <- function(file_id) {
     print("getting output file")
     #get file
     output_data <- get_output_data(file_id)
+    return(output_data)
 
-      df_list <- list(
-        dd = demo,
-        gd = geo,
-        full_api_results = r_list
-      )
-
-      return(df_list)
-
-    } else {
-      print("hit an error!")
-      r_json <- httr::content(response, as = "text")
-      error_text <- rjson::fromJSON(r_json)
-      return_message <- stringr::str_glue("The analysis for your uploaded data did not succeed. The error is {error_text}")
-      return(return_message)
-    }
   } else {
     print("hit an error!")
     error_messages <- paste(names(lapply(status_list[["results"]][["formdata"]][["error-messages"]], function(x) x[isTRUE(x)])), " ")
