@@ -23,6 +23,12 @@ create_map <- function(geo_df,
                        file_path = "bias_map"
 
                        ){
+
+  rlang::check_installed(
+    c("urbnthemes", "tmap", "dplyr"),
+    reason = "to use the `create_map()` function."
+  )
+
   #Check all Inputs for correct types:
   stopifnot("sf" %in% class(geo_df))
   stopifnot(is.logical(save_map))
@@ -40,17 +46,17 @@ create_map <- function(geo_df,
       # interactive is true
       file_suffix = ".png"
       if(interactive){
-        tmap_mode("view")
+        tmap::tmap_mode("view")
         file_suffix = ".html"
       }
 
       # replace observations that are not significantly different with NA
       # multiply by 100 to convert to percentage
       geo_df <- geo_df |>
-        dplyr::mutate(!!sym(col_to_plot) :=
-                 dplyr::if_else(!!sym(stringr::str_glue("sig_{col_to_plot}")) == "FALSE",
+        dplyr::mutate(!!rlang::sym(col_to_plot) :=
+                 dplyr::if_else(!!rlang::sym(stringr::str_glue("sig_{col_to_plot}")) == "FALSE",
                          NA_real_,
-                         !!sym(col_to_plot)*100
+                         !!rlang::sym(col_to_plot)*100
                          )
                )
 

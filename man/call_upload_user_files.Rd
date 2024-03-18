@@ -28,7 +28,7 @@ dataset is stored. Dataset should be a csv or tsv}
 \item{resource_lat_column}{(string) a column name in in the resource_file
 dataset indicating the resource latitude column}
 
-\item{resource_lon_column}{(string)a column name in in the resource_file
+\item{resource_lon_column}{(string) a column name in in the resource_file
 dataset indicating the resource longitude column}
 
 \item{demographic_file_path}{(string) Optional: a path to the location where
@@ -58,9 +58,9 @@ are either the names of their respective standard error columns or NA if the
 column lacks standard error data.}
 
 \item{resource_filters}{(string representation of Python list of dictionaries).
-Optional. Each dictionary has the structure {"filter_column":"\link{Column Name}",
-"filter_comparison" : "\link{Comparison Operator}", "filter_type":"\link{type}",
-"filter_val":"\link{filter value}"}. The filter-column key should be paired with
+Optional. Each dictionary has the structure {"filter_column":"[Column Name]",
+"filter_comparison" : "[Comparison Operator]", "filter_type":"[type]",
+"filter_val":"[filter value]"}. The filter-column key should be paired with
 a column name in the resource dataset. The filter_comparison operator should
 be one of the following: "==", ">=", "<=", "<", ">", "!=", or "dateRange".
 The filter type should be one of "string", "number" or "date." filter_val
@@ -86,9 +86,9 @@ four digit year beginning with "20" must be inputted. If it is different than
 "2019" or "2021" the tool will use 2021 data.}
 }
 \value{
-response (list): The function wraps httr::POST() which
+response (list): The function wraps \code{\link[httr:POST]{httr::POST()}} which
 returns a "response object" which is a list with information about the request.
-See the \link{httr documentation}(api_url = "https://equity-tool-api.urban.org/api/v1/upload-user-file/")
+See the [httr documentation](api_url = "https://equity-tool-api.urban.org/api/v1/upload-user-file/")
 for more details.
 }
 \description{
