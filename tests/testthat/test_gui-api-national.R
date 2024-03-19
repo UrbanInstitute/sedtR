@@ -49,15 +49,16 @@ test_that("API and GUI results match for national", {
 
   gui_geo_cols <- names(gui_geo)
 
-  api_dem <- dplyr::as_tibble(df_list$dd) |>
-    dplyr::mutate(
-      geo_fips = as.character(geo_fips),
-      dplyr::across(.cols = tidyselect::where(is.numeric),
+  api_dem <- readr::read_csv(df_list$download_links$demographic_bias_csv,
+                             col_types = c("geo_fips" = "character")) |>
+    dplyr::mutate(dplyr::across(.cols = tidyselect::where(is.numeric),
                                 ~round(.x, digits = 3)))
 
-  api_geo <- dplyr::as_tibble(df_list$gd) |>
+  api_geo <- readr::read_csv(df_list$download_links$geo_bias_csv,
+                             col_types = c("GEOID" = "character")) |>
     # reorder cols to match gui
     dplyr::select(tidyselect::all_of(gui_geo_cols), -geometry) |>
+    dplyr::mutate(dplyr::across(.cols = starts_with("sig_diff"), ~as.character(.x))) |>
     dplyr::mutate(dplyr::across(.cols = where(is.numeric), ~round(.x, digits = 3))) %>%
     dplyr::arrange(GEOID)
 
@@ -102,13 +103,13 @@ test_that("API and GUI results match for national", {
 
   gui_geo_cols <- names(gui_geo)
 
-  api_dem <- dplyr::as_tibble(df_list$dd) |>
-    dplyr::mutate(
-      geo_fips = as.character(geo_fips),
-      dplyr::across(.cols = tidyselect::where(is.numeric),
-                    ~round(.x, digits = 3)))
+  api_dem <- readr::read_csv(df_list$download_links$demographic_bias_csv,
+                             col_types = c("geo_fips" = "character")) |>
+    dplyr::mutate(dplyr::across(.cols = tidyselect::where(is.numeric),
+                                ~round(.x, digits = 3)))
 
-  api_geo <- dplyr::as_tibble(df_list$gd) |>
+  api_geo <- readr::read_csv(df_list$download_links$geo_bias_csv,
+                             col_types = c("GEOID" = "character")) |>
     # reorder cols to match gui
     dplyr::select(tidyselect::all_of(gui_geo_cols), -geometry) |>
     dplyr::mutate(dplyr::across(.cols = starts_with("sig_diff"), ~as.character(.x))) |>

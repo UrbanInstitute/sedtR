@@ -82,16 +82,7 @@ convert_to_na <- function(col_name) {
 
 get_api_results <- function(file_id) {
   #check status
-  status_url <- stringr::str_glue("{base_url}/api/v1/get-output-data-status/{file_id}/")
-  Sys.sleep(3L)
-  response <- httr::GET(url = status_url)
-  # if the request for the status is not successful, return error
-  if (response[["status_code"]] != 200L) {
-    return("There has beeen an error")
-  }
-
-  status_json <- httr::content(response, as = "text")
-  status_list <- rjson::fromJSON(status_json)
+  status_list <- get_status(file_id)
 
   counter <- 0L
   # it can sometimes take a few seconds for the status file to be present
@@ -99,10 +90,8 @@ get_api_results <- function(file_id) {
   # then tries again
   while (!status_list[["results"]][["file_exists"]] && counter < 10L) {
     Sys.sleep(3L)
-    response <- httr::GET(url = status_url)
+    status_list <- get_status(file_id)
     counter <- counter + 1L
-    status_json <- httr::content(response, as = "text")
-    status_list <- rjson::fromJSON(status_json)
   }
 
   # test if there is no error message and if job is finished
@@ -112,11 +101,7 @@ get_api_results <- function(file_id) {
 
   while (no_error && !finished && counter < 50L) {
 
-    response <- httr::GET(url = status_url)
-
-    status_json <- httr::content(response, as = "text")
-    status_list <- rjson::fromJSON(status_json)
-
+    status_list <- get_status(file_id)
     no_error <- !any(unlist(status_list[["results"]][["formdata"]][["error-messages"]]))
     finished <- status_list[["results"]][["formdata"]][["updates"]][["finished"]]
     Sys.sleep(2L)
@@ -129,43 +114,9 @@ get_api_results <- function(file_id) {
     # if the job finished, get the file
     print("getting output file")
     #get file
-    output_data_url <- stringr::str_glue("{base_url}/api/v1/get-output-data/{file_id}/")
+    output_data <- get_output_data(file_id)
+    return(output_data)
 
-    response <- httr::GET(
-      url = output_data_url
-    )
-    r_json <- httr::content(response, as = "text")
-    r_list <- rjson::fromJSON(r_json)
-    file_exists <- r_list[["results"]][["file_exists"]]
-
-    if (file_exists) {
-      print("parsing output result")
-
-      geo <- r_list[["results"]][["result"]][["geo_bias_data"]] |> #access geo bias data from list
-        rjson::toJSON() |> #convert back to JSON for geojsonsf to read
-        geojsonsf::geojson_sf() #Convert from json format to sf dataframe
-
-      demo <- r_list[["results"]][["result"]][["demographic_bias_data"]] |>
-        rjson::toJSON() |>
-        jsonlite::fromJSON() |>
-        as.data.frame()
-
-
-      df_list <- list(
-        dd = demo,
-        gd = geo,
-        full_api_results = r_list
-      )
-
-      return(df_list)
-
-    } else {
-      print("hit an error!")
-      r_json <- httr::content(response, as = "text")
-      error_text <- rjson::fromJSON(r_json)
-      return_message <- stringr::str_glue("The analysis for your uploaded data did not succeed. The error is {error_text}")
-      return(return_message)
-    }
   } else {
     print("hit an error!")
     error_messages <- paste(names(lapply(status_list[["results"]][["formdata"]][["error-messages"]], function(x) x[isTRUE(x)])), " ")
