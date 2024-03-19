@@ -1,7 +1,7 @@
 #' Function to call get-equity-file api endpoint
 #' @param file_id (string) - the id associated with the api function call. This
 #' should be returned from call_upload_user_files.R
-#' @return list of six elements:
+#' @return list of seven elements:
 #'  status_code (integer) - a status code showing whether the API call was successful
 #'  file_exists (Boolean) - whether or not the equity status data exists.
 #'  file_id (string) - the inputed file_id
@@ -9,6 +9,10 @@
 #'    SEDT API. NA if file_exists is FALSE.
 #'  demo_bias_data (dataframe) - the demographic bias dataset outputted from the
 #'    SEDT API. NA if file_exists is FALSE.
+#'  download_links - (named list) - composed of three entries geo_bias_geojson,
+#'    geo_bias_csv, and demographic_bias_csv. Each of these names maps to a
+#'    signed URL where you can download the resulting files from AWS S3. This
+#'    serves as an alternative to parsing JSON objects from full_api_results
 #'  full_api_results (list) - the entirety of the JSON response object from the
 #'    get-equity-file api endpoint converted to an R list. NA if file_exists is FALSE.
 #' @export
