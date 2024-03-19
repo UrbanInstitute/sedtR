@@ -56,7 +56,7 @@ create_demo_chart <- function(demo_df,
       }
 
       #Convert to Percent
-      df <- dplyr::mutate(df, diff_data_city = diff_data_city/100)
+      df <- dplyr::mutate(df, diff_data_city = diff_data_city / 100)
 
 
       #Edit string names:
@@ -103,7 +103,7 @@ create_demo_chart <- function(demo_df,
                                 just = c("left", "top"),
                                 rot = 90,
                                 gp=grid::gpar(fontface = "bold",
-                                        fontfamily = "Lato",
+                                        #fontfamily = "Lato",
                                         #col = "#eec046",
                                         #col = urbnthemes::palette_urbn_diverging[7],
                                         fontsize = 22,
@@ -115,7 +115,7 @@ create_demo_chart <- function(demo_df,
                                      just = c("right", "top"),
                                      rot = 90,
                                      gp=grid::gpar(fontface = "bold",
-                                             fontfamily = "Lato",
+                                             #fontfamily = "Lato",
                                              #col = urbnthemes::palette_urbn_diverging[1],
                                              fontsize = 22,
                                              alpha = 0.75))

@@ -94,5 +94,5 @@ The Spatial Equity Data Tool has comprehensive documentation in the form of an [
 Other particularly relevant chapters cover [common API errors and warnings](https://ui-research.github.io/sedt_documentation/common_errors_warnings.html), [how to interpret Tool results](https://ui-research.github.io/sedt_documentation/interpreting_results.html), and a [description of data appropriate for the Tool](https://ui-research.github.io/sedt_documentation/resource_datasets.html). 
 
 
-## Feedback:
+## Feedback:S
 Please provide feedback by opening [GitHub Issues](https://github.com/UrbanInstitute/sedtR/issues) or contacting us at sedt@urban.org.
