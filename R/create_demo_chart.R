@@ -33,7 +33,7 @@ create_demo_chart <- function(demo_df,
   stopifnot(TRUE %in% endsWith(file_path,
                                c("eps", "ps", "tex", "pdf", "jpeg",
                                  "tiff", "png", "bmp", "svg", "wmf"))
-            ) #file path is allowed by ggsave
+  ) #file path is allowed by ggsave
 
   tryCatch(
     #TRY:
@@ -62,17 +62,17 @@ create_demo_chart <- function(demo_df,
       #Edit string names:
       df <- df |>
         dplyr::mutate(census_var = janitor::make_clean_names(census_var, case = "title"),
-                 census_var = stringr::str_replace_all(census_var, "Pct", "Pct."),
-                 census_var = stringr::str_replace_all(census_var, "under18", "Under 18"),
-                 census_var = stringr::str_replace_all(census_var,"Unins", "Uninsured"),
-                 census_var = stringr::str_replace_all(census_var, "Hisp", "Hispanic"),
-                 census_var = stringr::str_replace_all(census_var, "under", "Under"),
-                 census_var = stringr::str_replace_all(census_var, "Unemp", "Unemployed"),
-                 census_var = stringr::str_replace_all(census_var, "Cb", "Cost-Burdened"),
-                 census_var = stringr::str_replace_all(census_var, "Hh", "Household"),
-                 census_var = stringr::str_replace_all(census_var, "Bach", "Bachelors"),
-                 census_var = stringr::str_replace_all(census_var, "Pov ", "Poverty ")
-          )
+                      census_var = stringr::str_replace_all(census_var, "Pct", "Pct."),
+                      census_var = stringr::str_replace_all(census_var, "under18", "Under 18"),
+                      census_var = stringr::str_replace_all(census_var,"Unins", "Uninsured"),
+                      census_var = stringr::str_replace_all(census_var, "Hisp", "Hispanic"),
+                      census_var = stringr::str_replace_all(census_var, "under", "Under"),
+                      census_var = stringr::str_replace_all(census_var, "Unemp", "Unemployed"),
+                      census_var = stringr::str_replace_all(census_var, "Cb", "Cost-Burdened"),
+                      census_var = stringr::str_replace_all(census_var, "Hh", "Household"),
+                      census_var = stringr::str_replace_all(census_var, "Bach", "Bachelors"),
+                      census_var = stringr::str_replace_all(census_var, "Pov ", "Poverty ")
+        )
 
       # We get max value before filtering bc the limits of all 3 baseline_pops
       # should be equal for comparability
@@ -100,73 +100,73 @@ create_demo_chart <- function(demo_df,
       # way we can set x and y relatively to full plot window instead of actual
       # axis numbers which vary with the data
       underrep_label = grid::textGrob(label = "Underrepresented", x = .02, y = 0.02,
-                                just = c("left", "top"),
-                                rot = 90,
-                                gp=grid::gpar(fontface = "bold",
-                                        #fontfamily = "Lato",
-                                        #col = "#eec046",
-                                        #col = urbnthemes::palette_urbn_diverging[7],
-                                        fontsize = 22,
-                                        #alpha = 0.5
-                                        alpha = .75
-                                ))
+                                      just = c("left", "top"),
+                                      rot = 90,
+                                      gp=grid::gpar(fontface = "bold",
+                                                    #fontfamily = "Lato",
+                                                    #col = "#eec046",
+                                                    #col = urbnthemes::palette_urbn_diverging[7],
+                                                    fontsize = 22,
+                                                    #alpha = 0.5
+                                                    alpha = .75
+                                      ))
 
       overrep_label = grid::textGrob(label = "Overrepresented", x = .96, y = 0.98,
                                      just = c("right", "top"),
                                      rot = 90,
                                      gp=grid::gpar(fontface = "bold",
-                                             #fontfamily = "Lato",
-                                             #col = urbnthemes::palette_urbn_diverging[1],
-                                             fontsize = 22,
-                                             alpha = 0.75))
+                                                   #fontfamily = "Lato",
+                                                   #col = urbnthemes::palette_urbn_diverging[1],
+                                                   fontsize = 22,
+                                                   alpha = 0.75))
 
       plot <-
         df_plot |>
-          ggplot2::ggplot(ggplot2::aes(y = census_var, x = diff_data_city)) +
-          ggplot2::geom_vline(xintercept = 0 #,
-                              #color = urbnthemes::palette_urbn_gray[8]
-                              ) +
-          ggplot2::geom_segment(ggplot2::aes(x = 0,
-                                    xend = diff_data_city,
-                                    y = census_var,
-                                    yend = census_var) #,
-                                #color = urbnthemes::palette_urbn_gray[6]
-                                ) +
-          ggplot2:: geom_point(ggplot2::aes(color = pos_diff)) +
-          # Put text to left/right of 0 line to match equity tool
-          ggplot2::geom_text(data = df_plot |>
-                               dplyr::filter(diff_data_city >= 0),
-                             ggplot2::aes(x = 0, y = census_var, label = census_var),
-                             nudge_x  = -(max_val * 0.01),
-                             hjust = "right",
-                             size = 5) +
-          ggplot2::geom_text(data = df_plot |>
-                               dplyr::filter(diff_data_city < 0),
-                             ggplot2::aes(x = 0, y = census_var, label = census_var),
-                             nudge_x  = max_val * 0.01,
-                             hjust = "left",
-                             size = 5) +
-          ggplot2::annotation_custom(underrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
-          ggplot2::annotation_custom(overrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
-          # ggplot2::scale_color_manual(values = c('positive' = urbnthemes::palette_urbn_diverging[1],
-          #                               'negative' = urbnthemes::palette_urbn_diverging[7])) +
-          ggplot2::scale_x_continuous(position = "top",
-                             limits = c(-max_val, max_val),
-                             labels = scales::percent) +
-          ggplot2::labs(y = "", x = "") +
-          ggplot2::theme(panel.grid.major = ggplot2::element_blank(),
-                panel.grid.minor = ggplot2::element_blank(),
-                axis.text.y = ggplot2::element_blank(),
-                legend.position = "none")
+        ggplot2::ggplot(ggplot2::aes(y = census_var, x = diff_data_city)) +
+        ggplot2::geom_vline(xintercept = 0 #,
+                            #color = urbnthemes::palette_urbn_gray[8]
+        ) +
+        ggplot2::geom_segment(ggplot2::aes(x = 0,
+                                           xend = diff_data_city,
+                                           y = census_var,
+                                           yend = census_var) #,
+                              #color = urbnthemes::palette_urbn_gray[6]
+        ) +
+        ggplot2:: geom_point(ggplot2::aes(color = pos_diff)) +
+        # Put text to left/right of 0 line to match equity tool
+        ggplot2::geom_text(data = df_plot |>
+                             dplyr::filter(diff_data_city >= 0),
+                           ggplot2::aes(x = 0, y = census_var, label = census_var),
+                           nudge_x  = -(max_val * 0.01),
+                           hjust = "right",
+                           size = 5) +
+        ggplot2::geom_text(data = df_plot |>
+                             dplyr::filter(diff_data_city < 0),
+                           ggplot2::aes(x = 0, y = census_var, label = census_var),
+                           nudge_x  = max_val * 0.01,
+                           hjust = "left",
+                           size = 5) +
+        ggplot2::annotation_custom(underrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
+        ggplot2::annotation_custom(overrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
+        # ggplot2::scale_color_manual(values = c('positive' = urbnthemes::palette_urbn_diverging[1],
+        #                               'negative' = urbnthemes::palette_urbn_diverging[7])) +
+        ggplot2::scale_x_continuous(position = "top",
+                                    limits = c(-max_val, max_val),
+                                    labels = scales::percent) +
+        ggplot2::labs(y = "", x = "") +
+        ggplot2::theme(panel.grid.major = ggplot2::element_blank(),
+                       panel.grid.minor = ggplot2::element_blank(),
+                       axis.text.y = ggplot2::element_blank(),
+                       legend.position = "none")
 
       print(plot)
 
       if(save_chart){
         ggplot2::ggsave(filename = file_path,
-               plot = plot,
-               width = 11,
-               height = 8.5,
-               units = "in")
+                        plot = plot,
+                        width = 11,
+                        height = 8.5,
+                        units = "in")
       }
 
       return(plot)
@@ -180,9 +180,9 @@ create_demo_chart <- function(demo_df,
 
     #WARNING
     warning=function(w) {
-    message('A Warning Occurred')
-    print(w)
-    return(NA)
+      message('A Warning Occurred')
+      print(w)
+      return(NA)
     }
 
   )
