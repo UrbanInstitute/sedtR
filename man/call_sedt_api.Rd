@@ -92,10 +92,8 @@ four digit year beginning with "20" must be inputted. If it is different than
 \value{
 response (list): The function wraps httr::POST() which
 returns a "response object" which is a list with information about the request.
-See the [API documentation](api_url = "https://equity-tool-api.urban.org/api/v1/upload-user-file/")
+See the \href{"https://ui-research.github.io/sedt_documentation/api_documentation.html"}{API documentation}
 for more details.
-
-[API documentation]: R:API\%20documentation\%5C
 }
 \description{
 This function takes a set of user inputs, calls the upload-user-files endpoint
