@@ -43,6 +43,11 @@ get_output_data <- function(
       jsonlite::fromJSON() |>
       as.data.frame()
 
+    download_links <- r_list[["results"]][["result"]][["download_links"]] |>
+      rjson::toJSON() |>
+      jsonlite::fromJSON() |>
+      as.data.frame()
+
 
     return(
       list(
@@ -51,7 +56,7 @@ get_output_data <- function(
         file_id = file_id,
         geo_bias_data = geo,
         demo_bias_data = demo,
-        full_api_results = r_list
+        download_links = download_links
       )
     )
   } else {
@@ -62,7 +67,7 @@ get_output_data <- function(
         file_id = file_id,
         geo_bias_data = NA,
         demo_bias_data = NA,
-        full_api_results = NA
+        download_links = NA
       )
     )
   }
