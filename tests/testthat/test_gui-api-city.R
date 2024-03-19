@@ -41,15 +41,20 @@ test_that("API and GUI results match for city", {
                                         "gui_example",
                                         "minneapolis_bikes_geo.csv"))
 
-  api_dem <- dplyr::as_tibble(df_list$dd) |>
+  api_dem <- readr::read_csv(df_list$download_links$demographic_bias_csv,
+                             col_types = c("geo_fips" = "character")) |>
     dplyr::mutate(dplyr::across(.cols = tidyselect::where(is.numeric),
                          ~round(.x, digits = 3)))
 
-  api_geo <- dplyr::as_tibble(df_list$gd)
+  api_geo <- readr::read_csv(df_list$download_links$geo_bias_csv)
 
   expect_true(all.equal(gui_dem |>  dplyr::select(-geo_mo),
                         api_dem |>  dplyr::select(-geo_mo))
               )
+
+  expect_true(all.equal(gui_geo,
+                        api_geo)
+  )
 
   ##### Same but 2022 data ##########
   param_list$acs_data_year <- "2022"
@@ -75,14 +80,19 @@ test_that("API and GUI results match for city", {
                                         "gui_example",
                                         "minneapolis_bikes_geo_2022.csv"))
 
-  api_dem <- dplyr::as_tibble(df_list$dd) |>
+  api_dem <- readr::read_csv(df_list$download_links$demographic_bias_csv,
+                             col_types = c("geo_fips" = "character")) |>
     dplyr::mutate(dplyr::across(.cols = tidyselect::where(is.numeric),
                                 ~round(.x, digits = 3)))
 
-  api_geo <- dplyr::as_tibble(df_list$gd)
+  api_geo <- readr::read_csv(df_list$download_links$geo_bias_csv)
 
   expect_true(all.equal(gui_dem |>  dplyr::select(-geo_mo),
                         api_dem |>  dplyr::select(-geo_mo))
+  )
+
+  expect_true(all.equal(gui_geo,
+                        api_geo)
   )
 
 }
