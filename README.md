@@ -166,15 +166,7 @@ sedt_response$demo_bias_data |>
 The package has under-development visualization functions `create_map()`
 and `create_demo_chart()` that ultimately will be able to visualize
 these results in graphics similar to those displayed on the SEDT
-website:
-
-``` r
-create_map(sedt_response$geo_bias_data, save_map = FALSE, interactive = FALSE)
-```
-
-``` r
-create_demo_chart(sedt_response$demo_bias_data)
-```
+website.
 
 ## Where Can I Learn More:
 
