@@ -1,50 +1,62 @@
 Package: sedtR
-Title: sedtR allows programmers to call the Urban Institute's Spatial Equity Data Tool API
-Version: 0.0.0.2000
-Authors@R: 
-    c(person(given = "Gabriel", 
-             family = "Morrison", 
-             email = "gmorrison@urban.org", 
-             role = c("aut", "cre")),
-      person(given = "Alena", 
-             family = "Stern", 
-             email = "astern@urban.org", 
-             role = "aut")
-      )
+Title: sedtR allows programmers to call the Urban Institute's Spatial
+    Equity Data Tool API
+Version: 0.0.0.3000
+Date: 2024-03-19
+Authors@R: c(
+  person(
+    "Gabriel", "Morrison",
+    email = "gmorrison@urban.org",
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0009-0008-1815-5920")
+    ),
+  person(
+    "Alena", "Stern",
+    email = "astern@urban.org",
+    role = c("aut"),
+    comment = c(ORCID = "0009-0002-7171-8207")
+    ),
+  person("Eli", "Pousson", , 
+    "eli.pousson@gmail.com", 
+    role = "ctb",
+    comment = c(ORCID = "0000-0001-8280-1706")
+    )
+   )
 Maintainer: Gabriel Morrison <gmorrison@urban.org>
-Description: The Urban Institute has developed the Spatial Equity Data Tool to 
-  analyze the equitability of resources across cities, counties, states, and the
-  entirety of the United States. This package allows users to call the Spatial
-  Equity Data Tool API programmatically using R code.
-URL: https://github.com/UrbanInstitute/sedtR
-BugReports: https://github.com/UrbanInstitute/sedtR/issues
+Description: The Urban Institute has developed the Spatial Equity Data
+    Tool to analyze the equitability of resources across cities, counties,
+    states, and the entirety of the United States. This package allows
+    users to call the Spatial Equity Data Tool API programmatically using
+    R code.
 License: GPL (>= 3) + file LICENSE
+Imports:
+    geojsonsf,
+    httr,
+    jsonlite,
+    purrr,
+    rjson,
+    rlang,
+    stringr,
+    utils
+Suggests: 
+    dplyr,
+    forcats,
+    ggplot2,
+    here,
+    janitor,
+    openxlsx,
+    readr,
+    scales,
+    testthat,
+    tidycensus,
+    tidyr,
+    tidyselect,
+    tmap,
+    urbnthemes (>= 0.0.2),
+    withr
+Remotes: 
+    UrbanInstitute/urbnthemes
 Encoding: UTF-8
-Date: 2024-03-08
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Imports:
-  dplyr,
-  forcats,
-  geojsonsf,
-  ggplot2,
-  httr,
-  janitor,
-  jsonlite,
-  purrr,
-  rjson,
-  scales,
-  stringr,
-  urbnthemes,
-  utils,
-  tmap,
-  testthat,
-  here,
-  openxlsx,
-  readr,
-  testthat,
-  tidycensus,
-  tidyr,
-  tidyselect
-Remotes:
-  UrbanInstitute/urbnthemes
+
