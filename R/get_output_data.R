@@ -1,7 +1,7 @@
 #' Function to call get-equity-file api endpoint
 #' @param file_id (string) - the id associated with the api function call. This
 #' should be returned from call_upload_user_files.R
-#' @return list of six elements:
+#' @return list of seven elements:
 #'  status_code (integer) - a status code showing whether the API call was successful
 #'  file_exists (Boolean) - whether or not the equity status data exists.
 #'  file_id (string) - the inputed file_id
@@ -9,6 +9,10 @@
 #'    SEDT API. NA if file_exists is FALSE.
 #'  demo_bias_data (dataframe) - the demographic bias dataset outputted from the
 #'    SEDT API. NA if file_exists is FALSE.
+#'  download_links - (named list) - composed of three entries geo_bias_geojson,
+#'    geo_bias_csv, and demographic_bias_csv. Each of these names maps to a
+#'    signed URL where you can download the resulting files from AWS S3. This
+#'    serves as an alternative to parsing JSON objects from full_api_results
 #'  full_api_results (list) - the entirety of the JSON response object from the
 #'    get-equity-file api endpoint converted to an R list. NA if file_exists is FALSE.
 #' @export
@@ -43,6 +47,11 @@ get_output_data <- function(
       jsonlite::fromJSON() |>
       as.data.frame()
 
+    download_links <- r_list[["results"]][["result"]][["download_links"]] |>
+      rjson::toJSON() |>
+      jsonlite::fromJSON() |>
+      as.data.frame()
+
 
     return(
       list(
@@ -51,7 +60,7 @@ get_output_data <- function(
         file_id = file_id,
         geo_bias_data = geo,
         demo_bias_data = demo,
-        full_api_results = r_list
+        download_links = download_links
       )
     )
   } else {
@@ -62,7 +71,7 @@ get_output_data <- function(
         file_id = file_id,
         geo_bias_data = NA,
         demo_bias_data = NA,
-        full_api_results = NA
+        download_links = NA
       )
     )
   }

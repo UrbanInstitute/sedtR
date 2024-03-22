@@ -88,7 +88,7 @@ four digit year beginning with "20" must be inputted. If it is different than
 \value{
 response (list): The function wraps \code{\link[httr:POST]{httr::POST()}} which
 returns a "response object" which is a list with information about the request.
-See the \href{https://equity-tool-api.urban.org/api/v1/upload-user-file/}{API documentation}
+See the [API documentation]("https://ui-research.github.io/sedt_documentation/")
 for more details.
 }
 \description{

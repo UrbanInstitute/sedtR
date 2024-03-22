@@ -57,7 +57,7 @@
 #'  "2019" or "2021" the tool will use 2021 data.
 #' @return response (list): The function wraps [httr::POST()] which
 #'  returns a "response object" which is a list with information about the request.
-#'  See the [API documentation](https://equity-tool-api.urban.org/api/v1/upload-user-file/)
+#'  See the [API documentation]("https://ui-research.github.io/sedt_documentation/api_documentation.html")
 #'  for more details.
 #' @export
 

@@ -52,10 +52,10 @@ create_map <- function(geo_df,
       # replace observations that are not significantly different with NA
       # multiply by 100 to convert to percentage
       geo_df <- geo_df |>
-        dplyr::mutate(!!sym(col_to_plot) :=
-                 dplyr::if_else(!!sym(stringr::str_glue("sig_{col_to_plot}")) == "FALSE",
+        dplyr::mutate(!!rlang::sym(col_to_plot) :=
+                 dplyr::if_else(!!rlang::sym(stringr::str_glue("sig_{col_to_plot}")) == "FALSE",
                          NA_real_,
-                         !!sym(col_to_plot)*100
+                         !!rlang::sym(col_to_plot)*100
                          )
                )
 
