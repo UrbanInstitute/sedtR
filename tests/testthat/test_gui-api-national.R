@@ -29,7 +29,7 @@ test_that("API and GUI results match for national", {
                                         "testthat",
                                         "data",
                                         "gui_example",
-                           "us_library_outlets_dem.csv"),
+                                        "us_library_outlets_dem.csv"),
                       col_types = c("geo_fips" = "character")) |>
     dplyr::mutate(dplyr::across(.cols = where(is.numeric), ~round(.x, digits = 3))) %>%
     # gui includes geography and subgeography dem disparity scores. API only includes geography
@@ -79,21 +79,13 @@ test_that("API and GUI results match for national", {
   df_list <- get_api_results(r$file_id)
 
 
-  gui_dem <- readr::read_csv(here::here("tests",
-                                        "testthat",
-                                        "data",
-                                        "gui_example",
-                                        "us_library_outlets_dem_2022.csv"),
+  gui_dem <- readr::read_csv(stringr::str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/demographic-bias/csv/us_library_outlets.csv"),
                              col_types = c("geo_fips" = "character")) |>
     dplyr::mutate(dplyr::across(.cols = where(is.numeric), ~round(.x, digits = 3))) %>%
     # gui includes geography and subgeography dem disparity scores. API only includes geography
     dplyr::filter(geo == "national")
 
-  gui_geo <- readr::read_csv(here::here("tests",
-                                        "testthat",
-                                        "data",
-                                        "gui_example",
-                                        "us_library_outlets_geo_2022.csv"),
+  gui_geo <- readr::read_csv(stringr::str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/geo-bias/csv/us_library_outlets.csv"),
                              col_types = c("GEOID" = "character")) |>
     dplyr::select(-geometry) |>
     dplyr::mutate(dplyr::across(.cols = tidyselect::where(is.numeric), ~round(.x, digits = 3))) |>

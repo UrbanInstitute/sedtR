@@ -90,21 +90,12 @@ test_that("API and GUI results match for county", {
   df_list <- get_api_results(r$file_id)
 
 
-  gui_dem <- readr::read_csv(here::here("tests",
-                                        "testthat",
-                                        "data",
-                                        "gui_example",
-                                        "miami_dade_county_fl_playgrounds_dem_2022.csv"),
+  gui_dem <- readr::read_csv(stringr::str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/demographic-bias/csv/miami_dade_county_fl_playgrounds.csv"),
                              col_types = c("geo_fips" = "character")) |>
     dplyr::mutate(dplyr::across(.cols = tidyselect::where(is.numeric),
                                 ~round(.x, digits = 3)))
 
-  gui_geo <- readr::read_csv(here::here("tests",
-                                        "testthat",
-                                        "data",
-                                        "gui_example",
-                                        "miami_dade_county_fl_playgrounds_geo_2022.csv"
-  ),
+  gui_geo <- readr::read_csv(stringr::str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/geo-bias/csv/miami_dade_county_fl_playgrounds.csv"),
   col_types = c("GEOID" = "character")) |>
     dplyr::select(-geometry) |>
     dplyr::mutate(dplyr::across(.cols = tidyselect::where(is.numeric),
