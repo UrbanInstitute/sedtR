@@ -8,8 +8,17 @@ test_that("fileid starts with 1", {
     acs_data_year = "2019"
   )
 
-  r <- get_api_response(param_list)
-  expect_equal( str_sub(r$file_id, 1, 1), "1")
+  r1 <- get_api_response(param_list)
+
+  r2 <- get_api_response(param_list)
+
+  r3 <- get_api_response(param_list)
+
+  v <- c(str_sub(r1$file_id, 1, 1),
+         str_sub(r2$file_id, 1, 1),
+         str_sub(r3$file_id, 1, 1))
+
+  expect_true(all(v == "1"))
 }
 )
 
