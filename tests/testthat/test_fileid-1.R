@@ -14,9 +14,9 @@ test_that("fileid starts with 1", {
 
   r3 <- get_api_response(param_list)
 
-  v <- c(str_sub(r1$file_id, 1, 1),
-         str_sub(r2$file_id, 1, 1),
-         str_sub(r3$file_id, 1, 1))
+  v <- c(stringr::str_sub(r1$file_id, 1, 1),
+         stringr::str_sub(r2$file_id, 1, 1),
+         stringr::str_sub(r3$file_id, 1, 1))
 
   expect_true(all(v == "1"))
 }
