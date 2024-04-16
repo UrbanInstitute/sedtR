@@ -64,13 +64,13 @@ test_that("API and GUI results match for city", {
   df_list <- get_api_results(r$file_id)
 
 
-  gui_dem <- readr::read_csv(str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/demographic-bias/csv/minneapolis_bikes.csv"),
+  gui_dem <- readr::read_csv(stringr::str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/demographic-bias/csv/minneapolis_bikes.csv"),
                              col_types = c("geo_fips" = "character")
   ) |>
     dplyr::mutate(dplyr::across(.cols = tidyselect::where(is.numeric),
                                 ~round(.x, digits = 3)))
 
-  gui_geo <- readr::read_csv(str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/geo-bias/csv/minneapolis_bikes.csv"))
+  gui_geo <- readr::read_csv(stringr::str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/geo-bias/csv/minneapolis_bikes.csv"))
 
   api_dem <- readr::read_csv(df_list$download_links$demographic_bias_csv,
                              col_types = c("geo_fips" = "character")) |>
