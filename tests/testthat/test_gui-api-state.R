@@ -37,7 +37,7 @@ test_that("API and GUI results match for state", {
                                         "testthat",
                                         "data",
                                         "gui_example",
-                           "wa_mental_health_dem.csv"),
+                                        "wa_mental_health_dem.csv"),
                       col_types = c("geo_fips" = "character")) |>
     dplyr::mutate(dplyr::across(.cols = where(is.numeric), ~round(.x, digits = 3))) %>%
     # gui includes geography and subgeography dem disparity scores. API only includes geography
@@ -47,7 +47,7 @@ test_that("API and GUI results match for state", {
                                         "testthat",
                                         "data",
                                         "gui_example",
-                           "wa_mental_health_geo.csv"),
+                                        "wa_mental_health_geo.csv"),
                       col_types = c("GEOID" = "character")) |>
     dplyr::select(-geometry) |>
     dplyr::mutate(dplyr::across(.cols = tidyselect::where(is.numeric), ~round(.x, digits = 3))) |>
@@ -86,21 +86,13 @@ test_that("API and GUI results match for state", {
   df_list <- get_api_results(r$file_id)
 
 
-  gui_dem <- readr::read_csv(here::here("tests",
-                                        "testthat",
-                                        "data",
-                                        "gui_example",
-                                        "wa_mental_health_dem_2022.csv"),
+  gui_dem <- readr::read_csv(str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/demographic-bias/csv/wa_mental_health.csv"),
                              col_types = c("geo_fips" = "character")) |>
     dplyr::mutate(dplyr::across(.cols = where(is.numeric), ~round(.x, digits = 3))) %>%
     # gui includes geography and subgeography dem disparity scores. API only includes geography
     dplyr::filter(geo == "state")
 
-  gui_geo <- readr::read_csv(here::here("tests",
-                                        "testthat",
-                                        "data",
-                                        "gui_example",
-                                        "wa_mental_health_geo_2022.csv"),
+  gui_geo <- readr::read_csv(str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/geo-bias/csv/wa_mental_health.csv"),
                              col_types = c("GEOID" = "character")) |>
     dplyr::select(-geometry) |>
     dplyr::mutate(dplyr::across(.cols = tidyselect::where(is.numeric), ~round(.x, digits = 3))) |>
