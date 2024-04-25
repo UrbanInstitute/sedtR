@@ -16,7 +16,7 @@ get_status <- function(file_id) {
     return("There has beeen an error")
   }
 
-  r_json <- httr::content(response, as = "text")
+  r_json <- httr::content(response, as = "text", encoding = "UTF-8")
   r_list <- rjson::fromJSON(r_json)
 
   return(r_list)

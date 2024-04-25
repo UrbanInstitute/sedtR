@@ -191,16 +191,17 @@ call_upload_user_files <- function(
 
   # parses response and checks for non-201 http code and returns message if so, or file id if got 201
   if (response$status_code == 201) {
-    r_json <- httr::content(response, as = "text")
+    r_json <- httr::content(response, as = "text", encoding = "UTF-8")
+
     r_list <- rjson::fromJSON(r_json)
     file_id <- r_list$file_id
 
     return(list(status_code = response$status_code, file_id = file_id))
   } else{
     # update to parse error message
-    r_json <- httr::content(response, as = "text")
+    r_json <- httr::content(response, as = "text", encoding = "UTF-8")
 
-    #Check if there Cloudflare blocks data from hitting the API
+    # Check if there Cloudflare blocks data from hitting the API
     if (r_json == "<html>\r\n<head><title>413 Request Entity Too Large</title></head>\r\n<body>\r\n<center><h1>413 Request Entity Too Large</h1></center>\r\n<hr><center>cloudflare</center>\r\n</body>\r\n</html>\r\n") {
       response_to_return <- list(status_code = 413,
                                  error_message = "Request Entity Too Large")
