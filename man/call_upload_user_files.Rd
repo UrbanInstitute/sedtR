@@ -2,13 +2,13 @@
 % Please edit documentation in R/call_upload_user_files.R
 \name{call_upload_user_files}
 \alias{call_upload_user_files}
-\title{Function to call SEDT API /upload-user-files/ endpoint and trigger start
-of process to conduct SEDT analysis}
+\title{Call the SEDT API and return an API response}
 \usage{
 call_upload_user_files(
-  resource_file_path,
-  resource_lat_column,
-  resource_lon_column,
+  resource = NULL,
+  resource_file_path = NULL,
+  resource_lat_column = "lat",
+  resource_lon_column = "lon",
   demographic_file_path = NA,
   demographic_geo_id_column = NA,
   demographic_columns = NA,
@@ -18,18 +18,24 @@ call_upload_user_files(
   resource_filters = NA,
   resource_weight = NA,
   geo = "city",
-  acs_data_year = "2021"
+  acs_data_year = getOption("sedtR.year", 2021),
+  ...,
+  call = caller_env()
 )
 }
 \arguments{
-\item{resource_file_path}{(string) path to location where the resource file
-dataset is stored. Dataset should be a csv or tsv}
+\item{resource}{A URL, file path, sf or sfc object, or a data frame with
+\code{coords} columns. See details for more information.}
 
-\item{resource_lat_column}{(string) a column name in in the resource_file
-dataset indicating the resource latitude column}
+\item{resource_file_path}{(string) Default \code{NULL}. File path to location
+where the resource file dataset is stored. Dataset should be a csv or tsv.
+Optional if \code{resource} is provided.}
 
-\item{resource_lon_column}{(string) a column name in in the resource_file
-dataset indicating the resource longitude column}
+\item{resource_lat_column}{(string) Default "lat". a column name in in the
+resource_file dataset indicating the resource latitude column.}
+
+\item{resource_lon_column}{(string) Default "lon". a column name in in the
+resource_file dataset indicating the resource longitude column}
 
 \item{demographic_file_path}{(string) Optional: a path to the location where
 the demographic supplemental dataset is stored. Dataset should be a csv or tsv.}
@@ -47,7 +53,7 @@ column lacks standard errors.}
 \item{geographic_file_path}{(string) Optional: a path to the location where the
 supplemental geographic dataset is stored. Dataset should be either csv or tsv.}
 
-\item{geographic_geo_id_column}{(string): Only necessary if there is a
+\item{geographic_geo_id_column}{(string): Required if there is a
 geographic dataset provided. The name of the column with FIPS codes identifying
 the geography}
 
@@ -74,24 +80,56 @@ filter_val should be a string. For date-based filters, the filter_column should
 contain dates, the filter_comparison should be dateRange, and the filter_val
 should be of the form "date1-date2".}
 
-\item{resource_weight}{(string): Optional. Should be the name of a column
-in the resource dataset. If included, the number of resources in a geography
-will be weighted using this column.}
+\item{resource_weight}{(string): Optional. Should be the name of a column in
+the resource dataset. If included, the number of resources in a geography
+will be weighted using this column. Can't be used if resource is a \code{sfc}
+object.}
 
 \item{geo}{(string): One of "city", "county", "state", or "country". Indicates
 the geographic level at which the analysis should be conducted.}
 
-\item{acs_data_year}{(string): The tool currently has 2019 and 2021 data in it. A
-four digit year beginning with "20" must be inputted. If it is different than
-"2019" or "2021" the tool will use 2021 data.}
+\item{acs_data_year}{(string or integer): The tool currently has 2019 and
+2021 data in it. A four digit year beginning with "20" must be inputted. If
+it is different than "2019" or "2021" the tool will use 2021 data. A
+default value can be set using the "sedtR.year" option.}
+
+\item{...}{Additional parameters passed to \code{\link[arcgislayers:arc_read]{arcgislayers::arc_read()}} or
+\code{\link[sf:st_read]{sf::st_read()}} depending on the value provided to \code{resource}.}
+
+\item{call}{The execution environment of a currently
+running function, e.g. \code{caller_env()}. The function will be
+mentioned in error messages as the source of the error. See the
+\code{call} argument of \code{\link[rlang:abort]{abort()}} for more information.}
 }
 \value{
-response (list): The function wraps \code{\link[httr:POST]{httr::POST()}} which
-returns a "response object" which is a list with information about the request.
-See the [API documentation]("https://ui-research.github.io/sedt_documentation/")
+response (list): The function wraps \code{\link[httr:POST]{httr::POST()}} which returns a
+"response object" which is a list with information about the request. See
+the \href{https://ui-research.github.io/sedt_documentation/}{API documentation}
 for more details.
 }
 \description{
-Function to call SEDT API /upload-user-files/ endpoint and trigger start
-of process to conduct SEDT analysis
+\code{\link[=call_upload_user_files]{call_upload_user_files()}} calls the SEDT API /upload-user-files/ endpoint
+and trigger start of process to conduct SEDT analysis. This is a helper
+function that is used by \code{\link[=call_sedt_api]{call_sedt_api()}} and is primarily internded for
+internal use.
 }
+\details{
+Valid resource inputs
+
+To call the Spatial Equity Data Tool API, \code{\link[=call_sedt_api]{call_sedt_api()}} requires a CSV or
+TSV input file with coordinate attribute columns. \code{\link[=prep_sedt_resource]{prep_sedt_resource()}} also allows users to alternatively supply:
+\itemize{
+\item A URL for a delimited file with coordinate columns or a spatial data file
+\item A ArcGIS FeatureLayer or Table URL (read with \code{\link[arcgislayers:arc_read]{arcgislayers::arc_read()}})
+\item A file path for a spatial or tabular data file that can be read with \code{\link[sf:st_read]{sf::read_sf()}}
+\item A data frame containing the named columns in \code{coords}
+\item A \code{sf} or \code{sfc} object that can be converted to a data frame using \code{\link[sf:st_coordinates]{sf::st_coordinates()}}
+}
+
+If resource is an \code{sf} object or a path to a spatial data file with POLYGON,
+MULTIPOLYGON, or any non-POINT geometry, \code{placement} is used to convert the
+input into points. \code{\link[sf:geos_unary]{sf::st_centroid()}} (if \code{placement = "centroid"}) or
+\code{\link[sf:geos_unary]{sf::st_point_on_surface()}} (if \code{placement = "surface"} which is the default)
+option.
+}
+\keyword{internal}

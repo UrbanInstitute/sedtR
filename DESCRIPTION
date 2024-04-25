@@ -39,6 +39,7 @@ Imports:
     stringr,
     utils
 Suggests: 
+    arcgislayers,
     dplyr,
     forcats,
     ggplot2,
@@ -47,6 +48,7 @@ Suggests:
     openxlsx,
     readr,
     scales,
+    sf,
     testthat,
     tidycensus,
     tidyr,

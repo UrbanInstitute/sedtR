@@ -1,12 +1,18 @@
-#' Function to call SEDT API /upload-user-files/ endpoint and trigger start
-#' of process to conduct SEDT analysis
+#' Call the SEDT API and return an API response
 #'
-#' @param resource_file_path (string) path to location where the resource file
-#'  dataset is stored. Dataset should be a csv or tsv
-#' @param resource_lat_column (string) a column name in in the resource_file
-#'  dataset indicating the resource latitude column
-#' @param resource_lon_column (string) a column name in in the resource_file
-#'  dataset indicating the resource longitude column
+#' [call_upload_user_files()] calls the SEDT API /upload-user-files/ endpoint
+#' and trigger start of process to conduct SEDT analysis. This is a helper
+#' function that is used by [call_sedt_api()] and is primarily internded for
+#' internal use.
+#'
+#' @inheritParams prep_sedt_resource
+#' @param resource_file_path (string) Default `NULL`. File path to location
+#'   where the resource file dataset is stored. Dataset should be a csv or tsv.
+#'   Optional if `resource` is provided.
+#' @param resource_lat_column (string) Default "lat". a column name in in the
+#'   resource_file dataset indicating the resource latitude column.
+#' @param resource_lon_column (string) Default "lon". a column name in in the
+#'   resource_file dataset indicating the resource longitude column
 #' @param demographic_file_path (string) Optional: a path to the location where
 #'  the demographic supplemental dataset is stored. Dataset should be a csv or tsv.
 #' @param demographic_geo_id_column (string) Only necessary if a demographic
@@ -19,7 +25,7 @@
 #'  column lacks standard errors.
 #' @param geographic_file_path (string) Optional: a path to the location where the
 #'  supplemental geographic dataset is stored. Dataset should be either csv or tsv.
-#' @param geographic_geo_id_column (string): Only necessary if there is a
+#' @param geographic_geo_id_column (string): Required if there is a
 #'  geographic dataset provided. The name of the column with FIPS codes identifying
 #'  the geography
 #' @param geographic_columns (string representation of Python dictionary) Only
@@ -43,24 +49,30 @@
 #'  filter_val should be a string. For date-based filters, the filter_column should
 #'  contain dates, the filter_comparison should be dateRange, and the filter_val
 #'  should be of the form "date1-date2".
-#' @param resource_weight (string): Optional. Should be the name of a column
-#'  in the resource dataset. If included, the number of resources in a geography
-#'  will be weighted using this column.
+#' @param resource_weight (string): Optional. Should be the name of a column in
+#'   the resource dataset. If included, the number of resources in a geography
+#'   will be weighted using this column. Can't be used if resource is a `sfc`
+#'   object.
 #' @param geo (string): One of "city", "county", "state", or "country". Indicates
 #'  the geographic level at which the analysis should be conducted.
-#' @param acs_data_year (string): The tool currently has 2019 and 2021 data in it. A
-#'  four digit year beginning with "20" must be inputted. If it is different than
-#'  "2019" or "2021" the tool will use 2021 data.
-#' @return response (list): The function wraps [httr::POST()] which
-#'  returns a "response object" which is a list with information about the request.
-#'  See the \[API documentation\]("https://ui-research.github.io/sedt_documentation/")
-#'  for more details.
+#' @param acs_data_year (string or integer): The tool currently has 2019 and
+#'   2021 data in it. A four digit year beginning with "20" must be inputted. If
+#'   it is different than "2019" or "2021" the tool will use 2021 data. A
+#'   default value can be set using the "sedtR.year" option.
+#' @param ... Additional parameters passed to [arcgislayers::arc_read()] or
+#'   [sf::st_read()] depending on the value provided to `resource`.
+#' @return response (list): The function wraps [httr::POST()] which returns a
+#'   "response object" which is a list with information about the request. See
+#'   the [API documentation](https://ui-research.github.io/sedt_documentation/)
+#'   for more details.
+#' @inherit prep_sedt_resource details
+#' @keywords internal
 #' @export
-
 call_upload_user_files <- function(
-  resource_file_path,
-  resource_lat_column,
-  resource_lon_column,
+  resource = NULL,
+  resource_file_path = NULL,
+  resource_lat_column = "lat",
+  resource_lon_column = "lon",
   demographic_file_path = NA,
   demographic_geo_id_column = NA,
   demographic_columns = NA,
@@ -70,23 +82,33 @@ call_upload_user_files <- function(
   resource_filters = NA,
   resource_weight = NA,
   geo = "city",
-  acs_data_year = "2021"
+  acs_data_year = getOption("sedtR.year", 2021),
+  ...,
+  call = caller_env()
   ) {
 
-  #Define api URL
-  api_url <- sedt_url("upload-user-file/")
-
-  #Data Input Type Checks:
-  stopifnot(is.character(c(resource_file_path,
-                           resource_lat_column,
-                           resource_lon_column,
-                           geo,
-                           acs_data_year)
-                         )
+  resource_file_path <- resource_file_path %||% prep_sedt_resource(
+    resource = resource,
+    coords = c(resource_lon_column, resource_lat_column),
+    placement = placement,
+    ...,
+    call = call
   )
 
-  stopifnot(acs_data_year %in%  c("2019", "2021", "2022"))
-  stopifnot(geo %in% c("city", "county", "state", "national"))
+  # Define api URL
+  api_url <- sedt_url("upload-user-file/")
+
+  acs_data_year <- as.character(acs_data_year)
+
+  acs_data_year <- arg_match0(acs_data_year, c("2019", "2021", "2022"), error_call = call)
+  geo <- arg_match0(geo, c("city", "county", "state", "national"), error_call = call)
+
+  #Data Input Type Checks:
+  stopifnot(
+    is.character(
+      c(resource_file_path, resource_lat_column, resource_lon_column)
+    )
+  )
 
   possible_vars <- list(demographic_file_path = demographic_file_path,
                         demographic_geo_id_column = demographic_geo_id_column,
