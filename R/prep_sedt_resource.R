@@ -48,7 +48,7 @@ prep_sedt_resource <- function(resource,
   if (is_url(resource)) {
     if (grepl("rest/services", resource)) {
       # Download FeatureLayer or Table
-      rlang::check_installed("arcgislayers", call = call)
+      check_installed("arcgislayers", call = call)
       resource <- arcgislayers::arc_read(resource, ..., crs = 4326)
     } else {
       file <- file %||% file.path(tempdir(), basename(resource))
@@ -65,7 +65,7 @@ prep_sedt_resource <- function(resource,
 
     # If not a delimited file attempt to read other file types with
     # `sf::read_sf`
-    rlang::check_installed("sf", call = call)
+    check_installed("sf", call = call)
     resource <- sf::read_sf(resource, ...)
   }
 

@@ -19,11 +19,11 @@
 create_map <- function(geo_df,
                        col_to_plot = "diff_pop",
                        save_map = TRUE,
-                       interactive = rlang::is_interactive(),
+                       interactive = is_interactive(),
                        file_path = "bias_map"
 
                        ){
-  rlang::check_installed(
+  check_installed(
     c("urbnthemes", "tmap", "dplyr"),
     reason = "to use the `create_map()` function."
   )
@@ -52,10 +52,10 @@ create_map <- function(geo_df,
       # replace observations that are not significantly different with NA
       # multiply by 100 to convert to percentage
       geo_df <- geo_df |>
-        dplyr::mutate(!!rlang::sym(col_to_plot) :=
-                 dplyr::if_else(!!rlang::sym(stringr::str_glue("sig_{col_to_plot}")) == "FALSE",
+        dplyr::mutate(!!sym(col_to_plot) :=
+                 dplyr::if_else(!!sym(stringr::str_glue("sig_{col_to_plot}")) == "FALSE",
                          NA_real_,
-                         !!rlang::sym(col_to_plot)*100
+                         !!sym(col_to_plot)*100
                          )
                )
 

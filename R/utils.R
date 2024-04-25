@@ -135,7 +135,7 @@ is_delim_path <- function(path) {
 #' Does x match the pattern of a URL?
 #' @noRd
 is_url <- function(x) {
-  if (!rlang::is_vector(x) || rlang::is_empty(x)) {
+  if (!is_vector(x) || is_empty(x)) {
     return(FALSE)
   }
 
@@ -180,7 +180,7 @@ convert_to_coords <- function(data,
     sf::st_transform(4326) |>
     sf::st_coordinates() |>
     as.data.frame() |>
-    rlang::set_names(coords)
+    set_names(coords)
 
   if (!keep_all || inherits(data, "sfc")) {
     return(coords_data)
