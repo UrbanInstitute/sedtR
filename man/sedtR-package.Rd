@@ -9,11 +9,11 @@
 The Urban Institute has developed the Spatial Equity Data Tool to analyze the equitability of resources across cities, counties, states, and the entirety of the United States. This package allows users to call the Spatial Equity Data Tool API programmatically using R code.
 }
 \author{
-\strong{Maintainer}: Gabriel Morrison \email{gmorrison@urban.org}
+\strong{Maintainer}: Gabriel Morrison \email{gmorrison@urban.org} (\href{https://orcid.org/0009-0008-1815-5920}{ORCID})
 
 Authors:
 \itemize{
-  \item Alena Stern \email{astern@urban.org}
+  \item Alena Stern \email{astern@urban.org} (\href{https://orcid.org/0009-0002-7171-8207}{ORCID})
 }
 
 Other contributors:
