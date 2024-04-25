@@ -1,3 +1,49 @@
+#' @noRd
+check_resource_file_path <- function(
+    file,
+    coords = c("lon", "lat"),
+    arg = caller_arg(file),
+    call = caller_env()) {
+
+  if (!(is_string(file) && file.exists(file))) {
+    abort(
+      "{.arg {arg}} must be a valid path to an existing file.",
+      call = call
+    )
+  }
+
+  if (!(is.character(coords) && has_length(coords, 2))) {
+    abort(
+      "Valid latitude and longitude column names must be supplied.",
+      call = call
+    )
+  }
+
+  invisible(NULL)
+}
+
+#' @noRd
+match_acs_data_year <- function(acs_data_year,
+                                error_call = caller_env()) {
+  acs_data_year <- as.character(acs_data_year)
+
+  arg_match0(
+    acs_data_year,
+    c("2019", "2021", "2022"),
+    error_call = error_call
+  )
+}
+
+#' @noRd
+match_geo <- function(geo,
+                      error_call = caller_env()) {
+  arg_match0(
+    geo,
+    c("city", "county", "state", "national"),
+    error_call = error_call
+  )
+}
+
 #' Call the SEDT API and return an API response
 #'
 #' [call_upload_user_files()] calls the SEDT API /upload-user-files/ endpoint
@@ -90,6 +136,8 @@ call_upload_user_files <- function(
   ...,
   call = caller_env()
 ) {
+  # Define api URL
+  api_url <- sedt_url("upload-user-file/")
 
   resource_file_path <- resource_file_path %||% prep_sedt_resource(
     resource = resource,
@@ -99,29 +147,15 @@ call_upload_user_files <- function(
     call = call
   )
 
-  # Define api URL
-  api_url <- sedt_url("upload-user-file/")
-
-  acs_data_year <- as.character(acs_data_year)
-
-  acs_data_year <- arg_match0(
-    acs_data_year,
-    c("2019", "2021", "2022"),
-    error_call = call
+  check_resource_file_path(
+    resource_file_path,
+    coords = c(resource_lon_column, resource_lat_column),
+    call = call
   )
 
-  geo <- arg_match0(
-    geo,
-    c("city", "county", "state", "national"),
-    error_call = call
-  )
+  acs_data_year <- match_acs_data_year(acs_data_year, error_call = call)
 
-  #Data Input Type Checks:
-  stopifnot(
-    is.character(
-      c(resource_file_path, resource_lat_column, resource_lon_column)
-    )
-  )
+  geo <- match_geo(geo, error_call = call)
 
   possible_vars <- list(demographic_file_path = demographic_file_path,
                         demographic_geo_id_column = demographic_geo_id_column,
