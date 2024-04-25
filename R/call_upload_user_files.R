@@ -83,6 +83,7 @@ call_upload_user_files <- function(
   resource_weight = NA,
   geo = "city",
   acs_data_year = getOption("sedtR.year", 2021),
+  placement = "surface",
   ...,
   call = caller_env()
   ) {

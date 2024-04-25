@@ -93,6 +93,10 @@ the geographic level at which the analysis should be conducted.}
 it is different than "2019" or "2021" the tool will use 2021 data. A
 default value can be set using the "sedtR.year" option.}
 
+\item{placement}{Placement of point when converting non-point input geometry.
+"surface" (default) or "centroid". Only used if resource is a file path for
+a spatial data file or an \code{sf} object. See details for more information.}
+
 \item{...}{Additional parameters passed to \code{\link[arcgislayers:arc_read]{arcgislayers::arc_read()}} or
 \code{\link[sf:st_read]{sf::st_read()}} depending on the value provided to \code{resource}.}
 }
