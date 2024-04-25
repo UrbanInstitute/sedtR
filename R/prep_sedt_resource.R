@@ -34,7 +34,7 @@
 #' @returns A path to a CSV or TSV file (depending on value of `fileext`).
 #' @keywords internal
 #' @export
-#' @importFrom utils download.file
+#' @importFrom utils download.file write.csv
 prep_sedt_resource <- function(resource,
                                coords = c("lon", "lat"),
                                file = NULL,
@@ -82,10 +82,17 @@ prep_sedt_resource <- function(resource,
 
   file <- file %||% tempfile(fileext = fileext)
 
-  readr::write_csv(
-    resource,
-    file = file
-  )
+  if (is_installed("readr")) {
+    readr::write_csv(
+      resource,
+      file = file
+    )
+  } else {
+    utils::write.csv(
+      resource,
+      file = file
+    )
+  }
 
   file
 }
@@ -98,14 +105,14 @@ check_sedt_resource <- function(resource,
                                 arg = caller_arg(resource),
                                 call = caller_env()) {
   if (allow_null && is.null(resource)) {
-    return(NULL)
+    return(invisible(NULL))
   }
 
   not_message <- "{.obj_type_friendly {resource}}"
 
   if (is_string(resource)) {
     if (is_url(resource) || file.exists(resource)) {
-      return(NULL)
+      return(invisible(NULL))
     }
 
     not_message <- "not {.str {resource}}"
