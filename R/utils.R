@@ -1,9 +1,10 @@
 #' Get API Response
 #'
-#' Calls call_upload_user_files() for a given file path, lat col,
+#' Calls [call_upload_user_files()] for a given file path, lat col,
 #' and lon col, parses and returns API response
 #'
-#' @param param_list (string) Required: Includes the parameters included in the call_upload_user_files function
+#' @param param_list (string) Required: Includes the parameters included in the
+#'   call_upload_user_files function
 #'
 #' @return r (string) Returns the API error status code response
 

@@ -9,10 +9,11 @@
 #' results to the user.
 #'
 #' @inheritParams call_upload_user_files
-#' @return response (list): The function wraps [httr::POST()] which
-#'  returns a "response object" which is a list with information about the request.
-#'  See the [API documentation](https://ui-research.github.io/sedt_documentation/api_documentation.html)
-#'  for more details.
+#' @return response (list): The function wraps [httr::POST()] which returns a
+#'   "response object" which is a list with information about the request. See
+#'   the [API
+#'   documentation](https://ui-research.github.io/sedt_documentation/api_documentation.html)
+#'   for more details.
 #' @inherit prep_sedt_resource details
 #' @export
 
@@ -109,7 +110,6 @@ call_sedt_api <- function(resource = NULL,
     inform("getting output file")
     return(get_output_data(file_id))
   } else {
-    # cli::cli_abort("hit an error!")
     r_json <- httr::content(response, as = "text", encoding = "UTF-8")
     error_text <- rjson::fromJSON(r_json)
     message <- stringr::str_glue("The analysis for your uploaded data did not succeed. The error is {error_text}")
