@@ -1,7 +1,9 @@
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage("Loading sedtR - using the production API")
+  stage <- "production"
+  packageStartupMessage(paste0("Loading sedtR - using the ", stage, " API"))
 }
 
+#' @noRd
 sedt_url <- function(
     ...,
     base_url = "https://equity-tool-api.urban.org/api/v",
