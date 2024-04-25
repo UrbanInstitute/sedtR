@@ -1,7 +1,11 @@
-#' Function to create a choropleth map to visualize the geographic disparity scores
+#' Create a chloropleth map to visualize the geographic disparity scores
+#'
+#' [create_map()] uses `{tmap}` and `{urbnthemes}` to create a chloropleth map
+#' to visualize the geographic disparity scores returned with the response
+#' object from [call_sedt_api()].
 #'
 #' @param geo_df  (sf dataframe) - a spatial dataframe containing the geographic
-#' disparity scores outputted from the Spatial Equity data tool.
+#'   disparity scores outputted from the Spatial Equity data tool.
 #' @param col_to_plot (string) - The column in the geo_df to plot in
 #' choropleth map.
 #' @param save_map (logical) - Default set to TRUE. Whether to save the chart
@@ -9,17 +13,17 @@
 #' .html. Otherwise, the map will save as a .png.
 #' @param interactive (logical) - Default set to TRUE. Whether the map should
 #' be interactive or not.
-#' @param file_path (character) - Default set to "bias_map". A file path of where
-#' to save the file. This should not include a file type as that is controlled
-#' by the interactive variable. An example file-path would be,
-#' "visuals/interactives/disparity_map".
+#' @param file_path (character) - Default set to "bias_map". A file path of
+#'   where to save the file. This should not include a file type as that is
+#'   controlled by the interactive variable. An example file-path would be,
+#'   "visuals/interactives/disparity_map".
 #' @return bias_map (tmap map) - the choropleth map created
 #' @export
 
 create_map <- function(geo_df,
                        col_to_plot = "diff_pop",
                        save_map = TRUE,
-                       interactive = is_interactive(),
+                       interactive = TRUE,
                        file_path = "bias_map"
 
                        ){
@@ -52,13 +56,13 @@ create_map <- function(geo_df,
       # replace observations that are not significantly different with NA
       # multiply by 100 to convert to percentage
       geo_df <- geo_df |>
-        dplyr::mutate(!!sym(col_to_plot) :=
-                 dplyr::if_else(!!sym(stringr::str_glue("sig_{col_to_plot}")) == "FALSE",
-                         NA_real_,
-                         !!sym(col_to_plot)*100
-                         )
-               )
-
+        dplyr::mutate(
+          !!sym(col_to_plot) := dplyr::if_else(
+            !!sym(stringr::str_glue("sig_{col_to_plot}")) == "FALSE",
+            NA_real_,
+            !!sym(col_to_plot) * 100
+            )
+          )
 
       bias_map <-
         tmap::tm_basemap("CartoDB.PositronNoLabels") +
