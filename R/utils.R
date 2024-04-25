@@ -125,3 +125,72 @@ get_api_results <- function(file_id) {
 
   }
 }
+
+#' Does x match the pattern of a delimited data file path?
+#' @noRd
+is_delim_path <- function(path) {
+  grepl("\\.(csv|tsv)", path)
+}
+
+#' Does x match the pattern of a URL?
+#' @noRd
+is_url <- function(x) {
+  if (!rlang::is_vector(x) || rlang::is_empty(x)) {
+    return(FALSE)
+  }
+
+  url_pattern <-
+    "http[s]?://(?:[[:alnum:]]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
+
+  grepl(url_pattern, x)
+}
+
+#' Convert a sf object to a data frame of coordinates
+#'
+#' @noRd
+#' @importFrom purrr list_cbind
+convert_to_coords <- function(data,
+                              coords = c("lon", "lat"),
+                              placement = "surface",
+                              keep_all = TRUE,
+                              call = caller_env()) {
+  check_installed("sf", call = call)
+
+  placement <- arg_match0(
+    placement,
+    values = c("surface", "centroid"),
+    error_call = call
+  )
+
+  st_point_placement <- switch (placement,
+    surface = sf::st_point_on_surface,
+    centroid = sf::st_centroid
+  )
+
+  if (!all(sf::st_is(data, "POINT"))) {
+    data <- suppressWarnings(st_point_placement(data))
+  }
+
+  stopifnot(
+    is.character(coords),
+    has_length(coords, 2)
+  )
+
+  coords_data <- data |>
+    sf::st_transform(4326) |>
+    sf::st_coordinates() |>
+    as.data.frame() |>
+    rlang::set_names(coords)
+
+  if (!keep_all || inherits(data, "sfc")) {
+    return(coords_data)
+  }
+
+  purrr::list_cbind(
+    list(
+      sf::st_drop_geometry(data),
+      coords_data
+    )
+  )
+}
+

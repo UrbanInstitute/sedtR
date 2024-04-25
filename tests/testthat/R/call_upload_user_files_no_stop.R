@@ -77,7 +77,7 @@ call_upload_user_files_no_stop <- function(
     acs_data_year = "2021"
     ){
   #Define api URL
-  api_url = stringr::str_glue("{base_url}/api/v1/upload-user-file/")
+  api_url = sedt_url("upload-user-file/")
 
   #print("start of no stop")
 

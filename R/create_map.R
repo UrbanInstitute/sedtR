@@ -19,11 +19,10 @@
 create_map <- function(geo_df,
                        col_to_plot = "diff_pop",
                        save_map = TRUE,
-                       interactive = TRUE,
+                       interactive = rlang::is_interactive(),
                        file_path = "bias_map"
 
                        ){
-
   rlang::check_installed(
     c("urbnthemes", "tmap", "dplyr"),
     reason = "to use the `create_map()` function."

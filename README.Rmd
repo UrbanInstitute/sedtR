@@ -35,6 +35,7 @@ The tool – launched in 2020 and expanded in 2021 – has been used by a wide v
 ### Why Create a Public API and `sedtR`:
 Through engagements with local government and nonprofit users, we identified a key barrier. Organizations wanted to embed the SEDT within their own tools and data workflows and thus make the Tool a core part of institutional processes. However, before the API's release in March of 2024, Tool users would have had to visit Urban’s website and use the GUI interface to upload one dataset at a time whenever new analyses were needed. The release of the API overcomes this barrier by allowing programmatic access to the Tool. We wrote `sedtR` to wrap the public API's endpoints in user-friendly R code. We are hopeful that `sedtR` makes it easy for researchers, analysts, and policymakers to incorporate SEDT calculations into R workflows. 
 
+The SEDT enables local, state, and federal leaders, as well as the general public, to upload their own point spatial data and quickly assess whether place-based programs and resources – such as parks, libraries, wi-fi hotspots or electric vehicle charging stations – are equitably distributed across neighborhoods and demographic groups.
 
 ## Installation
 
@@ -69,6 +70,23 @@ withr::with_tempdir({
 })
 ```
 
+```{r}
+create_map(sedt_response$geo_bias_data, save_map = FALSE)
+```
+
+A data frame with demographic information used in the analysis is also returned:
+
+```{r}
+sedt_response$demo_bias_data
+```
+
+## Where Can I Learn More?
+
+The Spatial Equity Data Tool has comprehensive documentation in the form of an [online book](https://ui-research.github.io/sedt_documentation/). Most notably, there is a chapter [specifically devoted to the API](https://ui-research.github.io/sedt_documentation/api_documentation.html). It provides more in-depth `sedtR` code and outputs.
+
+Other particularly relevant chapters cover [common API errors and warnings](https://ui-research.github.io/sedt_documentation/common_errors_warnings.html), [how to interpret Tool results](https://ui-research.github.io/sedt_documentation/interpreting_results.html), and a [description of data appropriate for the Tool](https://ui-research.github.io/sedt_documentation/resource_datasets.html). 
+
+## Feedback
 
 `call_sedt_api()` returns a list object that contains a `sf` object storing the geographic disparity scores: 
 
