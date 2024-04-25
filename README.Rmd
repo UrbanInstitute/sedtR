@@ -61,24 +61,6 @@ sedt_response <- call_sedt_api(
 )
 ```
 
-```{r}
-create_map(sedt_response$geo_bias_data, save_map = FALSE)
-```
-
-A data frame with demographic information used in the analysis is also returned:
-
-```{r}
-sedt_response$demo_bias_data
-```
-
-## Where Can I Learn More?
-
-The Spatial Equity Data Tool has comprehensive documentation in the form of an [online book](https://ui-research.github.io/sedt_documentation/). Most notably, there is a chapter [specifically devoted to the API](https://ui-research.github.io/sedt_documentation/api_documentation.html). It provides more in-depth `sedtR` code and outputs.
-
-Other particularly relevant chapters cover [common API errors and warnings](https://ui-research.github.io/sedt_documentation/common_errors_warnings.html), [how to interpret Tool results](https://ui-research.github.io/sedt_documentation/interpreting_results.html), and a [description of data appropriate for the Tool](https://ui-research.github.io/sedt_documentation/resource_datasets.html). 
-
-## Feedback
-
 `call_sedt_api()` returns a list object that contains a `sf` object storing the geographic disparity scores: 
 
 ```{r}
@@ -96,14 +78,12 @@ sedt_response$demo_bias_data |>
 
 The package has under-development visualization functions `create_map()` and `create_demo_chart()`  that ultimately will be able to visualize these results in graphics similar to those displayed on the SEDT website. 
 
-
-
 ## Where Can I Learn More:
 
 The Spatial Equity Data Tool has comprehensive documentation in the form of an [online book](https://ui-research.github.io/sedt_documentation/). Most notably, there is a chapter [specifically devoted to the API](https://ui-research.github.io/sedt_documentation/api_documentation.html). It provides more in-depth `sedtR` code and outputs. 
 
 Other particularly relevant chapters cover [common API errors and warnings](https://ui-research.github.io/sedt_documentation/common_errors_warnings.html), [how to interpret Tool results](https://ui-research.github.io/sedt_documentation/interpreting_results.html), and a [description of data appropriate for the Tool](https://ui-research.github.io/sedt_documentation/resource_datasets.html). 
 
-
 ## Feedback:
+
 Please provide feedback by opening [GitHub Issues](https://github.com/UrbanInstitute/sedtR/issues) or contacting us at sedt@urban.org.
