@@ -50,24 +50,15 @@ devtools::install_github("UrbanInstitute/sedtR")
 
 The following example illustrates using the `call_sedt_api()` function on Minneapolis, MN bikeshare data stored on the Urban Institute's [Data Catalog](https://datacatalog.urban.org/).  
 
-``` {r, echo = FALSE, message = FALSE, warning = FALSE}
+``` {r}
 library(sedtR)
 
-withr::with_tempdir({
-  
-  # Download bicycle data:
-  download.file(
-    "https://equity-tool-api.urban.org/sample-data/minneapolis_bikes.csv",
-    destfile = "bikes.csv")
-    
-  # Call sedt API with wrapper function
-  sedt_response <- sedtR::call_sedt_api(
-    resource_file_path = here::here("bikes.csv"),
-    resource_lat_column = "lat",
-    resource_lon_column = "lon",
-    geo = "city",
-    acs_data_year = "2021")
-})
+# Call sedt API with wrapper function
+sedt_response <- call_sedt_api(
+  resource = "https://equity-tool-api.urban.org/sample-data/minneapolis_bikes.csv",
+  geo = "city",
+  acs_data_year = 2021
+)
 ```
 
 ```{r}

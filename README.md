@@ -73,7 +73,18 @@ The following example illustrates using the `call_sedt_api()` function
 on Minneapolis, MN bikeshare data stored on the Urban Institute’s [Data
 Catalog](https://datacatalog.urban.org/).
 
-    #> [1] "getting output file"
+``` r
+library(sedtR)
+#> Loading sedtR - using the production API
+
+# Call sedt API with wrapper function
+sedt_response <- call_sedt_api(
+  resource = "https://equity-tool-api.urban.org/sample-data/minneapolis_bikes.csv",
+  geo = "city",
+  acs_data_year = 2021
+)
+#> getting output file
+```
 
 ``` r
 create_map(sedt_response$geo_bias_data, save_map = FALSE)

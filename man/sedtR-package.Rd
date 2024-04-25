@@ -8,6 +8,14 @@
 \description{
 The Urban Institute has developed the Spatial Equity Data Tool to analyze the equitability of resources across cities, counties, states, and the entirety of the United States. This package allows users to call the Spatial Equity Data Tool API programmatically using R code.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/UrbanInstitute/sedtR}
+  \item Report bugs at \url{https://github.com/UrbanInstitute/sedtR/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Gabriel Morrison \email{gmorrison@urban.org} (\href{https://orcid.org/0009-0008-1815-5920}{ORCID})
 
