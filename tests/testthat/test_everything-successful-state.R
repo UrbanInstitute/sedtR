@@ -35,9 +35,9 @@ test_that("API is able to call successfully for state", {
   #Get diff_data_city for specific portions:
   get_diff <- function(var) {
     val <- demo_bias_data |>
-      filter(census_var == var) |>
-      pull(diff_data_city)
-    print(val)
+      dplyr::filter(census_var == var) |>
+      dplyr::pull(diff_data_city)
+    #print(val)
   }
 
 
@@ -59,31 +59,14 @@ test_that("API is able to call successfully for state", {
   seniors_tool <- get_diff("pct_seniors")
   seniors_sup <- get_diff("pct_num_seniorsE_demographic")
 
-  testthat::expect_true(abs(white_tool - white_sup) < .04)
-  testthat::expect_true(abs(black_tool - black_sup) < .02)
-  testthat::expect_true(abs(asian_tool - asian_sup) < .03)
-  testthat::expect_true(abs(hisp_tool - hisp_sup) < .04)
-  testthat::expect_true(abs(children_tool - children_sup) < .05)
-  testthat::expect_true(abs(seniors_tool - seniors_sup) < .05)
+  testthat::expect_true(abs(white_tool - white_sup) < .0001)
+  testthat::expect_true(abs(black_tool - black_sup) < .0001)
+  testthat::expect_true(abs(asian_tool - asian_sup) < .0001)
+  testthat::expect_true(abs(hisp_tool - hisp_sup) < .0001)
+  testthat::expect_true(abs(children_tool - children_sup) < .0001)
+  testthat::expect_true(abs(seniors_tool - seniors_sup) < .0002)
 
+}
 
-
-  #
-  #
-  # counter <- 0
-  # sedt_status <- get_status(r$file_id)
-  #
-  # while(!(isTRUE(sedt_status$results$formdata$updates$finished)) & counter < 50){
-  #   sedt_status <- get_status(r$file_id)
-  #   counter = counter + 1
-  #   Sys.sleep(3L)
-  # }
-  #
-  # expect_equal(sedt_status$results$formdata$updates$finished,
-  #              TRUE)
-  }
-
-
-
- )
+)
 

@@ -69,13 +69,11 @@ test_that("Missing more than 50% of data in geographic and demographic columns",
     "hispanic_demographic" %in% demo_bias_data$census_var
 
   no_sig_diff <- demo_bias_data |>
-    dplyr::filter(census_var == "nh_white_pop_demographic") |>
+    dplyr::filter(census_var == "pct_nh_white_pop_demographic") |>
     dplyr::pull(sig_diff) |>
     as.logical()
 
   expect_false(hispanic_demographic_in_dem_bias)
-
-  #Currently fails: We need an update to equity_calculations
   expect_false(no_sig_diff)
 
   ###############################################

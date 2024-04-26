@@ -8,10 +8,12 @@ test_that("API is able to call successfully for county", {
     demographic_file_path = here::here("tests", "testthat", "data", "test_api_dem_county.csv"),
     demographic_geo_id_column = "GEOID",
     demographic_columns =  list(
-      male_under_5E = "male_under_5M",
-        female_under_5E = "female_under_5M",
-        masters_degreeE = "masters_degreeM",
-        owner_occupiedE = "owner_occupiedM"
+      num_blackE = "num_blackM",
+      num_whiteE = "num_whiteM",
+      num_seniorsE = "num_seniorsM",
+      num_childrenE = "num_childrenM",
+      num_asianE = "num_asianM",
+      num_hispE = "num_hispM"
     ),
     geographic_file_path = here::here("tests", "testthat", "data", "test_api_geo_county.csv"),
     geographic_geo_id_column = "GEOID",
