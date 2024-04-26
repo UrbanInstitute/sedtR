@@ -106,7 +106,7 @@ create_demo_chart <- function(demo_df,
                                                     #fontfamily = "Lato",
                                                     #col = "#eec046",
                                                     #col = urbnthemes::palette_urbn_diverging[7],
-                                                    fontsize = 22,
+                                                    fontsize = 18,
                                                     #alpha = 0.5
                                                     alpha = .75
                                       ))
@@ -117,7 +117,7 @@ create_demo_chart <- function(demo_df,
                                      gp=grid::gpar(fontface = "bold",
                                                    #fontfamily = "Lato",
                                                    #col = urbnthemes::palette_urbn_diverging[1],
-                                                   fontsize = 22,
+                                                   fontsize = 18,
                                                    alpha = 0.75))
 
       plot <-
@@ -132,20 +132,21 @@ create_demo_chart <- function(demo_df,
                                            yend = census_var) #,
                               #color = urbnthemes::palette_urbn_gray[6]
         ) +
-        ggplot2:: geom_point(ggplot2::aes(color = pos_diff)) +
+        ggplot2:: geom_point(ggplot2::aes(color = pos_diff),
+                             size = 3) +
         # Put text to left/right of 0 line to match equity tool
         ggplot2::geom_text(data = df_plot |>
                              dplyr::filter(diff_data_city >= 0),
                            ggplot2::aes(x = 0, y = census_var, label = census_var),
                            nudge_x  = -(max_val * 0.01),
                            hjust = "right",
-                           size = 5) +
+                           size = 4) +
         ggplot2::geom_text(data = df_plot |>
                              dplyr::filter(diff_data_city < 0),
                            ggplot2::aes(x = 0, y = census_var, label = census_var),
                            nudge_x  = max_val * 0.01,
                            hjust = "left",
-                           size = 5) +
+                           size = 4) +
         ggplot2::annotation_custom(underrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
         ggplot2::annotation_custom(overrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
         # ggplot2::scale_color_manual(values = c('positive' = urbnthemes::palette_urbn_diverging[1],
@@ -157,6 +158,16 @@ create_demo_chart <- function(demo_df,
         ggplot2::theme(panel.grid.major = ggplot2::element_blank(),
                        panel.grid.minor = ggplot2::element_blank(),
                        axis.text.y = ggplot2::element_blank(),
+                       panel.background = ggplot2::element_rect(
+                         fill = "white",
+                         colour = "black"
+                       ),
+                       plot.margin = ggplot2::margin(
+                         r = 10,
+                         l = 5,
+                         t = 5,
+                         b = 5
+                       ),
                        legend.position = "none")
 
       print(plot)

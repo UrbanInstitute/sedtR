@@ -18,14 +18,14 @@
 
 create_map <- function(geo_df,
                        col_to_plot = "diff_pop",
-                       save_map = TRUE,
+                       save_map = FALSE,
                        interactive = TRUE,
                        file_path = "bias_map"
 
                        ){
 
   rlang::check_installed(
-    c("urbnthemes", "tmap", "dplyr"),
+    c("urbnthemes", "tmap", "dplyr", "janitor"),
     reason = "to use the `create_map()` function."
   )
 
@@ -48,6 +48,9 @@ create_map <- function(geo_df,
       if(interactive){
         tmap::tmap_mode("view")
         file_suffix = ".html"
+      } else{
+        tmap::tmap_mode("plot")
+        file_suffix = ".png"
       }
 
       # replace observations that are not significantly different with NA
@@ -59,7 +62,7 @@ create_map <- function(geo_df,
                          !!rlang::sym(col_to_plot)*100
                          )
                )
-
+      print("passed dplyr")
 
       bias_map <-
         tmap::tm_basemap("CartoDB.PositronNoLabels") +
@@ -79,10 +82,9 @@ create_map <- function(geo_df,
         tmap::tm_tiles("CartoDB.PositronOnlyLabels") +
         tmap::tm_layout(legend.outside = TRUE,
                   #inner.margins = c(0.02, 0.02, 0.02, .3)
-                  attr.outside = TRUE
-                  ) #+
-        #tm_compass(position = c("right", "bottom")) +
-        #tm_scale_bar(position = c("right", "bottom"))
+                  attr.outside = TRUE,
+                  title = janitor::make_clean_names(string = col_to_plot, case = "title")
+                  )
 
       if(save_map){
         tmap::tmap_save(tm = bias_map,
