@@ -67,13 +67,13 @@ test_that("Check that we successfully handle supplemental data without se column
   # data with missing margins:
   expect_false(
     demo_bias_data |>
-      dplyr::filter(census_var == "hispanic_demographic") |>
+      dplyr::filter(census_var == "pct_hispanic_demographic") |>
       dplyr::pull(sig_diff)
   )
 
   expect_false(
     demo_bias_data |>
-      dplyr::filter(census_var == "hispanic_men_demographic") |>
+      dplyr::filter(census_var == "pct_hispanic_men_demographic") |>
       dplyr::pull(sig_diff)
   )
 }
