@@ -7,12 +7,13 @@
 get_api_response(param_list)
 }
 \arguments{
-\item{param_list}{(string) Required: Includes the parameters included in the call_upload_user_files function}
+\item{param_list}{(string) Required: Includes the parameters included in the
+call_upload_user_files function}
 }
 \value{
 r (string) Returns the API error status code response
 }
 \description{
-Calls call_upload_user_files() for a given file path, lat col,
+Calls \code{\link[=call_upload_user_files]{call_upload_user_files()}} for a given file path, lat col,
 and lon col, parses and returns API response
 }

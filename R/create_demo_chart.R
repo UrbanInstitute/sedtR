@@ -17,7 +17,7 @@ create_demo_chart <- function(demo_df,
                               save_chart = TRUE,
                               file_path = "dem_disparity_chart.png") {
 
-  rlang::check_installed(
+  check_installed(
     c("forcats", "janitor", "scales", "ggplot2", "dplyr"),
     reason = "to use the `create_demo_chart()` function."
   )

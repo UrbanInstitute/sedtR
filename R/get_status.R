@@ -8,7 +8,7 @@
 get_status <- function(file_id) {
 
 
-  status_url <- stringr::str_glue("{base_url}/api/v1/get-output-data-status/{file_id}/")
+  status_url <- sedt_url("get-output-data-status/{file_id}/")
   response <- httr::GET(url = status_url)
 
   # if the request for the status is not successful, return error
@@ -16,7 +16,7 @@ get_status <- function(file_id) {
     return("There has beeen an error")
   }
 
-  r_json <- httr::content(response, as = "text")
+  r_json <- httr::content(response, as = "text", encoding = "UTF-8")
   r_list <- rjson::fromJSON(r_json)
 
   return(r_list)

@@ -22,13 +22,13 @@ get_output_data <- function(
   file_id
 ) {
 
-  output_data_url <- stringr::str_glue("{base_url}/api/v1/get-output-data/{file_id}/")
+  output_data_url <- sedt_url("get-output-data/{file_id}/")
 
   response <- httr::GET(
     url = output_data_url
   )
   status_code <- response[["status_code"]]
-  r_json <- httr::content(response, as = "text")
+  r_json <-  httr::content(response, as = "text", encoding = "UTF-8")
   r_list <- rjson::fromJSON(r_json)
   file_exists <- r_list[["results"]][["file_exists"]]
 
