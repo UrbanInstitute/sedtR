@@ -25,19 +25,16 @@ create_map <- function(geo_df,
                        ){
 
   rlang::check_installed(
-    c("tmap", "dplyr", "janitor"),
-    reason = "to use the `create_map()` function."
-  )
+    c("tmap", "dplyr", "janitor", "urbnthemes"),
+    reason = "to use the `create_map()` function. If urbnthemes not installed, we use RdBu color palette"
+    )
 
-  palette_urbn_diverging <- c(
-    "#ca5800",
-    "#fdbf11",
-    "#fdd870",
-    "#fff2cf",
-    "#cfe8f3",
-    "#73bfe2",
-    "#1696d2",
-    "#0a4c6a")
+  # Choose color palette:
+  if (rlang::is_installed("urbnthemes")) {
+    pal <- urbnthemes::palette_urbn_diverging
+  } else {
+    pal <- "RdBu"
+  }
 
 
   #Check all Inputs for correct types:
@@ -81,7 +78,7 @@ create_map <- function(geo_df,
         tmap::tm_basemap("CartoDB.PositronNoLabels") +
         tmap::tm_shape(valid_geo_df) +
         tmap::tm_fill(col = col_to_plot,
-                palette = "RdBu",
+                palette = pal,
                 midpoint = 0,
                 legend.show = TRUE,
                 id = "id_col",

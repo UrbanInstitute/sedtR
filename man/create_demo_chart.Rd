@@ -7,7 +7,7 @@
 create_demo_chart(
   demo_df,
   group = "total",
-  save_chart = TRUE,
+  save_chart = FALSE,
   file_path = "dem_disparity_chart.png"
 )
 }
@@ -19,7 +19,7 @@ returned by the SEDT API}
 is "total" This variable indicates the demographic group for which the chart
 to show.}
 
-\item{save_chart}{(logical) - Default set to TRUE. Whether to save the chart
+\item{save_chart}{(logical) - Default set to FALSE. Whether to save the chart
 or not.}
 
 \item{file_path}{(character) - Default set to "dem_disparity_chart.png".

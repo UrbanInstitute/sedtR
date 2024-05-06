@@ -18,9 +18,9 @@ create_demo_chart <- function(demo_df,
                               file_path = "dem_disparity_chart.png") {
 
   rlang::check_installed(
-    c("forcats", "janitor", "scales", "ggplot2", "dplyr"),
+    c("forcats", "janitor", "scales", "ggplot2", "dplyr", "urbnthemes"),
     reason = "to use the `create_demo_chart()` function."
-  )
+    )
 
   #Data is correct class:
   stopifnot("data.frame" %in% class(demo_df))
