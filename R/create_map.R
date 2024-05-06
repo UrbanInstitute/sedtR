@@ -62,7 +62,6 @@ create_map <- function(geo_df,
                          !!rlang::sym(col_to_plot)*100
                          )
                )
-      print("passed dplyr")
 
       bias_map <-
         tmap::tm_basemap("CartoDB.PositronNoLabels") +
@@ -81,7 +80,6 @@ create_map <- function(geo_df,
         tmap::tm_borders(lwd = .25) +
         tmap::tm_tiles("CartoDB.PositronOnlyLabels") +
         tmap::tm_layout(legend.outside = TRUE,
-                  #inner.margins = c(0.02, 0.02, 0.02, .3)
                   attr.outside = TRUE,
                   title = janitor::make_clean_names(string = col_to_plot, case = "title")
                   )

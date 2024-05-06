@@ -7,7 +7,7 @@
 create_map(
   geo_df,
   col_to_plot = "diff_pop",
-  save_map = TRUE,
+  save_map = FALSE,
   interactive = TRUE,
   file_path = "bias_map"
 )
