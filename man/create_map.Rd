@@ -14,12 +14,12 @@ create_map(
 }
 \arguments{
 \item{geo_df}{(sf dataframe) - a spatial dataframe containing the geographic
-disparity scores outputted from the Spatial Equity data tool.}
+disparity scores outputted from the Spatial Equity Data Tool.}
 
 \item{col_to_plot}{(string) - The column in the geo_df to plot in
 choropleth map.}
 
-\item{save_map}{(logical) - Default set to TRUE. Whether to save the chart
+\item{save_map}{(logical) - Default set to FALSE. Whether to save the chart
 or not. Note that if interactive is set to true, the map will save as a
 .html. Otherwise, the map will save as a .png.}
 

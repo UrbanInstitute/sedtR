@@ -74,6 +74,10 @@ create_map <- function(geo_df,
       # Avoid possible errors by ensuring geometry is valid
       valid_geo_df <- sf::st_make_valid(geo_df)
 
+      # Remove empty units to avoid warning. This is caused by tracts that do not have
+      # an associated geometry.
+      valid_geo_df <- valid_geo_df[!st_is_empty(valid_geo_df),]
+
       bias_map <-
         tmap::tm_basemap("CartoDB.PositronNoLabels") +
         tmap::tm_shape(valid_geo_df) +
