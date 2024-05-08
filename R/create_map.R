@@ -1,10 +1,10 @@
 #' Function to create a choropleth map to visualize the geographic disparity scores
 #'
 #' @param geo_df  (sf dataframe) - a spatial dataframe containing the geographic
-#' disparity scores outputted from the Spatial Equity data tool.
+#' disparity scores outputted from the Spatial Equity Data Tool.
 #' @param col_to_plot (string) - The column in the geo_df to plot in
 #' choropleth map.
-#' @param save_map (logical) - Default set to TRUE. Whether to save the chart
+#' @param save_map (logical) - Default set to FALSE. Whether to save the chart
 #' or not. Note that if interactive is set to true, the map will save as a
 #' .html. Otherwise, the map will save as a .png.
 #' @param interactive (logical) - Default set to TRUE. Whether the map should
@@ -15,6 +15,14 @@
 #' "visuals/interactives/disparity_map".
 #' @return bias_map (tmap map) - the choropleth map created
 #' @export
+#' @details
+#' Please use the following citation for data obtained from the API,
+#' replacing the version number with the current version:
+#'
+#' Stern, Alena, Gabe Morrison, Sonia Torres Rodríguez, Ajjit Narayanan, and Graham MacDonald. 2024.
+#' “Spatial Equity Data Tool API” (Version X.x.x). Washington, DC: Urban Institute.
+#' https://ui-research.github.io/sedt_documentation/. Data originally sourced from various sources,
+#' analyzed at the Urban Institute and made available under the ODC Attribution License.
 
 create_map <- function(geo_df,
                        col_to_plot = "diff_pop",

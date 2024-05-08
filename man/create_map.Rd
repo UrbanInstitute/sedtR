@@ -37,3 +37,12 @@ bias_map (tmap map) - the choropleth map created
 \description{
 Function to create a choropleth map to visualize the geographic disparity scores
 }
+\details{
+Please use the following citation for data obtained from the API,
+replacing the version number with the current version:
+
+Stern, Alena, Gabe Morrison, Sonia Torres Rodríguez, Ajjit Narayanan, and Graham MacDonald. 2024.
+“Spatial Equity Data Tool API” (Version X.x.x). Washington, DC: Urban Institute.
+https://ui-research.github.io/sedt_documentation/. Data originally sourced from various sources,
+analyzed at the Urban Institute and made available under the ODC Attribution License.
+}

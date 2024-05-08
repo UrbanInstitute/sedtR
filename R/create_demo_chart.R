@@ -11,6 +11,14 @@
 #' suffix. EX: "results/visuals/dem_disparity_chart.png"
 #' @return plot (ggplot object)  - The ggplot object that was created.
 #' @export
+#' @details
+#' Please use the following citation for data obtained from the API,
+#' replacing the version number with the current version:
+#'
+#' Stern, Alena, Gabe Morrison, Sonia Torres Rodríguez, Ajjit Narayanan, and Graham MacDonald. 2024.
+#' “Spatial Equity Data Tool API” (Version X.x.x). Washington, DC: Urban Institute.
+#' https://ui-research.github.io/sedt_documentation/. Data originally sourced from various sources,
+#' analyzed at the Urban Institute and made available under the ODC Attribution License.
 
 create_demo_chart <- function(demo_df,
                               group = "total",
