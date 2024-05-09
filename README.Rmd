@@ -49,11 +49,6 @@ devtools::install_github("UrbanInstitute/sedtR")
 
 The following example illustrates using the `call_sedt_api()` function on Minneapolis, MN bikeshare data stored on the Urban Institute's [Data Catalog](https://datacatalog.urban.org/).  
 
-```{r, echo = FALSE}
-devtools::load_all()
-
-```
-
 ``` {r, echo = FALSE, message = FALSE, warning = FALSE}
 library(sedtR)
 

@@ -67,9 +67,7 @@ The following example illustrates using the `call_sedt_api()` function
 on Minneapolis, MN bikeshare data stored on the Urban Institute’s [Data
 Catalog](https://datacatalog.urban.org/).
 
-    #> ℹ Loading sedtR
     #> Loading sedtR  - using  staging  API
-
     #> [1] "getting output file"
 
 `call_sedt_api()` returns a list object that contains a `sf` object
@@ -184,7 +182,7 @@ create_map(sedt_response$geo_bias_data,
 #> tmap mode set to plotting
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ``` r
 create_demo_chart(sedt_response$demo_bias_data,
@@ -192,7 +190,7 @@ create_demo_chart(sedt_response$demo_bias_data,
                   save_chart = FALSE) # optional, default is FALSE. If TRUE provide file_path
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ## Where Can I Learn More:
 
