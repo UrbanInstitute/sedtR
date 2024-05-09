@@ -67,7 +67,9 @@ The following example illustrates using the `call_sedt_api()` function
 on Minneapolis, MN bikeshare data stored on the Urban Institute’s [Data
 Catalog](https://datacatalog.urban.org/).
 
-    #> Loading sedtR  - using  production  API
+    #> ℹ Loading sedtR
+    #> Loading sedtR  - using  staging  API
+
     #> [1] "getting output file"
 
 `call_sedt_api()` returns a list object that contains a `sf` object
@@ -163,10 +165,34 @@ sedt_response$demo_bias_data |>
 #> 6   null  under18_pop
 ```
 
-The package has under-development visualization functions `create_map()`
-and `create_demo_chart()` that ultimately will be able to visualize
-these results in graphics similar to those displayed on the SEDT
-website.
+The package allows users to visualize the geographic disparity scores
+and demographic disparity scores with `create_map()` and
+`create_demo_chart()`, respectively. By default, these functions do not
+save the resulting images, but both provide arguments (`save_map` and
+`save_chart`) which take logicals and allow a user to save the outputted
+visualization. Like the interactive visualizations on the \[SEDT
+website\] (<https://apps.urban.org/features/equity-data-tool/>), these
+functions allow users to visualize different geographic or demographic
+disparity scores. `create_map()` allows interactive or static
+visualizations.
+
+``` r
+create_map(sedt_response$geo_bias_data, 
+           interactive = FALSE, # optional, defaults to TRUE
+           save_map = FALSE, #optional, defaults to FALSE. If TRUE, provide file_path
+           col_to_plot = "diff_pop") #optional, default is "diff_pop"
+#> tmap mode set to plotting
+```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
+``` r
+create_demo_chart(sedt_response$demo_bias_data,
+                  group = "total", # optional, default is "total"
+                  save_chart = FALSE) # optional, default is FALSE. If TRUE provide file_path
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 ## Where Can I Learn More:
 

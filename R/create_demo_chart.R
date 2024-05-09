@@ -182,8 +182,6 @@ create_demo_chart <- function(demo_df,
           "negative" = "#ca5800"
         ))
 
-      print(plot)
-
       if(save_chart){
         ggplot2::ggsave(filename = file_path,
                         plot = plot,
