@@ -11,9 +11,6 @@
 #'   `resource_lat_column` values for [call_sedt_api()].
 #' @param file File path for output file. Optional. If `NULL`, file path is set
 #'   to a temporary directory.
-#' @param placement Placement of point when converting non-point input geometry.
-#'   "surface" (default) or "centroid". Only used if resource is a file path for
-#'   a spatial data file or an `sf` object. See details for more information.
 #' @inheritParams rlang::args_error_context
 #' @details Valid resource inputs
 #'
@@ -24,7 +21,7 @@
 #' - A ArcGIS FeatureLayer or Table URL (read with [arcgislayers::arc_read()])
 #' - A file path for a spatial or tabular data file that can be read with [sf::read_sf()]
 #' - A data frame containing the named columns in `coords`
-#' - A `sf` or `sfc` object that can be converted to a data frame using [sf::st_coordinates()]
+#' - A `sf` or `sfc` object with POINT geometry that can be converted to a data frame using [sf::st_coordinates()]
 #'
 #' If resource is an `sf` object or a path to a spatial data file with POLYGON,
 #' MULTIPOLYGON, or any non-POINT geometry, `placement` is used to convert the

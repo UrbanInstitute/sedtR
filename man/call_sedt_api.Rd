@@ -96,10 +96,6 @@ Indicates the geographic level at which the analysis should be conducted.}
 it is different than "2019" or "2021" the tool will use 2021 data. A
 default value can be set using the "sedtR.year" option.}
 
-\item{placement}{Placement of point when converting non-point input geometry.
-"surface" (default) or "centroid". Only used if resource is a file path for
-a spatial data file or an \code{sf} object. See details for more information.}
-
 \item{...}{Additional parameters passed to \code{\link[arcgislayers:arc_read]{arcgislayers::arc_read()}} or
 \code{\link[sf:st_read]{sf::st_read()}} depending on the value provided to \code{resource}.}
 }
@@ -128,7 +124,7 @@ TSV input file with coordinate attribute columns. \code{\link[=prep_sedt_resourc
 \item A ArcGIS FeatureLayer or Table URL (read with \code{\link[arcgislayers:arc_read]{arcgislayers::arc_read()}})
 \item A file path for a spatial or tabular data file that can be read with \code{\link[sf:st_read]{sf::read_sf()}}
 \item A data frame containing the named columns in \code{coords}
-\item A \code{sf} or \code{sfc} object that can be converted to a data frame using \code{\link[sf:st_coordinates]{sf::st_coordinates()}}
+\item A \code{sf} or \code{sfc} object with POINT geometry that can be converted to a data frame using \code{\link[sf:st_coordinates]{sf::st_coordinates()}}
 }
 
 If resource is an \code{sf} object or a path to a spatial data file with POLYGON,

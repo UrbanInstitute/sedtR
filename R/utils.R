@@ -152,24 +152,23 @@ is_url <- function(x) {
 #' @importFrom purrr list_cbind
 convert_to_coords <- function(data,
                               coords = c("lon", "lat"),
-                              placement = "surface",
                               keep_all = TRUE,
+                              arg = caller_arg(data),
                               call = caller_env()) {
   check_installed("sf", call = call)
 
-  placement <- arg_match0(
-    placement,
-    values = c("surface", "centroid"),
-    error_call = call
-  )
-
-  st_point_placement <- switch (placement,
-    surface = sf::st_point_on_surface,
-    centroid = sf::st_centroid
-  )
-
   if (!all(sf::st_is(data, "POINT"))) {
-    data <- suppressWarnings(st_point_placement(data))
+    geom_type <- unique(sf::st_geometry_type(data))
+
+    message <- paste0(
+      "`", arg, "` must use POINT geometry only, not ",
+      paste0(geom_type, collapse = ", "), "."
+    )
+
+    abort(
+      message,
+      call = call
+    )
   }
 
   stopifnot(

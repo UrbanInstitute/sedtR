@@ -26,10 +26,6 @@ lon/lat order. Should correspond to the \code{resource_lon_column} and
 \item{file}{File path for output file. Optional. If \code{NULL}, file path is set
 to a temporary directory.}
 
-\item{placement}{Placement of point when converting non-point input geometry.
-"surface" (default) or "centroid". Only used if resource is a file path for
-a spatial data file or an \code{sf} object. See details for more information.}
-
 \item{arg}{An argument name as a string. This argument
 will be mentioned in error messages as the input that is at the
 origin of a problem.}
@@ -57,7 +53,7 @@ TSV input file with coordinate attribute columns. \code{\link[=prep_sedt_resourc
 \item A ArcGIS FeatureLayer or Table URL (read with \code{\link[arcgislayers:arc_read]{arcgislayers::arc_read()}})
 \item A file path for a spatial or tabular data file that can be read with \code{\link[sf:st_read]{sf::read_sf()}}
 \item A data frame containing the named columns in \code{coords}
-\item A \code{sf} or \code{sfc} object that can be converted to a data frame using \code{\link[sf:st_coordinates]{sf::st_coordinates()}}
+\item A \code{sf} or \code{sfc} object with POINT geometry that can be converted to a data frame using \code{\link[sf:st_coordinates]{sf::st_coordinates()}}
 }
 
 If resource is an \code{sf} object or a path to a spatial data file with POLYGON,
