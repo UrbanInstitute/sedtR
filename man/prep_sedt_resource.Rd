@@ -9,7 +9,6 @@ prep_sedt_resource(
   coords = c("lon", "lat"),
   file = NULL,
   fileext = "csv",
-  placement = "surface",
   ...,
   arg = caller_arg(resource),
   call = caller_env()

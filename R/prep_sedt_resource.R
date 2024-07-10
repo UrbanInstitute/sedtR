@@ -36,14 +36,13 @@ prep_sedt_resource <- function(resource,
                                coords = c("lon", "lat"),
                                file = NULL,
                                fileext = "csv",
-                               placement = "surface",
                                ...,
                                arg = caller_arg(resource),
                                call = caller_env()) {
   check_sedt_resource(resource, coords = coords, arg = arg, call = call)
 
   # If resource is a URL it must be a downloadable file, a FeatureLayer, or Table
-  if (is_url(resource)) {
+  if (is_string(resource) && is_url(resource)) {
     if (grepl("rest/services", resource)) {
       # Download FeatureLayer or Table
       check_installed("arcgislayers", call = call)
@@ -72,12 +71,11 @@ prep_sedt_resource <- function(resource,
     resource <- convert_to_coords(
       resource,
       coords = coords,
-      placement = placement,
       call = call
     )
   }
 
-  file <- file %||% tempfile(fileext = fileext)
+  file <- file %||% tempfile(fileext = paste0(".", fileext))
 
   if (is_installed("readr")) {
     readr::write_csv(
@@ -121,11 +119,11 @@ check_sedt_resource <- function(resource,
 
   message <- paste0(
     "{.arg {arg}} must a path to an existing file, a valid url,
-    a sf or sfc object, or a data frame with columns named {coords},",
+    a sf or sfc object, or a data frame with columns named {coords}, ",
     not_message
   )
 
-  abort(
+  cli::cli_abort(
     message,
     call = call
   )
