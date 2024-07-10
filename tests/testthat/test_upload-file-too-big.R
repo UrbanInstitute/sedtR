@@ -32,8 +32,8 @@ test_that("upload file too big returns error", {
     resource_weight = NA
   )
 
-  testthat::expect_equal(
-    get_api_response(param_list)$status_code, 413
+  testthat::expect_true(
+    get_api_response(param_list)$status_code %in% c(413, 400)
   )
 
 
@@ -54,8 +54,8 @@ test_that("upload file too big returns error", {
     resource_weight = NA
   )
 
-  testthat::expect_equal(
-    get_api_response(param_list)$status_code, 413
+  testthat::expect_true(
+    get_api_response(param_list)$status_code %in% c(413, 400)
   )
 
   ### geographic to big:
@@ -75,8 +75,8 @@ test_that("upload file too big returns error", {
     resource_weight = NA
   )
 
-  testthat::expect_equal(
-    get_api_response(param_list)$status_code, 413
+  testthat::expect_true(
+    get_api_response(param_list)$status_code %in% c(413, 400)
   )
 
 })

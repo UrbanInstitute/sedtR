@@ -7,19 +7,19 @@
 create_map(
   geo_df,
   col_to_plot = "diff_pop",
-  save_map = TRUE,
+  save_map = FALSE,
   interactive = TRUE,
   file_path = "bias_map"
 )
 }
 \arguments{
 \item{geo_df}{(sf dataframe) - a spatial dataframe containing the geographic
-disparity scores outputted from the Spatial Equity data tool.}
+disparity scores outputted from the Spatial Equity Data Tool.}
 
 \item{col_to_plot}{(string) - The column in the geo_df to plot in
 choropleth map.}
 
-\item{save_map}{(logical) - Default set to TRUE. Whether to save the chart
+\item{save_map}{(logical) - Default set to FALSE. Whether to save the chart
 or not. Note that if interactive is set to true, the map will save as a
 .html. Otherwise, the map will save as a .png.}
 
@@ -38,4 +38,13 @@ bias_map (tmap map) - the choropleth map created
 \code{\link[=create_map]{create_map()}} uses \code{{tmap}} and \code{{urbnthemes}} to create a chloropleth map
 to visualize the geographic disparity scores returned with the response
 object from \code{\link[=call_sedt_api]{call_sedt_api()}}.
+}
+\details{
+Please use the following citation for data obtained from the API,
+replacing the version number with the current version:
+
+Stern, Alena, Gabe Morrison, Sonia Torres Rodríguez, Ajjit Narayanan, and Graham MacDonald. 2024.
+“Spatial Equity Data Tool API” (Version X.x.x). Washington, DC: Urban Institute.
+https://ui-research.github.io/sedt_documentation/. Data originally sourced from various sources,
+analyzed at the Urban Institute and made available under the ODC Attribution License.
 }
