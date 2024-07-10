@@ -76,6 +76,9 @@ Catalog](https://datacatalog.urban.org/).
 ``` r
 library(sedtR)
 #> Loading sedtR - using the production API
+```
+
+``` r
 
 # Call sedt API with wrapper function
 sedt_response <- call_sedt_api(
@@ -85,6 +88,11 @@ sedt_response <- call_sedt_api(
 )
 #> getting output file
 ```
+
+A resource can be a path or URL for an existing delimited (`csv` or
+`tsv`) file with coordinate columns, a spatial data file that can be
+read with `sf::read_sf()`, a `sf` object, or a URL for a FeatureLayer.
+Any input spatial data file or object *must* use POINT geometry.
 
 `call_sedt_api()` returns a list object that contains a `sf` object
 storing the geographic disparity scores:
