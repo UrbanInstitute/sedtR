@@ -189,14 +189,11 @@ sedt_response$demo_bias_data |>
 
 The package allows users to visualize the geographic disparity scores
 and demographic disparity scores with `create_map()` and
-`create_demo_chart()`, respectively. By default, these functions do not
-save the resulting images, but both provide arguments (`save_map` and
-`save_chart`) which take logicals and allow a user to save the outputted
-visualization. Like the interactive visualizations on the \[SEDT
-website\] (<https://apps.urban.org/features/equity-data-tool/>), these
-functions allow users to visualize different geographic or demographic
-disparity scores. `create_map()` allows interactive or static
-visualizations.
+`create_demo_chart()`, respectively. Like the interactive visualizations
+on the \[SEDT website\]
+(<https://apps.urban.org/features/equity-data-tool/>), these functions
+allow users to visualize different geographic or demographic disparity
+scores. `create_map()` allows interactive or static visualizations.
 
 ``` r
 create_map(sedt_response$geo_bias_data, 
@@ -215,6 +212,10 @@ create_demo_chart(sedt_response$demo_bias_data,
 ```
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
+By default, these functions do not save the resulting images, but both
+provide arguments (`save_map` and `save_chart`) which take logicals and
+allow a user to save the outputted visualization.
 
 ## Where Can I Learn More:
 
