@@ -136,7 +136,7 @@ test_that("Test negative columns are dropped", {
   )
 
   expect_true(
-    "nh_white_pop_demographic" %in% demo_bias_data$census_var
+    "pct_nh_white_pop_demographic" %in% demo_bias_data$census_var
   )
 
 

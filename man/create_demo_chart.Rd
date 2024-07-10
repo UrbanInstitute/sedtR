@@ -7,7 +7,7 @@
 create_demo_chart(
   demo_df,
   group = "total",
-  save_chart = TRUE,
+  save_chart = FALSE,
   file_path = "dem_disparity_chart.png"
 )
 }
@@ -19,7 +19,7 @@ returned by the SEDT API}
 is "total" This variable indicates the demographic group for which the chart
 to show.}
 
-\item{save_chart}{(logical) - Default set to TRUE. Whether to save the chart
+\item{save_chart}{(logical) - Default set to FALSE. Whether to save the chart
 or not.}
 
 \item{file_path}{(character) - Default set to "dem_disparity_chart.png".
@@ -31,4 +31,13 @@ plot (ggplot object)  - The ggplot object that was created.
 }
 \description{
 Function to visualize demographic disparity scores on a lollipop chart
+}
+\details{
+Please use the following citation for data obtained from the API,
+replacing the version number with the current version:
+
+Stern, Alena, Gabe Morrison, Sonia Torres Rodríguez, Ajjit Narayanan, and Graham MacDonald. 2024.
+“Spatial Equity Data Tool API” (Version X.x.x). Washington, DC: Urban Institute.
+https://ui-research.github.io/sedt_documentation/. Data originally sourced from various sources,
+analyzed at the Urban Institute and made available under the ODC Attribution License.
 }

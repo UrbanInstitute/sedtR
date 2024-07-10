@@ -5,12 +5,15 @@ test_that("API is able to call all fields successfully", {
     resource_lon_column = "X",
     geo = "city",
     acs_data_year = "2019",
-    demographic_file_path = here::here("tests", "testthat", "data", "dc_test_api_demographic.csv"),
+    demographic_file_path = here::here("tests", "testthat", "data", "test_api_dem_city.csv"),
     demographic_geo_id_column = "GEOID",
     demographic_columns =  list(
-      nh_white_pop = "nh_white_pop_margin",
-      hispanic = "hispanic_margin",
-      hispanic_men = "hispanic_men_margin"
+      num_blackE = "num_blackM",
+      num_whiteE = "num_whiteM",
+      num_seniorsE = "num_seniorsM",
+      num_childrenE = "num_childrenM",
+      num_asianE = "num_asianM",
+      num_hispE = "num_hispM"
     ),
     geographic_file_path = here::here("tests", "testthat", "data", "dc_test_api_geographic.csv"),
     geographic_geo_id_column = "GEOID",
@@ -52,6 +55,46 @@ test_that("API is able to call all fields successfully", {
 
   expect_equal(sedt_status$results$formdata$updates$finished,
                TRUE)
+
+
+  df_list <- get_api_results(r$file_id)
+
+  geo_bias_data <- df_list$geo_bias_data
+  demo_bias_data <- df_list$demo_bias_data
+
+  #Get diff_data_city for specific portions:
+  get_diff <- function(var) {
+    val <- demo_bias_data |>
+      dplyr::filter(census_var == var) |>
+      dplyr::pull(diff_data_city)
+    #print(val)
   }
- )
+
+
+  white_tool <- get_diff("pct_white")
+  white_sup <- get_diff("pct_num_whiteE_demographic")
+
+  black_tool <- get_diff("pct_black")
+  black_sup <- get_diff("pct_num_blackE_demographic")
+
+  asian_tool <- get_diff("pct_asian")
+  asian_sup <- get_diff("pct_num_asianE_demographic")
+
+  hisp_tool <- get_diff("pct_hisp")
+  hisp_sup <- get_diff("pct_num_hispE_demographic")
+
+  children_tool <- get_diff("pct_children")
+  children_sup <- get_diff("pct_num_childrenE_demographic")
+
+  seniors_tool <- get_diff("pct_seniors")
+  seniors_sup <- get_diff("pct_num_seniorsE_demographic")
+
+  testthat::expect_true(abs(white_tool - white_sup) < .0001)
+  testthat::expect_true(abs(black_tool - black_sup) < .0001)
+  testthat::expect_true(abs(asian_tool - asian_sup) < .0001)
+  testthat::expect_true(abs(hisp_tool - hisp_sup) < .0001)
+  testthat::expect_true(abs(children_tool - children_sup) < .0001)
+  testthat::expect_true(abs(seniors_tool - seniors_sup) < .0005)
+}
+)
 

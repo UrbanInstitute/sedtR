@@ -4,19 +4,26 @@
 #' @param group (character) - One of "total", "poverty", or "under18". Default
 #' is "total" This variable indicates the demographic group for which the chart
 #' to show.
-#' @param save_chart (logical) - Default set to TRUE. Whether to save the chart
+#' @param save_chart (logical) - Default set to FALSE. Whether to save the chart
 #'  or not.
 #' @param file_path (character) - Default set to "dem_disparity_chart.png".
 #' A file path of where to save the file. This should include a data type
 #' suffix. EX: "results/visuals/dem_disparity_chart.png"
 #' @return plot (ggplot object)  - The ggplot object that was created.
 #' @export
+#' @details
+#' Please use the following citation for data obtained from the API,
+#' replacing the version number with the current version:
+#'
+#' Stern, Alena, Gabe Morrison, Sonia Torres Rodríguez, Ajjit Narayanan, and Graham MacDonald. 2024.
+#' “Spatial Equity Data Tool API” (Version X.x.x). Washington, DC: Urban Institute.
+#' https://ui-research.github.io/sedt_documentation/. Data originally sourced from various sources,
+#' analyzed at the Urban Institute and made available under the ODC Attribution License.
 
 create_demo_chart <- function(demo_df,
                               group = "total",
-                              save_chart = TRUE,
+                              save_chart = FALSE,
                               file_path = "dem_disparity_chart.png") {
-
   check_installed(
     c("forcats", "janitor", "scales", "ggplot2", "dplyr"),
     reason = "to use the `create_demo_chart()` function."
@@ -38,11 +45,7 @@ create_demo_chart <- function(demo_df,
   tryCatch(
     #TRY:
     {
-      #urbnthemes::set_urbn_defaults(style = "print")
-
       #Handle filtering to one of the baseline groups
-      #Note that this will need to be updated to work with API data, but overall
-      # logic should be similar
       if(group == "total") {
         df <- demo_df |>
           dplyr::filter(!(stringr::str_detect(census_var, "pct_pov"))) |>
@@ -55,7 +58,7 @@ create_demo_chart <- function(demo_df,
           dplyr::filter(stringr::str_detect(census_var, "pct_under18"))
       }
 
-      #Convert to Percent
+      #Convert from percent (ex 10.5%) to decimal (ex: .105)
       df <- dplyr::mutate(df, diff_data_city = diff_data_city / 100)
 
 
@@ -67,7 +70,7 @@ create_demo_chart <- function(demo_df,
                       census_var = stringr::str_replace_all(census_var,"Unins", "Uninsured"),
                       census_var = stringr::str_replace_all(census_var, "Hisp", "Hispanic"),
                       census_var = stringr::str_replace_all(census_var, "under", "Under"),
-                      census_var = stringr::str_replace_all(census_var, "Unemp", "Unemployed"),
+                      census_var = stringr::str_replace_all(census_var, "Unemp$", "Unemployed"),
                       census_var = stringr::str_replace_all(census_var, "Cb", "Cost-Burdened"),
                       census_var = stringr::str_replace_all(census_var, "Hh", "Household"),
                       census_var = stringr::str_replace_all(census_var, "Bach", "Bachelors"),
@@ -79,9 +82,13 @@ create_demo_chart <- function(demo_df,
       max_val = max(abs(df$diff_data_city)) * 1.1
 
       df_plot <- df |>
-        dplyr::mutate(pos_diff = dplyr::if_else(diff_data_city > 0, "positive", "negative"),
-                      pos_diff = dplyr::if_else(sig_diff, pos_diff, NA),
-                      census_var = forcats::fct_reorder(census_var, diff_data_city)) |>
+        dplyr::mutate(
+          pos_diff = dplyr::case_when(
+            diff_data_city > 0 & sig_diff ~ "positive",
+            diff_data_city < 0 & sig_diff ~ "negative",
+            TRUE ~ "not_stat_sig"
+          ),
+          census_var = forcats::fct_reorder(census_var, diff_data_city)) |>
         dplyr::arrange(dplyr::desc(diff_data_city))
 
 
@@ -103,11 +110,8 @@ create_demo_chart <- function(demo_df,
                                       just = c("left", "top"),
                                       rot = 90,
                                       gp=grid::gpar(fontface = "bold",
-                                                    #fontfamily = "Lato",
-                                                    #col = "#eec046",
-                                                    #col = urbnthemes::palette_urbn_diverging[7],
-                                                    fontsize = 22,
-                                                    #alpha = 0.5
+                                                    col = "#ca5800",
+                                                    fontsize = 18,
                                                     alpha = .75
                                       ))
 
@@ -115,37 +119,39 @@ create_demo_chart <- function(demo_df,
                                      just = c("right", "top"),
                                      rot = 90,
                                      gp=grid::gpar(fontface = "bold",
-                                                   #fontfamily = "Lato",
-                                                   #col = urbnthemes::palette_urbn_diverging[1],
-                                                   fontsize = 22,
+                                                   col = "#1696d2",
+                                                   fontsize = 18,
                                                    alpha = 0.75))
+
+
 
       plot <-
         df_plot |>
         ggplot2::ggplot(ggplot2::aes(y = census_var, x = diff_data_city)) +
-        ggplot2::geom_vline(xintercept = 0 #,
-                            #color = urbnthemes::palette_urbn_gray[8]
+        ggplot2::geom_vline(xintercept = 0,
+                            color = "#353535"
         ) +
         ggplot2::geom_segment(ggplot2::aes(x = 0,
                                            xend = diff_data_city,
                                            y = census_var,
-                                           yend = census_var) #,
-                              #color = urbnthemes::palette_urbn_gray[6]
+                                           yend = census_var),
+                              color = "#9d9d9d"
         ) +
-        ggplot2:: geom_point(ggplot2::aes(color = pos_diff)) +
+        ggplot2:: geom_point(ggplot2::aes(color = pos_diff),
+                             size = 3) +
         # Put text to left/right of 0 line to match equity tool
         ggplot2::geom_text(data = df_plot |>
                              dplyr::filter(diff_data_city >= 0),
                            ggplot2::aes(x = 0, y = census_var, label = census_var),
                            nudge_x  = -(max_val * 0.01),
                            hjust = "right",
-                           size = 5) +
+                           size = 4) +
         ggplot2::geom_text(data = df_plot |>
                              dplyr::filter(diff_data_city < 0),
                            ggplot2::aes(x = 0, y = census_var, label = census_var),
                            nudge_x  = max_val * 0.01,
                            hjust = "left",
-                           size = 5) +
+                           size = 4) +
         ggplot2::annotation_custom(underrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
         ggplot2::annotation_custom(overrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
         # ggplot2::scale_color_manual(values = c('positive' = urbnthemes::palette_urbn_diverging[1],
@@ -156,10 +162,24 @@ create_demo_chart <- function(demo_df,
         ggplot2::labs(y = "", x = "") +
         ggplot2::theme(panel.grid.major = ggplot2::element_blank(),
                        panel.grid.minor = ggplot2::element_blank(),
+                       axis.ticks.y = ggplot2::element_blank(),
                        axis.text.y = ggplot2::element_blank(),
-                       legend.position = "none")
-
-      print(plot)
+                       panel.background = ggplot2::element_rect(
+                         fill = "white",
+                         colour = "black"
+                       ),
+                       plot.margin = ggplot2::margin(
+                         r = 10,
+                         l = 5,
+                         t = 5,
+                         b = 5
+                       ),
+                       legend.position = "none") +
+        ggplot2::scale_color_manual(values = c(
+          "positive" = "#1696d2",
+          "not_stat_sig" = "#7f7f7f",
+          "negative" = "#ca5800"
+        ))
 
       if(save_chart){
         ggplot2::ggsave(filename = file_path,
