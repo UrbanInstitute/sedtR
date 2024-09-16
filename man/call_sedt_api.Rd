@@ -19,7 +19,6 @@ call_sedt_api(
   resource_weight = NA,
   geo = "city",
   acs_data_year = getOption("sedtR.year", 2021),
-  placement = "surface",
   ...
 )
 }

@@ -132,7 +132,6 @@ call_upload_user_files <- function(
   resource_weight = NA,
   geo = "city",
   acs_data_year = getOption("sedtR.year", 2021),
-  placement = "surface",
   ...,
   call = caller_env()
 ) {
@@ -142,7 +141,6 @@ call_upload_user_files <- function(
   resource_file_path <- resource_file_path %||% prep_sedt_resource(
     resource = resource,
     coords = c(resource_lon_column, resource_lat_column),
-    placement = placement,
     ...,
     call = call
   )
