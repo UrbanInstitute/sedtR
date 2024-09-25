@@ -1,3 +1,17 @@
+#' Citation for Spatial Equity Data Tool API Data
+#'
+#' @name setd-citation
+#' @details
+#' Please use the following citation for data obtained from the API:
+#'
+#' Stern, Alena, Gabe Morrison, Sonia Torres Rodríguez, Ajjit Narayanan, and
+#' Graham MacDonald. 2024. “Spatial Equity Data Tool API” (Version
+#' `r utils::packageVersion("sedtR")`). Washington, DC: Urban Institute.
+#' <https://ui-research.github.io/sedt_documentation/>. Data originally sourced
+#' from various sources, analyzed at the Urban Institute and made available
+#' under the ODC Attribution License.
+NULL
+
 #' Get API Response
 #'
 #' Calls call_upload_user_files() for a given file path, lat col,
