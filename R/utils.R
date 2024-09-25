@@ -130,7 +130,7 @@ get_api_results <- function(file_id) {
 #' Does x match the pattern of a delimited data file path?
 #' @noRd
 is_delim_path <- function(path) {
-  grepl("\\.(csv|tsv)", path)
+  grepl("\\.(csv|tsv)$", path)
 }
 
 #' Does x match the pattern of a URL?
