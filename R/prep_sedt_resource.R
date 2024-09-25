@@ -31,7 +31,8 @@
 #' @returns A path to a CSV or TSV file (depending on value of `fileext`).
 #' @keywords internal
 #' @export
-#' @importFrom utils download.file write.csv
+#' @importFrom utils write.csv
+#' @importFrom curl multi_download
 prep_sedt_resource <- function(resource,
                                coords = c("lon", "lat"),
                                file = NULL,
@@ -49,7 +50,7 @@ prep_sedt_resource <- function(resource,
       resource <- arcgislayers::arc_read(resource, ..., crs = 4326)
     } else {
       file <- file %||% file.path(tempdir(), basename(resource))
-      utils::download.file(resource, destfile = file, method = "auto")
+      curl::multi_download(resource, destfiles = file)
       resource <- file
     }
   }
