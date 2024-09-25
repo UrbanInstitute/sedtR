@@ -9,203 +9,315 @@
 #' @param file_path (character) - Default set to "dem_disparity_chart.png".
 #' A file path of where to save the file. This should include a data type
 #' suffix. EX: "results/visuals/dem_disparity_chart.png"
+#' @inherit setd-citation details
 #' @return plot (ggplot object)  - The ggplot object that was created.
 #' @export
-#' @details
-#' Please use the following citation for data obtained from the API,
-#' replacing the version number with the current version:
-#'
-#' Stern, Alena, Gabe Morrison, Sonia Torres Rodríguez, Ajjit Narayanan, and Graham MacDonald. 2024.
-#' “Spatial Equity Data Tool API” (Version X.x.x). Washington, DC: Urban Institute.
-#' https://ui-research.github.io/sedt_documentation/. Data originally sourced from various sources,
-#' analyzed at the Urban Institute and made available under the ODC Attribution License.
-
-create_demo_chart <- function(demo_df,
-                              group = "total",
-                              save_chart = FALSE,
-                              file_path = "dem_disparity_chart.png") {
-
-  rlang::check_installed(
-    c("forcats", "janitor", "scales", "ggplot2", "dplyr", "urbnthemes"),
+create_demo_chart <- function(
+    demo_df,
+    group = "total",
+    save_chart = FALSE,
+    file_path = "dem_disparity_chart.png",
+    ggsave_args = list(
+      width = 11,
+      height = 8.5,
+      units = "in"
+    )) {
+  check_installed(
+    c("forcats", "janitor", "scales", "ggplot2", "dplyr"),
     reason = "to use the `create_demo_chart()` function."
-    )
+  )
 
-  #Data is correct class:
+  # Data is correct class:
   stopifnot("data.frame" %in% class(demo_df))
   stopifnot(is.logical(save_chart))
   stopifnot(is.character(file_path))
   stopifnot(is.character(group))
 
-  #Other checks:
-  stopifnot(group %in% c("total", "poverty", "under18")) #group is one of provided options
-  stopifnot(TRUE %in% endsWith(file_path,
-                               c("eps", "ps", "tex", "pdf", "jpeg",
-                                 "tiff", "png", "bmp", "svg", "wmf"))
-  ) #file path is allowed by ggsave
+  # Other checks:
+  stopifnot(TRUE %in% endsWith(
+    file_path,
+    c(
+      "eps", "ps", "tex", "pdf", "jpeg",
+      "tiff", "png", "bmp", "svg", "wmf"
+    )
+  )) # file path is allowed by ggsave
 
-  tryCatch(
-    #TRY:
-    {
-      #Handle filtering to one of the baseline groups
-      if(group == "total") {
-        df <- demo_df |>
-          dplyr::filter(!(stringr::str_detect(census_var, "pct_pov"))) |>
-          dplyr::filter(!(stringr::str_detect(census_var, "pct_under18")))
-      }else if(group == "poverty"){
-        df <- demo_df |>
-          dplyr::filter(stringr::str_detect(census_var, "pct_pov"))
-      }else{
-        df <- demo_df |>
-          dplyr::filter(stringr::str_detect(census_var, "pct_under18"))
-      }
-
-      #Convert from percent (ex 10.5%) to decimal (ex: .105)
-      df <- dplyr::mutate(df, diff_data_city = diff_data_city / 100)
-
-
-      #Edit string names:
-      df <- df |>
-        dplyr::mutate(census_var = janitor::make_clean_names(census_var, case = "title"),
-                      census_var = stringr::str_replace_all(census_var, "Pct", "Pct."),
-                      census_var = stringr::str_replace_all(census_var, "under18", "Under 18"),
-                      census_var = stringr::str_replace_all(census_var,"Unins", "Uninsured"),
-                      census_var = stringr::str_replace_all(census_var, "Hisp", "Hispanic"),
-                      census_var = stringr::str_replace_all(census_var, "under", "Under"),
-                      census_var = stringr::str_replace_all(census_var, "Unemp$", "Unemployed"),
-                      census_var = stringr::str_replace_all(census_var, "Cb", "Cost-Burdened"),
-                      census_var = stringr::str_replace_all(census_var, "Hh", "Household"),
-                      census_var = stringr::str_replace_all(census_var, "Bach", "Bachelors"),
-                      census_var = stringr::str_replace_all(census_var, "Pov ", "Poverty ")
-        )
-
-      # We get max value before filtering bc the limits of all 3 baseline_pops
-      # should be equal for comparability
-      max_val = max(abs(df$diff_data_city)) * 1.1
-
-      df_plot <- df |>
-        dplyr::mutate(
-          pos_diff = dplyr::case_when(
-            diff_data_city > 0 & sig_diff ~ "positive",
-            diff_data_city < 0 & sig_diff ~ "negative",
-            TRUE ~ "not_stat_sig"
-          ),
-          census_var = forcats::fct_reorder(census_var, diff_data_city)) |>
-        dplyr::arrange(dplyr::desc(diff_data_city))
-
-
-      last_var = df_plot |>
-        dplyr::arrange(dplyr::desc(diff_data_city)) |>
-        utils::tail(1) |>
-        dplyr::pull(census_var) |>
-        as.character()
-      first_var = df_plot |>
-        dplyr::arrange(dplyr::desc(diff_data_city)) |>
-        utils::head(1) |>
-        dplyr::pull(census_var) |>
-        as.character()
-
-      # Generate under/overrep labels to use in annotation_custom. This is the only
-      # way we can set x and y relatively to full plot window instead of actual
-      # axis numbers which vary with the data
-      underrep_label = grid::textGrob(label = "Underrepresented", x = .02, y = 0.02,
-                                      just = c("left", "top"),
-                                      rot = 90,
-                                      gp=grid::gpar(fontface = "bold",
-                                                    col = "#ca5800",
-                                                    fontsize = 18,
-                                                    alpha = .75
-                                      ))
-
-      overrep_label = grid::textGrob(label = "Overrepresented", x = .96, y = 0.98,
-                                     just = c("right", "top"),
-                                     rot = 90,
-                                     gp=grid::gpar(fontface = "bold",
-                                                   col = "#1696d2",
-                                                   fontsize = 18,
-                                                   alpha = 0.75))
-
-
-
-      plot <-
-        df_plot |>
-        ggplot2::ggplot(ggplot2::aes(y = census_var, x = diff_data_city)) +
-        ggplot2::geom_vline(xintercept = 0,
-                            color = "#353535"
-        ) +
-        ggplot2::geom_segment(ggplot2::aes(x = 0,
-                                           xend = diff_data_city,
-                                           y = census_var,
-                                           yend = census_var),
-                              color = "#9d9d9d"
-        ) +
-        ggplot2:: geom_point(ggplot2::aes(color = pos_diff),
-                             size = 3) +
-        # Put text to left/right of 0 line to match equity tool
-        ggplot2::geom_text(data = df_plot |>
-                             dplyr::filter(diff_data_city >= 0),
-                           ggplot2::aes(x = 0, y = census_var, label = census_var),
-                           nudge_x  = -(max_val * 0.01),
-                           hjust = "right",
-                           size = 4) +
-        ggplot2::geom_text(data = df_plot |>
-                             dplyr::filter(diff_data_city < 0),
-                           ggplot2::aes(x = 0, y = census_var, label = census_var),
-                           nudge_x  = max_val * 0.01,
-                           hjust = "left",
-                           size = 4) +
-        ggplot2::annotation_custom(underrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
-        ggplot2::annotation_custom(overrep_label, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
-        # ggplot2::scale_color_manual(values = c('positive' = urbnthemes::palette_urbn_diverging[1],
-        #                               'negative' = urbnthemes::palette_urbn_diverging[7])) +
-        ggplot2::scale_x_continuous(position = "top",
-                                    limits = c(-max_val, max_val),
-                                    labels = scales::percent) +
-        ggplot2::labs(y = "", x = "") +
-        ggplot2::theme(panel.grid.major = ggplot2::element_blank(),
-                       panel.grid.minor = ggplot2::element_blank(),
-                       axis.ticks.y = ggplot2::element_blank(),
-                       axis.text.y = ggplot2::element_blank(),
-                       panel.background = ggplot2::element_rect(
-                         fill = "white",
-                         colour = "black"
-                       ),
-                       plot.margin = ggplot2::margin(
-                         r = 10,
-                         l = 5,
-                         t = 5,
-                         b = 5
-                       ),
-                       legend.position = "none") +
-        ggplot2::scale_color_manual(values = c(
-          "positive" = "#1696d2",
-          "not_stat_sig" = "#7f7f7f",
-          "negative" = "#ca5800"
-        ))
-
-      if(save_chart){
-        ggplot2::ggsave(filename = file_path,
-                        plot = plot,
-                        width = 11,
-                        height = 8.5,
-                        units = "in")
-      }
-
-      return(plot)
-    },
-
-    #ERROR:
-    error=function(e) {
-      message('An Error Occurred')
-      print(e)
-    },
-
-    #WARNING
-    warning=function(w) {
-      message('A Warning Occurred')
-      print(w)
-      return(NA)
-    }
-
+  df <- filter_baseline_group(
+    demo_df,
+    group = group
   )
 
+  # Convert from percent (ex 10.5%) to decimal (ex: .105)
+  df <- dplyr::mutate(df, diff_data_city = diff_data_city / 100)
+
+  df <- fmt_pos_diff(df)
+
+  # Edit string names
+  df <- fmt_census_var_short(df)
+
+  # We get max value before filtering bc the limits of all 3 baseline_pops
+  # should be equal for comparability
+  max_val <- max(abs(df$diff_data_city)) * 1.1
+
+  demo_lollipop_plot <- plot_demo_lollipop(
+    data = df,
+    max_val = max_val
+  )
+
+  if (save_chart) {
+    ggplot2::ggsave(
+      filename = file_path,
+      plot = demo_lollipop_plot,
+      !!!ggsave_args
+    )
+  }
+
+  return(demo_lollipop_plot)
+}
+
+#' Create geom for demographic lollipop plot
+#' @noRd
+plot_demo_lollipop <- function(data,
+                               max_val,
+                               ...,
+                               labelled = TRUE) {
+  lollipop_plot <- ggplot2::ggplot(
+    data = data,
+    mapping = ggplot2::aes(y = census_var, x = diff_data_city)
+  )
+
+  lollipop_plot_labels <- list()
+
+  if (labelled) {
+    lollipop_plot_labels <- list(
+      # Put text to left/right of 0 line to match equity tool
+      ggplot2::geom_text(
+        data = dplyr::filter(data, diff_data_city >= 0),
+        ggplot2::aes(x = 0, y = census_var, label = census_var),
+        nudge_x = -(max_val * 0.01),
+        hjust = "right",
+        size = 4
+      ),
+      ggplot2::geom_text(
+        data = dplyr::filter(data, diff_data_city < 0),
+        ggplot2::aes(x = 0, y = census_var, label = census_var),
+        nudge_x = max_val * 0.01,
+        hjust = "left",
+        size = 4
+      )
+    )
+  }
+
+  lollipop_plot +
+    c(
+      list(
+        ggplot2::geom_vline(
+          xintercept = 0,
+          color = "#353535"
+        ),
+        ggplot2::geom_segment(
+          ggplot2::aes(
+            x = 0,
+            xend = diff_data_city,
+            y = census_var,
+            yend = census_var
+          ),
+          color = "#9d9d9d"
+        ),
+        ggplot2::geom_point(
+          ggplot2::aes(
+            color = pos_diff
+          ),
+          size = 3
+        ),
+        ggplot2::scale_x_continuous(
+          position = "top",
+          limits = c(-max_val, max_val),
+          labels = scales::label_percent()
+        ),
+        ggplot2::labs(y = "", x = ""),
+        scale_color_demo_pos_diff()
+      ),
+      lollipop_plot_labels,
+      annotation_demo_lollipop(),
+      theme_demo_lollipop()
+    )
+}
+
+#' ggplot2 theme for create_demo_chart function
+#' @inheritParams ggplot2::theme
+#' @param ... Additional parameters passed to [ggplot2::theme()]
+#' @noRd
+theme_demo_lollipop <- function(
+    plot.margin = ggplot2::margin(
+      t = 5, r = 10, b = 5, l = 5
+    ),
+    panel.background = ggplot2::element_rect(
+      fill = "white",
+      colour = "black"
+    ),
+    legend.position = "none",
+    ...) {
+  list(
+    ggplot2::theme(
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_blank(),
+      panel.background = panel.background,
+      plot.margin = plot.margin,
+      legend.position = legend.position,
+    ),
+    ggplot2::theme(
+      ...
+    )
+  )
+}
+
+#' @noRd
+demo_text_label <- function(
+    label = "Underrepresented",
+    x = .02,
+    y = 0.02,
+    just = c("left", "top"),
+    rot = 90,
+    font_face = "bold",
+    font_color = "#ca5800",
+    font_size = 18,
+    font_alpha = 0.75,
+    ...) {
+  grid::textGrob(
+    label = label,
+    x = x,
+    y = y,
+    just = just,
+    rot = rot,
+    gp = grid::gpar(
+      fontface = font_face,
+      col = font_color,
+      fontsize = font_size,
+      alpha = font_alpha
+    ),
+    ...
+  )
+}
+
+#' Annotations for create_demo_chart function
+#' @noRd
+annotation_demo_lollipop <- function() {
+  # Generate under/overrep labels to use in annotation_custom. This is the only
+  # way we can set x and y relatively to full plot window instead of actual
+  # axis numbers which vary with the data
+  list(
+    ggplot2::annotation_custom(
+      demo_text_label(
+        label = "Underrepresented",
+        x = 0.02,
+        y = 0.02,
+        just = c("left", "top"),
+        font_color = "#ca5800"
+      ),
+      xmin = -Inf,
+      xmax = Inf,
+      ymin = -Inf,
+      ymax = Inf
+    ),
+    ggplot2::annotation_custom(
+      demo_text_label(
+        label = "Overrepresented",
+        x = 0.96,
+        y = 0.98,
+        just = c("right", "top"),
+        font_color = "#1696d2"
+      ),
+      xmin = -Inf,
+      xmax = Inf,
+      ymin = -Inf,
+      ymax = Inf
+    )
+  )
+}
+
+#' Scale color based on pos_diff column derived by `fmt_diff_data_city()`
+#' @noRd
+scale_color_demo_pos_diff <- function(
+    values = c(
+      "positive" = "#1696d2",
+      "not_stat_sig" = "#7f7f7f",
+      "negative" = "#ca5800"
+    ),
+    ...) {
+  ggplot2::scale_color_manual(
+    values = values,
+    ...
+  )
+}
+
+#' Use diff_data_city to derive pos_diff column
+#' @noRd
+fmt_pos_diff <- function(data) {
+  data |>
+    dplyr::mutate(
+      pos_diff = dplyr::case_when(
+        diff_data_city > 0 & sig_diff ~ "positive",
+        diff_data_city < 0 & sig_diff ~ "negative",
+        TRUE ~ "not_stat_sig"
+      )
+    ) |>
+    dplyr::arrange(dplyr::desc(diff_data_city))
+}
+
+#' Shorten census_var column
+#' @noRd
+fmt_census_var_short <- function(data, call = caller_env()) {
+  check_installed(
+    c("forcats", "janitor", "dplyr"),
+    reason = "to create plots with `create_demo_chart()`",
+    call = call
+  )
+
+  dplyr::mutate(
+    data,
+    census_var = janitor::make_clean_names(census_var, case = "title"),
+    census_var = stringr::str_replace_all(census_var, "Pct", "Pct."),
+    census_var = stringr::str_replace_all(census_var, "under18", "Under 18"),
+    census_var = stringr::str_replace_all(census_var, "Unins", "Uninsured"),
+    census_var = stringr::str_replace_all(census_var, "Hisp", "Hispanic"),
+    census_var = stringr::str_replace_all(census_var, "under", "Under"),
+    census_var = stringr::str_replace_all(census_var, "Unemp$", "Unemployed"),
+    census_var = stringr::str_replace_all(census_var, "Cb", "Cost-Burdened"),
+    census_var = stringr::str_replace_all(census_var, "Hh", "Household"),
+    census_var = stringr::str_replace_all(census_var, "Bach", "Bachelors"),
+    census_var = stringr::str_replace_all(census_var, "Pov ", "Poverty "),
+    census_var = forcats::fct_reorder(census_var, diff_data_city)
+  )
+}
+
+#' Match baseline group value
+#' @noRd
+match_baseline_group <- function(group, error_call = caller_env()) {
+  arg_match0(group, c("total", "poverty", "under18"), error_call = error_call)
+}
+
+#' Filter data to baseline group variable
+#' @noRd
+filter_baseline_group <- function(
+    data,
+    group = c("total", "poverty", "under18"),
+    call = caller_env()) {
+  group <- match_baseline_group(group, error_call = call)
+
+  if (group == "total") {
+    data |>
+      dplyr::filter(
+        !stringr::str_detect(census_var, "pct_pov"),
+        !stringr::str_detect(census_var, "pct_under18")
+      )
+  } else if (group == "poverty") {
+    data |>
+      dplyr::filter(stringr::str_detect(census_var, "pct_pov"))
+  } else {
+    data |>
+      dplyr::filter(stringr::str_detect(census_var, "pct_under18"))
+  }
 }

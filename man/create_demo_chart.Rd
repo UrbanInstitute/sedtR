@@ -8,7 +8,8 @@ create_demo_chart(
   demo_df,
   group = "total",
   save_chart = FALSE,
-  file_path = "dem_disparity_chart.png"
+  file_path = "dem_disparity_chart.png",
+  ggsave_args = list(width = 11, height = 8.5, units = "in")
 )
 }
 \arguments{
@@ -33,11 +34,12 @@ plot (ggplot object)  - The ggplot object that was created.
 Function to visualize demographic disparity scores on a lollipop chart
 }
 \details{
-Please use the following citation for data obtained from the API,
-replacing the version number with the current version:
+Please use the following citation for data obtained from the API:
 
-Stern, Alena, Gabe Morrison, Sonia Torres Rodríguez, Ajjit Narayanan, and Graham MacDonald. 2024.
-“Spatial Equity Data Tool API” (Version X.x.x). Washington, DC: Urban Institute.
-https://ui-research.github.io/sedt_documentation/. Data originally sourced from various sources,
-analyzed at the Urban Institute and made available under the ODC Attribution License.
+Stern, Alena, Gabe Morrison, Sonia Torres Rodríguez, Ajjit Narayanan, and
+Graham MacDonald. 2024. “Spatial Equity Data Tool API” (Version
+0.0.0.4000). Washington, DC: Urban Institute.
+\url{https://ui-research.github.io/sedt_documentation/}. Data originally sourced
+from various sources, analyzed at the Urban Institute and made available
+under the ODC Attribution License.
 }
