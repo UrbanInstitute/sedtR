@@ -180,7 +180,7 @@ tm_plot_geo_bias_map <- function(
     tmap::tm_layout(
       legend.outside = legend.outside,
       attr.outside = attr.outside,
-      title = title %||% janitor::make_clean_names(
+      title = title %||% str_to_label(
         string = fill_col,
         case = "title"
       )
