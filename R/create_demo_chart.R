@@ -15,8 +15,10 @@
 create_demo_chart <- function(
     demo_df,
     group = "total",
+    ...,
     save_chart = FALSE,
     file_path = "dem_disparity_chart.png",
+    pct_abb = "Pct.",
     ggsave_args = list(
       width = 11,
       height = 8.5,
@@ -47,13 +49,10 @@ create_demo_chart <- function(
     group = group
   )
 
-  # Convert from percent (ex 10.5%) to decimal (ex: .105)
-  df <- dplyr::mutate(df, diff_data_city = diff_data_city / 100)
-
   df <- fmt_pos_diff(df)
 
   # Edit string names
-  df <- fmt_census_var_short(df)
+  df <- fmt_census_var_label(df, pct_abb = pct_abb)
 
   # We get max value before filtering bc the limits of all 3 baseline_pops
   # should be equal for comparability
@@ -72,7 +71,7 @@ create_demo_chart <- function(
     )
   }
 
-  return(demo_lollipop_plot)
+  demo_lollipop_plot
 }
 
 #' Create geom for demographic lollipop plot
@@ -80,7 +79,9 @@ create_demo_chart <- function(
 plot_demo_lollipop <- function(data,
                                max_val,
                                ...,
-                               labelled = TRUE) {
+                               labelled = TRUE,
+                               plot_annotation = annotation_demo_lollipop(),
+                               plot_theme = theme_demo_lollipop()) {
   lollipop_plot <- ggplot2::ggplot(
     data = data,
     mapping = ggplot2::aes(y = census_var, x = diff_data_city)
@@ -93,15 +94,21 @@ plot_demo_lollipop <- function(data,
       # Put text to left/right of 0 line to match equity tool
       ggplot2::geom_text(
         data = dplyr::filter(data, diff_data_city >= 0),
-        ggplot2::aes(x = 0, y = census_var, label = census_var),
-        nudge_x = -(max_val * 0.01),
+        ggplot2::aes(
+          x = max(diff_data_city) * -0.06,
+          y = census_var,
+          label = census_var
+        ),
         hjust = "right",
         size = 4
       ),
       ggplot2::geom_text(
         data = dplyr::filter(data, diff_data_city < 0),
-        ggplot2::aes(x = 0, y = census_var, label = census_var),
-        nudge_x = max_val * 0.01,
+        ggplot2::aes(
+          x = max(abs(diff_data_city)) * 0.06,
+          y = census_var,
+          label = census_var
+        ),
         hjust = "left",
         size = 4
       )
@@ -115,17 +122,10 @@ plot_demo_lollipop <- function(data,
           xintercept = 0,
           color = "#353535"
         ),
-        ggplot2::geom_segment(
+        geom_lollipop(
           ggplot2::aes(
-            x = 0,
-            xend = diff_data_city,
+            x = diff_data_city,
             y = census_var,
-            yend = census_var
-          ),
-          color = "#9d9d9d"
-        ),
-        ggplot2::geom_point(
-          ggplot2::aes(
             color = pos_diff
           ),
           size = 3
@@ -133,14 +133,14 @@ plot_demo_lollipop <- function(data,
         ggplot2::scale_x_continuous(
           position = "top",
           limits = c(-max_val, max_val),
-          labels = scales::label_percent()
+          labels = scales::label_percent(scale = 1)
         ),
         ggplot2::labs(y = "", x = ""),
         scale_color_demo_pos_diff()
       ),
       lollipop_plot_labels,
-      annotation_demo_lollipop(),
-      theme_demo_lollipop()
+      plot_annotation,
+      plot_theme
     )
 }
 
@@ -246,30 +246,31 @@ scale_color_demo_pos_diff <- function(
       "not_stat_sig" = "#7f7f7f",
       "negative" = "#ca5800"
     ),
-    ...) {
+    ...,
+    aesthetics = c("color", "fill")) {
   ggplot2::scale_color_manual(
     values = values,
+    aesthetics = aesthetics,
     ...
   )
 }
 
-#' Use diff_data_city to derive pos_diff column
+#' Use sig_diff and diff_data_city to derive pos_diff column
 #' @noRd
 fmt_pos_diff <- function(data) {
   data |>
     dplyr::mutate(
       pos_diff = dplyr::case_when(
-        diff_data_city > 0 & sig_diff ~ "positive",
-        diff_data_city < 0 & sig_diff ~ "negative",
-        TRUE ~ "not_stat_sig"
+        !sig_diff ~ "not_stat_sig",
+        diff_data_city > 0 ~ "positive",
+        diff_data_city < 0 ~ "negative"
       )
-    ) |>
-    dplyr::arrange(dplyr::desc(diff_data_city))
+    )
 }
 
 #' Shorten census_var column
 #' @noRd
-fmt_census_var_short <- function(data, call = caller_env()) {
+fmt_census_var_label <- function(data, pct_abb = "Pct.", call = caller_env()) {
   check_installed(
     c("forcats", "janitor", "dplyr"),
     reason = "to create plots with `create_demo_chart()`",
@@ -278,14 +279,15 @@ fmt_census_var_short <- function(data, call = caller_env()) {
 
   dplyr::mutate(
     data,
-    census_var = janitor::make_clean_names(census_var, case = "title"),
-    census_var = stringr::str_replace_all(census_var, "Pct", "Pct."),
+    census_var = str_to_label(census_var, case = "title"),
+    census_var = stringr::str_replace_all(census_var, "Pct", pct_abb),
     census_var = stringr::str_replace_all(census_var, "under18", "Under 18"),
     census_var = stringr::str_replace_all(census_var, "Unins", "Uninsured"),
     census_var = stringr::str_replace_all(census_var, "Hisp", "Hispanic"),
     census_var = stringr::str_replace_all(census_var, "under", "Under"),
     census_var = stringr::str_replace_all(census_var, "Unemp$", "Unemployed"),
     census_var = stringr::str_replace_all(census_var, "Cb", "Cost-Burdened"),
+    census_var = stringr::str_replace_all(census_var, "Hs ", "HS "),
     census_var = stringr::str_replace_all(census_var, "Hh", "Household"),
     census_var = stringr::str_replace_all(census_var, "Bach", "Bachelors"),
     census_var = stringr::str_replace_all(census_var, "Pov ", "Poverty "),
@@ -307,17 +309,8 @@ filter_baseline_group <- function(
     call = caller_env()) {
   group <- match_baseline_group(group, error_call = call)
 
-  if (group == "total") {
-    data |>
-      dplyr::filter(
-        !stringr::str_detect(census_var, "pct_pov"),
-        !stringr::str_detect(census_var, "pct_under18")
-      )
-  } else if (group == "poverty") {
-    data |>
-      dplyr::filter(stringr::str_detect(census_var, "pct_pov"))
-  } else {
-    data |>
-      dplyr::filter(stringr::str_detect(census_var, "pct_under18"))
-  }
+  data |>
+    dplyr::filter(
+      stringr::str_detect(baseline_pop, group)
+    )
 }

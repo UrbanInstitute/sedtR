@@ -7,8 +7,10 @@
 create_demo_chart(
   demo_df,
   group = "total",
+  ...,
   save_chart = FALSE,
   file_path = "dem_disparity_chart.png",
+  pct_abb = "Pct.",
   ggsave_args = list(width = 11, height = 8.5, units = "in")
 )
 }

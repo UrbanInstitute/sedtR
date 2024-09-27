@@ -139,3 +139,17 @@ get_api_results <- function(file_id) {
 
   }
 }
+
+#' @noRd
+str_to_label <- function(string, case = "title", locale = "en") {
+  case <- arg_match(case, c("title", "upper", "lower", "sentence"))
+  label <- stringr::str_replace_all(string, "_", " ")
+
+  switch (case,
+          title = stringr::str_to_title(label, locale),
+          upper = stringr::str_to_upper(label, locale),
+          lower = stringr::str_to_lower(label, locale),
+          sentence = stringr::str_to_sentence(label, locale)
+  )
+}
+
