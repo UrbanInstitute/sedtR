@@ -113,19 +113,31 @@ create_map <- function(geo_df,
   )
 }
 
-#' Use tmap to plot a bias map
-#' @noRd
-tm_plot_bias_map <- function(data,
-                             fill_col = "diff_pop",
-                             fill_label = "Disparity Score",
-                             basemap_server = "CartoDB.PositronNoLabels",
-                             border_lwd = 0.25,
-                             fill_palette = "RdBu",
-                             title = NULL,
-                             legend.outside = TRUE,
-                             attr.outside = TRUE,
-                             interactive = FALSE,
-                             ...) {
+#' Plot a map of geo bias data with `{tmap}` or `{ggplot2}`
+#'
+#' @param fill_col String with column name to map to fill.
+#' @param fill_label Label to use for fill column. Passed as title for
+#'   [tmap::tm_fill()] or fill label for [ggplot2::labs()].
+#' @param fill_palette String with palette name.
+#' @name geo_bias_map
+NULL
+
+#' [tm_plot_geo_bias_map()] uses [tmap::tm_shape()] and [tmap::tm_fill()] to map
+#' the geo bias data returned by [call_sedt_api()].
+#' @inheritParams tmap::tm_layout
+#' @keywords internal
+tm_plot_geo_bias_map <- function(
+    data,
+    fill_col = "diff_pop",
+    fill_label = "Disparity Score",
+    basemap_server = "CartoDB.PositronNoLabels",
+    border_lwd = 0.25,
+    fill_palette = "RdBu",
+    title = NULL,
+    legend.outside = TRUE,
+    attr.outside = TRUE,
+    interactive = FALSE,
+    ...) {
   check_installed(c("tmap", "janitor"))
 
   if (interactive) {
@@ -138,7 +150,7 @@ tm_plot_bias_map <- function(data,
     fmt_col_to_plot() |>
     prep_geo_df()
 
-  tmap::tm_basemap(
+  bias_map <- tmap::tm_basemap(
     server = basemap_server
   ) +
     tmap::tm_shape(data) +
@@ -173,20 +185,28 @@ tm_plot_bias_map <- function(data,
         case = "title"
       )
     )
+
+  bias_map
 }
 
-#' Use ggplot2 to plot a bias map
-#' @noRd
-plot_bias_map <- function(data,
-                          fill_col = "diff_pop",
-                          fill_label = "Disparity Score",
-                          fill_palette = "RdBu",
-                          fill_scale = ggplot2::scale_fill_distiller(
-                            type = "div",
-                            palette = fill_palette,
-                            direction = 1
-                          ),
-                          plot_theme = ggplot2::theme_void()) {
+
+#' [plot_geo_bias_map()] uses [ggplot2::geom_sf()] to map the geo bias data
+#' returned by [call_sedt_api()].
+#' @rdname geo_bias_map
+#' @param fill_scale ggplot2 scale function to use with map.
+#' @param plot_theme ggplot2 theme to use with map.
+#' @keywords internal
+plot_geo_bias_map <- function(
+    data,
+    fill_col = "diff_pop",
+    fill_label = "Disparity Score",
+    fill_palette = "RdBu",
+    fill_scale = ggplot2::scale_fill_distiller(
+      type = "div",
+      palette = fill_palette,
+      direction = 1
+    ),
+    plot_theme = ggplot2::theme_void()) {
   geo_df <- data |>
     fmt_col_to_plot(
       col_to_plot = fill_col
@@ -195,8 +215,7 @@ plot_bias_map <- function(data,
 
   check_installed("ggplot2")
 
-  geo_df |>
-    ggplot2::ggplot() +
+  ggplot2::ggplot(data = geo_df) +
     ggplot2::geom_sf(
       ggplot2::aes(fill = .data[[fill_col]]),
       color = "white"
@@ -231,11 +250,11 @@ prep_geo_df <- function(data) {
   check_installed("dplyr")
 
   data |>
-    # Avoid possible errors by ensuring geometry is valid
+    # Ensure geometry is valid to avoid possible errors
     sf::st_make_valid() |>
     dplyr::filter(
-      # Remove empty units to avoid warning. This is caused by tracts that do not have
-      # an associated geometry.
+      # Remove empty units to avoid warning from tracts with no associated
+      # geometry.
       !sf::st_is_empty(.data[[attr(data, "sf_column")]])
     )
 }
