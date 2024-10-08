@@ -36,11 +36,11 @@ create_map <- function(geo_df,
     reason = "to use the `create_map()` function. If urbnthemes not installed, we use RdBu color palette."
   )
 
-  pal <- "RdBu"
-
   # Choose color palette:
   if (rlang::is_installed("urbnthemes")) {
     pal <- urbnthemes::palette_urbn_diverging
+  } else {
+    pal <- "RdBu"
   }
 
   # Check all Inputs for correct types:
@@ -64,14 +64,14 @@ create_map <- function(geo_df,
       pkg <- arg_match0(pkg, c("tmap", "ggplot2"))
 
       if (pkg == "tmap") {
-        bias_map <- tm_plot_bias_map(
+        bias_map <- tm_plot_geo_bias_map(
           data = geo_df,
           fill_col = col_to_plot,
           fill_palette = pal,
           ...
         )
       } else {
-        bias_map <- plot_bias_map(
+        bias_map <- plot_geo_bias_map(
           data = geo_df,
           fill_col = col_to_plot,
           fill_palette = pal,
@@ -204,6 +204,7 @@ plot_geo_bias_map <- function(
     fill_scale = ggplot2::scale_fill_distiller(
       type = "div",
       palette = fill_palette,
+      labels = scales::label_percent(scale = 1),
       direction = 1
     ),
     plot_theme = ggplot2::theme_void()) {
