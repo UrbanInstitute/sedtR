@@ -25,7 +25,7 @@ create_demo_chart <- function(
       units = "in"
     )) {
   check_installed(
-    c("forcats", "janitor", "scales", "ggplot2", "dplyr"),
+    c("forcats", "scales", "ggplot2", "dplyr"),
     reason = "to use the `create_demo_chart()` function."
   )
 
@@ -272,7 +272,7 @@ fmt_pos_diff <- function(data) {
 #' @noRd
 fmt_census_var_label <- function(data, pct_abb = "Pct.", call = caller_env()) {
   check_installed(
-    c("forcats", "janitor", "dplyr"),
+    c("forcats", "dplyr"),
     reason = "to create plots with `create_demo_chart()`",
     call = call
   )

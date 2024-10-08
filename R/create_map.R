@@ -138,7 +138,7 @@ tm_plot_geo_bias_map <- function(
     attr.outside = TRUE,
     interactive = FALSE,
     ...) {
-  check_installed(c("tmap", "janitor"))
+  check_installed("tmap")
 
   if (interactive) {
     tmap::tmap_mode("view")
