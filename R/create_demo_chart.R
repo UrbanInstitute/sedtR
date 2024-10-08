@@ -100,7 +100,7 @@ plot_demo_lollipop <- function(data,
           label = census_var
         ),
         hjust = "right",
-        size = 4
+        size = 3
       ),
       ggplot2::geom_text(
         data = dplyr::filter(data, diff_data_city < 0),
@@ -110,7 +110,7 @@ plot_demo_lollipop <- function(data,
           label = census_var
         ),
         hjust = "left",
-        size = 4
+        size = 3
       )
     )
   }
@@ -128,7 +128,7 @@ plot_demo_lollipop <- function(data,
             y = census_var,
             color = pos_diff
           ),
-          size = 3
+          size = 2
         ),
         ggplot2::scale_x_continuous(
           position = "top",
