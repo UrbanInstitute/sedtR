@@ -10,8 +10,8 @@ plot_geo_bias_map(
   fill_col = "diff_pop",
   fill_label = "Disparity Score",
   fill_palette = "RdBu",
-  fill_scale = ggplot2::scale_fill_distiller(type = "div", palette = fill_palette,
-    direction = 1),
+  fill_scale = ggplot2::scale_fill_distiller(type = "div", palette = fill_palette, labels
+    = scales::label_percent(scale = 1), direction = 1),
   plot_theme = ggplot2::theme_void()
 )
 }
