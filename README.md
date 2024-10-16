@@ -67,7 +67,7 @@ The following example illustrates using the `call_sedt_api()` function
 on Minneapolis, MN bikeshare data stored on the Urban Institute’s [Data
 Catalog](https://datacatalog.urban.org/).
 
-    #> Loading sedtR  - using  staging  API
+    #> Loading sedtR  - using  production  API
     #> [1] "getting output file"
 
 `call_sedt_api()` returns a list object that contains a `sf` object
@@ -76,55 +76,34 @@ storing the geographic disparity scores:
 ``` r
 sedt_response$geo_bias_data |>
   head()
-#>   prop_cb_renter_hh diff_no_internet prop_pov diff_pov
-#> 1           0.00049           -0.006  0.00345   -0.003
-#> 2           0.00937           -0.008  0.01036   -0.005
-#> 3           0.00158           -0.007  0.00721   -0.007
-#> 4           0.00316           -0.007  0.00515   -0.005
-#> 5           0.00024           -0.006  0.00160   -0.002
-#> 6           0.00487            0.001  0.00384   -0.001
-#>                            disp_name sig_diff_seniors diff_seniors diff_pop
-#> 1 Census Tract 1.01, Minneapolis, MN             TRUE       -0.007   -0.008
-#> 2 Census Tract 1.02, Minneapolis, MN            FALSE       -0.004   -0.007
-#> 3    Census Tract 3, Minneapolis, MN             TRUE       -0.008   -0.008
-#> 4 Census Tract 6.01, Minneapolis, MN             TRUE       -0.015   -0.011
-#> 5 Census Tract 6.03, Minneapolis, MN             TRUE       -0.007   -0.008
-#> 6   Census Tract 11, Minneapolis, MN            FALSE        0.000   -0.002
-#>         GEOID prop_children prop_pop diff_children diff_cb_renter_hh data_prop
-#> 1 27053000101       0.01043  0.00786        -0.010             0.000   0.00000
-#> 2 27053000102       0.01378  0.01152        -0.009            -0.004   0.00506
-#> 3 27053000300       0.00746  0.00753        -0.007            -0.002   0.00000
-#> 4 27053000601       0.01193  0.01091        -0.012            -0.003   0.00000
-#> 5 27053000603       0.00486  0.00761        -0.005             0.000   0.00000
-#> 6 27053001100       0.00533  0.00493        -0.002            -0.002   0.00253
-#>   prop_no_internet diff_under_200_poverty_line prop_seniors
-#> 1          0.00552                      -0.008      0.00684
-#> 2          0.01252                      -0.010      0.00938
-#> 3          0.00728                      -0.006      0.00799
-#> 4          0.00735                      -0.009      0.01453
-#> 5          0.00622                      -0.002      0.00700
-#> 6          0.00198                      -0.002      0.00330
-#>   prop_under_200_poverty_line sig_diff_cb_renter_hh sig_diff_children
-#> 1                     0.00809                 FALSE              TRUE
-#> 2                     0.01458                 FALSE              TRUE
-#> 3                     0.00563                 FALSE              TRUE
-#> 4                     0.00855                 FALSE              TRUE
-#> 5                     0.00243                 FALSE              TRUE
-#> 6                     0.00517                 FALSE             FALSE
-#>   sig_diff_no_internet sig_diff_pop sig_diff_pov
-#> 1                FALSE         TRUE        FALSE
-#> 2                FALSE         TRUE        FALSE
-#> 3                FALSE         TRUE         TRUE
-#> 4                 TRUE         TRUE         TRUE
-#> 5                 TRUE         TRUE        FALSE
-#> 6                FALSE         TRUE        FALSE
-#>   sig_diff_under_200_poverty_line weighted_counts
-#> 1                            TRUE               0
-#> 2                            TRUE               2
-#> 3                            TRUE               0
-#> 4                            TRUE               0
-#> 5                            TRUE               0
-#> 6                           FALSE               1
+#>   sig_diff_seniors data_prop diff_cb_renter_hh diff_pop prop_children
+#> 1             TRUE   0.00000             0.000   -0.008       0.01043
+#> 2            FALSE   0.00506            -0.004   -0.007       0.01378
+#> 3             TRUE   0.00000            -0.002   -0.008       0.00746
+#> 4             TRUE   0.00000            -0.003   -0.011       0.01193
+#> 5             TRUE   0.00000             0.000   -0.008       0.00486
+#> 6            FALSE   0.00253            -0.002   -0.002       0.00533
+#>   diff_no_internet diff_under_200_poverty_line       GEOID diff_pov
+#> 1           -0.006                      -0.008 27053000101   -0.003
+#> 2           -0.008                      -0.010 27053000102   -0.005
+#> 3           -0.007                      -0.006 27053000300   -0.007
+#> 4           -0.007                      -0.009 27053000601   -0.005
+#> 5           -0.006                      -0.002 27053000603   -0.002
+#> 6            0.001                      -0.002 27053001100   -0.001
+#>   diff_seniors diff_children prop_under_200_poverty_line prop_cb_renter_hh
+#> 1       -0.007        -0.010                     0.00809           0.00049
+#> 2       -0.004        -0.009                     0.01458           0.00937
+#> 3       -0.008        -0.007                     0.00563           0.00158
+#> 4       -0.015        -0.012                     0.00855           0.00316
+#> 5       -0.007        -0.005                     0.00243           0.00024
+#> 6        0.000        -0.002                     0.00517           0.00487
+#>   prop_no_internet prop_pop
+#> 1          0.00552  0.00786
+#> 2          0.01252  0.01152
+#> 3          0.00728  0.00753
+#> 4          0.00735  0.01091
+#> 5          0.00622  0.00761
+#> 6          0.00198  0.00493
 #>                                                                                                                                                                                                                                                                                                                                                                                                        geometry
 #> 1                                                                                                                                                                         -93.31950, -93.31419, -93.30431, -93.29919, -93.29921, -93.29906, -93.30668, -93.31943, -93.31943, -93.31944, -93.31950, 45.05125, 45.05124, 45.05118, 45.05114, 45.04392, 45.03766, 45.03935, 45.04217, 45.04397, 45.04760, 45.05125
 #> 2                                           -93.29919, -93.29409, -93.29153, -93.28223, -93.28083, -93.28343, -93.28321, -93.28270, -93.28673, -93.28811, -93.28811, -93.29041, -93.29403, -93.29489, -93.29906, -93.29921, -93.29919, 45.05114, 45.05113, 45.05113, 45.05116, 45.04357, 45.03536, 45.03345, 45.03243, 45.03151, 45.03151, 45.03272, 45.03473, 45.03646, 45.03674, 45.03766, 45.04392, 45.05114
@@ -132,6 +111,27 @@ sedt_response$geo_bias_data |>
 #> 4 -93.26411, -93.26238, -93.26210, -93.25998, -93.25992, -93.24985, -93.24739, -93.24218, -93.23711, -93.23711, -93.23712, -93.23712, -93.23711, -93.24748, -93.24734, -93.26071, -93.26311, -93.26269, -93.26411, 45.02760, 45.02760, 45.02944, 45.03051, 45.03554, 45.03555, 45.03555, 45.03558, 45.03561, 45.02766, 45.02405, 45.02397, 45.02044, 45.02038, 45.01677, 45.01682, 45.01682, 45.02101, 45.02760
 #> 5                                                                                                          -93.23712, -93.23711, -93.23711, -93.22693, -93.22690, -93.22690, -93.22688, -93.22687, -93.22686, -93.22686, -93.22961, -93.23328, -93.23712, -93.23712, 45.02405, 45.02766, 45.03561, 45.03567, 45.02773, 45.02771, 45.02410, 45.02047, 45.01951, 45.01892, 45.01922, 45.02226, 45.02397, 45.02405
 #> 6                                                                                                                                                                                                                                        -93.24748, -93.23711, -93.23713, -93.23715, -93.24225, -93.24734, -93.24734, -93.24748, 45.02038, 45.02044, 45.01682, 45.01320, 45.01318, 45.01316, 45.01677, 45.02038
+#>   prop_pov prop_seniors sig_diff_cb_renter_hh sig_diff_children sig_diff_pop
+#> 1  0.00345      0.00684                 FALSE              TRUE         TRUE
+#> 2  0.01036      0.00938                 FALSE              TRUE         TRUE
+#> 3  0.00721      0.00799                 FALSE              TRUE         TRUE
+#> 4  0.00515      0.01453                 FALSE              TRUE         TRUE
+#> 5  0.00160      0.00700                 FALSE              TRUE         TRUE
+#> 6  0.00384      0.00330                 FALSE             FALSE         TRUE
+#>   sig_diff_no_internet sig_diff_pov                          disp_name
+#> 1                FALSE        FALSE Census Tract 1.01, Minneapolis, MN
+#> 2                FALSE        FALSE Census Tract 1.02, Minneapolis, MN
+#> 3                FALSE         TRUE    Census Tract 3, Minneapolis, MN
+#> 4                 TRUE         TRUE Census Tract 6.01, Minneapolis, MN
+#> 5                 TRUE        FALSE Census Tract 6.03, Minneapolis, MN
+#> 6                FALSE        FALSE   Census Tract 11, Minneapolis, MN
+#>   sig_diff_under_200_poverty_line weighted_counts
+#> 1                            TRUE               0
+#> 2                            TRUE               2
+#> 3                            TRUE               0
+#> 4                            TRUE               0
+#> 5                            TRUE               0
+#> 6                           FALSE               1
 ```
 
 A data frame with demographic information used in the analysis is also
@@ -171,26 +171,42 @@ save the resulting images, but both provide arguments (`save_map` and
 visualization. Like the interactive visualizations on the \[SEDT
 website\] (<https://apps.urban.org/features/equity-data-tool/>), these
 functions allow users to visualize different geographic or demographic
-disparity scores. `create_map()` allows interactive or static
-visualizations.
+disparity scores.
+
+`create_map()` allows interactive or static visualizations. By default,
+`create_map()` uses `{tmap}`:
 
 ``` r
-create_map(sedt_response$geo_bias_data, 
-           interactive = FALSE, # optional, defaults to TRUE
-           save_map = FALSE, #optional, defaults to FALSE. If TRUE, provide file_path
-           col_to_plot = "diff_pop") #optional, default is "diff_pop"
+create_map(
+  sedt_response$geo_bias_data, 
+  interactive = FALSE, # optional, defaults to TRUE
+  save_map = FALSE, # optional, defaults to FALSE. If TRUE, provide file_path
+  col_to_plot = "diff_pop" # optional, default is "diff_pop"
+)
 #> tmap mode set to plotting
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ``` r
-create_demo_chart(sedt_response$demo_bias_data,
-                  group = "total", # optional, default is "total"
-                  save_chart = FALSE) # optional, default is FALSE. If TRUE provide file_path
+plot_geo_bias_map(
+  sedt_response$geo_bias_data, 
+  fill_col = "diff_pop"
+)
 ```
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
+``` r
+create_demo_chart(
+  sedt_response$demo_bias_data,
+  group = "total", # optional, default is "total"
+  save_chart = FALSE,
+  pct_abb = "%" # optional, default is FALSE. If TRUE provide file_path
+)
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 ## Where Can I Learn More:
 
