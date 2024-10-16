@@ -115,6 +115,9 @@ create_map <- function(geo_df,
 
 #' Plot a map of geo bias data with `{tmap}` or `{ggplot2}`
 #'
+#' [tm_plot_geo_bias_map()] and [plot_geo_bias_map()] are internal plotting
+#' functions called by the more generic [create_map()] function.
+#'
 #' @param fill_col String with column name to map to fill.
 #' @param fill_label Label to use for fill column. Passed as title for
 #'   [tmap::tm_fill()] or fill label for [ggplot2::labs()].
@@ -126,6 +129,7 @@ NULL
 #' the geo bias data returned by [call_sedt_api()].
 #' @inheritParams tmap::tm_layout
 #' @keywords internal
+#' @export
 tm_plot_geo_bias_map <- function(
     data,
     fill_col = "diff_pop",
@@ -196,6 +200,7 @@ tm_plot_geo_bias_map <- function(
 #' @param fill_scale ggplot2 scale function to use with map.
 #' @param plot_theme ggplot2 theme to use with map.
 #' @keywords internal
+#' @export
 plot_geo_bias_map <- function(
     data,
     fill_col = "diff_pop",

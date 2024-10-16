@@ -28,9 +28,7 @@ plot_geo_bias_map(
 \item{plot_theme}{ggplot2 theme to use with map.}
 }
 \description{
-Plot a map of geo bias data with \code{{tmap}} or \code{{ggplot2}}
-
-\code{\link[=plot_geo_bias_map]{plot_geo_bias_map()}} uses \code{\link[ggplot2:ggsf]{ggplot2::geom_sf()}} to map the geo bias data
-returned by \code{\link[=call_sedt_api]{call_sedt_api()}}.
+\code{\link[=tm_plot_geo_bias_map]{tm_plot_geo_bias_map()}} and \code{\link[=plot_geo_bias_map]{plot_geo_bias_map()}} are internal plotting
+functions called by the more generic \code{\link[=create_map]{create_map()}} function.
 }
 \keyword{internal}
