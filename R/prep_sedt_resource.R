@@ -119,7 +119,7 @@ check_sedt_resource <- function(resource,
   }
 
   message <- paste0(
-    "{.arg {arg}} must a path to an existing file, a valid url,
+    "{.arg {arg}} must be a path to an existing file, a valid url,
     a sf or sfc object, or a data frame with columns named {coords}, ",
     not_message
   )
