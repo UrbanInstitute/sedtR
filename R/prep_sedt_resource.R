@@ -104,7 +104,7 @@ check_sedt_resource <- function(resource,
     return(invisible(NULL))
   }
 
-  not_message <- "{.obj_type_friendly {resource}}"
+  not_message <- "not {.obj_type_friendly {resource}}"
 
   if (is_string(resource)) {
     if (is_url(resource) || file.exists(resource)) {
