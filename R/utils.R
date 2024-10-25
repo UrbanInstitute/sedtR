@@ -1,9 +1,10 @@
 #' Get API Response
 #'
-#' Calls call_upload_user_files() for a given file path, lat col,
+#' Calls [call_upload_user_files()] for a given file path, lat col,
 #' and lon col, parses and returns API response
 #'
-#' @param param_list (string) Required: Includes the parameters included in the call_upload_user_files function
+#' @param param_list (string) Required: Includes the parameters included in the
+#'   call_upload_user_files function
 #'
 #' @return r (string) Returns the API error status code response
 
@@ -125,3 +126,71 @@ get_api_results <- function(file_id) {
 
   }
 }
+
+#' Does x match the pattern of a delimited data file path?
+#' @noRd
+is_delim_path <- function(path) {
+  grepl("\\.(csv|tsv)$", path)
+}
+
+#' Does x match the pattern of a URL?
+#' @noRd
+is_url <- function(x) {
+  if (!is_vector(x) || is_empty(x)) {
+    return(FALSE)
+  }
+
+  url_pattern <-
+    "http[s]?://(?:[[:alnum:]]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
+
+  grepl(url_pattern, x)
+}
+
+#' Convert a sf object to a data frame of coordinates
+#'
+#' @noRd
+#' @importFrom purrr list_cbind
+convert_to_coords <- function(data,
+                              coords = c("lon", "lat"),
+                              keep_all = TRUE,
+                              arg = caller_arg(data),
+                              call = caller_env()) {
+  check_installed("sf", call = call)
+
+  if (!all(sf::st_is(data, "POINT"))) {
+    geom_type <- unique(sf::st_geometry_type(data))
+
+    message <- paste0(
+      "`", arg, "` must use POINT geometry only, not ",
+      paste0(geom_type, collapse = ", "), "."
+    )
+
+    abort(
+      message,
+      call = call
+    )
+  }
+
+  stopifnot(
+    is.character(coords),
+    has_length(coords, 2)
+  )
+
+  coords_data <- data |>
+    sf::st_transform(4326) |>
+    sf::st_coordinates() |>
+    as.data.frame() |>
+    set_names(coords)
+
+  if (!keep_all || inherits(data, "sfc")) {
+    return(coords_data)
+  }
+
+  purrr::list_cbind(
+    list(
+      sf::st_drop_geometry(data),
+      coords_data
+    )
+  )
+}
+

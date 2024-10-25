@@ -29,7 +29,11 @@ Description: The Urban Institute has developed the Spatial Equity Data
     users to call the Spatial Equity Data Tool API programmatically using
     R code.
 License: GPL (>= 3) + file LICENSE
+URL: https://github.com/UrbanInstitute/sedtR
+BugReports: https://github.com/UrbanInstitute/sedtR/issues
 Imports:
+    cli,
+    curl,
     geojsonsf,
     httr,
     jsonlite,
@@ -39,6 +43,7 @@ Imports:
     stringr,
     utils
 Suggests: 
+    arcgislayers,
     dplyr,
     forcats,
     ggplot2,
@@ -47,15 +52,15 @@ Suggests:
     openxlsx,
     readr,
     scales,
+    sf,
     testthat,
     tidycensus,
     tidyr,
     tidyselect,
     tmap,
-    urbnthemes (>= 0.0.2),
-    withr
+    urbnthemes (>= 0.0.2)
 Remotes: 
     UrbanInstitute/urbnthemes
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2

@@ -1,4 +1,8 @@
-#' Function to create a choropleth map to visualize the geographic disparity scores
+#' Create a chloropleth map to visualize the geographic disparity scores
+#'
+#' [create_map()] uses `{tmap}` and `{urbnthemes}` to create a chloropleth map
+#' to visualize the geographic disparity scores returned with the response
+#' object from [call_sedt_api()].
 #'
 #' @param geo_df  (sf dataframe) - a spatial dataframe containing the geographic
 #' disparity scores outputted from the Spatial Equity Data Tool.
@@ -9,10 +13,10 @@
 #' .html. Otherwise, the map will save as a .png.
 #' @param interactive (logical) - Default set to TRUE. Whether the map should
 #' be interactive or not.
-#' @param file_path (character) - Default set to "bias_map". A file path of where
-#' to save the file. This should not include a file type as that is controlled
-#' by the interactive variable. An example file-path would be,
-#' "visuals/interactives/disparity_map".
+#' @param file_path (character) - Default set to "bias_map". A file path of
+#'   where to save the file. This should not include a file type as that is
+#'   controlled by the interactive variable. An example file-path would be,
+#'   "visuals/interactives/disparity_map".
 #' @return bias_map (tmap map) - the choropleth map created
 #' @export
 #' @details
@@ -31,11 +35,10 @@ create_map <- function(geo_df,
                        file_path = "bias_map"
 
                        ){
-
-  rlang::check_installed(
-    c("tmap", "dplyr", "janitor", "urbnthemes"),
-    reason = "to use the `create_map()` function. If urbnthemes not installed, we use RdBu color palette"
-    )
+  check_installed(
+    c("tmap", "dplyr", "janitor"),
+    reason = "to use the `create_map()` function. If urbnthemes not installed, we use RdBu color palette."
+  )
 
   # Choose color palette:
   if (rlang::is_installed("urbnthemes")) {
@@ -43,7 +46,6 @@ create_map <- function(geo_df,
   } else {
     pal <- "RdBu"
   }
-
 
   #Check all Inputs for correct types:
   stopifnot("sf" %in% class(geo_df))
@@ -72,12 +74,13 @@ create_map <- function(geo_df,
       # replace observations that are not significantly different with NA
       # multiply by 100 to convert to percentage
       geo_df <- geo_df |>
-        dplyr::mutate(!!rlang::sym(col_to_plot) :=
-                 dplyr::if_else(!!rlang::sym(stringr::str_glue("sig_{col_to_plot}")) == "FALSE",
-                         NA_real_,
-                         !!rlang::sym(col_to_plot)*100
-                         )
-               )
+        dplyr::mutate(
+          !!sym(col_to_plot) := dplyr::if_else(
+            !!sym(stringr::str_glue("sig_{col_to_plot}")) == "FALSE",
+            NA_real_,
+            !!sym(col_to_plot) * 100
+            )
+          )
 
       # Avoid possible errors by ensuring geometry is valid
       valid_geo_df <- sf::st_make_valid(geo_df)
