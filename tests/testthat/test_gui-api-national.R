@@ -78,6 +78,12 @@ test_that("API and GUI results match for national", {
 
   df_list <- get_api_results(r$file_id)
 
+  sc <- jsonlite::read_json("../../secrets.json")
+  s3_bucket <- dplyr::if_else(
+    stage == "production",
+    sc$s3_bucket_prod,
+    sc$s3_bucket_stg)
+
 
   gui_dem <- readr::read_csv(stringr::str_glue("https://{s3_bucket}.s3.amazonaws.com/reference-data/demographic-bias/csv/us_library_outlets.csv"),
                              col_types = c("geo_fips" = "character")) |>

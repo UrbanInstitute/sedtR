@@ -1,5 +1,6 @@
 .onAttach <- function(libname, pkgname) {
   stage <- "production"
+  assign("stage", stage, envir=as.environment("package:sedtR"))
   packageStartupMessage(paste0("Loading sedtR - using the ", stage, " API"))
 }
 
@@ -11,3 +12,4 @@ sedt_url <- function(
     .envir = parent.frame()) {
   paste0(base_url, version, "/", stringr::str_glue(..., .envir = .envir))
 }
+

@@ -30,7 +30,7 @@ test_that("prep_sedt_resource works with valid inputs", {
   subway_station_url <- "https://services6.arcgis.com/yG5s3afENB5iO9fj/arcgis/rest/services/SubwayStation_view/FeatureServer/0"
 
   # Works with URL
-  expect_error(
-    prep_sedt_resource(subway_station_url)
+  expect_true(
+    file.exists(prep_sedt_resource(subway_station_url))
   )
 })
