@@ -47,6 +47,7 @@ Suggests:
     dplyr,
     forcats,
     ggplot2,
+    gpkg,
     here,
     janitor,
     openxlsx,
