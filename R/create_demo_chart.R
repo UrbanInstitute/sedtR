@@ -9,7 +9,7 @@
 #' @param file_path (character) - Default set to "dem_disparity_chart.png".
 #' A file path of where to save the file. This should include a data type
 #' suffix. EX: "results/visuals/dem_disparity_chart.png"
-#' @inherit setd-citation details
+#' @inherit sedt-citation details
 #' @return plot (ggplot object)  - The ggplot object that was created.
 #' @export
 create_demo_chart <- function(

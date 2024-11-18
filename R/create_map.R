@@ -20,7 +20,7 @@
 #' by the interactive variable. An example file-path would be,
 #' "visuals/interactives/disparity_map".
 #' @return bias_map (tmap map or ggplot2 plot) - the choropleth map created
-#' @inherit setd-citation details
+#' @inherit sedt-citation details
 #' @export
 create_map <- function(geo_df,
                        col_to_plot = "diff_pop",

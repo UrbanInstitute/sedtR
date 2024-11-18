@@ -1,6 +1,6 @@
 #' Citation for Spatial Equity Data Tool API Data
 #'
-#' @name setd-citation
+#' @name sedt-citation
 #' @details
 #' Please use the following citation for data obtained from the API:
 #'
