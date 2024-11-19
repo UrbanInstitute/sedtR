@@ -68,6 +68,7 @@ create_map <- function(geo_df,
           data = geo_df,
           fill_col = col_to_plot,
           fill_palette = pal,
+          interactive = interactive,
           ...
         )
       } else {
