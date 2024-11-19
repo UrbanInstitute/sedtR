@@ -64,7 +64,8 @@ create_demo_chart <- function(
   )
 
   if (save_chart) {
-    ggplot2::ggsave(
+    rlang::exec(
+      ggplot2::ggsave,
       filename = file_path,
       plot = demo_lollipop_plot,
       !!!ggsave_args
