@@ -3,7 +3,7 @@ test_that("test call_sedt_api works with non-file resources", {
   nc = sf::read_sf(system.file("shape/nc.shp", package="sf"))
   nc_path <- system.file("shape/nc.shp", package="sf")
   nc = sf::read_sf(nc_path)
-  nc_points <- suppressWarnings(sf::st_centroid(nc))
+  nc_points <- suppressWarnings(sf::st_point_on_surface(nc))
 
   if(!file.exists("data/nc_points.csv")){
     nc_points |>
@@ -88,6 +88,16 @@ test_that("test call_sedt_api works with non-file resources", {
   testthat::expect_no_error(sedt_response$geo_bias_data)
   testthat::expect_no_error(sedt_response$demo_bias_data)
 
+  # test CSV url
+
+  sedt_response <- call_sedt_api(
+    resource = "https://equity-tool-api.urban.org/sample-data/minneapolis_bikes.csv",
+    geo = "city",
+    acs_data_year = 2021
+  )
+
+  testthat::expect_no_error(sedt_response$geo_bias_data)
+  testthat::expect_no_error(sedt_response$demo_bias_data)
 
 
 }
