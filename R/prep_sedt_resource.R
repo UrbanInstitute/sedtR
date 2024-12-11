@@ -24,10 +24,10 @@
 #' - A `sf` or `sfc` object with POINT geometry that can be converted to a data frame using [sf::st_coordinates()]
 #'
 #' If resource is an `sf` object or a path to a spatial data file with POLYGON,
-#' MULTIPOLYGON, or any non-POINT geometry, `placement` is used to convert the
-#' input into points. [sf::st_centroid()] (if `placement = "centroid"`) or
-#' [sf::st_point_on_surface()] (if `placement = "surface"` which is the default)
-#' option.
+#' MULTIPOLYGON, or any non-POINT geometry, users should pre-process the data
+#' with [sf::st_centroid()] or [sf::st_point_on_surface()] and define a
+#' `resource_weight` column for [call_sedt_api()] to account for differences in
+#' the intersecting geometry.
 #' @returns A path to a CSV or TSV file (depending on value of `fileext`).
 #' @keywords internal
 #' @export
