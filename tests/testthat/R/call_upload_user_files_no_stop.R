@@ -6,65 +6,17 @@
 #' lines. We use this to test the sedt API and should not be used in production
 #' environment code.
 #'
-#' @param resource_file_path (string) path to location where the resource file
-#'  dataset is stored. Dataset should be a csv or tsv
-#' @param resource_lat_column (string) a column name in in the resource_file
-#'  dataset indicating the resource latitude column
-#' @param resource_lon_column (string)a column name in in the resource_file
-#'  dataset indicating the resource longitude column
-#' @param demographic_file_path (string) Optional: a path to the location where
-#'  the demographic supplemental dataset is stored. Dataset should be a csv or tsv.
-#' @param demographic_geo_id_column (string) Only necessary if a demographic
-#'  file is provided. The name of the column with FIPS codes identifying the
-#'  geography
-#' @param demographic_columns (string representation of Python dictionary) Only
-#'  necessary if a demographic file is provided. Data should be of the form
-#'  "{'key':'value'}" where keys are the names of variable columns and value
-#'  are either the name of their respective standard error columns or NA if the
-#'  column lacks standard errors.
-#' @param geographic_file_path (string) Optional: a path to the location where the
-#'  supplemental geographic dataset is stored. Dataset should be either csv or tsv.
-#' @param geographic_geo_id_column (string): Only necessary if there is a
-#'  geographic dataset provided. The name of the column with FIPS codes identifying
-#'  the geography
-#' @param geographic_columns (string representation of Python dictionary) Only
-#'  necessary if a geographic file is provided. Data should be of the form
-#'  "{'key':'value'}" where keys are the names of variable columns and values
-#'  are either the names of their respective standard error columns or NA if the
-#'  column lacks standard error data.
-#' @param resource_filters (string representation of Python list of dictionaries).
-#'  Optional. Each dictionary has the structure {"filter_column":"\[Column Name\]",
-#'  "filter_comparison" : "\[Comparison Operator\]", "filter_type":"\[type\]",
-#'  "filter_val":"\[filter value\]"}. The filter-column key should be paired with
-#'  a column name in the resource dataset. The filter_comparison operator should
-#'  be one of the following: "==", ">=", "<=", "<", ">", "!=", or "dateRange".
-#'  The filter type should be one of "string", "number" or "date." filter_val
-#'  depends on the type. More broadly, the parameter allows users to input
-#'  numeric-, string-, or date-based filters. For numeric filters, the
-#'  filter_column should be numeric, the filter_comparison can be any of the listed
-#'  alternatives except "dateRange", and the value should be a number wrapped in
-#'  a string (ex.: "1"). For string filters, the filter_column should contain
-#'  strings, the filter_comparison should be either "==" or "!=", and the
-#'  filter_val should be a string. For date-based filters, the filter_column should
-#'  contain dates, the filter_comparison should be dateRange, and the filter_val
-#'  should be of the form "date1-date2".
-#' @param resource_weight (string): Optional. Should be the name of a column
-#'  in the resource dataset. If included, the number of resources in a geography
-#'  will be weighted using this column.
-#' @param geo (string): One of "city", "county", "state", or "country". Indicates
-#'  the geographic level at which the analysis should be conducted.
-#' @param acs_data_year (string): The tool currently has 2019 and 2021 data in it. A
-#'  four digit year beginning with "20" must be inputted. If it is different than
-#'  "2019" or "2021" the tool will use 2021 data.
+#' @inheritParams call_upload_user_files
 #' @return response (list): The function wraps [httr::POST()] which
 #'  returns a "response object" which is a list with information about the request.
-#'  See the [API documentation]("https://ui-research.github.io/sedt_documentation/api_documentation.html")
+#'  See the [API documentation](https://ui-research.github.io/sedt_documentation/api_documentation.html)
 #'  for more details.
 
 call_upload_user_files_no_stop <- function(
-    resource_file_path,
-    resource_lat_column,
-    resource_lon_column,
+    resource = NULL,
+    resource_file_path = NULL,
+    resource_lat_column = "lat",
+    resource_lon_column = "lon",
     demographic_file_path = NA,
     demographic_geo_id_column = NA,
     demographic_columns = NA,
@@ -74,10 +26,21 @@ call_upload_user_files_no_stop <- function(
     resource_filters = NA,
     resource_weight = NA,
     geo = "city",
-    acs_data_year = "2021"
+    acs_data_year = getOption("sedtR.year", 2021),
+    placement = "surface",
+    ...,
+    call = caller_env()
     ){
-  #Define api URL
-  api_url = stringr::str_glue("{base_url}/api/v1/upload-user-file/")
+  # Define api URL
+  api_url <- sedt_url("upload-user-file/")
+
+  resource_file_path <- resource_file_path %||% prep_sedt_resource(
+    resource = resource,
+    coords = c(resource_lon_column, resource_lat_column),
+    placement = placement,
+    ...,
+    call = call
+  )
 
   #print("start of no stop")
 

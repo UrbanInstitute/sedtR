@@ -1,14 +1,25 @@
-# sedtR 0.0.0.2
+# sedtR 0.3.0
 
-- Fix installation issue with `urbnthemes` package 
-- Fix package misspellings in `tests/create_dc_test_data.R`
+- Add `resource` argument to `call_sedt_api()` that supports a wider range of resource inputs: URLs (including ArcGIS FeatureLayer and Table URLs), spatial data file paths, `sf` or `sfc` object, and data frames with columns matching the supplied `resource_lat_column` and `resource_lon_column` values. All input data must use POINT geometry. See `arcgislayers::arc_read()` for more on working with ArcGIS layer URLs.
+- Add default values ("lat" and "lon") for `resource_lat_column` and `resource_lon_column`.
+- Allow users to set default `acs_data_year` using the `"sedtR.year"` option.
+- Use .onAttach intead of .onLoad for package start-up messages ([consistent with guidance](https://r-pkgs.org/code.html#sec-code-r-landscape))
 
-# sedtR 0.0.3 
+# sedtR 0.2.0 
+- Makes `create_demo_chart()` and `create_map()` operational
+- Provides description of how to use `create_demo_chart()` and `create_map()` on the README 
+
+# sedtR 0.1.2 
 
 - Polish package readme to be more user-friendly
 - Remove `urbnthemes` from `create_demo_chart()`
 - Implement best practices suggested by Eli Pousson (elipousson)
 
-# sedtR 0.0.4 
-- Makes `create_demo_chart()` and `create_map()` operational
-- Provides description of how to use `create_demo_chart()` and `create_map()` on the README 
+# sedtR 0.1.1
+
+- Fix installation issue with `urbnthemes` package 
+- Fix package misspellings in `tests/create_dc_test_data.R`
+
+# sedtR 0.1.0
+
+- First release

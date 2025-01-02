@@ -1,10 +1,14 @@
-.onLoad <- function(libname, pkgname){
-
-  assign("stage", "production", envir = parent.env(environment()))
-  assign("base_url",
-         "https://equity-tool-api.urban.org",
-         envir = parent.env(environment()))
-
-  msg <- paste("Loading", pkgname, " - using ", stage, " API")
-  cat(msg)
+.onAttach <- function(libname, pkgname) {
+  stage <- "production"
+  assign("stage", stage, envir=as.environment("package:sedtR"))
 }
+
+#' @noRd
+sedt_url <- function(
+    ...,
+    base_url = "https://equity-tool-api.urban.org/api/v",
+    version = 1,
+    .envir = parent.frame()) {
+  paste0(base_url, version, "/", stringr::str_glue(..., .envir = .envir))
+}
+

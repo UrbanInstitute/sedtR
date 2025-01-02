@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_map.R
 \name{create_map}
 \alias{create_map}
-\title{Function to create a choropleth map to visualize the geographic disparity scores}
+\title{Create a chloropleth map to visualize the geographic disparity scores}
 \usage{
 create_map(
   geo_df,
@@ -26,16 +26,18 @@ or not. Note that if interactive is set to true, the map will save as a
 \item{interactive}{(logical) - Default set to TRUE. Whether the map should
 be interactive or not.}
 
-\item{file_path}{(character) - Default set to "bias_map". A file path of where
-to save the file. This should not include a file type as that is controlled
-by the interactive variable. An example file-path would be,
+\item{file_path}{(character) - Default set to "bias_map". A file path of
+where to save the file. This should not include a file type as that is
+controlled by the interactive variable. An example file-path would be,
 "visuals/interactives/disparity_map".}
 }
 \value{
 bias_map (tmap map) - the choropleth map created
 }
 \description{
-Function to create a choropleth map to visualize the geographic disparity scores
+\code{\link[=create_map]{create_map()}} uses \code{{tmap}} and \code{{urbnthemes}} to create a chloropleth map
+to visualize the geographic disparity scores returned with the response
+object from \code{\link[=call_sedt_api]{call_sedt_api()}}.
 }
 \details{
 Please use the following citation for data obtained from the API,

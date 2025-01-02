@@ -35,6 +35,7 @@ The tool – launched in 2020 and expanded in 2021 – has been used by a wide v
 ### Why Create a Public API and `sedtR`:
 Through engagements with local government and nonprofit users, we identified a key barrier. Organizations wanted to embed the SEDT within their own tools and data workflows and thus make the Tool a core part of institutional processes. However, before the API's release in March of 2024, Tool users would have had to visit Urban’s website and use the GUI interface to upload one dataset at a time whenever new analyses were needed. The release of the API overcomes this barrier by allowing programmatic access to the Tool. We wrote `sedtR` to wrap the public API's endpoints in user-friendly R code. We are hopeful that `sedtR` makes it easy for researchers, analysts, and policymakers to incorporate SEDT calculations into R workflows. 
 
+The SEDT enables local, state, and federal leaders, as well as the general public, to upload their own point spatial data and quickly assess whether place-based programs and resources – such as parks, libraries, wi-fi hotspots or electric vehicle charging stations – are equitably distributed across neighborhoods and demographic groups.
 
 ## Installation
 
@@ -49,26 +50,18 @@ devtools::install_github("UrbanInstitute/sedtR")
 
 The following example illustrates using the `call_sedt_api()` function on Minneapolis, MN bikeshare data stored on the Urban Institute's [Data Catalog](https://datacatalog.urban.org/).  
 
-``` {r, echo = FALSE, message = FALSE, warning = FALSE}
+``` {r}
 library(sedtR)
 
-withr::with_tempdir({
-  
-  # Download bicycle data:
-  download.file(
-    "https://equity-tool-api.urban.org/sample-data/minneapolis_bikes.csv",
-    destfile = "bikes.csv")
-    
-  # Call sedt API with wrapper function
-  sedt_response <- sedtR::call_sedt_api(
-    resource_file_path = here::here("bikes.csv"),
-    resource_lat_column = "lat",
-    resource_lon_column = "lon",
-    geo = "city",
-    acs_data_year = "2021")
-})
+# Call sedt API with wrapper function
+sedt_response <- call_sedt_api(
+  resource = "https://equity-tool-api.urban.org/sample-data/minneapolis_bikes.csv",
+  geo = "city",
+  acs_data_year = 2021
+)
 ```
 
+A resource can be a path or URL for an existing delimited (`csv` or `tsv`) file with coordinate columns, a spatial data file that can be read with `sf::read_sf()`, a `sf` object, or a URL for a FeatureLayer. Any input spatial data file or object *must* use POINT geometry.
 
 `call_sedt_api()` returns a list object that contains a `sf` object storing the geographic disparity scores: 
 
@@ -85,7 +78,7 @@ sedt_response$demo_bias_data |>
   head()
 ```
 
-The package allows users to visualize the geographic disparity scores and demographic disparity scores with `create_map()` and `create_demo_chart()`, respectively. By default, these functions do not save the resulting images, but both provide arguments (`save_map` and `save_chart`) which take logicals and allow a user to save the outputted visualization. Like the interactive visualizations on the [SEDT website] (https://apps.urban.org/features/equity-data-tool/), these functions allow users to visualize different geographic or demographic disparity scores. `create_map()` allows interactive or static visualizations.
+The package allows users to visualize the geographic disparity scores and demographic disparity scores with `create_map()` and `create_demo_chart()`, respectively. Like the interactive visualizations on the [SEDT website] (https://apps.urban.org/features/equity-data-tool/), these functions allow users to visualize different geographic or demographic disparity scores. `create_map()` allows interactive or static visualizations.
 
 ```{r}
 create_map(sedt_response$geo_bias_data, 
@@ -100,12 +93,14 @@ create_demo_chart(sedt_response$demo_bias_data,
                   save_chart = FALSE) # optional, default is FALSE. If TRUE provide file_path
 ```
 
+By default, these functions do not save the resulting images, but both provide arguments (`save_map` and `save_chart`) which take logicals and allow a user to save the outputted visualization.
+
 ## Where Can I Learn More:
 
 The Spatial Equity Data Tool has comprehensive documentation in the form of an [online book](https://ui-research.github.io/sedt_documentation/). Most notably, there is a chapter [specifically devoted to the API](https://ui-research.github.io/sedt_documentation/api_documentation.html). It provides more in-depth `sedtR` code and outputs. 
 
 Other particularly relevant chapters cover [common API errors and warnings](https://ui-research.github.io/sedt_documentation/common_errors_warnings.html), [how to interpret Tool results](https://ui-research.github.io/sedt_documentation/interpreting_results.html), and a [description of data appropriate for the Tool](https://ui-research.github.io/sedt_documentation/resource_datasets.html). 
 
-
 ## Feedback:
+
 Please provide feedback by opening [GitHub Issues](https://github.com/UrbanInstitute/sedtR/issues) or contacting us at sedt@urban.org.
