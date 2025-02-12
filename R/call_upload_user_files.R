@@ -44,6 +44,41 @@ match_geo <- function(geo,
   )
 }
 
+#`' @noRd
+check_distance_mode <- function(distance_mode,
+                                error_call = caller_env()) {
+  arg_match0(
+    distance_mode,
+    c("drive", "walk"),
+    error_call = error_call
+  )
+}
+
+check_distance_time <- function(distance_mode,
+                                  distance_time,
+                                  error_call = caller_env()) {
+
+  if (distance_mode == "walk") {
+    out <- arg_match0(
+      distance_time,
+      values = c("10", "15", "20"),
+      error_call = error_call
+    )
+  }
+
+  if (distance_mode == "drive") {
+    distance_time <- as.character(distance_time)
+    out <- arg_match0(
+      distance_time,
+      values = c("15", "30", "60"),
+      error_call = error_call
+    )
+  }
+  out
+}
+
+
+
 #' Call the SEDT API and return an API response
 #'
 #' [call_upload_user_files()] calls the SEDT API /upload-user-files/ endpoint
@@ -108,6 +143,9 @@ match_geo <- function(geo,
 #'   2021 data in it. A four digit year beginning with "20" must be inputted. If
 #'   it is different than "2019" or "2021" the tool will use 2021 data. A
 #'   default value can be set using the "sedtR.year" option.
+#' @param distance_mode (string): Optional. One of "walk" or "drive"
+#' @param distance_time (string): Optional. If distance_mode is walk, one of
+#'  "10", "15", or "20". If mode is drive, one of "15", "30", or "60"
 #' @param ... Additional parameters passed to [arcgislayers::arc_read()] or
 #'   [sf::st_read()] depending on the value provided to `resource`.
 #' @return response (list): The function wraps [httr::POST()] which returns a
@@ -132,6 +170,8 @@ call_upload_user_files <- function(
   resource_weight = NA,
   geo = "city",
   acs_data_year = getOption("sedtR.year", 2021),
+  distance_mode = NA,
+  distance_time = NA,
   ...,
   call = caller_env()
 ) {
@@ -154,6 +194,46 @@ call_upload_user_files <- function(
   acs_data_year <- match_acs_data_year(acs_data_year, error_call = call)
 
   geo <- match_geo(geo, error_call = call)
+
+  #Checks for distance measure:
+
+  # Ensure mode is allowed
+  if(!is.na(distance_mode)) {
+    distance_mode <- check_distance_mode(distance_mode, error_call = call)
+  }
+
+  # Ensure time is allowed
+  if (!is.na(distance_time)) {
+    distance_time <- check_distance_time(distance_mode,
+                                         distance_time,
+                                         error_call = error_call)
+  }
+
+  # stop for state and national calls:
+  if (geo %in% c("state", "national") & !is.na(distance_mode)) {
+    stop("State and national calls are not supported for this distance access")
+  }
+
+  # Ensure both distance_mode and distance_time are provided if one is provided
+  if (is.na(distance_mode) & !is.na(distance_time)) {
+    stop("If distance_time is provided, distance_mode must also be provided")
+  }
+  if (!is.na(distance_mode) & is.na(distance_time)) {
+    stop("If distance_mode is provided, distance_time must also be provided")
+  }
+
+  # Message about beta:
+  if (!is.na(distance_mode)) {
+    message("Please note that all analyses using travel shed functionality are in beta mode.")
+  }
+
+  # Create json for distance access
+  if (!is.na(distance_mode)) {
+    distance_access_json <- rjson::toJSON(list(distance_mode = distance_time))
+  } else {
+    distance_access_json <- NA
+  }
+
 
   possible_vars <- list(demographic_file_path = demographic_file_path,
                         demographic_geo_id_column = demographic_geo_id_column,
@@ -247,6 +327,11 @@ call_upload_user_files <- function(
     }
   }
 
+  ## Add distance access payload:
+  if (!is.na(distance_mode)) {
+    payload$distance_access <- distance_access_json
+  }
+
   #print(payload)
 
   response <-
@@ -255,6 +340,8 @@ call_upload_user_files <- function(
       body = payload,
       type = "form"
       )
+
+  message("Getting response...")
 
   # parses response and checks for non-201 http code and returns message if so, or file id if got 201
   if (response$status_code == 201) {

@@ -31,6 +31,8 @@ call_sedt_api <- function(resource = NULL,
                           resource_weight = NA,
                           geo = "city",
                           acs_data_year = getOption("sedtR.year", 2021),
+                          distance_mode = NA,
+                          distance_time = NA,
                           ...) {
   # submit request to API
   response <- call_upload_user_files(
@@ -48,6 +50,7 @@ call_sedt_api <- function(resource = NULL,
     resource_weight = resource_weight,
     geo = geo,
     acs_data_year = acs_data_year,
+    distance_access = NA,
     ...
   )
 
