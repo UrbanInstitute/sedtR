@@ -9,6 +9,7 @@
     # Read the secrets.json file
     secrets <- jsonlite::fromJSON("secrets.json")
     base_url <- secrets$staging_url
+    message("On staging API")
   }
 
   assign("stage", stage, envir=as.environment("package:sedtR"))

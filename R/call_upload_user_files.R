@@ -78,6 +78,9 @@ check_distance_time <- function(distance_mode,
 }
 
 
+na_to_empty <- function(x) {
+  if (is.na(x)) "" else x
+}
 
 #' Call the SEDT API and return an API response
 #'
@@ -300,6 +303,7 @@ call_upload_user_files <- function(
   )
 
   for (i in seq_along(possible_vars)) {
+    print(names(possible_vars)[i])
     if(names(possible_vars)[[i]] %in% c("demographic_columns", "geographic_columns")) {
       if(is.list(possible_vars[[i]])){
         # set name of item in named list to variable name and value to variable value
@@ -321,18 +325,28 @@ call_upload_user_files <- function(
         # if resource_filters is null, create empty list
         payload[names(possible_vars)[[i]]] <- jsonlite::toJSON(list(), na = "null", null = "null")
       }
-    } else if(!is.na(possible_vars[[i]])) {
-      # set name of item in named list to variable name and value to variable value
-      payload[names(possible_vars)[[i]]] <- possible_vars[[i]]
+      #Handle case for resource weight. We want value to exist in API call
+     } #else if(names(possible_vars)[[i]] == "resource_weight") {
+  #       if(is.na(possible_vars[[i]])) {
+  #         payload[["resource_weight"]] <- ""
+  #       } else {
+  #         payload["resource_weight"] <- possible_vars[[i]]
+  #         }
+  #   } else if(!is.na(possible_vars[[i]])) {
+  #     # set name of item in named list to variable name and value to variable value
+  #     payload[names(possible_vars)[[i]]] <- possible_vars[[i]]
+  #   }
+    else {
+      payload[[names(possible_vars)[[i]]]] <- na_to_empty(possible_vars[[i]])
     }
-  }
+   }
 
   ## Add distance access payload:
   if (!is.na(distance_mode)) {
     payload$distance_access <- distance_access_json
   }
 
-  #print(payload)
+  print(payload)
 
   response <-
     httr::POST(
