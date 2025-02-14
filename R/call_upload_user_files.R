@@ -55,28 +55,38 @@ check_distance_mode <- function(distance_mode,
 }
 
 check_distance_time <- function(distance_mode,
-                                  distance_time,
-                                  error_call = caller_env()) {
+                               distance_time,
+                               error_call = caller_env()) {
+
+  if (!is.numeric(distance_time)){
+    abort(
+      "Distance time must be a numeric value.",
+      call = error_call
+    )
+  }
+
+  valid_walk_times <- c(10, 15, 20)
+  valid_drive_times <- c(15, 30, 60)
 
   if (distance_mode == "walk") {
-    out <- arg_match0(
-      distance_time,
-      values = c("10", "15", "20"),
-      error_call = error_call
-    )
+    if (!(distance_time %in% valid_walk_times)) {
+      abort(
+        "Valid walk times are 10, 15, and 20 minutes.",
+        call = error_call
+      )
+    }
   }
 
   if (distance_mode == "drive") {
-    distance_time <- as.character(distance_time)
-    out <- arg_match0(
-      distance_time,
-      values = c("15", "30", "60"),
-      error_call = error_call
-    )
+    if(!(distance_time %in% valid_drive_times)) {
+      abort(
+        "Valid drive times are 15, 30, and 60 minutes.",
+        call = error_call
+      )
+    }
   }
-  out
+  return(distance_time)
 }
-
 
 na_to_empty <- function(x) {
   if (is.na(x)) "" else x
@@ -147,8 +157,9 @@ na_to_empty <- function(x) {
 #'   it is different than "2019" or "2021" the tool will use 2021 data. A
 #'   default value can be set using the "sedtR.year" option.
 #' @param distance_mode (string): Optional. One of "walk" or "drive"
-#' @param distance_time (string): Optional. If distance_mode is walk, one of
-#'  "10", "15", or "20". If mode is drive, one of "15", "30", or "60"
+#' @param distance_time (integer): Optional. If distance_mode is walk, one of
+#'  10, 15, 20. If mode is drive, one of 15, 30, 60. If a string is provided,
+#'  we parse to integer.
 #' @param ... Additional parameters passed to [arcgislayers::arc_read()] or
 #'   [sf::st_read()] depending on the value provided to `resource`.
 #' @return response (list): The function wraps [httr::POST()] which returns a
@@ -199,6 +210,7 @@ call_upload_user_files <- function(
   geo <- match_geo(geo, error_call = call)
 
   #Checks for distance measure:
+  #stopifnot(is.numeric(distance_time))
 
   # Ensure mode is allowed
   if(!is.na(distance_mode)) {
@@ -209,7 +221,7 @@ call_upload_user_files <- function(
   if (!is.na(distance_time)) {
     distance_time <- check_distance_time(distance_mode,
                                          distance_time,
-                                         error_call = error_call)
+                                         error_call = call)
   }
 
   # stop for state and national calls:
@@ -232,7 +244,9 @@ call_upload_user_files <- function(
 
   # Create json for distance access
   if (!is.na(distance_mode)) {
-    distance_access_json <- rjson::toJSON(list(distance_mode = distance_time))
+    distance_access_list <- list()
+    distance_access_list[distance_mode] <- distance_time
+    distance_access_json <- rjson::toJSON(distance_access_list)
   } else {
     distance_access_json <- NA
   }
@@ -303,7 +317,6 @@ call_upload_user_files <- function(
   )
 
   for (i in seq_along(possible_vars)) {
-    print(names(possible_vars)[i])
     if(names(possible_vars)[[i]] %in% c("demographic_columns", "geographic_columns")) {
       if(is.list(possible_vars[[i]])){
         # set name of item in named list to variable name and value to variable value
@@ -332,10 +345,11 @@ call_upload_user_files <- function(
   #       } else {
   #         payload["resource_weight"] <- possible_vars[[i]]
   #         }
-  #   } else if(!is.na(possible_vars[[i]])) {
-  #     # set name of item in named list to variable name and value to variable value
-  #     payload[names(possible_vars)[[i]]] <- possible_vars[[i]]
-  #   }
+  #  }
+    else if(!is.na(possible_vars[[i]])) {
+      # set name of item in named list to variable name and value to variable value
+      payload[names(possible_vars)[[i]]] <- possible_vars[[i]]
+    }
     else {
       payload[[names(possible_vars)[[i]]]] <- na_to_empty(possible_vars[[i]])
     }
@@ -344,9 +358,12 @@ call_upload_user_files <- function(
   ## Add distance access payload:
   if (!is.na(distance_mode)) {
     payload$distance_access <- distance_access_json
+    message("adding distance access to payload...")
+  } else {
+    message("not doing distance_access")
   }
 
-  print(payload)
+  #print(payload)
 
   response <-
     httr::POST(

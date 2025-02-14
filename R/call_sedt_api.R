@@ -50,7 +50,8 @@ call_sedt_api <- function(resource = NULL,
     resource_weight = resource_weight,
     geo = geo,
     acs_data_year = acs_data_year,
-    distance_access = NA,
+    distance_mode = distance_mode,
+    distance_time = distance_time,
     ...
   )
 
