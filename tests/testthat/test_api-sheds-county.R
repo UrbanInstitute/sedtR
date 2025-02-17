@@ -57,11 +57,35 @@ test_that("travel sheds for county perform as expected", {
   expect_equal(c(r$status_code),
                c(200))
 
-  # Test 3: Call falls for non-2022 year
+  #Test 3: Call works at county scale and outside of DC:
+  r <- call_sedt_api(
+    resource_file_path = here::here("tests",
+                                    "testthat",
+                                    "data",
+                                    "polling_montgomery_county_md.csv"),
+    resource_lat_column = "POINT_X",
+    resource_lon_column = "POINT_Y",
+    geo = "county",
+    acs_data_year = "2022",
+    demographic_file_path = NA,
+    demographic_geo_id_column = NA,
+    demographic_columns =  NA,
+    geographic_file_path = NA,
+    geographic_geo_id_column = NA,
+    geographic_columns = NA,
+    resource_filters = NA,
+    resource_weight = NA,
+    distance_mode = "walk",
+    distance_time = 20
+  )
+  expect_equal(c(r$status_code),
+               c(200))
+
+  # Test 4: Call falls for non-2022 year
   # NOTE: HAVE NOT YET BUILT THIS INTO SEDT SO DON"T TEST YET
 
-  # r <- call_upload_user_files(
-  #   resource_file_path = here::here("tests",
+  #   call_upload_user_files(
+  #     resource_file_path = here::here("tests",
   #                                   "testthat",
   #                                   "data",
   #                                   "polling_montgomery_county_md.csv"),
@@ -79,13 +103,14 @@ test_that("travel sheds for county perform as expected", {
   #   resource_weight = NA,
   #   distance_mode = "walk",
   #   distance_time = 10
-  # )
-  # expect_equal(c(r$status_code),
-  #              c(400))
+  # ) |>
+  #  expect_error()
 
 
-  # Test 4: Call falls for non-city or county data
-  r <- call_sedt_api(
+
+
+  # Test 5: Call fails for non-city or county data
+  call_sedt_api(
     resource_file_path = here::here("tests",
                                     "testthat",
                                     "data",
@@ -101,7 +126,7 @@ test_that("travel sheds for county perform as expected", {
     geographic_geo_id_column = NA,
     geographic_columns = NA,
     resource_filters = NA,
-    #resource_weight = NA,
+    resource_weight = NA,
     distance_mode = "walk",
     distance_time = 10
   ) |>
