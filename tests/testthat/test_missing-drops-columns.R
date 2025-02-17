@@ -56,7 +56,7 @@ test_that("Missing more than 50% of data in geographic and demographic columns",
 
   equity_data <- get_output_data(r$file_id)
   counter <- 0
-  while(isFALSE(equity_data$file_exists) & counter < 5){
+  while(isFALSE(equity_data$file_exists) & counter < 20){
     counter = counter + 1
     Sys.sleep(3L)
     equity_data <- get_output_data(r$file_id)
