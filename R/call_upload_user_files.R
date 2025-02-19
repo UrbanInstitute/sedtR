@@ -333,7 +333,10 @@ call_upload_user_files <- function(
                                                      na = "null",
                                                      null = "null",
                                                      auto_unbox = TRUE))
-        payload[names(possible_vars)[[i]]] <- jsonlite::toJSON(unlist(filter_list))
+        payload[names(possible_vars)[[i]]] <- jsonlite::toJSON(unlist(filter_list),
+                                                               na = "null",
+                                                               null = "null",
+                                                               auto_unbox = TRUE)
       } else {
         # if resource_filters is null, create empty list
         payload[names(possible_vars)[[i]]] <- jsonlite::toJSON(list(), na = "null", null = "null")
