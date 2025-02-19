@@ -5,13 +5,13 @@ test_that("test call_sedt_api works with non-file resources", {
   nc = sf::read_sf(nc_path)
   nc_points <- suppressWarnings(sf::st_point_on_surface(nc))
 
-  if(!file.exists("tests/testthat/data/nc_points.csv")){
+  if(!file.exists(here::here("tests/testthat/data/nc_points.csv"))){
     nc_points |>
       sf::st_transform(4326) |>
       sf::st_coordinates() |>
       as.data.frame() |>
       set_names(c("lon", "lat")) |>
-      readr::write_csv("tests/testthat/data/nc_points.csv")
+      readr::write_csv(here::here("tests/testthat/data/nc_points.csv"))
   }
 
 
@@ -46,7 +46,7 @@ test_that("test call_sedt_api works with non-file resources", {
   testthat::expect_no_error(sedt_response_gpkg$demo_bias_data)
 
   sedt_response_csv <- call_sedt_api(
-    resource = "tests/testthat/data/nc_points.csv",
+    resource_file_path = here::here("tests/testthat/data/nc_points.csv"),
     geo = "state",
     acs_data_year = 2021
   )
