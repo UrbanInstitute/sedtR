@@ -63,8 +63,8 @@ test_that("travel sheds for county perform as expected", {
                                     "testthat",
                                     "data",
                                     "polling_montgomery_county_md.csv"),
-    resource_lat_column = "POINT_X",
-    resource_lon_column = "POINT_Y",
+    resource_lat_column = "POINT_Y",
+    resource_lon_column = "POINT_X",
     geo = "county",
     acs_data_year = "2022",
     demographic_file_path = NA,
@@ -84,29 +84,41 @@ test_that("travel sheds for county perform as expected", {
   # Test 4: Call falls for non-2022 year
   # NOTE: HAVE NOT YET BUILT THIS INTO SEDT SO DON"T TEST YET
 
-  #   call_upload_user_files(
-  #     resource_file_path = here::here("tests",
-  #                                   "testthat",
-  #                                   "data",
-  #                                   "polling_montgomery_county_md.csv"),
-  #   resource_lat_column = "POINT_Y",
-  #   resource_lon_column = "POINT_X",
-  #   geo = "county",
-  #   acs_data_year = "2021", #PROBLEM HERE
-  #   demographic_file_path = NA,
-  #   demographic_geo_id_column = NA,
-  #   demographic_columns =  NA,
-  #   geographic_file_path = NA,
-  #   geographic_geo_id_column = NA,
-  #   geographic_columns = NA,
-  #   resource_filters = NA,
-  #   resource_weight = NA,
-  #   distance_mode = "walk",
-  #   distance_time = 10
-  # ) |>
-  #  expect_error()
+   r <- call_upload_user_files(
+      resource_file_path = here::here("tests",
+                                    "testthat",
+                                    "data",
+                                    "polling_montgomery_county_md.csv"),
+    resource_lat_column = "POINT_Y",
+    resource_lon_column = "POINT_X",
+    geo = "county",
+    acs_data_year = "2021", #PROBLEM HERE
+    demographic_file_path = NA,
+    demographic_geo_id_column = NA,
+    demographic_columns =  NA,
+    geographic_file_path = NA,
+    geographic_geo_id_column = NA,
+    geographic_columns = NA,
+    resource_filters = NA,
+    resource_weight = NA,
+    distance_mode = "walk",
+    distance_time = 10
+  )
 
 
+   sedt_status <- get_status(r[["file_id"]])
+   counter <- 0L
+   while (!(isTRUE(sedt_status[["results"]][["formdata"]][["updates"]][["finished"]])) &
+          !(isTRUE(sedt_status[["results"]][["formdata"]][["updates"]][["error-messages"]])) &
+          counter < 50L) {
+     sedt_status <- get_status(r[["file_id"]])
+     counter <- counter + 1L
+     Sys.sleep(1L)
+   }
+
+   expect_true(
+     sedt_status[["results"]][["formdata"]][["error-messages"]][["isochrone_year_not_allowed"]]
+   )
 
 
   # Test 5: Call fails for non-city or county data
@@ -131,8 +143,5 @@ test_that("travel sheds for county perform as expected", {
     distance_time = 10
   ) |>
     expect_error()
-
-
-
   }
 )
