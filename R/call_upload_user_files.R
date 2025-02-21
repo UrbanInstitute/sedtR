@@ -394,6 +394,11 @@ call_upload_user_files <- function(
 
     } else {
       error_text <- rjson::fromJSON(r_json)
+
+      if (class(error_text) == "list") {
+        error_text = rjson::fromJSON(gsub("'error_message'", "\"error_message\"", error_text))
+      }
+
       return(list(status_code = response$status_code, error_message = error_text))
 
     }
