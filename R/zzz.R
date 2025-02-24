@@ -1,5 +1,5 @@
 .onAttach <- function(libname, pkgname) {
-  stage <- "staging"
+  stage <- "production"
 
   #Determine base URL depending on staging and production
   if (stage == "production") {
