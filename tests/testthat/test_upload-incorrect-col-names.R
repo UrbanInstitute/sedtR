@@ -22,7 +22,7 @@ test_that("incorrectly specifying col names gives error", {
 
   r <- get_api_response(param_list)
 
-  testthat::expect_identical(c(r[["status_code"]], r[["error_message"]]),
+  testthat::expect_identical(c(r[["status_code"]], r$error_message$error_message),
                              c(400L,
                                "wrong_col is expected in ['GEOID', 'NAME', 'hispanic_men', 'male_under_18', 'female_under_18', 'hispanic_men_margin', 'male_under_18_margin', 'female_under_18_margin', 'children', 'children_margin']"))
 
@@ -36,7 +36,7 @@ test_that("incorrectly specifying col names gives error", {
 
   r <- get_api_response(param_list)
 
-  testthat::expect_identical(c(r[["status_code"]], r[["error_message"]]),
+  testthat::expect_identical(c(r[["status_code"]], r$error_message$error_message),
                              c(400L,
                                "hispanic_women is expected to be in ['GEOID', 'NAME', 'hispanic_men', 'male_under_18', 'female_under_18', 'hispanic_men_margin', 'male_under_18_margin', 'female_under_18_margin', 'children', 'children_margin']"))
 
