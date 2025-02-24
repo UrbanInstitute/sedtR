@@ -31,7 +31,7 @@ test_that("incorrect file type", {
   testthat::expect_identical(r[["status_code"]],
                              400L)
 
-  testthat::expect_identical(r[["error_message"]],
+  testthat::expect_identical(r$error_message$error_message,
                              "Only CSV and TSV files are allowed!")
 
 
@@ -66,7 +66,7 @@ test_that("incorrect file type", {
   testthat::expect_identical(r[["status_code"]],
                              400L)
 
-  testthat::expect_identical(r[["error_message"]],
+  testthat::expect_identical(r$error_message$error_message,
                              "Only CSV and TSV files are allowed!")
 
   #resource is excel
@@ -100,7 +100,7 @@ test_that("incorrect file type", {
   testthat::expect_identical(r[["status_code"]],
                              400L)
 
-  testthat::expect_identical(r[["error_message"]],
+  testthat::expect_identical(r$error_message$error_message,
                              "Only CSV and TSV files are allowed!")
 
 

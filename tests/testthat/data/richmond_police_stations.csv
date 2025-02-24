@@ -1,0 +1,9 @@
+LandmarkID,Name,Functn,Structure,EditBy,EditDate,Location 1,EditState,latitude,longitude
+7001948,Fourth Precinct,6420: Police,4520: Police station,waldrosr,5/29/2009 10:28,POINT (-77.4433580799999 37.5632493),complete,37.5632493,-77.44335808
+7000275,Capitol Police Headquarters,6420: Police,2100: Office or bank building,rosewl,7/2/2007 13:51,POINT (-77.4345837399999 37.54023979),complete,37.54023979,-77.43458374
+7000830,VCU Police Security Office,6420: Police,2000: Commercial buildings and other specialized structures,rosewl,6/21/2007 8:33,POINT (-77.45271241 37.55090269),complete,37.55090269,-77.45271241
+7000898,VCU Community Police Office,6130: Colleges and Universities,,rosewl,6/15/2007 16:28,POINT (-77.45295912 37.5450895399999),needs research,37.54508954,-77.45295912
+7000637,Third Precinct,6420: Police,4520: Police station,rosewl,5/23/2007 16:48,POINT (-77.4672050599999 37.54632652),complete,37.54632652,-77.46720506
+7000638,Second Precinct,6420: Police,4520: Police station,rosewl,5/23/2007 16:41,POINT (-77.4820063399999 37.5065036),complete,37.5065036,-77.48200634
+7000239,First Precinct,6420: Police,4520: Police station,rosewl,5/23/2007 16:39,POINT (-77.4122463399999 37.53826455),complete,37.53826455,-77.41224634
+7000055,Richmond Police Headquarters,6420: Police,4520: Police station,rosewl,5/23/2007 11:51,POINT (-77.44485684 37.5462176699999),complete,37.54621767,-77.44485684

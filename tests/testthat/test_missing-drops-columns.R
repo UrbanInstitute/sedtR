@@ -24,6 +24,7 @@ test_that("Missing more than 50% of data in geographic and demographic columns",
     resource_weight = NA
   )
 
+
   r <- get_api_response(param_list)
 
   #Set counter in case something goes wrong
@@ -31,8 +32,8 @@ test_that("Missing more than 50% of data in geographic and demographic columns",
   counter = 0
   while(
     !("geographic_dropped_cols_over_half_missing_values" %in% names(sedt_status$results$formdata$warnings)) &
-    !("demographic_dropped_cols_over_half_missing_values" %in% names(sedt_status$results$formdata$warnings))
-  ){
+    !("demographic_dropped_cols_over_half_missing_values" %in% names(sedt_status$results$formdata$warnings)) &
+      counter < 20) {
     sedt_status <- get_status(r$file_id)
     counter = counter + 1
     Sys.sleep(3L)
@@ -55,7 +56,8 @@ test_that("Missing more than 50% of data in geographic and demographic columns",
 
   equity_data <- get_output_data(r$file_id)
   counter <- 0
-  while(isFALSE(equity_data$file_exists) & counter < 50){
+  while(isFALSE(equity_data$file_exists) & counter < 20){
+    counter = counter + 1
     Sys.sleep(3L)
     equity_data <- get_output_data(r$file_id)
   }
