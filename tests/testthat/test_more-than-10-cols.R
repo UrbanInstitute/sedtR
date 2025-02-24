@@ -18,7 +18,7 @@ test_that("more than 10 cols", {
 
   r <- get_api_response(param_list)
 
-  expect_equal(c(r$status_code, r$error_message),
+  expect_equal(c(r$status_code, r$error_message$error_message),
                c(400, "Columns cannot hold more than 10 items"))
 
 })
@@ -47,7 +47,7 @@ test_that("more than 10 cols", {
 
   r <- get_api_response(param_list)
 
-  expect_equal(c(r$status_code, r$error_message),
+  expect_equal(c(r$status_code, r$error_message$error_message),
                c(400, "Columns cannot hold more than 10 items"))
 
 })
