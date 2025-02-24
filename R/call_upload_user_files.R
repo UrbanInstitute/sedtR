@@ -338,6 +338,7 @@ call_upload_user_files <- function(
         # if resource_filters is null, create empty list
         payload[names(possible_vars)[[i]]] <- jsonlite::toJSON(list(), na = "null", null = "null")
       }
+     }
     else if(!is.na(possible_vars[[i]])) {
       # set name of item in named list to variable name and value to variable value
       payload[names(possible_vars)[[i]]] <- possible_vars[[i]]
