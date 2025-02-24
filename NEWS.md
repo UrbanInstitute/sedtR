@@ -1,3 +1,8 @@
+# sedtR 0.4.0
+
+- Introduce beta functionality to allow users to use a travel shed approach for SEDT analyses. The functionality is being tested and is available at the county and city scale for datasets in the District of Columbia, Virginia, and Maryland. Urban hopes to expand the functionality to all states soon. For more information, see the [travel sheds documentation](https://ui-research.github.io/sedt_documentation/using_sheds.html)
+- Adds `distance_mode` and `distance_time` arguments to `call_upload_user_files()` and `call_sedt_api()` functions to set travel mode ("walk" or "drive") and the maximum travel time for travel shed analyses. 
+
 # sedtR 0.3.0
 
 - Add `resource` argument to `call_sedt_api()` that supports a wider range of resource inputs: URLs (including ArcGIS FeatureLayer and Table URLs), spatial data file paths, `sf` or `sfc` object, and data frames with columns matching the supplied `resource_lat_column` and `resource_lon_column` values. All input data must use POINT geometry. See `arcgislayers::arc_read()` for more on working with ArcGIS layer URLs.
