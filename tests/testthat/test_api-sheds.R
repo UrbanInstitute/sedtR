@@ -82,7 +82,6 @@ test_that("travel sheds for county perform as expected", {
                c(200))
 
   # Test 4: Call falls for non-2022 year
-  # NOTE: HAVE NOT YET BUILT THIS INTO SEDT SO DON"T TEST YET
 
    r <- call_upload_user_files(
       resource_file_path = here::here("tests",

@@ -338,14 +338,6 @@ call_upload_user_files <- function(
         # if resource_filters is null, create empty list
         payload[names(possible_vars)[[i]]] <- jsonlite::toJSON(list(), na = "null", null = "null")
       }
-      #Handle case for resource weight. We want value to exist in API call
-     } #else if(names(possible_vars)[[i]] == "resource_weight") {
-  #       if(is.na(possible_vars[[i]])) {
-  #         payload[["resource_weight"]] <- ""
-  #       } else {
-  #         payload["resource_weight"] <- possible_vars[[i]]
-  #         }
-  #  }
     else if(!is.na(possible_vars[[i]])) {
       # set name of item in named list to variable name and value to variable value
       payload[names(possible_vars)[[i]]] <- possible_vars[[i]]
