@@ -244,4 +244,25 @@ test_that("Test BOM Chicago Example", {
 }
 )
 
+test_that("LA encoding example",{
+
+  r <- call_sedt_api(
+    resource_file_path = here::here("tests/testthat/data/test_la_encoding.csv"),
+    resource_lat_column = "LATITUDE",
+    resource_lon_column = "LONGITUDE",
+    geo = "city",
+    acs_data_year = "2019",
+    demographic_file_path = NA,
+    demographic_geo_id_column = NA,
+    demographic_columns =  NA,
+    geographic_file_path = NA,
+    geographic_geo_id_column = NA,
+    geographic_columns = NA,
+    resource_filters = NA,
+    resource_weight = NA
+  ) # Successful call
+
+  expect_equal(r$status_code, 200)
+
+})
 
