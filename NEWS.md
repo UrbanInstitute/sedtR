@@ -1,3 +1,7 @@
+# sedtR 0.4.1 
+
+- Updates parameter validation for API calls to allow users to set 2023 as the ACS data year.
+
 # sedtR 0.4.0
 
 - Introduces beta functionality to allow users to use a travel shed approach for SEDT analyses. The functionality is being tested and is available at the county and city scale for datasets in the District of Columbia, Virginia, and Maryland. Urban hopes to expand the functionality to all states soon. For more information, see the [travel sheds documentation](https://ui-research.github.io/sedt_documentation/using_sheds.html)
