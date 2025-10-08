@@ -29,7 +29,7 @@ match_acs_data_year <- function(acs_data_year,
 
   arg_match0(
     acs_data_year,
-    c("2019", "2021", "2022"),
+    c("2019", "2021", "2022", "2023"),
     error_call = error_call
   )
 }
