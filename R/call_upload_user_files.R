@@ -152,10 +152,9 @@ na_to_empty <- function(x) {
 #'   object.
 #' @param geo (string): One of "city", "county", "state", or "country".
 #'   Indicates the geographic level at which the analysis should be conducted.
-#' @param acs_data_year (string or integer): The tool currently has 2019 and
-#'   2021 data in it. A four digit year beginning with "20" must be inputted. If
-#'   it is different than "2019" or "2021" the tool will use 2021 data. A
-#'   default value can be set using the "sedtR.year" option.
+#' @param acs_data_year (string or integer): The tool currently has 2019,
+#'   2021, 2022, and 2023 data. A default value can be set using the
+#'   "sedtR.year" option (e.g., options(sedtR.year = 2022))
 #' @param distance_mode (string): Optional. One of "walk" or "drive"
 #' @param distance_time (integer): Optional. If distance_mode is walk, one of
 #'  10, 15, 20. If mode is drive, one of 15, 30, 60. If a string is provided,
@@ -183,7 +182,7 @@ call_upload_user_files <- function(
   resource_filters = NA,
   resource_weight = NA,
   geo = "city",
-  acs_data_year = getOption("sedtR.year", 2021),
+  acs_data_year = getOption("sedtR.year", 2023),
   distance_mode = NA,
   distance_time = NA,
   ...,
