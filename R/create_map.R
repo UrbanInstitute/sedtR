@@ -92,23 +92,28 @@ create_map <- function(geo_df,
       bias_map <-
         tmap::tm_basemap("CartoDB.PositronNoLabels") +
         tmap::tm_shape(valid_geo_df) +
-        tmap::tm_fill(col = col_to_plot,
-                palette = pal,
-                midpoint = 0,
-                legend.show = TRUE,
-                id = "id_col",
-                title = "Disparity Score",
-                textNA = "Not Stat. Sig.",
-                legend.format= list(
-                  fun=function(x) paste0(formatC(x, digits=1, format="f"), " %")
+        tmap::tm_fill(
+                fill = col_to_plot,
+                fill.scale = tmap::tm_scale_continuous(
+                  values = pal,
+                  midpoint = 0,
+                  label.na = "Not Stat. Sig."
+                ),
+                fill.legend = tmap::tm_legend(
+                  show = TRUE,
+                  title = "Disparity Score",
+                  format = tmap::tm_label_format(
+                    fun = function(x) paste0(formatC(x, digits=1, format="f"), " %")
                   )
+                ),
+                id = "GEOID",
+                hover = "GEOID"
                 ) +
-        tmap::tm_borders(lwd = .25) +
+        tmap::tm_borders(col = "black", lwd = .25) +
         tmap::tm_tiles("CartoDB.PositronOnlyLabels") +
         tmap::tm_layout(legend.outside = TRUE,
-                  attr.outside = TRUE,
-                  title = janitor::make_clean_names(string = col_to_plot, case = "title")
-                  )
+                  attr.outside = TRUE) +
+        tmap::tm_title(janitor::make_clean_names(string = col_to_plot, case = "title"))
 
       if(save_map){
         tmap::tmap_save(tm = bias_map,

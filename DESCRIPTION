@@ -58,7 +58,7 @@ Suggests:
     tidycensus,
     tidyr,
     tidyselect,
-    tmap,
+    tmap (>= 4.0),
     urbnthemes (>= 0.0.2)
 Remotes: 
     UrbanInstitute/urbnthemes
