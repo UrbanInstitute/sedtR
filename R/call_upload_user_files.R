@@ -378,18 +378,23 @@ call_upload_user_files <- function(
     # update to parse error message
     r_json <- httr::content(response, as = "text", encoding = "UTF-8")
 
-    # Check if there Cloudflare blocks data from hitting the API
-    if (r_json == "<html>\r\n<head><title>413 Request Entity Too Large</title></head>\r\n<body>\r\n<center><h1>413 Request Entity Too Large</h1></center>\r\n<hr><center>cloudflare</center>\r\n</body>\r\n</html>\r\n") {
+    # Check if Cloudflare blocks data from hitting the API. Cloudflare returns an
+    # HTML "413" page (the exact wording, e.g. "Request Entity Too Large" vs
+    # "Payload Too Large", and any challenge <script> block, can change over time),
+    # so match loosely rather than on an exact string.
+    if (grepl("413", r_json) && grepl("cloudflare", r_json, ignore.case = TRUE)) {
       response_to_return <- list(status_code = 413,
                                  error_message = "Request Entity Too Large")
       return(response_to_return)
 
     } else {
-      error_text <- rjson::fromJSON(r_json)
-
-      # if (class(error_text) == "list") {
-      #    error_text = rjson::fromJSON(gsub("(?<!\\[)'(?!\\])", "\"", error_text, perl = TRUE))
-      #  }
+      # The error body is normally JSON, but some upstream errors (e.g. proxy or
+      # gateway HTML pages) are not. Fall back to the raw text so we surface the
+      # real status code instead of erroring while parsing.
+      error_text <- tryCatch(
+        rjson::fromJSON(r_json),
+        error = function(e) r_json
+      )
 
       return(list(status_code = response$status_code, error_message = error_text))
 
