@@ -58,10 +58,10 @@ Suggests:
     tidycensus,
     tidyr,
     tidyselect,
-    tmap,
+    tmap (>= 4.0),
     urbnthemes (>= 0.0.2)
 Remotes: 
     UrbanInstitute/urbnthemes
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
