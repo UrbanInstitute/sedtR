@@ -1,3 +1,7 @@
+# sedtR 0.4.2
+
+- Updates the package to work with tmap >= 4.0, which reorganized the layer function API.
+
 # sedtR 0.4.1
 
 - Updates parameter validation to allow users to set 2023 as the ACS data year for API calls.
